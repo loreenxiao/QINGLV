@@ -179,7 +179,18 @@ $(function () {
         delay: 5,
         time: 800
     });
-
+    // 返回顶部
+    $(document).ready(function () {
+        if ($("#to-top").length) {
+            var btnTop = document.getElementById('to-top');
+            btnTop.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    })
     
     
 
