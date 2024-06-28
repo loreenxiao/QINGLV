@@ -108,10 +108,13 @@ $(function () {
 
         if (!$(this).hasClass(c)) {
           $(this).addClass(c);
-          $("#pcHeaderBody").stop().slideDown(500);
+          $("#pcHeaderBody").stop().slideDown(500); // 关闭导航栏部分内容
+
+          $(".header-pc .header-wrap .header-right .menudown-show").css("display", "none");
         } else {
           $("#pcHeaderBody").stop().slideUp(300);
           $(this).removeClass(c);
+          $(".header-pc .header-wrap .header-right .menudown-show").css("display", "inline-flex");
         }
       });
     } // 返回顶部
@@ -277,10 +280,33 @@ $(function () {
     });
   }
 
-  indexSlide(); // 首页- 客户案例
+  indexSlide(); // 青绿环境 -banner
 
-  function idx_case() {
-    var box = $('#idx_solve');
+  function indexbanner() {
+    var slide = new Swiper('.index-environment-banner .bannerbox', {
+      autoplay: true,
+      speed: 1000,
+      effect: 'fade',
+      // loop: true,
+      watchOverflow: true,
+      //因为仅有1个slide，swiper无效
+      preventLinksPropagation: false,
+      // 阻止点击事件冒泡
+      navigation: {
+        nextEl: '.index-environment-banner .bannerbox .swiper-button-next',
+        prevEl: '.index-environment-banner .bannerbox .swiper-button-prev'
+      },
+      pagination: {
+        el: '.index-environment-banner .bannerbox .swiper-pagination',
+        clickable: true
+      }
+    });
+  }
+
+  indexbanner(); // 解决方案
+
+  function indexSolution() {
+    var box = $('#idx_solution');
 
     if (box.length) {
       var swiper = box.find(".swiper_box"),
@@ -351,6 +377,94 @@ $(function () {
           var index = $(this).index();
           s2.slideTo(index);
         });
+        $(".idx_solve .swiper_box .topbox .swiper_list .item_box .item").click(function () {
+          $(this).addClass("active").siblings().removeClass("active");
+          var index = $(this).index();
+          s2.slideTo(index);
+        });
+      });
+    }
+  }
+
+  indexSolution(); // 首页- 客户案例
+
+  function idx_case() {
+    var box = $('#idx_solve');
+
+    if (box.length) {
+      var swiper = box.find(".swiper_box"),
+          num = swiper.find(".center_box");
+      var s0 = new Swiper(swiper, {
+        slidesPerView: 1,
+        speed: 800,
+        allowTouchMove: false,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+        on: {
+          init: function init() {
+            swiperAnimateCache(this);
+            swiperAnimate(this);
+          },
+          slideChangeTransitionEnd: function slideChangeTransitionEnd() {
+            swiperAnimate(this);
+          }
+        }
+      });
+      num.each(function (e) {
+        var _this = $(this),
+            swiper_img = _this.find('.swiper_img'),
+            swiper_text = _this.find('.swiper_text'),
+            pagination = _this.find('.idxPageHide'),
+            item = _this.find(".swiper_list  .item_box .item");
+
+        var s1 = new Swiper(swiper_img, {
+          effect: 'fade',
+          slidesPerView: 1,
+          speed: 1200,
+          allowTouchMove: false
+        });
+        var s2 = new Swiper(swiper_text, {
+          slidesPerView: 1,
+          speed: 800,
+          effect: 'fade',
+          fadeEffect: {
+            crossFade: true
+          },
+          pagination: {
+            el: pagination,
+            clickable: true
+          },
+          allowTouchMove: false,
+          breakpoints: {
+            768: {
+              allowTouchMove: true
+            }
+          },
+          navigation: {
+            nextEl: '.pre-next-button .nextbtn',
+            prevEl: '.pre-next-button .prebtn'
+          },
+          on: {
+            init: function init() {
+              swiperAnimateCache(this);
+              swiperAnimate(this);
+            },
+            slideChangeTransitionEnd: function slideChangeTransitionEnd() {
+              swiperAnimate(this);
+            },
+            slideChangeTransitionStart: function slideChangeTransitionStart() {
+              var index = this.activeIndex;
+              s1.slideTo(index);
+              item.removeClass("active").eq(index).addClass("active");
+            }
+          }
+        });
+        item.click(function () {
+          var index = $(this).index();
+          s2.slideTo(index);
+        });
       });
       $(".idx_solve .idx_title .item_box .item").click(function () {
         $(this).addClass("active").siblings().removeClass("active");
@@ -360,31 +474,7 @@ $(function () {
     }
   }
 
-  idx_case(); // 青绿环境 -banner
-  // 首页-banner
-
-  function indexbanner() {
-    var slide = new Swiper('.index-environment-banner .bannerbox', {
-      autoplay: true,
-      speed: 1000,
-      effect: 'fade',
-      // loop: true,
-      watchOverflow: true,
-      //因为仅有1个slide，swiper无效
-      preventLinksPropagation: false,
-      // 阻止点击事件冒泡
-      navigation: {
-        nextEl: '.index-environment-banner .bannerbox .swiper-button-next',
-        prevEl: '.index-environment-banner .bannerbox .swiper-button-prev'
-      },
-      pagination: {
-        el: '.index-environment-banner .bannerbox .swiper-pagination',
-        clickable: true
-      }
-    });
-  }
-
-  indexbanner();
+  idx_case();
 }); // 鼠标跟随
 
 function imousehover(obj, obj2) {
