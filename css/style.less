@@ -3538,6 +3538,12 @@ button {
     color: var(--black-000);
   }
   .two{color: var(--black-999);}
+  @media @max768 {
+    .one,.two{
+      .font28 !important;
+    }
+  }
+
 }
 
 
@@ -4124,12 +4130,12 @@ button {
       }
     }
     .right-box{
-      width: 25.33%;
-      .itemrow{.flex;.j_justify; border-top: solid 1px var(--black-000);
+      min-width: 25.33%;
+      .itemrow{.flex;.j_justify; gap: .7rem; border-top: solid 1px var(--black-000);
         &:first-child{
           border-top: none;
         }
-        .item{max-width: 127px; padding: .4rem 0;
+        .item{padding: .4rem 0;
           .data{.flex; .a_start;
             line-height: 1; position: relative;  color: var(--black-000); 
             .num{.font64;font-weight: 700;}
@@ -4160,6 +4166,32 @@ button {
     text-align: center;
     transform: translateY(-100px);
   }
+  @media @max990 {
+    .info{
+      position: relative;
+      z-index: 10;
+      display: inline-block;
+      width: 100%;
+      .left-box {
+        width: 100%;
+      }
+      .right-box{
+        width: 100%;
+        margin-top: .4rem;
+        .itemrow{
+          .j_start;
+        }
+      }
+    }
+  }
+  @media @max768 {
+    .info .right-box .itemrow .item .data .num{
+      .font32;
+    }
+  }
+  @media @max480 {
+    
+  }
 }
 // --------------------------------------------- 首页-新闻动态
 .index-news{
@@ -4168,11 +4200,15 @@ button {
   .news-top{
     .newsbox{
       .flex;.a_center;.j_justify;margin-top: .32rem;
-     
       .title{
         color: var(--black-999);
         span{
           color: var(--black-999);
+        }
+      }
+      .public-opacity-title {
+        span{
+          font-weight: 700;
         }
       }
     }
@@ -4210,6 +4246,77 @@ button {
       }
     }
   }
+  @media @max1280{
+    .new-list {
+      .item {
+        .info {
+          width: 45%;
+        }
+        .image {
+          width: 45%;
+        }
+      }
+     }
+  }
+  @media @max768{
+    .new-list {
+      .item {
+        .info {
+          width: 45%;
+          .title{
+            margin-top: 0.5rem;
+          }
+        }
+        .image {
+          width: 45%;
+        }
+      }
+     }
+    
+  }
+  @media @max640{
+    .new-list {margin-top: 0.4rem;
+      .item {
+        .info {
+          width: 55%;
+          .title{
+            margin-top: 0.2rem;
+          }
+          .sec-title {
+            margin-top: 0.12rem;
+          }
+          .news-more {
+            color: var(--black-999);
+            margin-top: 0.2rem;
+          }
+        }
+        .image {
+          width: 40%;
+        }
+      }
+    }
+     .news-top .newsbox{
+      display: inline-block; width: 100%;
+     }
+     .index-p-more{
+      margin-top: .3rem;
+     }
+  }
+  @media @max480{
+    .new-list {
+      .item {display: inline-block; width: 100%;
+        .info {
+          width: 100%;
+          
+        }
+        .image {
+          width: 100%;
+          margin-top: .3rem;
+        }
+      }
+     }
+    
+  }
 }
 
 // --------------------------------------------- 首页-业务咨询
@@ -4217,13 +4324,10 @@ button {
 .index-business-consulting{
   position: relative;
   .content{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
+    position: relative;
     color: var(--white-color);
     padding: 1.36rem 0;
-    
+    align-content: center;
     .sec-title{margin-top: .32rem;font-weight: 700;}
     .third-title{margin-top: .12rem; .font48}
     .index-more{margin-top: .64rem;}
@@ -4239,13 +4343,35 @@ button {
     }
     .index-p-title{
       color: #fff;
-      background-image: linear-gradient(to right,top rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
     }
    
   }
-  
-  @media @max990{
+  .image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  @media @max1280{
     
+    
+  }
+  @media @max768{
+    .content {
+      .third-title{
+        font-size: 0.28rem;
+      }
+      .sec-title {
+        margin-top: 0.15rem;
+       
+      }
+    }
     
   }
   @media @max480{

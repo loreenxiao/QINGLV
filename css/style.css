@@ -3791,6 +3791,13 @@ button {
 .public-opacity-title .two {
   color: var(--black-999);
 }
+@media (max-width:768px) {
+  .public-opacity-title .one,
+  .public-opacity-title .two {
+    font-size: 28px !important;
+    font-size: clamp(18px, 0.28rem, 28px) !important;
+  }
+}
 .public-title p,
 .public-title span {
   font-size: 0.42rem;
@@ -4940,7 +4947,7 @@ button {
   margin-top: 0.8rem;
 }
 .index-about .info .right-box {
-  width: 25.33%;
+  min-width: 25.33%;
 }
 .index-about .info .right-box .itemrow {
   display: -webkit-box;
@@ -4951,13 +4958,13 @@ button {
   -ms-flex-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
+  gap: 0.7rem;
   border-top: solid 1px var(--black-000);
 }
 .index-about .info .right-box .itemrow:first-child {
   border-top: none;
 }
 .index-about .info .right-box .itemrow .item {
-  max-width: 127px;
   padding: 0.4rem 0;
 }
 .index-about .info .right-box .itemrow .item .data {
@@ -4991,6 +4998,33 @@ button {
   text-align: center;
   transform: translateY(-100px);
 }
+@media (max-width:990px) {
+  .index-about .info {
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    width: 100%;
+  }
+  .index-about .info .left-box {
+    width: 100%;
+  }
+  .index-about .info .right-box {
+    width: 100%;
+    margin-top: 0.4rem;
+  }
+  .index-about .info .right-box .itemrow {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+}
+@media (max-width:768px) {
+  .index-about .info .right-box .itemrow .item .data .num {
+    font-size: 32px;
+    font-size: clamp(20px, 0.32rem, 32px);
+  }
+}
 .index-news {
   position: relative;
   padding: 1.6rem 0;
@@ -5015,6 +5049,9 @@ button {
 }
 .index-news .news-top .newsbox .title span {
   color: var(--black-999);
+}
+.index-news .news-top .newsbox .public-opacity-title span {
+  font-weight: 700;
 }
 .index-news .new-list {
   margin-top: 0.96rem;
@@ -5083,16 +5120,74 @@ button {
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transform: translateX(20px);
 }
+@media (max-width:1280px) {
+  .index-news .new-list .item .info {
+    width: 45%;
+  }
+  .index-news .new-list .item .image {
+    width: 45%;
+  }
+}
+@media (max-width:768px) {
+  .index-news .new-list .item .info {
+    width: 45%;
+  }
+  .index-news .new-list .item .info .title {
+    margin-top: 0.5rem;
+  }
+  .index-news .new-list .item .image {
+    width: 45%;
+  }
+}
+@media (max-width:640px) {
+  .index-news .new-list {
+    margin-top: 0.4rem;
+  }
+  .index-news .new-list .item .info {
+    width: 55%;
+  }
+  .index-news .new-list .item .info .title {
+    margin-top: 0.2rem;
+  }
+  .index-news .new-list .item .info .sec-title {
+    margin-top: 0.12rem;
+  }
+  .index-news .new-list .item .info .news-more {
+    color: var(--black-999);
+    margin-top: 0.2rem;
+  }
+  .index-news .new-list .item .image {
+    width: 40%;
+  }
+  .index-news .news-top .newsbox {
+    display: inline-block;
+    width: 100%;
+  }
+  .index-news .index-p-more {
+    margin-top: 0.3rem;
+  }
+}
+@media (max-width:480px) {
+  .index-news .new-list .item {
+    display: inline-block;
+    width: 100%;
+  }
+  .index-news .new-list .item .info {
+    width: 100%;
+  }
+  .index-news .new-list .item .image {
+    width: 100%;
+    margin-top: 0.3rem;
+  }
+}
 .index-business-consulting {
   position: relative;
 }
 .index-business-consulting .content {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
+  position: relative;
   color: var(--white-color);
   padding: 1.36rem 0;
+  align-content: center;
 }
 .index-business-consulting .content .sec-title {
   margin-top: 0.32rem;
@@ -5117,5 +5212,24 @@ button {
 }
 .index-business-consulting .content .index-p-title {
   color: #fff;
-  background-image: linear-gradient(to right, top rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+}
+.index-business-consulting .image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.index-business-consulting .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width:768px) {
+  .index-business-consulting .content .third-title {
+    font-size: 0.28rem;
+  }
+  .index-business-consulting .content .sec-title {
+    margin-top: 0.15rem;
+  }
 }
