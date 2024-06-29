@@ -283,9 +283,13 @@ $(function () {
   indexSlide(); // 青绿环境 -banner
 
   function indexbanner() {
-    var slide = new Swiper('.index-environment-banner .bannerbox', {
-      autoplay: true,
-      speed: 1000,
+    var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#fff" stroke-dasharray="314" stroke-dashoffset="314"/></svg>';
+    var mySwiper = new Swiper('.index-environment-banner .bannerbox', {
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      loop: true,
       effect: 'fade',
       // loop: true,
       watchOverflow: true,
@@ -297,10 +301,16 @@ $(function () {
         prevEl: '.index-environment-banner .bannerbox .swiper-button-prev'
       },
       pagination: {
-        el: '.index-environment-banner .bannerbox .swiper-pagination',
+        el: '.index-environment-banner .bannerbox .banner_sp',
         clickable: true
+      },
+      on: {
+        slideChange: function slideChange(mySwiper) {
+          $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty();
+        }
       }
     });
+    $('.banner_sp span').eq(0).html(svg);
   }
 
   indexbanner(); // 解决方案
@@ -312,6 +322,7 @@ $(function () {
       var swiper = box.find(".swiper_box"),
           num = swiper.find(".center_box");
       var s0 = new Swiper(swiper, {
+        loop: true,
         slidesPerView: 1,
         speed: 800,
         allowTouchMove: false,
@@ -329,6 +340,7 @@ $(function () {
           }
         }
       });
+      var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="2"  stroke="#fff" stroke-dasharray="314" stroke-dashoffset="314"/></svg>';
       num.each(function (e) {
         var _this = $(this),
             swiper_img = _this.find('.swiper_img'),
@@ -339,9 +351,21 @@ $(function () {
         var s1 = new Swiper(swiper_img, {
           slidesPerView: 1,
           speed: 1200,
-          allowTouchMove: false
+          allowTouchMove: false,
+          loop: true,
+          pagination: {
+            el: '.banner_sp',
+            clickable: true
+          },
+          on: {
+            slideChange: function slideChange(mySwiper) {
+              $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty();
+            }
+          }
         });
+        $('.banner_sp span').eq(0).html(svg);
         var s2 = new Swiper(swiper_text, {
+          loop: true,
           slidesPerView: 1,
           speed: 800,
           effect: 'fade',

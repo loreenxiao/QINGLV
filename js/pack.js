@@ -289,11 +289,14 @@ $(function () {
 
     // 青绿环境 -banner
     function indexbanner() {
-        var slide = new Swiper('.index-environment-banner .bannerbox', {
-            autoplay:true,
-            speed: 1000,
+        var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#fff" stroke-dasharray="314" stroke-dashoffset="314"/></svg>'
+        var mySwiper = new Swiper('.index-environment-banner .bannerbox', {
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            loop:true,
             effect: 'fade',
-            
             // loop: true,
             watchOverflow: true, //因为仅有1个slide，swiper无效
             preventLinksPropagation: false, // 阻止点击事件冒泡
@@ -302,19 +305,27 @@ $(function () {
                 prevEl: '.index-environment-banner .bannerbox .swiper-button-prev',
             },
             pagination: {
-                el: '.index-environment-banner .bannerbox .swiper-pagination',
+                el: '.index-environment-banner .bannerbox .banner_sp',
                 clickable: true,
             },
+            on:{
+                slideChange: function(mySwiper){
+                    $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty()
+                },
+            },
         });
+        $('.banner_sp span').eq(0).html(svg)
     }
     indexbanner(); 
     // 解决方案
     function indexSolution() {
+        
         var box = $('#idx_solution');
         if (box.length) {
             var swiper = box.find(".swiper_box"), 
             num = swiper.find(".center_box");
             var s0 = new Swiper(swiper, {
+                loop:true,
                 slidesPerView: 1, speed: 800, allowTouchMove: false,
                 effect: 'fade', fadeEffect: { crossFade: true, },
                 on: {
@@ -322,13 +333,26 @@ $(function () {
                     slideChangeTransitionEnd() { swiperAnimate(this); },
                 },
             })
+            var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="2"  stroke="#fff" stroke-dasharray="314" stroke-dashoffset="314"/></svg>'
             num.each(function (e) {
                 var _this = $(this), swiper_img = _this.find('.swiper_img'), swiper_text = _this.find('.swiper_text'), pagination = _this.find('.idxPageHide'), item = _this.find(".swiper_list  .item_box .item");
                 var s1 = new Swiper(swiper_img, {
                     slidesPerView: 1, speed: 1200,
                     allowTouchMove: false,
+                    loop:true,
+                    pagination: {
+                        el: '.banner_sp',
+                        clickable :true,
+                    },
+                    on:{
+                        slideChange: function(mySwiper){
+                            $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty()
+                        },
+                    },
                 })
+                $('.banner_sp span').eq(0).html(svg)
                 var s2 = new Swiper(swiper_text, {
+                    loop:true,
                     slidesPerView: 1, speed: 800,
                     effect: 'fade', fadeEffect: { crossFade: true, },
                     pagination: { el: pagination, clickable: true, }, allowTouchMove: false,
@@ -356,7 +380,7 @@ $(function () {
                     s2.slideTo(index)
                 })
             })
-    
+            
           
             
         }
