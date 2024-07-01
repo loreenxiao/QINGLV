@@ -1,0 +1,19 @@
+<div id="container">
+  <div class="content">内容1</div>
+  <div class="content">内容2</div>
+  <div class="content">内容3</div>
+</div>
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+$(document).ready(function() {
+  var divs = $('#container .content');
+  var index = 0;
+ 
+  var play = setInterval(function() {
+    divs.hide(); // 隐藏所有div
+    $(divs[index]).show(); // 显示当前索引的div
+    index = (index + 1) % divs.length; // 更新索引，循环使用
+  }, 2000); // 每2秒切换一次内容
+});
+</script>

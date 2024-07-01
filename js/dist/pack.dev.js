@@ -100,10 +100,10 @@ $(function () {
             'left': $on_a.parents("dl").position().left
           });
         });
-      } // 下拉框
+      } // 下拉框导航
 
 
-      $("#menuBtn").click(function () {
+      $("#pcmenuBtn").click(function () {
         var c = "active";
 
         if (!$(this).hasClass(c)) {
@@ -182,7 +182,7 @@ $(function () {
 
   $('.jump-num').countUp({
     delay: 5,
-    time: 800
+    time: 2000
   }); // 返回顶部
 
   $(document).ready(function () {
@@ -280,7 +280,36 @@ $(function () {
     });
   }
 
-  indexSlide(); // 青绿环境 -banner
+  indexSlide(); // 青绿环境 -文字循环
+  // function indextextloop(){
+  //     var divs = $('.index-environment .info .global-title .namelists span');
+  //     var index = 0;
+  //     var play = setInterval(function() {
+  //       divs.hide(); // 隐藏所有div
+  //       $(divs[index]).show(); // 显示当前索引的div
+  //       index = (index + 1) % divs.length; // 更新索引，循环使用
+  //     }, 2000); // 每2秒切换一次内容
+  // }
+  // indextextloop()
+
+  function indextextloop() {
+    var mySwiper = new Swiper('.index-environment .opcitylist', {
+      autoplay: true,
+      speed: 500,
+      // loop:true,
+      on: {
+        slideChangeTransitionEnd: function slideChangeTransitionEnd() {
+          var offsetY = this.activeIndex * 85;
+          console.log("this.activeIndex", this.activeIndex);
+          $(".swiper-name>span").animate({
+            top: -offsetY
+          }, 500);
+        }
+      }
+    });
+  }
+
+  indextextloop(); // 青绿环境 -banner
 
   function indexbanner() {
     var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#fff" stroke-dasharray="314" stroke-dashoffset="314"/></svg>';
@@ -352,7 +381,8 @@ $(function () {
           slidesPerView: 1,
           speed: 1200,
           allowTouchMove: false,
-          loop: true,
+          // loop:true,
+          autoplay: true,
           pagination: {
             el: '.banner_sp',
             clickable: true
@@ -456,11 +486,7 @@ $(function () {
           fadeEffect: {
             crossFade: true
           },
-          pagination: {
-            el: pagination,
-            clickable: true
-          },
-          allowTouchMove: false,
+          // pagination: { el: pagination, clickable: true, }, allowTouchMove: false,
           breakpoints: {
             768: {
               allowTouchMove: true
