@@ -299,7 +299,7 @@ $(function () {
             // loop:true,
             on:{
                 slideChangeTransitionEnd: function(){
-                    let offsetY = this.activeIndex * 0.85;
+                    let offsetY = this.activeIndex * 85;
                     console.log("this.activeIndex",this.activeIndex)
                     $(".swiper-name>span").animate({top: -offsetY}, 500);
                 }
@@ -339,76 +339,50 @@ $(function () {
     }
     indexbanner(); 
     // 解决方案
+
     function indexSolution() {
-        
         var box = $('#idx_solution');
-        if (box.length) {
-            var swiper = box.find(".swiper_box"), 
-            num = swiper.find(".center_box");
-            var s0 = new Swiper(swiper, {
-                loop:true,
-                slidesPerView: 1, speed: 800, allowTouchMove: false,
-                effect: 'fade', fadeEffect: { crossFade: true, },
-                on: {
-                    init() { swiperAnimateCache(this); swiperAnimate(this); },
-                    slideChangeTransitionEnd() { swiperAnimate(this); },
+        var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#fff" stroke-dasharray="314" stroke-dashoffset="314"/></svg>'
+
+
+        if(box.length){
+            var slide = new Swiper('#idx_solution .center_box', {
+				autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
                 },
-            })
-            var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="2"  stroke="#fff" stroke-dasharray="314" stroke-dashoffset="314"/></svg>'
-            num.each(function (e) {
-                var _this = $(this), 
-                swiper_img = _this.find('.swiper_img'), 
-                swiper_text = _this.find('.swiper_text'), 
-                pagination = _this.find('.idxPageHide'), 
-                item = _this.find(".swiper_list  .item_box .item");
-                var s1 = new Swiper(swiper_img, {
-                    slidesPerView: 1, speed: 1200,
-                    allowTouchMove: false,
-                    // loop:true,
-                    autoplay:true,
-                    pagination: {
-                        el: '.banner_sp',
-                        clickable :true,
+                effect:"fade",
+                fadeEffect:{
+                    crossFade:true  //开启淡出。过渡时，原slide透明度从1->0（淡出），过渡中的slide透明度从0->1（淡入），其他slide透明度0。
+        
+                },
+				preventLinksPropagation: false, // 阻止点击事件冒泡
+				pagination: {
+					el: '#idx_solution .banner_sp',
+					clickable: true,
+				},
+				allowTouchMove: false,
+				on: {
+					slideChangeTransitionStart: function () {  //切换时分类也要改变状态
+						var d = this.activeIndex;
+						$(".idx_solve .swiper_box .topbox .swiper_list .item_box .item").eq(d).addClass("active").siblings().removeClass("active");
+
+					},
+                    slideChange: function(mySwiper){
+                        $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty()
                     },
-                    on:{
-                        slideChange: function(mySwiper){
-                            $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty()
-                        },
-                    },
-                })
-                $('.banner_sp span').eq(0).html(svg)
-                var s2 = new Swiper(swiper_text, {
-                    loop:true,
-                    slidesPerView: 1, speed: 800,
-                    effect: 'fade', fadeEffect: { crossFade: true, },
-                    pagination: { el: pagination, clickable: true, }, allowTouchMove: false,
-                    breakpoints: {
-                        768: { allowTouchMove: true, },
-                    },
-                    on: {
-                        init() { swiperAnimateCache(this); swiperAnimate(this); },
-                        slideChangeTransitionEnd() { swiperAnimate(this); },
-                        slideChangeTransitionStart: function () {
-                            var index = this.activeIndex;
-                            s1.slideTo(index)
-                            item.removeClass("active").eq(index).addClass("active");
-                        },
-                    },
-                })
-                item.click(function () {
-                    var index = $(this).index();
-                    s2.slideTo(index)
-                })
-                $(".idx_solve .swiper_box .topbox .swiper_list .item_box .item").click(function () {
-                    
-                    $(this).addClass("active").siblings().removeClass("active");
-                    var index = $(this).index();
-                    s2.slideTo(index)
-                })
-            })
-            
+				},
+			});
+
+			$(".idx_solve .swiper_box .topbox .swiper_list .item_box .item").click(function () {
+                
+				var a = $(this).index();
+				$(this).addClass('active').siblings().removeClass('active');
+				slide.slideTo($(this).index());
+			});
+
+
           
-            
         }
     }
     indexSolution();
