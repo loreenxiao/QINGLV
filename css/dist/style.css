@@ -4754,8 +4754,23 @@ button {
 .index-case .idx_solve .center_box .right .pre-next-button .prebtn {
   background-color: rgb(255 255 3.1875%);
 }
-.index-case .idx_solve .center_box .right .pre-next-button .nextbtn {
+.index-case .idx_solve .center_box .right .pre-next-button .prebtn:hover {
   background: linear-gradient(to bottom right, rgb(255 255 Infinity%), rgb(255 255 3.1875%));
+}
+.index-case .idx_solve .center_box .right .pre-next-button .prebtn:hover img {
+  filter: brightness(0) invert(1);
+}
+.index-case .idx_solve .center_box .right .pre-next-button .nextbtn {
+  background-color: rgb(255 255 3.1875%);
+}
+.index-case .idx_solve .center_box .right .pre-next-button .nextbtn img {
+  transform: rotate(180deg);
+}
+.index-case .idx_solve .center_box .right .pre-next-button .nextbtn:hover {
+  background: linear-gradient(to bottom right, rgb(255 255 Infinity%), rgb(255 255 3.1875%));
+}
+.index-case .idx_solve .center_box .right .pre-next-button .nextbtn:hover img {
+  filter: brightness(0) invert(1);
 }
 .index-case .idx_solve .center_box .right .swiper_text {
   position: absolute;
