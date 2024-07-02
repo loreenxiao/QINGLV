@@ -63,7 +63,7 @@
                             <span class="black0 namelists">
                                 <span class="swiper-name">
                                     <span>低成本_<br>高可用_<br>可持续_</span>
-                                    
+
                                 </span>
                             </span>
                         </p>
@@ -721,7 +721,9 @@
 
                         </div>
                         <div class="image">
-                            <img src="./images/index-news1.png" alt="" class="img1">
+                            <div class="coverbg img1" >
+                            </div>
+                            <img src="./images/index-news1.png" alt="" >
                         </div>
                     </div>
                     <div class="item wow fadeInUp">
@@ -736,7 +738,10 @@
 
                         </div>
                         <div class="image">
-                            <img src="./images/index-news2.png" alt="" class="img2">
+                            <div class="coverbg img2" >
+                            </div>
+                            <img src="./images/index-news2.png" alt="" >
+                            
                         </div>
                     </div>
 
@@ -751,7 +756,10 @@
                             </div>
                         </div>
                         <div class="image">
-                            <img src="./images/index-news3.png" alt="" class="img3">
+                            
+                            <div class="coverbg img3" >
+                            </div>
+                            <img src="./images/index-news3.png" alt="" >
                         </div>
                     </div>
 
@@ -761,14 +769,9 @@
         </section>
 
         <!-- 首页- 业务咨询  -->
-        <section class="index-business-consulting">
-            <div class="image">
-                <!-- <img src="./images/index-business.png" alt=""> -->
-                <img src="./images/index-business-complete.png" alt="">
-            </div>
+        <section class="index-business-consulting wow showPic" data-wow-delay=".5s" data-wow-duration="2s" style="background-image: url(./images/index-business-complete.png)">
             <div class="container">
                 <div class="content">
-
                     <div class="index-p-title wow fadeInUp">
                         业务咨询
                     </div>
@@ -785,7 +788,7 @@
             </div>
         </section>
 
-        
+
 
     </main>
 
@@ -808,7 +811,7 @@
     <script type="text/javascript" src="js/pack.js"></script>
     <script src="js/gsap.min.js"></script>
     <script src="js/ScrollTrigger.min.js"></script>
-    
+
     <!-- boyi -->
     <script src="js/TweenMax.min.js"></script>
     <script src="js/ScrollMagic.min.js"></script>
@@ -889,34 +892,34 @@
     <script>
         $(document).ready(function () {
             // 初始化ScrollTrigger
-
-            const sections = document.querySelectorAll('section');
-            gsap.registerPlugin(ScrollTrigger); // 注册插件
-            // registerPlugin 是一个注册插件的方法 用来注册插件
-            // ScrollTrigger 是一个插件 用来监听滚动事件
-            // ScrollTrigger.create() 是一个创建监听滚动事件的方法
-            sections.forEach(section => {
-                // gsap 是一个动画库 fromTo 是一个动画方法 用来设置动画的起始状态和结束状态 以及动画的配置 例如动画的时间 缓动函数等 
-                // gsap.fromTo(section, { backgroundPositionY: `-${window.innerHeight / 2}px` }, { backgroundPositionY: `${window.innerHeight / 2}px`, ease: 'none', scrollTrigger: { trigger: section, scrub: true } });
-                // 意思是 从section的背景图的Y轴位置为 -window.innerHeight / 2 的位置开始动画 到window.innerHeight / 2 的位置结束动画
-                // ease: 'none' 意思是动画的缓动函数为线性
-                // scrollTrigger: { trigger: section, scrub: true } 意思是当section出现在视口中时触发动画
-                // scrub: true 意思是当section在视口中时 滚动页面会触发动画
-                // trigger: section 意思是当section出现在视口中时触发动画
-                // 
-                // registerPlugin
-                gsap.fromTo(section, {
-                    backgroundPositionY: `-${window.innerHeight / 2}px`
-                }, {
-                    backgroundPositionY: `${window.innerHeight / 2}px`,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: section,
-                        scrub: true
-                    }
-                });
-
-            });
+            //
+            // const sections = document.querySelectorAll('section');
+            // gsap.registerPlugin(ScrollTrigger); // 注册插件
+            // // registerPlugin 是一个注册插件的方法 用来注册插件
+            // // ScrollTrigger 是一个插件 用来监听滚动事件
+            // // ScrollTrigger.create() 是一个创建监听滚动事件的方法
+            // sections.forEach(section => {
+            //     // gsap 是一个动画库 fromTo 是一个动画方法 用来设置动画的起始状态和结束状态 以及动画的配置 例如动画的时间 缓动函数等
+            //     // gsap.fromTo(section, { backgroundPositionY: `-${window.innerHeight / 2}px` }, { backgroundPositionY: `${window.innerHeight / 2}px`, ease: 'none', scrollTrigger: { trigger: section, scrub: true } });
+            //     // 意思是 从section的背景图的Y轴位置为 -window.innerHeight / 2 的位置开始动画 到window.innerHeight / 2 的位置结束动画
+            //     // ease: 'none' 意思是动画的缓动函数为线性
+            //     // scrollTrigger: { trigger: section, scrub: true } 意思是当section出现在视口中时触发动画
+            //     // scrub: true 意思是当section在视口中时 滚动页面会触发动画
+            //     // trigger: section 意思是当section出现在视口中时触发动画
+            //     //
+            //     // registerPlugin
+            //     gsap.fromTo(section, {
+            //         backgroundPositionY: `-${window.innerHeight / 2}px`
+            //     }, {
+            //         backgroundPositionY: `${window.innerHeight / 2}px`,
+            //         ease: 'none',
+            //         scrollTrigger: {
+            //             trigger: section,
+            //             scrub: true
+            //         }
+            //     });
+            //
+            // });
 
 
 
@@ -1012,30 +1015,30 @@
         });
 
     </script> -->
-   
+
 
     <script>
         $(document).ready(function () {
             gsap.registerPlugin(ScrollTrigger);
             // 1.首屏固定并调低透明度
-            // ScrollTrigger.create({
-            //     trigger: '.index-environment',
-            //     start: 'top top',
-            //     // end: headerHeight.offsetHeight, // 固定距离为当前元素高度
-            //     end: "300px", // 固定距离为当前元素高度
+            ScrollTrigger.create({
+                trigger: '.index-environment',
+                start: 'top top',
+                // end: headerHeight.offsetHeight, // 固定距离为当前元素高度
+                end: "300px", // 固定距离为当前元素高度
 
-            //     pin: true, // 固定
-            //     pinSpacing: false, // 不设置间距
-            //     scrub: true,
-            //     animation: gsap.timeline()
-            //         .to('.index-environment', { opacity: 0.5 })
-            // });
+                pin: true, // 固定
+                pinSpacing: false, // 不设置间距
+                scrub: true,
+                animation: gsap.timeline()
+                    .to('.index-environment', { opacity: 0.5 })
+            });
             // 2.首页背景球鼠标滚动时移动
-            
+
             gsap.to(".index-environment .image", {
                 // rotation: 360,
                 // x: 20,
-                x: -50, 
+                x: -50,
                 duration: 1,
                 // scale: 1.5,
                 scrollTrigger: {
@@ -1044,13 +1047,13 @@
                 },
             });
 
-            
+
             // 3.关于青绿
             // 1-1 鼠标滚动时候地图展示完整
-               
+
 
             gsap.to(".index-about .image", {
-                // x: 50, 
+                // x: 50,
                 y:-300,
                 duration: 1,
                 scale: 1.1,
@@ -1062,40 +1065,63 @@
 
             // 7.新闻动态
 
-           const t1 = gsap.timeline();
+        //    const t1 = gsap.timeline();
+        //    t1.to(".index-news .image .img1", {
+        //         x: 0,
+        //         duration: 0.2,
+        //         scrollTrigger: {
+        //             trigger: ".index-news .image .img1",
+        //             scrub: 1,
+        //         },
+        //     }).to(".index-news .image .img2", {
+        //         x: 0,
+        //         duration: 0.2,
+        //         scrollTrigger: {
+        //             trigger: ".index-news .image .img2",
+        //             scrub: 1,
+        //         },
+        //     }, "<2").to(".index-news .image .img3", {
+        //         x: 0,
+        //         duration: 0.2,
+        //         scrollTrigger: {
+        //             trigger: ".index-news .image .img3",
+        //             scrub: 1,
+        //         },
+        //     }, ">1");
+        const t1 = gsap.timeline();
            t1.to(".index-news .image .img1", {
-                x: 0,
-                duration: 0.2,
+                width: '100%',
+                duration: 1,
                 scrollTrigger: {
                     trigger: ".index-news .image .img1",
-                    scrub: 1,
+                    scrub: 1,// 触发器1秒后跟上滚动条
                 },
-            }).to(".index-news .image .img2", {
-                x: 0,
-                duration: 0.2,
+            })
+            .add("myLabel", 2)
+            .to(".index-news .image .img2", {
+                width: '100%',
+                duration: 1,
                 scrollTrigger: {
                     trigger: ".index-news .image .img2",
-                    scrub: 1,
+                    scrub: 1,// 触发器1秒后跟上滚动条
                 },
-            }, "<2").to(".index-news .image .img3", {
-                x: 0,
-                duration: 0.2,
+            }, "myLabel-=1").to(".index-news .image .img3", {
+                width: '100%',
+                duration: 1,
                 scrollTrigger: {
                     trigger: ".index-news .image .img3",
-                    scrub: 1,
+                    scrub: 1,// 触发器1秒后跟上滚动条
                 },
-            }, ">1");
-
-
+            }, "myLabel-=2");
+            
 
             // 5.综合服务
-            
+
             gsap.to(".index-services .serverimg", {
-               
-               // y:'100vh',
-            //    height:'100%',
+
+               y:'100',
                rotation: 360,
-               scale:0.8,
+               scale:0.5,
                repeat: 2,
                 yoyo: true,
                // y: '100%', // 视窗单位
@@ -1107,21 +1133,21 @@
            });
 
 
-            // 8.业务咨询        
+            // 8.业务咨询
             // 1-1图片上下撑满整屏
-            // 1-2文字出现停留3s            
+            // 1-2文字出现停留3s
 
-            gsap.to(".index-business-consulting .image", {
-               
-                // y:'100vh',
-                height:'100%',
-                // y: '100%', // 视窗单位
-                duration: 1,
-                scrollTrigger: {
-                    trigger: ".index-business-consulting .image",
-                    scrub: 1,
-                },
-            });
+            // gsap.to(".index-business-consulting .image", {
+            
+            //     // y:'100vh',
+            //     height:'100%',
+            //     // y: '100%', // 视窗单位
+            //     duration: 1,
+            //     scrollTrigger: {
+            //         trigger: ".index-business-consulting .image",
+            //         scrub: 1,
+            //     },
+            // });
         })
 
     </script>

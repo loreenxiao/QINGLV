@@ -299,7 +299,7 @@ $(function () {
             // loop:true,
             on:{
                 slideChangeTransitionEnd: function(){
-                    let offsetY = this.activeIndex * 85;
+                    let offsetY = this.activeIndex * 0.85;
                     console.log("this.activeIndex",this.activeIndex)
                     $(".swiper-name>span").animate({top: -offsetY}, 500);
                 }

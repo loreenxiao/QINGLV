@@ -5140,6 +5140,7 @@ button {
 }
 .index-about .info .right-box {
   min-width: 25.33%;
+  z-index: 2;
 }
 .index-about .info .right-box .itemrow {
   display: -webkit-box;
@@ -5311,8 +5312,17 @@ button {
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .index-news .new-list .item .image {
+  position: relative;
   width: 32.42%;
   overflow: hidden;
+}
+.index-news .new-list .item .image .coverbg {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: #fff;
 }
 .index-news .new-list .item .image img {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -5321,24 +5331,9 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: translateX(0px);
-}
-.index-news .new-list .item .image .img1,
-.index-news .new-list .item .image .img2,
-.index-news .new-list .item .image .img3 {
-  transform: translateX(-500px);
 }
 .index-news .new-list .item .image .active {
   animation: newsrotateRight 3s ;
-}
-.index-news .new-list .item .image:hover img {
-  -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
-  -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
 }
 .index-news .new-list .item:hover .news-more img {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -5409,9 +5404,44 @@ button {
 .index-business-consulting {
   position: relative;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  background: center center no-repeat;
+  background-size: cover;
+  visibility: visible!important;
+  animation-delay: 0!important;
+}
+.index-business-consulting:before,
+.index-business-consulting:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 50%;
+  background: #FFFFFF;
+  transition: all 1.5s linear 0.1s;
+}
+.index-business-consulting:before {
+  top: 0;
+}
+.index-business-consulting:after {
+  top: auto;
+  bottom: 0;
+}
+.index-business-consulting.showPic.animated:after,
+.index-business-consulting.showPic.animated:before {
+  height: 0;
 }
 .index-business-consulting .content {
   position: relative;
+  z-index: 1;
   color: var(--white-color);
   padding: 1.36rem 0;
   align-content: center;
@@ -5443,17 +5473,6 @@ button {
 .index-business-consulting .content .index-p-title {
   color: #fff;
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
-}
-.index-business-consulting .image {
-  position: absolute;
-  width: 100%;
-  height: 58%;
-  top: 0;
-}
-.index-business-consulting .image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 @media (max-width:768px) {
   .index-business-consulting .content .third-title {
