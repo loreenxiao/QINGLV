@@ -236,21 +236,22 @@ textarea:-ms-input-placeholder {
 //   background-color: #eee;
 // }
 
-::-webkit-scrollbar {
-  width: 2px;
-  height: 5px;
-  background-color: #fff;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 0;
-}
+// 
+// ::-webkit-scrollbar {
+//   width: 2px;
+//   height: 5px;
+//   background-color: #fff;
+//   -webkit-border-radius: 50%;
+//   -moz-border-radius: 50%;
+//   border-radius: 0;
+// }
 
-::-webkit-scrollbar-thumb {
-  background-color: var(--color-active);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 0;
-}
+// ::-webkit-scrollbar-thumb {
+//   background-color: var(--color-active);
+//   -webkit-border-radius: 4px;
+//   -moz-border-radius: 4px;
+//   border-radius: 0;
+// }
 
 .clear-float::after {
   content: "";
@@ -1237,7 +1238,10 @@ button {
   background-image: linear-gradient(to right, rgb(37 187 15 / 10%), rgb(37 187 15 / 0%));
   width: fit-content;
   border-radius: 60px;
-  padding: 0.085rem 0.485rem;
+  // padding: 0.085rem 0.485rem;
+  padding: 0.085rem 0;
+  text-indent: 20px;
+  min-width: 1.61rem;
   color: var(--active-color);
   font-weight: 500;
 }
@@ -1320,7 +1324,7 @@ button {
 
     .header-wrap {
       margin: auto;
-      padding: 0 .54rem;
+      padding: 0 .68rem;
       height: var(--header-height);
       .flex;
       .j_justify;
@@ -1340,9 +1344,9 @@ button {
 					display: none;
 				}
         img {
-          max-height: .6rem;
-          margin-right: .2rem;
-          // filter: brightness(0) invert(1);
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       }
 
@@ -1351,8 +1355,8 @@ button {
         .nav {
           position: relative;
           .flex;
-          grid-gap: 0 50px;
-          .grid_gap(0,50);
+          grid-gap: 0 40px;
+          .grid_gap(0,40);
           @media @max1366 {
             .grid_gap(0,34);
             margin: 0;
@@ -1383,7 +1387,6 @@ button {
               color: var(--black-999);
               position: relative;
               height: var(--header-height);
-              .font-weight-b;
               .flex;
               .j_center;
               .a_center;
@@ -1478,15 +1481,15 @@ button {
               .flex;
               .a_center;
               .menu_btn {
-                width: 30px;
-                height: 30px;
+                width: 28px;
+                height: 16px;
                 position: relative;
                 overflow: hidden;
 
                 &::after,
                 &::before,
                 i {
-                  width: 70%;
+                  width: 100%;
                   height: 2px;
                   display: block;
                   background: var(--black-000);
@@ -1689,6 +1692,7 @@ button {
             height: .56rem;
             width: 100%;
             color: var(--black-999);
+            min-height: 40px;
            }
             img{
               position: absolute;
@@ -3614,7 +3618,7 @@ button {
     position: relative;
     background: transparent;
     opacity: 1;
-    margin: 10px!important;
+    // margin: 10px!important;
 
     &:before{
       content: '';
@@ -3719,16 +3723,21 @@ button {
 
 // --------------------------------------------- 首页
 // --------------------------------------------- 首页-青绿环境 QINGLV
-.index-environment{margin-top: 2.4rem;overflow: hidden;
+.index-environment{margin-top: 1.94rem;overflow: hidden;
   position: relative;
   .info{margin-bottom: 1.2rem;
     .index-p-title{}
-    .global-title{margin-top: .49rem;
+    .global-title{margin-top: .4rem;
       .swipertitle{.flex;.a_center; .font64;font-weight: 700;position: relative; z-index: 12;overflow: hidden;
         .namelists{display: inline-block;
-          span{.dh;
-            // display: none;
-            transition: all .5s ease-in-out;
+          .item{.dh;
+            display: none;
+            &:first-child{
+              display: inline-block;
+            }
+          }
+          .active{
+            display: inline-block;
           }
         }
         span{
@@ -3745,7 +3754,15 @@ button {
         }
       }
     }
-    .index-p-more{margin-top: .64rem;}
+    .index-p-more{margin-top: .64rem;
+      .title{
+        background-image: url("../images/section1-one.png");
+      }
+      .icon{
+        background-image: url("../images/section1-two.png");
+      }
+
+    }
 
   }
   .image{
@@ -3788,7 +3805,7 @@ button {
 .index-environment-banner{position: relative;
   .bannerbox{
     .info{
-      padding: 2.4rem 0;
+      padding: 2.4rem 0 3.59rem 0;
       color: #fff;
       position: relative;
       z-index: 10;
@@ -3845,7 +3862,7 @@ button {
       float: right;
       padding-right: 64px;
       writing-mode: tb;
-      bottom: 12%;
+      bottom: 11%;
       right: 0;
     &:before{
       position: absolute;
@@ -3865,7 +3882,7 @@ button {
       top: 48px;
       left: 9px;
       background-color: #fff;
-      animation: moveDown 3s infinite alternate;
+      animation: moveDown 1s infinite alternate;
 
     }
 
@@ -3874,10 +3891,12 @@ button {
     margin: 0 .4rem;
   }
   .banner_sp {
+    position: absolute;
+    bottom: 0.96rem;
     display: flex;
     text-align: left;
     align-items: center;
-    padding-left: 30px;
+    padding-left: 3%;
     span {
       width: 28px;
       height: 28px;
@@ -3954,6 +3973,7 @@ button {
             margin-top: .32rem;
             p{.font48;
               font-weight: 700;
+              line-height: 1.2;
             }
           }
         }
@@ -4111,8 +4131,8 @@ button {
       }
       .right {.flex; .a_center; padding: 1.82rem 0; width: 100%; height: 100%; position: relative; z-index: 3;
         .index-p-title{color: #fff;background-image: linear-gradient(to right, rgb(255 255 255 / 30%), rgb(255 255 255 / 0%));}
-        .sectitle{margin-top: .49rem;
-          p{ .font48;font-weight: 700;}
+        .sectitle{margin-top: .4rem;
+          p{ .font48;font-weight: 700;line-height: 1.2;}
           .title1{
             color: #ffffff;
           }
@@ -4134,6 +4154,10 @@ button {
         .swiper_list { width: 65%; height: 100%; .flex; .a_end;
           .item_box { width: 100%; height: auto; margin-top: 1.57rem;
             .item { width: auto; height: auto; position: relative;   color: var(--black-999); line-height: 24px;  cursor: pointer; opacity: 0.7; .dh;
+              .image{
+                display: inline-block;
+                width: 34px;
+              }
               img{
                 display: none;
                 filter: brightness(0) invert(1);
@@ -4280,6 +4304,7 @@ button {
         right: 0;
         .swiper-wrapper .swiper-slide .centerInfo{
           padding: 0.3rem;
+
           .datalist{
             margin-top: 0.3rem;
             .item .percent {font-size: 0.32rem;
@@ -4315,7 +4340,7 @@ button {
       .sec-title{
          margin-top: .41rem;
          p{
-          .font48;font-weight: 700;
+          .font48;font-weight: 700;line-height: 1.2;
          }
         .greytitle{color: var(--black-999);}
         .blacktitle{color: var(--black-000);}
@@ -4436,14 +4461,13 @@ button {
           .data{.flex; .a_start;
             line-height: 1; position: relative;  color: var(--black-000);
             .num{.font64;font-weight: 700;}
-            .dw{}
-            .year{
-
-            }
+            .dw{font-weight: 700;}
+            .year{font-weight: 700;}
           }
           .title{
             color: var(--black-666);
             margin-top: .04rem;
+            max-width: 127px
           }
         }
 

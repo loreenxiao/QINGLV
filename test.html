@@ -1,19 +1,57 @@
-<div id="container">
-  <div class="content">内容1</div>
-  <div class="content">内容2</div>
-  <div class="content">内容3</div>
-</div>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Text Print Effect</title>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 <script src="js/jquery-1.8.3.min.js"></script>
-<script>
-$(document).ready(function() {
-  var divs = $('#container .content');
-  var index = 0;
+</head>
+<body>
  
-  var play = setInterval(function() {
-    divs.hide(); // 隐藏所有div
-    $(divs[index]).show(); // 显示当前索引的div
-    index = (index + 1) % divs.length; // 更新索引，循环使用
-  }, 2000); // 每2秒切换一次内容
+<!-- <div id="text-container">
+  <span class="text-wrapper"></span>
+</div>
+ 
+<script>
+$(document).ready(function(){
+  var text = "Hello, World!"; // 要打印的文本
+  var $textContainer = $('#text-container .text-wrapper');
+  
+  // 定义打印文本的函数
+  function printText(index) {
+    if (index < text.length) {
+      $textContainer.text($textContainer.text() + text.charAt(index));
+      setTimeout(function() {
+        printText(index + 1);
+      }, 100); // 每0.1秒打印一个字符
+    }
+  }
+  
+
+  printText(0);
+});
+</script> -->
+
+
+<div id="text-container">这是要显示的文字。</div>
+<script>
+  $(document).ready(function(){
+  var text = $("#text-container").text(); // 获取文本内容
+  var i = 0;
+ 
+  function printLetter() {
+    if(i < text.length) {
+      $("#text-container").text(text.substring(0, i++) + '_'); // 每次增加一个下划线代表打字机打字的样式
+    } else {
+      clearInterval(interval); // 文本打印完成后清除定时器
+    }
+  }
+ 
+  var interval = setInterval(printLetter, 200); // 每200毫秒调用一次printLetter函数
 });
 </script>
+
+
+ 
+</body>
+</html>

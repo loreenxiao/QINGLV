@@ -48,22 +48,19 @@
                         青绿环境 QINGLV
                     </div>
                     <div class="global-title">
-                        <div class="opcitylist">
-                            <ul class="swiper-wrapper" >
-                                <li class="swiper-slide" id="slide1"><span >低成本_</span></li>
-                                <li class="swiper-slide" id="slide2"><span >高可用_</span></li>
-                                <li class="swiper-slide" id="slide3"><span >可持续_</span></li>
-
-                            </ul>
-                        </div>
                         <p class="swipertitle wow fadeInLeft">
                             <span class="black6">为全球</span>
                             <img src="./images/global-icon.png" alt="">
                             <span class="black6">客户创造</span>
                             <span class="black0 namelists">
-                                <span class="swiper-name">
-                                    <span>低成本_<br>高可用_<br>可持续_</span>
-
+                                <span class="item">
+                                   低成本_
+                                </span>
+                                <span class="item">
+                                    高可用_
+                                </span>
+                                <span class="item">
+                                    可持续_
                                 </span>
                             </span>
                         </p>
@@ -228,7 +225,7 @@
                             <ul class="swiper-wrapper">
                                 <li class="swiper-slide">
                                     <div class="swiper_img">
-                                        <div class="left centerInfo">
+                                        <div class="left centerInfo wow fadeInUp">
                                             <p class="num">( 01 )</p>
                                             <div class="info">
                                                 <img src="./images/solution-icon.png" alt=""
@@ -356,18 +353,50 @@
                                         </div>
                                         <div class="swiper_list">
                                             <div class="item_box">
-                                                <div class="item active"><img src="./images/icon-more.png"
-                                                        alt=""> 建筑装修垃圾</div>
-                                                <div class="item"><img src="./images/icon-more.png"
-                                                        alt="">高值可回收垃圾</div>
-                                                <div class="item"><img src="./images/icon-more.png"
-                                                        alt="">混合生活垃圾</div>
-                                                <div class="item"><img src="./images/icon-more.png"
-                                                        alt="">陈腐垃圾</div>
-                                                <div class="item"><img src="./images/icon-more.png"
-                                                        alt="">工业固废</div>
-                                                <div class="item"><img src="./images/icon-more.png"
-                                                        alt="">造纸厂垃圾</div>
+                                                <div class="item active">
+                                                    <span class="image">
+                                                        <img src="./images/icon-more.png"
+                                                        alt=""> 
+                                                    </span>
+                                                    
+                                                        
+                                                    建筑装修垃圾
+                                                </div>
+                                                <div class="item">
+                                                    <span class="image">
+                                                        <img src="./images/icon-more.png"
+                                                        alt=""> 
+                                                    </span>
+                                                    高值可回收垃圾
+                                                </div>
+                                                <div class="item">
+                                                    <span class="image">
+                                                        <img src="./images/icon-more.png"
+                                                        alt=""> 
+                                                    </span>
+                                                    混合生活垃圾
+                                                </div>
+                                                <div class="item">
+                                                    <span class="image">
+                                                        <img src="./images/icon-more.png"
+                                                        alt=""> 
+                                                    </span>
+                                                        陈腐垃圾
+                                                </div>
+                                                <div class="item">
+                                                    <span class="image">
+                                                        <img src="./images/icon-more.png"
+                                                        alt=""> 
+                                                    </span>
+                                                        工业固废
+                                                </div>
+                                                <div class="item">
+                                                    <span class="image">
+                                                        <img src="./images/icon-more.png"
+                                                        alt=""> 
+                                                    </span>
+                                                    造纸厂垃圾
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="pre-next-button">
@@ -552,7 +581,7 @@
                     </div>
                     <div class="rightbox">
                         <div class="index-p-more wow fadeInUp">
-                            <span class="title">更多动态</span>
+                            <span class="title">了解更多</span>
                             <span class="icon">
                                 <img src="./images/icon-more.png" alt="">
                             </span>
@@ -809,62 +838,28 @@
     <script src="js/animation.gsap.min.js"></script>
 
     
-    <script>
-        $(document).ready(function () {
-            // 初始化ScrollTrigger
-            //
-            // const sections = document.querySelectorAll('section');
-            // gsap.registerPlugin(ScrollTrigger); // 注册插件
-            // // registerPlugin 是一个注册插件的方法 用来注册插件
-            // // ScrollTrigger 是一个插件 用来监听滚动事件
-            // // ScrollTrigger.create() 是一个创建监听滚动事件的方法
-            // sections.forEach(section => {
-            //     // gsap 是一个动画库 fromTo 是一个动画方法 用来设置动画的起始状态和结束状态 以及动画的配置 例如动画的时间 缓动函数等
-            //     // gsap.fromTo(section, { backgroundPositionY: `-${window.innerHeight / 2}px` }, { backgroundPositionY: `${window.innerHeight / 2}px`, ease: 'none', scrollTrigger: { trigger: section, scrub: true } });
-            //     // 意思是 从section的背景图的Y轴位置为 -window.innerHeight / 2 的位置开始动画 到window.innerHeight / 2 的位置结束动画
-            //     // ease: 'none' 意思是动画的缓动函数为线性
-            //     // scrollTrigger: { trigger: section, scrub: true } 意思是当section出现在视口中时触发动画
-            //     // scrub: true 意思是当section在视口中时 滚动页面会触发动画
-            //     // trigger: section 意思是当section出现在视口中时触发动画
-            //     //
-            //     // registerPlugin
-            //     gsap.fromTo(section, {
-            //         backgroundPositionY: `-${window.innerHeight / 2}px`
-            //     }, {
-            //         backgroundPositionY: `${window.innerHeight / 2}px`,
-            //         ease: 'none',
-            //         scrollTrigger: {
-            //             trigger: section,
-            //             scrub: true
-            //         }
-            //     });
-            //
-            // });
-
-
-        })
-    </script>
-
+    <!-- 首页gsap调用 -->
     <script>
         $(document).ready(function () {
             gsap.registerPlugin(ScrollTrigger);
             // 1.首屏固定并调低透明度
-            ScrollTrigger.create({
-                trigger: '.index-environment',
-                // start: 'top top',
-                start: 'top top',
+            // ScrollTrigger.create({
+            //     trigger: '.index-environment',
+            //     // start: 'top top',
+            //     start: 'top top',
 
-                // end: headerHeight.offsetHeight, // 固定距离为当前元素高度
-                end: "300px", // 固定距离为当前元素高度
+            //     // end: headerHeight.offsetHeight, // 固定距离为当前元素高度
+            //     end: "300px", // 固定距离为当前元素高度
 
-                pin: true, // 固定
-                pinSpacing: false, // 不设置间距
-                scrub: true,
-                animation: gsap.timeline()
-                    .to('.index-environment', { opacity: 0.5 })
-            });
+            //     pin: true, // 固定
+            //     pinSpacing: false, // 不设置间距
+            //     scrub: true,
+            //     animation: gsap.timeline()
+            //         .to('.index-environment', { opacity: 0.5 })
+            // });
+           
+           
             // 2.首页背景球鼠标滚动时移动
-
             gsap.to(".index-environment .image", {
                 // rotation: 360,
                 // x: 20,
@@ -878,7 +873,18 @@
             });
 
 
-            // 3.首屏固定并调低透明度
+            // 3.解决方案背景球鼠标滚动时移动
+            gsap.to(".index-solution", {
+                duration: 1, // 动画的持续时间（秒）
+                backgroundPosition: '110% 50%', // 设置背景图片的位置
+                ease: 'power1.inOut', // 动画的缓动函数
+                scrollTrigger: {
+                    trigger: ".index-solution",
+                    scrub: 1,
+                },
+            });
+
+            // 7.首屏固定并调低透明度
             // ScrollTrigger.create({
             //     trigger: '.index-solution',
             //     start: 'top top',
@@ -891,7 +897,6 @@
             //     animation: gsap.timeline()
             //         .to('.index-solution', { opacity: 0.7 })
             // });
-
 
 
             // 6.关于青绿
@@ -907,9 +912,21 @@
                 },
             });
 
+            // 5.综合服务
+            gsap.to(".index-services .serverimg", {
+               yPercent:'-10',
+            //    rotation: 360,
+               scale:0.9,
+            //    repeat: 2,
+                // yoyo: true,
+               // y: '100%', // 视窗单位
+               duration: 1,
+               scrollTrigger: {
+                   trigger: ".index-servicesg .serverimg",
+                   scrub: 1,
+               },
+           });
             // 7.新闻动态
-
-        
             const t1 = gsap.timeline();
             t1.to(".index-news .image .img1", {
                 width: '100%',
@@ -934,45 +951,7 @@
                     scrub: 1,// 触发器1秒后跟上滚动条
                 },
             });
-            
-
-          
-
-            // 5.综合服务
-            gsap.to(".index-services .serverimg", {
-
-               y:'100',
-               rotation: 360,
-               scale:0.5,
-               repeat: 2,
-                yoyo: true,
-               // y: '100%', // 视窗单位
-               duration: 2,
-               scrollTrigger: {
-                   trigger: ".index-servicesg .serverimg",
-                   scrub: 1,
-               },
-           });
-
-
             // 8.业务咨询
-            // 1-1图片上下撑满整屏
-            // 1-2文字出现停留3s
-
-            // 方式一
-            // gsap.to(".index-business-consulting", {
-            
-            //     // y:'100vh',
-            //     height:'100%',
-            //     // y: '100%', // 视窗单位
-            //     duration: 1,
-            //     scrollTrigger: {
-            //         trigger: ".index-business-consulting",
-            //         scrub: 1,
-            //     },
-            // });
-
-            // 方式二
             gsap.fromTo(".index-business-consulting", {
                 backgroundPositionY: `-${window.innerHeight / 2}px`
             }, { backgroundPositionY: `${window.innerHeight / 2}px`,
@@ -984,18 +963,22 @@
             });
 
         })
-
-
-          // 动画函数
-          function animateElement($element, duration) {
-                return gsap.to($element, {
-                    duration: duration,
-                    opacity: 0,
-                    ease: 'power1.inOut',
-                });
-            }
     </script>
-   
-</body>
 
+    <!-- 首页第一屏文字自动循环显示隐藏 -->
+    <script>
+        function indexText(){
+            var index =0;
+            //3秒轮播一次
+            var timer = setInterval(function(){
+                index = (index == 2) ? 0 : index + 1;          
+                //某个div显示，其他的隐藏
+                $(".index-environment .namelists .item").hide().eq(index).show();   
+                // $(".index-environment .namelists .item").eq(index).addClass("active").siblings().removeClass("active");;   
+               
+            }, 3000);
+        }
+        indexText()
+    </script>
+</body>
 </html>

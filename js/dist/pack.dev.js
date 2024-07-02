@@ -291,25 +291,22 @@ $(function () {
   //     }, 2000); // 每2秒切换一次内容
   // }
   // indextextloop()
-
-  function indextextloop() {
-    var mySwiper = new Swiper('.index-environment .opcitylist', {
-      autoplay: true,
-      speed: 500,
-      // loop:true,
-      on: {
-        slideChangeTransitionEnd: function slideChangeTransitionEnd() {
-          var offsetY = this.activeIndex * 85;
-          console.log("this.activeIndex", this.activeIndex);
-          $(".swiper-name>span").animate({
-            top: -offsetY
-          }, 500);
-        }
-      }
-    });
-  }
-
-  indextextloop(); // 青绿环境 -banner
+  // function indextextloop(){
+  //     let mySwiper = new Swiper ('.index-environment .opcitylist',{
+  //         autoplay:true,
+  //         speed:500,
+  //         // loop:true,
+  //         on:{
+  //             slideChangeTransitionEnd: function(){
+  //                 let offsetY = this.activeIndex * 85;
+  //                 console.log("this.activeIndex",this.activeIndex)
+  //                 $(".swiper-name>span").animate({top: -offsetY}, 500);
+  //             }
+  //         }
+  //     });
+  // }
+  // indextextloop()
+  // 青绿环境 -banner
 
   function indexbanner() {
     var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#fff" stroke-dasharray="314" stroke-dashoffset="314"/></svg>';
