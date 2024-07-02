@@ -403,7 +403,11 @@ $(function () {
                 },
             })
             num.each(function (e) {
-                var _this = $(this), swiper_img = _this.find('.swiper_img'), swiper_text = _this.find('.swiper_text'), pagination = _this.find('.idxPageHide'), item = _this.find(".swiper_list  .item_box .item");
+                var _this = $(this), 
+                swiper_img = _this.find('.swiper_img'), 
+                swiper_text = _this.find('.swiper_text'), 
+                pagination = _this.find('.idxPageHide'), 
+                item = _this.find(".swiper_list  .item_box .item");
                 var s1 = new Swiper(swiper_img, {
                     effect: 'fade',
                     slidesPerView: 1, speed: 1200,
@@ -422,8 +426,10 @@ $(function () {
                     },
                     on: {
                         init() { swiperAnimateCache(this); swiperAnimate(this); },
-                        slideChangeTransitionEnd() { swiperAnimate(this); },
+                        slideChangeTransitionEnd() {swiperAnimateCache(this); swiperAnimate(this); },
                         slideChangeTransitionStart: function () {
+                            swiperAnimateCache(this);
+                            swiperAnimate(this);
                             var index = this.activeIndex;
                             s1.slideTo(index)
                             item.removeClass("active").eq(index).addClass("active");

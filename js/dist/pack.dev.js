@@ -446,9 +446,12 @@ $(function () {
               swiperAnimate(this);
             },
             slideChangeTransitionEnd: function slideChangeTransitionEnd() {
+              swiperAnimateCache(this);
               swiperAnimate(this);
             },
             slideChangeTransitionStart: function slideChangeTransitionStart() {
+              swiperAnimateCache(this);
+              swiperAnimate(this);
               var index = this.activeIndex;
               s1.slideTo(index);
               item.removeClass("active").eq(index).addClass("active");
