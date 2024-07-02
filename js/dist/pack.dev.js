@@ -311,6 +311,8 @@ $(function () {
   function indexbanner() {
     var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#fff" stroke-dasharray="314" stroke-dashoffset="314"/></svg>';
     var mySwiper = new Swiper('.index-environment-banner .bannerbox', {
+      zoom: true,
+      // 启用缩放功能
       autoplay: {
         delay: 5000,
         disableOnInteraction: false
