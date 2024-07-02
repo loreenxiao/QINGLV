@@ -1252,6 +1252,7 @@ button {
     background: linear-gradient(to top right, rgb(221 221 221 / 0%), rgb(221 221 221 / 60%));
     width: fit-content;
     cursor: pointer;
+    // background-size: contain;
   }
   .icon{.flex;.a_center;.j_center;
     transition: all .5s ease-in-out;
@@ -1259,6 +1260,7 @@ button {
     height: .65rem;
     background: linear-gradient(to top right, rgb(221 221 221 / 0%), rgb(221 221 221 / 60%));
     cursor: pointer;
+    background-size: contain;
     span{display: block;}
   }
   &:hover{
@@ -1804,7 +1806,8 @@ button {
       height: 60px;
       padding: 0 20px;
       position: relative;
-      background-color: var(--black-000);
+      background-color: #fff;
+      border-bottom: solid 1px #999;
       .flex;
       .a_center;
       .j_justify;
@@ -2726,7 +2729,7 @@ button {
   margin: 0 auto;
 
   @media @max1560 {
-    width: auto !important;
+    // width: auto !important;
     padding: 0 60px;
     margin: 0 auto;
   }
@@ -4032,40 +4035,9 @@ button {
       }
       
     }
-    @media @max768 {
-      .idx_solve .swiper_box{margin-top: 0}
-      .idx_title { .a_start; }
-      .center_box { margin-top:0.5rem;
-        display: inline-block;width: 100%;
-        .left{
-          position: relative;
-          width: 100%;
-        }
-        .right {
-          width: 100%;
-          .centerInfo {
-            .info {
-              .solicon{
-                margin-top: .3rem;
-              }
-              .s-title{
-                margin-top: .3rem;
-              }
-            }
-            .index-p-more{
-              margin-top: .3rem;
-            }
-          }
-        }
-      }
-
-    }
+    
   }
-  @media @max1280 {
-    padding: 1rem 0;
-
-
-  }
+ 
   @media @max768 {
     padding: 0.5rem 0;
     .idx_solve .swiper_box .topbox{
@@ -4075,6 +4047,33 @@ button {
         width: 100%;
         .global-title p{
           .font28;
+        }
+      }
+    }
+    .idx_solve {
+      .center_box {
+        .swiper_img{
+          display: inline-block;
+          width: 100%;
+        }
+        .left{
+          width: 100%;
+          .info .solicon{
+            margin-top: 0.4rem;
+          }
+          .index-p-more{
+            margin-top: 0.4rem;
+          }
+        }
+        .right {
+          width: 100%;
+          margin-left: 0rem;
+          margin-top: 0.4rem;
+        }
+        .swiper-pagination{
+          position: absolute;
+          width: 100%;
+          bottom: .3rem;
         }
       }
     }
@@ -4164,7 +4163,7 @@ button {
             min-height: 50px;
           }
           .prebtn{
-            background-color: rgb(255 255 255 / 40%);
+            background-color: rgb(255 255 255 / 80%);
           }
           .nextbtn{
             background: linear-gradient(to bottom right, rgb(255 255 255 / 0%), rgb(255 255 255 / 80%));
@@ -4574,9 +4573,13 @@ button {
         }
         .image {
           width: 45%;
+          .coverbg{
+            display: none;
+          }
         }
       }
-     }
+    }
+
 
   }
   @media @max640{

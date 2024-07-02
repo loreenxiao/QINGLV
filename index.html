@@ -891,10 +891,11 @@
             //     animation: gsap.timeline()
             //         .to('.index-solution', { opacity: 0.7 })
             // });
+
+
+
             // 6.关于青绿
             // 1-1 鼠标滚动时候地图展示完整
-
-
             gsap.to(".index-about .image", {
                 // x: 50,
                 y:-300,
@@ -908,31 +909,9 @@
 
             // 7.新闻动态
 
-        //    const t1 = gsap.timeline();
-        //    t1.to(".index-news .image .img1", {
-        //         x: 0,
-        //         duration: 0.2,
-        //         scrollTrigger: {
-        //             trigger: ".index-news .image .img1",
-        //             scrub: 1,
-        //         },
-        //     }).to(".index-news .image .img2", {
-        //         x: 0,
-        //         duration: 0.2,
-        //         scrollTrigger: {
-        //             trigger: ".index-news .image .img2",
-        //             scrub: 1,
-        //         },
-        //     }, "<2").to(".index-news .image .img3", {
-        //         x: 0,
-        //         duration: 0.2,
-        //         scrollTrigger: {
-        //             trigger: ".index-news .image .img3",
-        //             scrub: 1,
-        //         },
-        //     }, ">1");
-        const t1 = gsap.timeline();
-           t1.to(".index-news .image .img1", {
+        
+            const t1 = gsap.timeline();
+            t1.to(".index-news .image .img1", {
                 width: '100%',
                 duration: 1,
                 scrollTrigger: {
@@ -940,7 +919,6 @@
                     scrub: 1,// 触发器1秒后跟上滚动条
                 },
             })
-            .add("myLabel", 2)
             .to(".index-news .image .img2", {
                 width: '100%',
                 duration: 1,
@@ -948,18 +926,19 @@
                     trigger: ".index-news .image .img2",
                     scrub: 1,// 触发器1秒后跟上滚动条
                 },
-            }, "myLabel-=1").to(".index-news .image .img3", {
+            }).to(".index-news .image .img3", {
                 width: '100%',
                 duration: 1,
                 scrollTrigger: {
                     trigger: ".index-news .image .img3",
                     scrub: 1,// 触发器1秒后跟上滚动条
                 },
-            }, "myLabel-=2");
+            });
             
 
-            // 5.综合服务
+          
 
+            // 5.综合服务
             gsap.to(".index-services .serverimg", {
 
                y:'100',
@@ -980,20 +959,43 @@
             // 1-1图片上下撑满整屏
             // 1-2文字出现停留3s
 
-            // gsap.to(".index-business-consulting .image", {
+            // 方式一
+            // gsap.to(".index-business-consulting", {
             
             //     // y:'100vh',
             //     height:'100%',
             //     // y: '100%', // 视窗单位
             //     duration: 1,
             //     scrollTrigger: {
-            //         trigger: ".index-business-consulting .image",
+            //         trigger: ".index-business-consulting",
             //         scrub: 1,
             //     },
             // });
+
+            // 方式二
+            gsap.fromTo(".index-business-consulting", {
+                backgroundPositionY: `-${window.innerHeight / 2}px`
+            }, { backgroundPositionY: `${window.innerHeight / 2}px`,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: ".index-business-consulting",
+                    scrub: true
+                }
+            });
+
         })
 
+
+          // 动画函数
+          function animateElement($element, duration) {
+                return gsap.to($element, {
+                    duration: duration,
+                    opacity: 0,
+                    ease: 'power1.inOut',
+                });
+            }
     </script>
+   
 </body>
 
 </html>
