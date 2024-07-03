@@ -1146,6 +1146,20 @@ button {
 	}
 }
 
+@keyframes slideDown {
+  0% {
+    transform: translateY(0%); /* 从上边界开始 */
+    opacity: 0; /* 开始时不可见 */
+  }
+  50% {
+    opacity: 1; /* 中间时完全可见 */
+  }
+  100% {
+    transform: translateY(150%); /* 移动到最终位置 */
+    opacity: 0; /* 结束时不可见 */
+  }
+}
+
 // 动画-- 360度自转
 @keyframes rotate {
   from {
@@ -2362,7 +2376,8 @@ button {
         top: 83px;
         left: 9px;
         background-color: var(--active-color);
-        animation: moveDown 3s infinite alternate;
+        // animation: moveDown 3s infinite alternate;
+        animation: slideDown 4s infinite;
       }
 
     }
@@ -3901,7 +3916,8 @@ button {
       top: 48px;
       left: 9px;
       background-color: #fff;
-      animation: moveDown 1s infinite alternate;
+      // animation: moveDown 1s infinite alternate;
+      animation: slideDown 2s infinite;
 
     }
 
@@ -4424,8 +4440,12 @@ button {
       width: 74%;
       left: 13%;
       top: 0;
-      transform: translateY(16%);
+      transform: translateY(25%);
       filter: blur(160px);
+      // animation: rotate 3s infinite alternate;
+      img{
+        animation: rotate 30s infinite;
+      }
     }
   }
   @media @max1280 {
