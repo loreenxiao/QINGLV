@@ -1151,13 +1151,14 @@ button {
   -webkit-justify-content: center;
   justify-content: center;
   color: var(--black-999);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.6s ease-in-out;
   padding: 0 0.56rem;
   height: 0.65rem;
   margin-right: 0.08rem;
   background: linear-gradient(to top right, rgba(221, 221, 221, 0), rgba(221, 221, 221, 0.6));
   width: fit-content;
   cursor: pointer;
+  z-index: 2;
 }
 .index-p-more a .icon {
   display: -webkit-box;
@@ -1172,23 +1173,24 @@ button {
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.6s ease-in-out;
   width: 0.65rem;
   height: 0.65rem;
   background: linear-gradient(to top right, rgba(221, 221, 221, 0), rgba(221, 221, 221, 0.6));
   cursor: pointer;
   background-size: contain;
+  z-index: 1;
 }
 .index-p-more a .icon span {
   display: block;
 }
 .index-p-more a:hover .title {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.6s ease-in-out;
   transform: translateX(0.73rem);
   z-index: 1;
 }
 .index-p-more a:hover .icon {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.6s ease-in-out;
   transform: translateX(-1.82rem);
   z-index: 2;
 }
@@ -2914,7 +2916,7 @@ button {
     padding: 0 20px;
   }
 }
-.c_til em {
+.c_til .emm {
   display: inline-block;
 }
 .H-box {
@@ -4064,7 +4066,7 @@ button {
 .index-screen1 .index-environment .info .global-title .swipertitle .namelists {
   display: inline-block;
 }
-.index-screen1 .index-environment .info .global-title .swipertitle .namelists .active em {
+.index-screen1 .index-environment .info .global-title .swipertitle .namelists .active .emm {
   font-size: 0.64rem;
   font-weight: 700;
   -webkit-animation: fadeIn 0.4s 1 forwards;
@@ -4074,11 +4076,11 @@ button {
   font-size: 0.64rem;
   font-weight: 700;
 }
-.index-screen1 .index-environment .info .global-title .swipertitle span em {
+.index-screen1 .index-environment .info .global-title .swipertitle span .emm {
   font-size: 0.64rem;
   font-weight: 700;
 }
-.index-screen1 .index-environment .info .global-title .swipertitle span + span {
+.index-screen1 .index-environment .info .global-title .swipertitle .item + .item {
   display: none;
 }
 .index-screen1 .index-environment .info .global-title .swipertitle .swiper-name span {
@@ -4096,9 +4098,11 @@ button {
 }
 .index-screen1 .index-environment .info .index-p-more .title {
   background-image: url("../images/section1-one.png");
+  z-index: 2;
 }
 .index-screen1 .index-environment .info .index-p-more .icon {
   background-image: url("../images/section1-two.png");
+  z-index: 1;
 }
 .index-screen1 .index-environment .image {
   position: absolute;

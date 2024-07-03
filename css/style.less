@@ -1265,32 +1265,34 @@ button {
     display: flex;
     .title{.flex;.a_center;.j_center;
       color: var(--black-999);
-      transition: all .5s ease-in-out;
+      transition: all .6s ease-in-out;
       padding: 0 .56rem;
       height: .65rem;
       margin-right: .08rem;
       background: linear-gradient(to top right, rgb(221 221 221 / 0%), rgb(221 221 221 / 60%));
       width: fit-content;
       cursor: pointer;
+      z-index: 2;
       // background-size: contain;
     }
     .icon{.flex;.a_center;.j_center;
-      transition: all .5s ease-in-out;
+      transition: all .6s ease-in-out;
       width: .65rem;
       height: .65rem;
       background: linear-gradient(to top right, rgb(221 221 221 / 0%), rgb(221 221 221 / 60%));
       cursor: pointer;
       background-size: contain;
+      z-index: 1;
       span{display: block;}
     }
     &:hover{
       .title{
-        transition: all .5s ease-in-out;
+        transition: all .6s ease-in-out;
         transform: translateX(.73rem);
         z-index: 1;
       }
       .icon{
-        transition: all .5s ease-in-out;
+        transition: all .6s ease-in-out;
         transform: translateX(-1.82rem);
         z-index: 2;
       }
@@ -2784,7 +2786,7 @@ button {
   }
 }
 
-.c_til em {
+.c_til .emm {
   display: inline-block; 
 }
 
@@ -3788,7 +3790,7 @@ button {
             //   }
             // }
             .active{
-              em{.font64;font-weight: 700;
+              .emm{.font64;font-weight: 700;
                 -webkit-animation: fadeIn .4s  1 forwards;
                 animation: fadeIn .4s  1 forwards;
               }
@@ -3797,9 +3799,9 @@ button {
           }
           span{
             .font64;font-weight: 700;
-            em{.font64;font-weight: 700;}
+            .emm{.font64;font-weight: 700;}
           }
-          span + span {
+          .item  + .item  {
             display: none;
           }
           .swiper-name{
@@ -3816,9 +3818,13 @@ button {
       .index-p-more{margin-top: .64rem;
         .title{
           background-image: url("../images/section1-one.png");
+          z-index: 2;
+          
         }
         .icon{
           background-image: url("../images/section1-two.png");
+          z-index: 1;
+          
         }
   
       }

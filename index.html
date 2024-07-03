@@ -847,7 +847,6 @@
             gsap.to(".index-about .image", {
                 y:-400,
                 duration: 1,
-               
                 scrollTrigger: {
                     trigger: ".index-about .image",
                     scrub: 1,
@@ -886,8 +885,8 @@
             });
             // 8.业务咨询
             gsap.fromTo(".index-business-consulting", {
-                backgroundPositionY: `-${window.innerHeight / 2}px`
-            }, { backgroundPositionY: `${window.innerHeight / 2}px`,
+                backgroundPositionY: `-${window.innerHeight / 1.5}px`
+            }, { backgroundPositionY: `${window.innerHeight / 1.5}px`,
                 ease: 'none',
                 scrollTrigger: {
                     trigger: ".index-business-consulting",
@@ -943,7 +942,7 @@
                 }
             }
             var interval = setInterval(printLetter, 200); // 每200毫秒调用一次printLetter函数
-            console.log("printLetter",printLetter)
+            
         });
     </script>
 
@@ -962,13 +961,9 @@
                 }
             }
             var interval = setInterval(printLetter, 200); // 每200毫秒调用一次printLetter函数
-            console.log("printLetter",printLetter)
+           
         });
-
-       
-
         // 显示当前第n个item并打印
-
 
     </script>
 
@@ -988,7 +983,7 @@
                     z_em = "<br/>";
                 } else {
                     z_sum = z_delay + z_num * 0.1;
-                    z_em = "<em class='wow fadeIn' data-wow-delay='" + z_sum + "s'>" + z_array[i] + "</em>"
+                    z_em = "<span class='emm wow fadeIn' data-wow-delay='" + z_sum + "s'>" + z_array[i] + "</span>"
                     z_num++;
                 }
                 z_html.push(z_em);
@@ -1013,7 +1008,7 @@
         });
 
     </script>
-    <!-- 首屏 --粘性定位+scroll鼠标事件 -->
+    <!-- 首屏 --粘性定位增加active改变字体颜色+scroll鼠标事件 -->
     <script>
         window.onscroll = function() {
            
