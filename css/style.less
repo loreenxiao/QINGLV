@@ -1260,39 +1260,43 @@ button {
   font-weight: 500;
 }
 // 公用更多
-.index-p-more{.flex;.a_center;max-width: 260px;
-  .title{.flex;.a_center;.j_center;
-    color: var(--black-999);
-    transition: all .5s ease-in-out;
-    padding: 0 .56rem;
-    height: .65rem;
-    margin-right: .08rem;
-    background: linear-gradient(to top right, rgb(221 221 221 / 0%), rgb(221 221 221 / 60%));
-    width: fit-content;
-    cursor: pointer;
-    // background-size: contain;
-  }
-  .icon{.flex;.a_center;.j_center;
-    transition: all .5s ease-in-out;
-    width: .65rem;
-    height: .65rem;
-    background: linear-gradient(to top right, rgb(221 221 221 / 0%), rgb(221 221 221 / 60%));
-    cursor: pointer;
-    background-size: contain;
-    span{display: block;}
-  }
-  &:hover{
-    .title{
+.index-p-more{.flex;.a_center;
+  a{width: auto;
+    display: flex;
+    .title{.flex;.a_center;.j_center;
+      color: var(--black-999);
       transition: all .5s ease-in-out;
-      transform: translateX(.73rem);
-      z-index: 1;
+      padding: 0 .56rem;
+      height: .65rem;
+      margin-right: .08rem;
+      background: linear-gradient(to top right, rgb(221 221 221 / 0%), rgb(221 221 221 / 60%));
+      width: fit-content;
+      cursor: pointer;
+      // background-size: contain;
     }
-    .icon{
+    .icon{.flex;.a_center;.j_center;
       transition: all .5s ease-in-out;
-      transform: translateX(-1.82rem);
-      z-index: 2;
+      width: .65rem;
+      height: .65rem;
+      background: linear-gradient(to top right, rgb(221 221 221 / 0%), rgb(221 221 221 / 60%));
+      cursor: pointer;
+      background-size: contain;
+      span{display: block;}
+    }
+    &:hover{
+      .title{
+        transition: all .5s ease-in-out;
+        transform: translateX(.73rem);
+        z-index: 1;
+      }
+      .icon{
+        transition: all .5s ease-in-out;
+        transform: translateX(-1.82rem);
+        z-index: 2;
+      }
     }
   }
+  
 
 }
 
@@ -3880,7 +3884,7 @@ button {
       }
      
     }
-    
+    .image{opacity: 0;}
   }
 }
 
@@ -4117,9 +4121,9 @@ button {
               cursor: pointer;
               margin-top: 1.89rem;
               transition: all 1s ease-in-out;
-              &:hover{
-                transform: translateX(50px)
-              }
+              // &:hover{
+              //   transform: translateX(50px)
+              // }
             }
             .s-title{
               .font28;
@@ -4139,13 +4143,17 @@ button {
               background-image: url("../images/section3-two.png");
             }
           }
-        
+          &:hover{
+            .info .solicon{
+              transform: translateY(-50px);
+            }
+          }
        
       }
       .right {width: calc(100% - 32.2%);margin-left: 1.27rem; overflow: hidden;
         img { width: 100%;height: 100%; min-height: 400px; object-fit: cover; transition: all .5s ease-in-out;}
         &:hover{
-          img{.fd(1.1);transition: all .5s ease-in-out;}
+          img{.fd(1.03);transition: all 1s ease-in-out;}
         }
       }
       .swiper-pagination{
@@ -4287,23 +4295,28 @@ button {
             min-height: 50px;
           }
           .prebtn{.dh;
-            background-color: rgb(255 255 255 / 80%);
+            background: linear-gradient(to bottom right, rgb(255 255 255 / 0%), rgb(255 255 255 / 80%));
+            img{.dh;
+              filter: brightness(0) invert(1);
+            }
             &:hover{.dh;
-              background: linear-gradient(to bottom right, rgb(255 255 255 / 0%), rgb(255 255 255 / 80%));
+              background-color: rgb(255 255 255 / 80%);
               img{.dh;
-                filter: brightness(0) invert(1);
+                filter: brightness(0) invert(0);
               }
             }
           }
           .nextbtn{
-            background-color: rgb(255 255 255 / 80%);
+            background: linear-gradient(to bottom right, rgb(255 255 255 / 0%), rgb(255 255 255 / 80%));
+            
             img{.dh;
               transform: rotate(180deg);
+              filter: brightness(0) invert(1);
             }
             &:hover{.dh;
-              background: linear-gradient(to bottom right, rgb(255 255 255 / 0%), rgb(255 255 255 / 80%));
+              background-color: rgb(255 255 255 / 80%);
               img{.dh;
-                filter: brightness(0) invert(1);
+                filter: brightness(0) invert(0);
               }
             }
           }
@@ -4457,8 +4470,12 @@ button {
          p{
           .font48;font-weight: 700;line-height: 1.2;
          }
-        .greytitle{color: var(--black-999);}
-        .blacktitle{color: var(--black-000);}
+        .greytitle{color: var(--black-999);
+         
+        }
+        .blacktitle{color: var(--black-000);
+         
+        }
       }
 
     }
@@ -4679,7 +4696,7 @@ button {
         .news-more{
           color: var(--black-999);
           margin-top: 0.4rem;
-          span{margin-right: .16rem;}
+          span{.dh;margin-right: .16rem;}
           img{.dh;
 
           }
@@ -4714,9 +4731,10 @@ button {
 
       &:hover{
         .news-more{
-         img{.dh;
-          transform: rotate(45deg);
-          // transform: translateX(10px);
+          span{.dh;color: #000}
+         img{
+          transition: 0.3s ease-in-out;
+          transform: translateX(10px);
          }
         }
       }
@@ -4804,37 +4822,9 @@ button {
 
 .index-business-consulting{
   position: relative;
-  height: 100vh;
-  .flex;
-  .a_center;
-  background: center center no-repeat;
-  background-size: cover;
-  visibility: visible!important;
-  animation-delay: 0!important;
-  &:before,&:after{
-    content: '';
-    position: absolute;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    height: 50%;
-    background: #FFFFFF;
-    transition: all 1.5s linear .1s;
-}
-  &:before{
-    top: 0;
-  }
-  &:after{
-    top: auto;
-    bottom: 0;
-  }
-  &.showPic{
-    &.animated{
-      &:after,&:before{
-        height: 0;
-      }
-    }
-  }
+  // height: 100vh;
+  background-image: url("../images/index-business-complete.png");
+  background-repeat:no-repeat;
   .content{
     position: relative;
     z-index: 1;
