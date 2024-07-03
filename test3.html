@@ -9,37 +9,43 @@
 <body>
  
   <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      background-image: url("./images/global-big.png");
-      background-repeat: no-repeat;
-    }
+   #typedText {
+    font-family: monospace;
+    font-size: 24px;
+    color: #333;
+    white-space: pre;
+  }
   </style>
 
-
+<div id="typedText"></div>
 
 
 <script>
- $(document).ready(function(){
-  var $body = $('body');
-  var bgWidth = $body.css('background-image') ? $body.width() : 0;
-  var bgHeight = $body.css('background-image') ? $body.height() : 0;
- 
-  $(document).mousemove(function(e) {
-    var mouseX = e.pageX;
-    var mouseY = e.pageY;
-    var bgX = (mouseX / $body.width()) * bgWidth * -1;
-    var bgY = (mouseY / $body.height()) * bgHeight * -1;
- 
-    $body.css({
-      'background-position-x': bgX + 'px',
-      'background-position-y': bgY + 'px'
-    });
-  });
-});
+const texts = ["Hello, world!", "Welcome to the universe.", "This is an example."];
+let textIndex = 0;
+let charIndex = 0;
+
+function printNextChar() {
+  const element = document.getElementById("typedText");
+
+  // 清除现有的文本
+  // element.textContent = "";
+
+  if (charIndex < texts[textIndex].length) {
+    element.textContent += texts[textIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(printNextChar, 100); // 每100毫秒输出一个字符
+  } else {
+    // 重置字符索引，并在一定延迟后开始打印下一个字符串
+    charIndex = 0;
+    textIndex = (textIndex + 1) % texts.length; // 循环到数组开头
+    setTimeout(printNextChar, 2000); // 等待2秒后开始打印下一个字符串
+  }
+}
+
+// 开始打印第一个字符串
+printNextChar();
+
 </script>
  
 </body>

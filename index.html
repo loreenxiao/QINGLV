@@ -55,19 +55,18 @@
                                 <img src="./images/global-icon.png" alt="">
                                 <span class="black6">客户创造</span>
                                 <span class="black0 namelists">
-                                    <span class="item">
+                                    <span class="item c_til">
                                        低成本_
                                     </span>
-                                    <span class="item">
+                                    <span class="item c_til">
                                         高可用_
                                     </span>
-                                    <span class="item">
+                                    <span class="item c_til">
                                         可持续_
                                     </span>
                                 </span>
                             </p>
-                            <p class="swipertitle black6" id="print-effect">的智慧分选解决方案</p>
-                            <p class="swipertitle black6 c_til">的智慧分选解决方案</p>
+                            <p class="swipertitle black6" >的智慧分选解决方案</p>
     
                         </div>
                         <div class="index-p-more wow fadeInLeft">
@@ -856,19 +855,7 @@
             });
 
             // 5.综合服务
-        //     gsap.to(".index-services .serverimg", {
-        //        yPercent:'-10',
-        //        rotation: 360,
-        //        scale:0.9,
-        //        repeat: 2,
-        //         // yoyo: true,
-        //        // y: '100%', // 视窗单位
-        //        duration: 1,
-        //        scrollTrigger: {
-        //            trigger: ".index-servicesg .serverimg",
-        //            scrub: 1,
-        //        },
-        //    });
+       
             // 7.新闻动态
             const t1 = gsap.timeline();
             t1.to(".index-news .image .img1", {
@@ -943,13 +930,14 @@
     <!-- 第一屏文字打印效果 -->
 
     <script>
+
         $(document).ready(function(){
-            var text = $("#print-effect").text(); // 获取文本内容
+            var text = $(".print-effect").text(); // 获取文本内容
             var i = 0;
             function printLetter() {
                 if(i < text.length) {
              
-                    $("#print-effect").text(text.substring(0, i++) ); // 每次增加一个下划线代表打字机打字的样式
+                    $(".print-effect").text(text.substring(0, i++) ); // 每次增加一个下划线代表打字机打字的样式
                 } else {
                     clearInterval(interval); // 文本打印完成后清除定时器
                 }
@@ -1000,7 +988,7 @@
                     z_em = "<br/>";
                 } else {
                     z_sum = z_delay + z_num * 0.1;
-                    z_em = "<em class='wow fadeInUp' data-wow-delay='" + z_sum + "s'>" + z_array[i] + "</em>"
+                    z_em = "<em class='wow fadeIn' data-wow-delay='" + z_sum + "s'>" + z_array[i] + "</em>"
                     z_num++;
                 }
                 z_html.push(z_em);
@@ -1011,16 +999,18 @@
 
     <!--首屏--背景球跟随鼠标移动 -->
     <script>
-        // $(document).ready(function(){
-        //     var $followMouse = $('.index-environment .image');
-        //     $(document).mousemove(function(e) {
-        //         console.log("e.pageX",e.pageX)
-        //         $followMouse.css({
-        //             // top: e.pageY,
-        //             left: e.pageX/2
-        //         });
-        //     });
-        // });
+        $(document).ready(function(){
+            let hoverBox = $(".index-environment"), menuBox = hoverBox.find(".image"), winW = window.innerWidth, winH = window.innerHeight;
+            hoverBox.hover(function (event) {
+                if (event.type != "mouseenter") {
+                    gsap.to(menuBox, { right: 0, bottom: 0, autoAlpha: 1 })
+                }
+            });
+            hoverBox.on("mousemove", function (e) {
+                let xNum = 30 - (e.clientX / winW) * 60, yNum = 30 - (e.clientY / winH) * 60;
+                gsap.to(menuBox, { right: xNum, bottom: yNum, autoAlpha: 1 })
+            });
+        });
 
     </script>
     <!-- 首屏 --粘性定位+scroll鼠标事件 -->

@@ -4038,6 +4038,7 @@ button {
   top: 1.94rem;
   z-index: 3;
   padding-bottom: 1.2rem;
+  overflow: hidden;
 }
 .index-screen1 .index-environment .info {
   margin-bottom: 1.2rem;
@@ -4063,9 +4064,22 @@ button {
 .index-screen1 .index-environment .info .global-title .swipertitle .namelists {
   display: inline-block;
 }
+.index-screen1 .index-environment .info .global-title .swipertitle .namelists .active em {
+  font-size: 0.64rem;
+  font-weight: 700;
+  -webkit-animation: fadeIn 0.4s 1 forwards;
+  animation: fadeIn 0.4s 1 forwards;
+}
 .index-screen1 .index-environment .info .global-title .swipertitle span {
   font-size: 0.64rem;
   font-weight: 700;
+}
+.index-screen1 .index-environment .info .global-title .swipertitle span em {
+  font-size: 0.64rem;
+  font-weight: 700;
+}
+.index-screen1 .index-environment .info .global-title .swipertitle span + span {
+  display: none;
 }
 .index-screen1 .index-environment .info .global-title .swipertitle .swiper-name span {
   position: absolute;
@@ -4520,7 +4534,7 @@ button {
   background-image: url("../images/section3-two.png");
 }
 .index-solution .idx_solve .center_box .left:hover .info .solicon {
-  transform: translateY(-50px);
+  transform: translateY(-30px);
 }
 .index-solution .idx_solve .center_box .right {
   width: calc(100% - 32.2%);
@@ -5161,7 +5175,7 @@ button {
 }
 .index-about {
   position: relative;
-  padding: 1.6rem 0;
+  padding: 1.6rem 0 2.6rem 0;
   background-color: rgb(230 230 11.5%);
   height: 948px;
   overflow: hidden;

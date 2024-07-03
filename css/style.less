@@ -3769,6 +3769,7 @@ button {
     top: 1.94rem;
     z-index: 3;
     padding-bottom: 1.2rem;
+    overflow: hidden;
       // overflow: hidden;
       // position: relative;
       // background-repeat: no-repeat;
@@ -3786,12 +3787,20 @@ button {
             //     display: inline-block;
             //   }
             // }
-            // .active{
-            //   display: inline-block;
-            // }
+            .active{
+              em{.font64;font-weight: 700;
+                -webkit-animation: fadeIn .4s  1 forwards;
+                animation: fadeIn .4s  1 forwards;
+              }
+           
+            }
           }
           span{
             .font64;font-weight: 700;
+            em{.font64;font-weight: 700;}
+          }
+          span + span {
+            display: none;
           }
           .swiper-name{
             span{position: absolute;top: 0;}
@@ -4145,7 +4154,7 @@ button {
           }
           &:hover{
             .info .solicon{
-              transform: translateY(-50px);
+              transform: translateY(-30px);
             }
           }
        
@@ -4565,7 +4574,9 @@ button {
 // --------------------------------------------- 首页-关于青绿
 .index-about{
   position: relative;
-  padding: 1.6rem 0;
+  // padding: 1.6rem 0;
+  padding: 1.6rem 0 2.6rem 0;
+
   background-color: rgb(230 230 230 / 20%);
   height: 948px;
   overflow: hidden;
