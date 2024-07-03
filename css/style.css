@@ -4792,8 +4792,8 @@ button {
 }
 .index-case .idx_solve .center_box .right .pre-next-button {
   position: absolute;
-  top: 1.82rem;
-  right: 32.2%;
+  top: 0;
+  right: 100%;
   width: 0.65rem;
   min-width: 50px;
   min-height: 50px;
@@ -4869,7 +4869,6 @@ button {
   right: 64px;
   width: 29%;
   height: auto;
-  overflow: hidden;
   padding-bottom: 2px;
   background: linear-gradient(to bottom, rgba(251, 251, 251, 0.9), #FFFFFF);
 }
@@ -4945,29 +4944,9 @@ button {
   color: var(--black-666);
   font-weight: 300;
 }
-@media (max-width:1680px) {
-  .index-case .idx_solve .center_box .right .pre-next-button {
-    top: 1.84rem;
-    right: 32.8%;
-  }
-}
-@media (max-width:1560px) {
-  .index-case .idx_solve .center_box .right .pre-next-button {
-    top: 1.82rem;
-    right: 33.1%;
-  }
-}
-@media (max-width:1400px) {
-  .index-case .idx_solve .center_box .right .pre-next-button {
-    right: 33.5%;
-  }
-}
 @media (max-width:1280px) {
   .index-case {
     margin-top: 0.5rem;
-  }
-  .index-case .idx_solve .center_box .right .pre-next-button {
-    right: 34%;
   }
   .index-case .idx_solve .center_box .right .swiper_list .item_box {
     margin-top: 1rem;
@@ -5181,7 +5160,6 @@ button {
   position: relative;
   padding: 1.6rem 0 2.6rem 0;
   background-color: rgba(230, 230, 230, 0.2);
-  height: 948px;
   overflow: hidden;
 }
 .index-about .info {

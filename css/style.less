@@ -4297,8 +4297,8 @@ button {
         }
         .pre-next-button{
           position: absolute;
-          top: 1.82rem;
-          right: 32.2%;
+          top: 0;
+          right: 100%;
           width: .65rem;
           min-width: 50px;
           min-height: 50px;
@@ -4337,7 +4337,7 @@ button {
           }
         }
         .swiper_text {position: absolute;top: 1.82rem;
-          right: 64px; width: 29%; height: auto;  overflow: hidden; padding-bottom: 2px;
+          right: 64px; width: 29%; height: auto;  padding-bottom: 2px;
 
           background: linear-gradient(to bottom, rgb(251 251 251 / 90%), #FFFFFF);
           .swiper-wrapper .swiper-slide { pointer-events: none; position: relative; z-index: 1;
@@ -4379,29 +4379,9 @@ button {
     }
 
   }
-  @media @max1680{
-    .idx_solve .center_box .right .pre-next-button{
-      top: 1.84rem;
-      right: 32.8%;
-    }
-  }
-  @media @max1560{
-    .idx_solve .center_box .right .pre-next-button{
-      top: 1.82rem;
-      right: 33.1%;
-    }
-  }
-  @media @max1400{
-    .idx_solve .center_box .right .pre-next-button{
-      right: 33.5%;
-    }
-  }
   @media @max1280 {
     margin-top: .5rem;
     .idx_solve .center_box .right{
-      .pre-next-button{
-        right: 34%;
-      }
       .swiper_list .item_box {
         margin-top: 1rem;
       }
@@ -4584,7 +4564,7 @@ button {
   padding: 1.6rem 0 2.6rem 0;
 
   background-color: rgb(230 230 230 / 20%);
-  height: 948px;
+  // height: 948px;
   overflow: hidden;
   .info{.flex;.a_center;.j_justify;
     .left-box{width: 40.79%;z-index: 2;
