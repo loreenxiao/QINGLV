@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Text Print Effect</title>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+ 
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-image: url("./images/global-big.png");
+      background-repeat: no-repeat;
+    }
+  </style>
+
+
+
+
+<script>
+ $(document).ready(function(){
+  var $body = $('body');
+  var bgWidth = $body.css('background-image') ? $body.width() : 0;
+  var bgHeight = $body.css('background-image') ? $body.height() : 0;
+ 
+  $(document).mousemove(function(e) {
+    var mouseX = e.pageX;
+    var mouseY = e.pageY;
+    var bgX = (mouseX / $body.width()) * bgWidth * -1;
+    var bgY = (mouseY / $body.height()) * bgHeight * -1;
+ 
+    $body.css({
+      'background-position-x': bgX + 'px',
+      'background-position-y': bgY + 'px'
+    });
+  });
+});
+</script>
+ 
+</body>
+</html>

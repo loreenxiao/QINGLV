@@ -763,7 +763,7 @@ button {
 }
 :root {
   /* 导航高度 */
-	--header-height: 0.68rem;
+	--header-height: 0.9rem;
   @media @max-lg{
     --header-height: 50px;
   }
@@ -1325,7 +1325,7 @@ button {
 
   .header-pc {.dh;
     position: relative;
-    padding: 0.11rem 0;
+    // padding: 0.11rem 0;
     &::before {
       content: '';
       width: 100%;
@@ -1668,20 +1668,36 @@ button {
       overflow-y: auto;
       margin-top: .24rem;
       .left-navlist{display: inline-grid;
-        a{
+        a{position: relative;
           .font40;color: var(--black-000);
+          span{.font40;position: relative; z-index: 2;}
+          &:after{
+            position: absolute;
+            content: '';
+            left: 0;
+            width: 0;
+            height: 24px;
+            bottom: -5px;
+            background-image: linear-gradient(to bottom, #29BD14, #fff);
+          }
           &:hover{
-            background-image: url(../images/activetext.png);
-            background-repeat: no-repeat;
-            // background-position: bottom 10px left 0px;
-            background-position: bottom -1px left 0px;
-            background-size: contain;
+           &:after{
+            width: 100%;
+            transition: 0.3s
+           }
           }
         }
-        .on{.dh;
-          background-image: url(../images/activetext.png);
-          background-repeat: no-repeat;
-          background-position: bottom 10px left 0px;
+        .on{
+          &:after{
+            position: absolute;
+            content: '';
+            left: 0;
+            width: 100%;
+            height: 24px;
+            bottom: -5px;
+            background-image: linear-gradient(to bottom, #29BD14, #fff);
+            
+          }
         }
       }
       .right-info{.flex; .j_justify;width: 66.3%;
@@ -2393,7 +2409,7 @@ button {
             li{
               position: relative;
               line-height: 28px;
-              a{display: inline-block;background-position: 0% 0%;
+              a{position: relative; display: inline-block;background-position: 0% 0%;
                 &:after{
                   content: "";
                   display: block;
@@ -2733,7 +2749,7 @@ button {
 
 // --------------------------------------------- 公用
 .wrapper {
-  overflow: hidden;
+  // overflow: hidden;
   // margin-top: .8rem;
 
   @media @max1024 {
@@ -2764,7 +2780,9 @@ button {
   }
 }
 
-
+.c_til em {
+  display: inline-block; 
+}
 
 // --------------------------------------------- 锚点链接
 .H-box {
@@ -3740,90 +3758,133 @@ button {
 
 // --------------------------------------------- 首页
 // --------------------------------------------- 首页-青绿环境 QINGLV
-.index-environment{
-  margin-top: 1.94rem;
-    overflow: hidden;
-    position: relative;
-    background-repeat: no-repeat;
-    background-image: url(../images/global-big.png);
-    background-position: 115% 100%;
-  .info{margin-bottom: 1.2rem;
-    .index-p-title{}
-    .global-title{margin-top: .4rem;
-      .swipertitle{.flex;.a_center; .font64;font-weight: 700;position: relative; z-index: 12;overflow: hidden;
-        .namelists{display: inline-block;
-          .item{.dh;
-            display: none;
-            &:first-child{
-              display: inline-block;
-            }
-          }
-          .active{
-            display: inline-block;
-          }
-        }
-        span{
-          .font64;font-weight: 700;
-        }
-        .swiper-name{
-          span{position: absolute;top: 0;}
-        }
-        img{
-          width: .56rem;
-          height: .56rem;
-          margin: 0 0.1rem ;
-          animation: rotate 15s linear infinite;
-        }
-      }
-    }
-    .index-p-more{margin-top: .64rem;
-      .title{
-        background-image: url("../images/section1-one.png");
-      }
-      .icon{
-        background-image: url("../images/section1-two.png");
-      }
 
+.index-screen1{
+  .index-environment{
+    position: sticky;
+    top: 1.94rem;
+    z-index: 3;
+    padding-bottom: 1.2rem;
+      // overflow: hidden;
+      // position: relative;
+      // background-repeat: no-repeat;
+      // background-image: url(../images/global-big.png);
+      // background-position: 115% 100%;
+    .info{
+      margin-bottom: 1.2rem;
+      .index-p-title{}
+      .global-title{margin-top: .4rem;
+        .swipertitle{.flex;.a_center; .font64;font-weight: 700;position: relative; z-index: 12;overflow: hidden;
+          .namelists{display: inline-block;
+            // .item{.dh;
+            //   display: none;
+            //   &:first-child{
+            //     display: inline-block;
+            //   }
+            // }
+            // .active{
+            //   display: inline-block;
+            // }
+          }
+          span{
+            .font64;font-weight: 700;
+          }
+          .swiper-name{
+            span{position: absolute;top: 0;}
+          }
+          img{
+            width: .56rem;
+            height: .56rem;
+            margin: 0 0.1rem ;
+            animation: rotate 15s linear infinite;
+          }
+        }
+      }
+      .index-p-more{margin-top: .64rem;
+        .title{
+          background-image: url("../images/section1-one.png");
+        }
+        .icon{
+          background-image: url("../images/section1-two.png");
+        }
+  
+      }
+     
+  
     }
-
-  }
-  .image{
-    // position: absolute;
-    // bottom: 0;
-    // right: 0;
-    // height: 100%;
-    // transform: translate3d(120px, 100px, 0px);
+    .image{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 100%;
+      transform: translate3d(120px, 100px, 0px);
+      
+  
+    }
+    .animatescroll{
+      animation: arrowMoveALL 3s infinite alternate;
+    }
     
-
-  }
-  .animatescroll{
-    animation: arrowMoveALL 3s infinite alternate;
-  }
-  @media @max768 {
-    margin-top: 1.8rem;
-    .info {
-      margin-bottom: 1rem;
-     .global-title .swipertitle {.font34;
-      span{
-        .font34;
-      }
-     }
-    }
-
-  }
-  @media @max480 {
-    margin-top: 2.2rem;
-    .info {
-      margin-bottom: 1rem;
-      .global-title p {font-size: .34rem;
+  
+  
+    @media @max768 {
+      margin-top: 1.8rem;
+      .info {
+        margin-bottom: 1rem;
+       .global-title .swipertitle {.font34;
         span{
-          font-size: .34rem;
+          .font34;
+        }
+       }
+      }
+  
+    }
+    @media @max480 {
+      margin-top: 2.2rem;
+      .info {
+        margin-bottom: 1rem;
+        .global-title p {font-size: .34rem;
+          span{
+            font-size: .34rem;
+          }
         }
       }
+  
     }
-
+  }
+  .activewhite{
+    .info{
+      .index-p-title{
+        color: #fff !important;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)) !important;
+      }
+      .global-title {
+        .swipertitle {
+          color: #fff;
+          span{
+            color: #fff;
+          }
+        }
+      }
+      .index-p-more {
+        .title{
+          color: #fff;
+          background-image: url(../images/section2-one.png);
+        }
+        .icon{
+          background-image: url(../images/section2-two.png);
+          img{
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+     
+    }
+    
   }
 }
+
+
 // --------------------------------------------- 首页-青绿环境 banner
 .index-environment-banner{position: relative;
   .bannerbox{
@@ -3867,7 +3928,7 @@ button {
 
     }
     .image{
-      position: absolute;
+      position: relative;
       width: 100%;
       height: 100%;
       top: 0;
@@ -4417,7 +4478,7 @@ button {
     border-top: solid 1px var(--black-ddd);
     margin-top: .96rem;
 
-    .itemlist{.flex;.a_center;.j_justify; position: relative; z-index: 1;
+    .itemlist{.flex;.j_justify; position: relative; z-index: 1;
         .item{flex: 1;
           border-right: solid 1px var(--black-ddd);
           padding-left: .32rem;
@@ -4428,7 +4489,7 @@ button {
             border-right:0;
           }
           .num{.font18;margin-top: .32rem; color: var(--black-ccc);}
-          .icon{max-width: 56px; margin-top: 2.27rem;
+          .icon{max-width: 56px; margin-top: 2.27rem;width: 56px; height: 56px;
 
           }
           .title{.font24;font-weight: 700; color: var(--black-000);margin-top: .24rem;}
