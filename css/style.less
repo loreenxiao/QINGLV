@@ -1271,11 +1271,12 @@ button {
     .title{
       transition: all .5s ease-in-out;
       transform: translateX(.73rem);
+      z-index: 1;
     }
     .icon{
       transition: all .5s ease-in-out;
       transform: translateX(-1.82rem);
-
+      z-index: 2;
     }
   }
 
@@ -1310,7 +1311,7 @@ button {
 
   .header-pc {.dh;
     position: relative;
-    padding: 0.26rem 0;
+    padding: 0.11rem 0;
     &::before {
       content: '';
       width: 100%;
@@ -1335,7 +1336,8 @@ button {
       }
 
       .logo {
-        height: var(--header-height);
+        width: 140px;
+        // height: var(--header-height);
         color: #282828;
         .font-weight-b;
         .flex;
@@ -3755,7 +3757,7 @@ button {
           width: .56rem;
           height: .56rem;
           margin: 0 0.1rem ;
-          animation: rotate 10s linear infinite;
+          animation: rotate 15s linear infinite;
         }
       }
     }
@@ -3823,7 +3825,7 @@ button {
       .global-title{margin-top: .49rem;
         p{.flex;.a_center; .font64;font-weight: 700;
           span{
-            .font64;
+            .font64;font-weight: 700;
           }
           img{
             width: .56rem;

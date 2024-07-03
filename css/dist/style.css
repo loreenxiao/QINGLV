@@ -1164,10 +1164,12 @@ button {
 .index-p-more:hover .title {
   transition: all 0.5s ease-in-out;
   transform: translateX(0.73rem);
+  z-index: 1;
 }
 .index-p-more:hover .icon {
   transition: all 0.5s ease-in-out;
   transform: translateX(-1.82rem);
+  z-index: 2;
 }
 /* 公共样式 - 结束 */
 #header {
@@ -1185,7 +1187,7 @@ button {
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
-  padding: 0.26rem 0;
+  padding: 0.11rem 0;
 }
 #header .header-pc::before {
   content: '';
@@ -1223,7 +1225,7 @@ button {
   }
 }
 #header .header-pc .header-wrap .logo {
-  height: var(--header-height);
+  width: 140px;
   color: #282828;
   font-weight: bold;
   display: -webkit-box;
@@ -4052,7 +4054,7 @@ button {
   width: 0.56rem;
   height: 0.56rem;
   margin: 0 0.1rem;
-  animation: rotate 10s linear infinite;
+  animation: rotate 15s linear infinite;
 }
 .index-environment .info .index-p-more {
   margin-top: 0.64rem;
@@ -4126,6 +4128,7 @@ button {
 }
 .index-environment-banner .bannerbox .info .global-title p span {
   font-size: 0.64rem;
+  font-weight: 700;
 }
 .index-environment-banner .bannerbox .info .global-title p img {
   width: 0.56rem;

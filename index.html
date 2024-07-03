@@ -854,20 +854,20 @@
         $(document).ready(function () {
             gsap.registerPlugin(ScrollTrigger);
             // 1.首屏固定并调低透明度
-            // ScrollTrigger.create({
-            //     trigger: '.index-environment',
-            //     // start: 'top top',
-            //     start: 'top top',
+            ScrollTrigger.create({
+                trigger: '.index-environment',
+                // start: 'top top',
+                start: 'top top',
 
-            //     // end: headerHeight.offsetHeight, // 固定距离为当前元素高度
-            //     end: "300px", // 固定距离为当前元素高度
+                // end: headerHeight.offsetHeight, // 固定距离为当前元素高度
+                end: "300px", // 固定距离为当前元素高度
 
-            //     pin: true, // 固定
-            //     pinSpacing: false, // 不设置间距
-            //     scrub: true,
-            //     animation: gsap.timeline()
-            //         .to('.index-environment', { opacity: 0.5 })
-            // });
+                pin: true, // 固定
+                pinSpacing: false, // 不设置间距
+                scrub: true,
+                animation: gsap.timeline()
+                    .to('.index-environment', { opacity: 0.5 })
+            });
            
            
             // 2.首页背景球鼠标滚动时移动
@@ -921,19 +921,19 @@
             });
 
             // 5.综合服务
-            gsap.to(".index-services .serverimg", {
-               yPercent:'-10',
-            //    rotation: 360,
-               scale:0.9,
-            //    repeat: 2,
-                // yoyo: true,
-               // y: '100%', // 视窗单位
-               duration: 1,
-               scrollTrigger: {
-                   trigger: ".index-servicesg .serverimg",
-                   scrub: 1,
-               },
-           });
+        //     gsap.to(".index-services .serverimg", {
+        //        yPercent:'-10',
+        //        rotation: 360,
+        //        scale:0.9,
+        //        repeat: 2,
+        //         // yoyo: true,
+        //        // y: '100%', // 视窗单位
+        //        duration: 1,
+        //        scrollTrigger: {
+        //            trigger: ".index-servicesg .serverimg",
+        //            scrub: 1,
+        //        },
+        //    });
             // 7.新闻动态
             const t1 = gsap.timeline();
             t1.to(".index-news .image .img1", {
