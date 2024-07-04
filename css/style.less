@@ -1269,7 +1269,7 @@ button {
       padding: 0 .56rem;
       height: .65rem;
       margin-right: .08rem;
-      background: linear-gradient(to right, rgb(221 221 221 / 0%), rgb(221 221 221 / 60%));
+      background: linear-gradient(to right, rgb(221 221 221 / 10%), rgb(221 221 221 / 100%));
       width: fit-content;
       cursor: pointer;
       z-index: 2;
@@ -3818,7 +3818,7 @@ button {
           }
         }
         .min-title{
-
+          margin-top: 60px;
         }
       }
       .swiperinfo {overflow: hidden;}
@@ -3923,10 +3923,44 @@ button {
     z-index: 0;
   }
 }
+.activewhite{
+  .index-environment{
+    .info{
+      .index-p-title{.dh;
+        color: #fff !important;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)) !important;
+      }
+      .global-title {
+        .swipertitle {.dh;
+          color: #fff;
+          span{.dh;
+            color: #fff;
+          }
+        }
+        .min-title{color: #fff;}
+      }
+      .index-p-more {
+        .title{
+          color: #fff;
+          // background-image: url(../images/section2-one.png);
 
+        }
+        .icon{
+          background-image: url(../images/more-icon-white.png);
+          img{
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+     
+    }
+    .image{opacity: 0;}
+  }
+}
 
 // --------------------------------------------- 首页-青绿环境 banner
 .index-environment-banner{position: relative;
+           
   
   .bannerbox{
     .info{
@@ -4540,7 +4574,7 @@ button {
       width: 74%;
       left: 13%;
       top: 0;
-      transform: translateY(25%);
+      transform: translateY(38%);
       filter: blur(160px);
       // animation: rotate 3s infinite alternate;
       img{

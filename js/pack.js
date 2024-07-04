@@ -310,62 +310,7 @@ $(function () {
     indexBgSlide();
 
 
-    // 青绿环境 - 首页banner
-    function indexbanner() {
-        // 文字区轮播
-        var slidetext = new Swiper('.index-environment .swiperinfo', {
-            // autoplay: {
-            //     delay: 4000,
-            //     disableOnInteraction: false,
-            // },
-            effect:"fade",
-            fadeEffect:{
-                crossFade:true  //开启淡出。过渡时，原slide透明度从1->0（淡出），过渡中的slide透明度从0->1（淡入），其他slide透明度0。
-            },
-            watchOverflow: true, //因为仅有1个slide，swiper无效
-            preventLinksPropagation: false, // 阻止点击事件冒泡
-            pagination: {
-                el: '.index-environment .info .swiper-pagination',
-                clickable: true,
-            },
-        });
-
-
-        // 背景图轮播
-        var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#fff" stroke-dasharray="314" stroke-dashoffset="314"/></svg>'
-        var mySwiper = new Swiper('.index-environment-banner .bannerbox', {
-            zoom: true, // 启用缩放功能
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            loop:true,
-            effect: 'fade',
-            // loop: true,
-            watchOverflow: true, //因为仅有1个slide，swiper无效
-            preventLinksPropagation: false, // 阻止点击事件冒泡
-            navigation: {
-                nextEl: '.index-environment-banner .bannerbox .swiper-button-next',
-                prevEl: '.index-environment-banner .bannerbox .swiper-button-prev',
-            },
-            pagination: {
-                el: '.index-environment-banner .bannerbox .banner_sp',
-                clickable: true,
-            },
-            on:{           
-                slideChange: function(mySwiper){
-                    $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty()
-                },
-                slideChangeTransitionStart: function () {
-                    var d = this.realIndex;
-                    $(".index-environment .info .swiper-pagination-bullet").eq(d).click();
-                }
-                
-            },
-        });
-        $('.banner_sp span').eq(0).html(svg)
-    }
-    indexbanner(); 
+  
 
    
     // 解决方案

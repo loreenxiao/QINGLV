@@ -1155,7 +1155,7 @@ button {
   padding: 0 0.56rem;
   height: 0.65rem;
   margin-right: 0.08rem;
-  background: linear-gradient(to right, rgb(221 221 Infinity%), rgb(221 221 3.68333333%));
+  background: linear-gradient(to right, rgb(221 221 22.1%), rgb(221 221 2.21%));
   width: fit-content;
   cursor: pointer;
   z-index: 2;
@@ -4103,6 +4103,9 @@ button {
   margin: 0 0.1rem;
   animation: rotate 15s linear infinite;
 }
+.index-screen1 .index-environment .info .global-title .min-title {
+  margin-top: 60px;
+}
 .index-screen1 .index-environment .info .swiperinfo {
   overflow: hidden;
 }
@@ -4216,6 +4219,40 @@ button {
   right: -9%;
   top: 2.4rem;
   z-index: 0;
+}
+.activewhite .index-environment .info .index-p-title {
+  -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  color: #fff !important;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)) !important;
+}
+.activewhite .index-environment .info .global-title .swipertitle {
+  -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  color: #fff;
+}
+.activewhite .index-environment .info .global-title .swipertitle span {
+  -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  color: #fff;
+}
+.activewhite .index-environment .info .global-title .min-title {
+  color: #fff;
+}
+.activewhite .index-environment .info .index-p-more .title {
+  color: #fff;
+}
+.activewhite .index-environment .info .index-p-more .icon {
+  background-image: url(../images/more-icon-white.png);
+}
+.activewhite .index-environment .info .index-p-more .icon img {
+  filter: brightness(0) invert(1);
+}
+.activewhite .index-environment .image {
+  opacity: 0;
 }
 .index-environment-banner {
   position: relative;
@@ -5151,7 +5188,7 @@ button {
   width: 74%;
   left: 13%;
   top: 0;
-  transform: translateY(25%);
+  transform: translateY(38%);
   filter: blur(160px);
 }
 .index-services .bottom-info .image img {

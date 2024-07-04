@@ -791,6 +791,11 @@
             //     },
             // });
 
+            
+            
+
+
+
             // 7.关于青绿固定并调低透明度
             ScrollTrigger.create({
                 trigger: '.index-about',
@@ -823,8 +828,8 @@
             const t1 = gsap.timeline();
             t1.to(".index-news .image .img1", {
                 // width: '100%',
-                left:'100%',
-                duration: 0.5,
+                left:'120%',
+                duration: 0.01,
                 scrollTrigger: {
                     trigger: ".index-news .news-top",
                     scrub: 0,// 触发器1秒后跟上滚动条
@@ -832,16 +837,16 @@
             })
             .to(".index-news .image .img2", {
                 // width: '100%',
-                left:'100%',
-                duration: 0.5,
+                left:'120%',
+                duration: 0.1,
                 scrollTrigger: {
                     trigger: ".index-news .image .img1",
                     scrub: 0,// 触发器1秒后跟上滚动条
                 },
             }).to(".index-news .image .img3", {
                 // width: '100%',
-                left:'100%',
-                duration: 0.5,
+                left:'120%',
+                duration: 0.1,
                 scrollTrigger: {
                     trigger: ".index-news .image .img2",
                     scrub: 0,// 触发器1秒后跟上滚动条
@@ -886,7 +891,7 @@
                 // }
                 // printLetter(); // 每200毫秒调用一次printLetter函数
 
-            }, 3000);
+            }, 1500);
         }
         indexText()
     </script>
@@ -947,7 +952,7 @@
                 }
             });
             hoverBox.on("mousemove", function (e) {
-                let xNum = 30 - (e.clientX / winW) * 60, yNum = 30 - (e.clientY / winH) * 60;
+                let xNum = 30 - (e.clientX / winW) * 160, yNum = 30 - (e.clientY / winH) * 60;
                 gsap.to(menuBox, { right: xNum, bottom: yNum, autoAlpha: 1 })
             });
         });
@@ -956,31 +961,84 @@
     <!-- 首屏 --粘性定位增加active改变字体颜色+scroll鼠标事件 -->
     <script>
         window.onscroll = function() {
-        //    获取内容区域高度
-            
-            
             // 超过首屏球体高度隐藏
             let infoBoxHeight = $(".index-screen1 .index-environment .info").height()
             if (window.scrollY > infoBoxHeight) { // 当滚动超过100px时
-                $(".index-environment").addClass("activewhite");
+                $(".index-environment").parent().addClass("activewhite");
                 $(".index-enviroment-circle").css("display","none");
-            } else {
-                $(".index-environment").removeClass("activewhite");
-                $(".index-enviroment-circle").css("display","block");
-            }
+                // 背景图移入到文字区域才让文字轮播--关联背景切换事件
+                $(".index-environment .info .swiper-pagination-bullet").eq(0).click();
 
-            // 超过首屏球体高度隐藏
-            // let globalBoxHeight = $(".index-enviroment-circle").height()
-           
-            // if (window.scrollY > globalBoxHeight ) { // 当滚动超过100px时
-            //     $(".index-enviroment-circle").css("display","none");
-                
-            // } else {
-            //     $(".index-enviroment-circle").css("display","block");
-              
-            // }
+                  
+
+            } else {
+                $(".index-environment").parent().removeClass("activewhite");
+                $(".index-enviroment-circle").css("display","block");
+               
+            }
           
         };
+    
+          // 青绿环境 - 首页banner
+        function indexbanner() {
+            // 文字区轮播
+            var slidetext = new Swiper('.index-environment .swiperinfo', {
+                effect:"fade",
+                fadeEffect:{
+                    crossFade:true  //开启淡出。过渡时，原slide透明度从1->0（淡出），过渡中的slide透明度从0->1（淡入），其他slide透明度0。
+                },
+                watchOverflow: true, //因为仅有1个slide，swiper无效
+                preventLinksPropagation: false, // 阻止点击事件冒泡
+                pagination: {
+                    el: '.index-environment .info .swiper-pagination',
+                    clickable: true,
+                },
+            });
+
+            // 背景图轮播
+            var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#fff" stroke-dasharray="314" stroke-dashoffset="314"/></svg>'
+            var mySwiper = new Swiper('.index-environment-banner .bannerbox', {
+                zoom: true, // 启用缩放功能
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                loop:true,
+                effect: 'fade',
+                // loop: true,
+                watchOverflow: true, //因为仅有1个slide，swiper无效
+                preventLinksPropagation: false, // 阻止点击事件冒泡
+                navigation: {
+                    nextEl: '.index-environment-banner .bannerbox .swiper-button-next',
+                    prevEl: '.index-environment-banner .bannerbox .swiper-button-prev',
+                },
+                pagination: {
+                    el: '.index-environment-banner .bannerbox .banner_sp',
+                    clickable: true,
+                },
+                on:{           
+                    slideChange: function(mySwiper){
+                        $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty()
+                    },
+
+                    slideChangeTransitionStart: function () {
+                        var d = this.realIndex;
+                        // $(".index-environment .info .swiper-pagination-bullet").eq(d).click();
+
+                        var hasActiveClass = $(".index-environment-banner").parent().hasClass('activewhite')
+                        if(hasActiveClass == true){
+                            $(".index-environment .info .swiper-pagination-bullet").eq(d).click();
+                        }else{
+                            $(".index-environment .info .swiper-pagination-bullet").eq(0).click();
+                        }
+                    }
+                    
+                },
+            });
+            $('.banner_sp span').eq(0).html(svg)
+        }
+        indexbanner(); 
+    
     </script>
 
 
