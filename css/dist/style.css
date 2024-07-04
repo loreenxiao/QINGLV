@@ -4046,6 +4046,7 @@ button {
 }
 .index-screen1 .index-environment .info {
   margin-bottom: 1.2rem;
+  overflow: hidden;
 }
 .index-screen1 .index-environment .info .index-p-title {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -4177,6 +4178,9 @@ button {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  color: #fff;
+}
+.index-screen1 .activewhite .info .global-title .min-title {
   color: #fff;
 }
 .index-screen1 .activewhite .info .index-p-more .title {
@@ -5518,6 +5522,7 @@ button {
   position: relative;
   background-image: url("../images/index-business-complete.png");
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .index-business-consulting .content {
   position: relative;

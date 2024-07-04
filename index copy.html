@@ -49,38 +49,26 @@
                         <div class="index-p-title wow fadeInLeft">
                             青绿环境 QINGLV
                         </div>
-                        <ul class="swiper-wrapper">
-                            <li class="swiper-slide">
-                                <div class="global-title">
-                                    <p class="swipertitle ">
-                                        <span class="black6">为全球</span>
-                                        <img src="./images/global-icon.png" alt="">
-                                        <span class="black6">客户创造</span>
-                                        <span class="black0 namelists">
-                                            <span class="item c_til">
-                                               低成本_
-                                            </span>
-                                            <span class="item c_til">
-                                                高可用_
-                                            </span>
-                                            <span class="item c_til">
-                                                可持续_
-                                            </span>
-                                        </span>
-                                    </p>
-                                    <p class="swipertitle black6" >的智慧分选解决方案</p>
-            
-                                </div>
-                            </li>
-                            <li class="swiper-slide">
-                                <div class="global-title">
-                                    <p class="swipertitle black6" >青绿环境让产业与生态长青 </p>
-                                    <p class="min-title black6">Make industry and ecology evergreen</p>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="swiper-pagination"></div>
-
+                        <div class="global-title">
+                            <p class="swipertitle ">
+                                <span class="black6">为全球</span>
+                                <img src="./images/global-icon.png" alt="">
+                                <span class="black6">客户创造</span>
+                                <span class="black0 namelists">
+                                    <span class="item c_til">
+                                       低成本_
+                                    </span>
+                                    <span class="item c_til">
+                                        高可用_
+                                    </span>
+                                    <span class="item c_til">
+                                        可持续_
+                                    </span>
+                                </span>
+                            </p>
+                            <p class="swipertitle black6" >的智慧分选解决方案</p>
+    
+                        </div>
                         <div class="index-p-more wow fadeInLeft">
                             <a href="">
                                 <span class="title">了解更多</span>
@@ -91,7 +79,9 @@
                             
                         </div>
                     </div>
-                    
+                    <!-- <div class="image">
+                        <img src="./images/global-big.png" alt="">
+                    </div> -->
                 </div>
             </div>
             <div class="index-enviroment-circle">
@@ -886,7 +876,15 @@
             //         scrub: true
             //     }
             // });
-           
+            gsap.fromTo(".index-business-consulting", {
+                backgroundPositionY: `-${window.innerHeight / 2}px`
+            }, { backgroundPositionY: `${window.innerHeight / 2}px`,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: ".index-business-consulting",
+                    scrub: true
+                }
+            });
 
         })
     </script>
