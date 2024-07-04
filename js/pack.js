@@ -313,7 +313,7 @@ $(function () {
     // 青绿环境 - 首页banner
     function indexbanner() {
         // 文字区轮播
-        var slidetext = new Swiper('.index-environment .info', {
+        var slidetext = new Swiper('.index-environment .swiperinfo', {
             // autoplay: {
             //     delay: 4000,
             //     disableOnInteraction: false,

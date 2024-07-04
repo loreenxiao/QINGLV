@@ -1269,7 +1269,7 @@ button {
       padding: 0 .56rem;
       height: .65rem;
       margin-right: .08rem;
-      background: linear-gradient(to top right, rgb(221 221 221 / 0%), rgb(221 221 221 / 60%));
+      background: linear-gradient(to right, rgb(221 221 221 / 0%), rgb(221 221 221 / 60%));
       width: fit-content;
       cursor: pointer;
       z-index: 2;
@@ -1279,8 +1279,9 @@ button {
       transition: all .6s ease-in-out;
       width: .65rem;
       height: .65rem;
-      background: linear-gradient(to top right, rgb(221 221 221 / 0%), rgb(221 221 221 / 60%));
+      // background: linear-gradient(to top right, rgb(221 221 221 / 0%), rgb(221 221 221 / 60%));
       cursor: pointer;
+      background-image: url("../images/more-icon-white.png");
       background-size: contain;
       z-index: 1;
       span{display: block;}
@@ -1849,7 +1850,7 @@ button {
       padding: 0 20px;
       position: relative;
       background-color: #fff;
-      border-bottom: solid 1px #999;
+      border-bottom: solid 1px rgb(37 187 15 / 10%);
       .flex;
       .a_center;
       .j_justify;
@@ -3781,7 +3782,6 @@ button {
      
     .info{
       margin-bottom: 1.2rem;
-      overflow: hidden;
       .index-p-title{.dh;}
       .global-title{margin-top: .4rem;.dh;
         .swipertitle{.flex;.a_center; .font64;font-weight: 700;position: relative; z-index: 12;overflow: hidden;
@@ -3821,20 +3821,21 @@ button {
 
         }
       }
+      .swiperinfo {overflow: hidden;}
+      .swiper-pagination{display: none;}
       .index-p-more{margin-top: .64rem;
         .title{.dh;
-          background-image: url("../images/section1-one.png");
+          // background-image: url("../images/section1-one.png");
           z-index: 2;
           
         }
         .icon{.dh;
-          background-image: url("../images/section1-two.png");
+          background-image: url("../images/more-icon-color.png");
           z-index: 1;
           
         }
   
       }
-     
   
     }
     .image{
@@ -3843,15 +3844,10 @@ button {
       right: 0;
       height: 100%;
       transform: translate3d(120px, 100px, 0px);
-      
-  
     }
     .animatescroll{
       animation: arrowMoveALL 3s infinite alternate;
     }
-    
-  
-  
     @media @max768 {
       margin-top: 1.8rem;
       .info {
@@ -3895,10 +3891,11 @@ button {
       .index-p-more {
         .title{
           color: #fff;
-          background-image: url(../images/section2-one.png);
+          // background-image: url(../images/section2-one.png);
+
         }
         .icon{
-          background-image: url(../images/section2-two.png);
+          background-image: url(../images/more-icon-white.png);
           img{
             filter: brightness(0) invert(1);
           }
@@ -3950,7 +3947,7 @@ button {
       .index-p-more{margin-top: .64rem;
         .title{
           color: #fff;
-          background-image: url("../images/section2-one.png");
+          // background-image: url("../images/section2-one.png");
         }
         .icon{
           background-image: url("../images/section2-two.png");
@@ -4167,10 +4164,11 @@ button {
           }
           .index-p-more{margin-top: .9rem;
             .title{
-              background-image: url("../images/section3-one.png");
+              // background-image: url("../images/section3-one.png");
             }
             .icon{
-              background-image: url("../images/section3-two.png");
+              // background-image: url("../images/section3-two.png");
+              background-image: url("../images/more-icon-color.png");
             }
           }
           &:hover{
@@ -4282,10 +4280,11 @@ button {
         .index-p-more{margin-top: .64rem;
           .title{
             color: #FFFFFF;
-            background-image: url("../images/section4-one.png");
+            // background-image: url("../images/section4-one.png");
           }
           .icon{
-            background-image: url("../images/section4-two.png");
+            // background-image: url("../images/more-icon-color.png");
+            
             img{filter: brightness(0) invert(1);}
           }
         }
@@ -4492,10 +4491,10 @@ button {
     .rightbox{
       .index-p-more{
         .title{
-          background-image: url("../images/section5-one.png");
+          // background-image: url("../images/section5-one.png");
         }
         .icon{
-          background-image: url("../images/section5-two.png");
+          background-image: url("../images/more-icon-color.png");
         }
       }
     }
@@ -4592,10 +4591,10 @@ button {
 
       .index-p-more{margin-top: .8rem;
         .title{
-          background-image: url("../images/section6-one.png");
+          // background-image: url("../images/section6-one.png");
         }
         .icon{
-          background-image: url("../images/section6-two.png");
+          background-image: url("../images/more-icon-color.png");
         }
       }
     }
@@ -4688,10 +4687,10 @@ button {
       }
       .index-p-more{
         .title{
-          background-image: url("../images/section7-one.png");
+          // background-image: url("../images/section7-one.png");
         }
         .icon{
-          background-image: url("../images/section7-two.png");
+          background-image: url("../images/more-icon-color.png");
         }
       }
     }
@@ -4840,6 +4839,7 @@ button {
   background-image: url("../images/index-business-complete.png");
   background-repeat:no-repeat;
   background-attachment: fixed;
+  background-size: cover;
   .content{
     position: relative;
     z-index: 1;
@@ -4854,10 +4854,10 @@ button {
       .title{
         color: var(--white-color);
         // background: linear-gradient(to top right, rgb(153 153 153 / 100%), rgba(255, 255, 255, 0));
-        background-image: url("../images/section8-one.png");
+        // background-image: url("../images/section8-one.png");
       }
       .icon{
-        background-image: url("../images/section8-two.png");
+        background-image: url("../images/more-icon-white.png");
       }
       img{
         filter: brightness(0) invert(1);
@@ -4869,10 +4869,10 @@ button {
     }
 
   }
-  @media @max1280{
-
-
+  @media @max990{
+    background-attachment: inherit;
   }
+  
   @media @max768{
     .content {
       .third-title{

@@ -1155,7 +1155,7 @@ button {
   padding: 0 0.56rem;
   height: 0.65rem;
   margin-right: 0.08rem;
-  background: linear-gradient(to top right, rgba(221, 221, 221, 0), rgba(221, 221, 221, 0.6));
+  background: linear-gradient(to right, rgba(221, 221, 221, 0), rgba(221, 221, 221, 0.6));
   width: fit-content;
   cursor: pointer;
   z-index: 2;
@@ -1176,8 +1176,8 @@ button {
   transition: all 0.6s ease-in-out;
   width: 0.65rem;
   height: 0.65rem;
-  background: linear-gradient(to top right, rgba(221, 221, 221, 0), rgba(221, 221, 221, 0.6));
   cursor: pointer;
+  background-image: url("../images/more-icon-white.png");
   background-size: contain;
   z-index: 1;
 }
@@ -1887,7 +1887,7 @@ button {
   padding: 0 20px;
   position: relative;
   background-color: #fff;
-  border-bottom: solid 1px #999;
+  border-bottom: solid 1px rgba(37, 187, 15, 0.1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -4046,7 +4046,6 @@ button {
 }
 .index-screen1 .index-environment .info {
   margin-bottom: 1.2rem;
-  overflow: hidden;
 }
 .index-screen1 .index-environment .info .index-p-title {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -4104,6 +4103,12 @@ button {
   margin: 0 0.1rem;
   animation: rotate 15s linear infinite;
 }
+.index-screen1 .index-environment .info .swiperinfo {
+  overflow: hidden;
+}
+.index-screen1 .index-environment .info .swiper-pagination {
+  display: none;
+}
 .index-screen1 .index-environment .info .index-p-more {
   margin-top: 0.64rem;
 }
@@ -4111,14 +4116,13 @@ button {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
-  background-image: url("../images/section1-one.png");
   z-index: 2;
 }
 .index-screen1 .index-environment .info .index-p-more .icon {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
-  background-image: url("../images/section1-two.png");
+  background-image: url("../images/more-icon-color.png");
   z-index: 1;
 }
 .index-screen1 .index-environment .image {
@@ -4185,10 +4189,9 @@ button {
 }
 .index-screen1 .activewhite .info .index-p-more .title {
   color: #fff;
-  background-image: url(../images/section2-one.png);
 }
 .index-screen1 .activewhite .info .index-p-more .icon {
-  background-image: url(../images/section2-two.png);
+  background-image: url(../images/more-icon-white.png);
 }
 .index-screen1 .activewhite .info .index-p-more .icon img {
   filter: brightness(0) invert(1);
@@ -4247,7 +4250,6 @@ button {
 }
 .index-environment-banner .bannerbox .info .index-p-more .title {
   color: #fff;
-  background-image: url("../images/section2-one.png");
 }
 .index-environment-banner .bannerbox .info .index-p-more .icon {
   background-image: url("../images/section2-two.png");
@@ -4567,11 +4569,8 @@ button {
 .index-solution .idx_solve .center_box .left .index-p-more {
   margin-top: 0.9rem;
 }
-.index-solution .idx_solve .center_box .left .index-p-more .title {
-  background-image: url("../images/section3-one.png");
-}
 .index-solution .idx_solve .center_box .left .index-p-more .icon {
-  background-image: url("../images/section3-two.png");
+  background-image: url("../images/more-icon-color.png");
 }
 .index-solution .idx_solve .center_box .left:hover .info .solicon {
   transform: translateY(-30px);
@@ -4774,10 +4773,6 @@ button {
 }
 .index-case .idx_solve .center_box .right .index-p-more .title {
   color: #FFFFFF;
-  background-image: url("../images/section4-one.png");
-}
-.index-case .idx_solve .center_box .right .index-p-more .icon {
-  background-image: url("../images/section4-two.png");
 }
 .index-case .idx_solve .center_box .right .index-p-more .icon img {
   filter: brightness(0) invert(1);
@@ -5085,11 +5080,8 @@ button {
 .index-services .top-info .leftbox .sec-title .blacktitle {
   color: var(--black-000);
 }
-.index-services .top-info .rightbox .index-p-more .title {
-  background-image: url("../images/section5-one.png");
-}
 .index-services .top-info .rightbox .index-p-more .icon {
-  background-image: url("../images/section5-two.png");
+  background-image: url("../images/more-icon-color.png");
 }
 .index-services .bottom-info {
   position: relative;
@@ -5229,11 +5221,8 @@ button {
 .index-about .info .left-box .index-p-more {
   margin-top: 0.8rem;
 }
-.index-about .info .left-box .index-p-more .title {
-  background-image: url("../images/section6-one.png");
-}
 .index-about .info .left-box .index-p-more .icon {
-  background-image: url("../images/section6-two.png");
+  background-image: url("../images/more-icon-color.png");
 }
 .index-about .info .right-box {
   min-width: 25.33%;
@@ -5358,11 +5347,8 @@ button {
 .index-news .news-top .newsbox .public-opacity-title span {
   font-weight: 700;
 }
-.index-news .news-top .newsbox .index-p-more .title {
-  background-image: url("../images/section7-one.png");
-}
 .index-news .news-top .newsbox .index-p-more .icon {
-  background-image: url("../images/section7-two.png");
+  background-image: url("../images/more-icon-color.png");
 }
 .index-news .new-list {
   margin-top: 0.96rem;
@@ -5523,6 +5509,7 @@ button {
   background-image: url("../images/index-business-complete.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
 }
 .index-business-consulting .content {
   position: relative;
@@ -5547,10 +5534,9 @@ button {
 }
 .index-business-consulting .content .index-p-more .title {
   color: var(--white-color);
-  background-image: url("../images/section8-one.png");
 }
 .index-business-consulting .content .index-p-more .icon {
-  background-image: url("../images/section8-two.png");
+  background-image: url("../images/more-icon-white.png");
 }
 .index-business-consulting .content .index-p-more img {
   filter: brightness(0) invert(1);
@@ -5558,6 +5544,11 @@ button {
 .index-business-consulting .content .index-p-title {
   color: #fff;
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+}
+@media (max-width:990px) {
+  .index-business-consulting {
+    background-attachment: inherit;
+  }
 }
 @media (max-width:768px) {
   .index-business-consulting .content .third-title {
