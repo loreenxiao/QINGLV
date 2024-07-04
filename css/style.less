@@ -3849,14 +3849,24 @@ button {
       animation: arrowMoveALL 3s infinite alternate;
     }
     @media @max768 {
-      margin-top: 1.8rem;
+      top: 1rem;
       .info {
-        margin-bottom: 1rem;
+        margin-bottom: 0rem;
        .global-title .swipertitle {.font34;
         span{
           .font34;
+          .emm{
+            .font34;
+          }
+        }
+        .namelists .active .emm{
+          .font34;
         }
        }
+       .index-p-more{
+        margin-top: .3rem;
+       }
+       
       }
   
     }
@@ -4019,7 +4029,7 @@ button {
   }
   .banner_sp {
     position: absolute;
-    bottom: 0.96rem;
+    bottom: 10%;
     display: flex;
     text-align: left;
     align-items: center;
@@ -4194,6 +4204,9 @@ button {
     
   }
  
+  @media @max1280 {
+    background-size: contain ;
+  }
   @media @max768 {
     padding: 0.5rem 0;
     .idx_solve .swiper_box .topbox{
@@ -4552,6 +4565,7 @@ button {
       margin-top: 0.4rem;
       .itemlist {.a_start;
         .item {
+          padding-left: .1rem;
           .title {
             .font16;
           }

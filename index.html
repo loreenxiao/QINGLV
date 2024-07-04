@@ -963,20 +963,22 @@
             let infoBoxHeight = $(".index-screen1 .index-environment .info").height()
             if (window.scrollY > infoBoxHeight) { // 当滚动超过100px时
                 $(".index-environment").addClass("activewhite");
+                $(".index-enviroment-circle").css("display","none");
             } else {
                 $(".index-environment").removeClass("activewhite");
+                $(".index-enviroment-circle").css("display","block");
             }
 
             // 超过首屏球体高度隐藏
-            let globalBoxHeight = $(".index-enviroment-circle").height()
+            // let globalBoxHeight = $(".index-enviroment-circle").height()
            
-            if (window.scrollY > globalBoxHeight ) { // 当滚动超过100px时
-                $(".index-enviroment-circle").css("display","none");
+            // if (window.scrollY > globalBoxHeight ) { // 当滚动超过100px时
+            //     $(".index-enviroment-circle").css("display","none");
                 
-            } else {
-                $(".index-enviroment-circle").css("display","block");
+            // } else {
+            //     $(".index-enviroment-circle").css("display","block");
               
-            }
+            // }
           
         };
     </script>
