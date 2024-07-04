@@ -79,10 +79,13 @@
                             
                         </div>
                     </div>
-                    <div class="image">
+                    <!-- <div class="image">
                         <img src="./images/global-big.png" alt="">
-                    </div>
+                    </div> -->
                 </div>
+            </div>
+            <div class="index-enviroment-circle">
+                <img src="./images/global-big.png" alt="">
             </div>
             <div class="index-environment-banner">
                 <div class="bannerbox">
@@ -846,27 +849,27 @@
             t1.to(".index-news .image .img1", {
                 // width: '100%',
                 left:'100%',
-                duration: 1,
+                duration: 0.5,
                 scrollTrigger: {
-                    trigger: ".index-news .image .img1",
-                    scrub: 1,// 触发器1秒后跟上滚动条
+                    trigger: ".index-news .news-top",
+                    scrub: 0.5,// 触发器1秒后跟上滚动条
                 },
             })
             .to(".index-news .image .img2", {
                 // width: '100%',
                 left:'100%',
-                duration: 1,
+                duration: 0.5,
                 scrollTrigger: {
-                    trigger: ".index-news .image .img2",
-                    scrub: 1,// 触发器1秒后跟上滚动条
+                    trigger: ".index-news .image .img1",
+                    scrub: 0.5,// 触发器1秒后跟上滚动条
                 },
             }).to(".index-news .image .img3", {
                 // width: '100%',
                 left:'100%',
-                duration: 1,
+                duration: 0.5,
                 scrollTrigger: {
-                    trigger: ".index-news .image .img3",
-                    scrub: 1,// 触发器1秒后跟上滚动条
+                    trigger: ".index-news .image .img2",
+                    scrub: 0.5,// 触发器1秒后跟上滚动条
                 },
             });
             // 8.业务咨询
@@ -981,7 +984,7 @@
     <!--首屏--背景球跟随鼠标移动 -->
     <script>
         $(document).ready(function(){
-            let hoverBox = $(".index-environment"), menuBox = hoverBox.find(".image"), winW = window.innerWidth, winH = window.innerHeight;
+            let hoverBox = $(".index-screen1"), menuBox = hoverBox.find(".index-enviroment-circle"), winW = window.innerWidth, winH = window.innerHeight;
             hoverBox.hover(function (event) {
                 if (event.type != "mouseenter") {
                     gsap.to(menuBox, { right: 0, bottom: 0, autoAlpha: 1 })
