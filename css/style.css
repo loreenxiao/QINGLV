@@ -3846,8 +3846,10 @@ button {
 }
 .public-opacity-title span {
   font-size: 0.48rem;
+  font-weight: 700;
 }
 .public-opacity-title .one {
+  font-weight: 700;
   color: var(--black-000);
 }
 .public-opacity-title .two {
@@ -4192,7 +4194,7 @@ button {
 }
 .index-screen1 .index-enviroment-circle {
   position: fixed;
-  width: 50%;
+  width: 45%;
   right: -9%;
   top: 2.4rem;
   z-index: 0;

@@ -100,17 +100,11 @@
                         <li class="swiper-slide">
                             <div class="swiper-zoom-container">
                                 <div class="image">
-                                    <img src="./images/case-image.png" alt="">
+                                    <img src="./images/banner.png" alt="">
                                 </div>
                             </div>
                         </li>
-                        <li class="swiper-slide">
-                            <div class="swiper-zoom-container">
-                                <div class="image">
-                                    <img src="./images/case-image.png" alt="">
-                                </div>
-                            </div>
-                        </li>
+                        
                     </ul>
                     <div class="swiper-pagination banner_sp "></div>
                 </div>
@@ -873,9 +867,18 @@
                 },
             });
             // 8.业务咨询
+            // gsap.fromTo(".index-business-consulting", {
+            //     backgroundPositionY: `-${window.innerHeight / 1.5}px`
+            // }, { backgroundPositionY: `${window.innerHeight / 1.5}px`,
+            //     ease: 'none',
+            //     scrollTrigger: {
+            //         trigger: ".index-business-consulting",
+            //         scrub: true
+            //     }
+            // });
             gsap.fromTo(".index-business-consulting", {
-                backgroundPositionY: `-${window.innerHeight / 1.5}px`
-            }, { backgroundPositionY: `${window.innerHeight / 1.5}px`,
+                backgroundPositionY: `-${window.innerHeight / 2}px`
+            }, { backgroundPositionY: `${window.innerHeight / 2}px`,
                 ease: 'none',
                 scrollTrigger: {
                     trigger: ".index-business-consulting",
@@ -1000,13 +1003,28 @@
     <!-- 首屏 --粘性定位增加active改变字体颜色+scroll鼠标事件 -->
     <script>
         window.onscroll = function() {
-           
+        //    获取内容区域高度
+            
             if (window.scrollY > 400) { // 当滚动超过100px时
                 $(".index-environment").addClass("activewhite");
             } else {
                 $(".index-environment").removeClass("activewhite");
             }
+
+            // 超过首屏球体高度隐藏
+            let globalBoxHeight = $(".index-enviroment-circle").height()
+           
+            if (window.scrollY > globalBoxHeight ) { // 当滚动超过100px时
+                $(".index-enviroment-circle").css("display","none");
+                
+            } else {
+                $(".index-enviroment-circle").css("display","block");
+              
+            }
+          
         };
     </script>
+
+
 </body>
 </html>

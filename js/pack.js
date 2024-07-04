@@ -279,34 +279,6 @@ $(function () {
     }
     indexSlide();
 
-    
-    // 青绿环境 -文字循环
-    // function indextextloop(){
-    //     var divs = $('.index-environment .info .global-title .namelists span');
-    //     var index = 0;
-       
-    //     var play = setInterval(function() {
-    //       divs.hide(); // 隐藏所有div
-    //       $(divs[index]).show(); // 显示当前索引的div
-    //       index = (index + 1) % divs.length; // 更新索引，循环使用
-    //     }, 2000); // 每2秒切换一次内容
-    // }
-    // indextextloop()
-    // function indextextloop(){
-    //     let mySwiper = new Swiper ('.index-environment .opcitylist',{
-    //         autoplay:true,
-    //         speed:500,
-    //         // loop:true,
-    //         on:{
-    //             slideChangeTransitionEnd: function(){
-    //                 let offsetY = this.activeIndex * 85;
-    //                 console.log("this.activeIndex",this.activeIndex)
-    //                 $(".swiper-name>span").animate({top: -offsetY}, 500);
-    //             }
-    //         }
-    //     });
-    // }
-    // indextextloop()
 
     // 青绿环境 -banner
     function indexbanner() {
