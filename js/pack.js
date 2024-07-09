@@ -1,5 +1,5 @@
 $(function () {
-   
+
     // 使用IE浏览器提示
     function hiUpgrade() {
         window.AESKey = '';
@@ -45,12 +45,12 @@ $(function () {
     // });
 
 
-    
+
     // 导航
     function headNav() {
         // pc
         if ($(".header-pc").length) {
-            
+
             // 触发白底
             // $("#header").mouseover(function () {
             //     $(this).addClass("active");
@@ -99,21 +99,21 @@ $(function () {
             }
 
             // 下拉框导航
-            
-           
+
+
             $("#pcmenuBtn").click(function () {
                 let c = "active";
                 if (!$(this).hasClass(c)) {
                     $(this).addClass(c);
-                    
+
                     $("#pcHeaderBody").stop().slideDown(500);
                     // 关闭导航栏部分内容
-                    $(".header-pc .header-wrap .header-right .menudown-show").css("display","none");
-                  
+                    $(".header-pc .header-wrap .header-right .menudown-show").css("display", "none");
+
                 } else {
                     $("#pcHeaderBody").stop().slideUp(300);
                     $(this).removeClass(c);
-                    $(".header-pc .header-wrap .header-right .menudown-show").css("display","inline-flex");
+                    $(".header-pc .header-wrap .header-right .menudown-show").css("display", "inline-flex");
                 }
             });
         }
@@ -195,8 +195,16 @@ $(function () {
             });
         }
     })
-    
-    
+
+
+    // 关于我们--弹窗
+    $(document).on("click", "#video-pop", function () {
+        $(".bullet_box").addClass('active');
+    })
+    $(document).on("click", ".bullet_box .close,.bullet_box", function () {
+        $(".bullet_box").removeClass('active');
+    });
+
 
     // 点击展开
     function tabUl() {
@@ -252,7 +260,7 @@ $(function () {
         });
     }
     visualData($(".num-move"));
-   
+
 
     // 首页-banner--文字区轮播
     // function indexSlideText() {
@@ -298,107 +306,130 @@ $(function () {
     //             },
     //         }
     //     });
-        
+
 
     // }
     // indexSlideText();
 
     // 首页-banner--背景轮播
     function indexBgSlide() {
-       
+
     }
     indexBgSlide();
 
 
-  
 
-   
+
+
     // 解决方案
     function indexSolution() {
         var box = $('#idx_solution');
         var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#fff" stroke-dasharray="314" stroke-dashoffset="314"/></svg>'
 
 
-        if(box.length){
+        if (box.length) {
             var slide = new Swiper('#idx_solution .center_box', {
-				autoplay: {
+                autoplay: {
                     delay: 5000,
                     disableOnInteraction: false,
                 },
-                effect:"fade",
-                fadeEffect:{
-                    crossFade:true  //开启淡出。过渡时，原slide透明度从1->0（淡出），过渡中的slide透明度从0->1（淡入），其他slide透明度0。
-        
-                },
-				preventLinksPropagation: false, // 阻止点击事件冒泡
-				pagination: {
-					el: '#idx_solution .banner_sp',
-					clickable: true,
-				},
-				allowTouchMove: false,
-				on: {
-					slideChangeTransitionStart: function () {  //切换时分类也要改变状态
-						var d = this.activeIndex;
-						$(".idx_solve .swiper_box .topbox .swiper_list .item_box .item").eq(d).addClass("active").siblings().removeClass("active");
+                effect: "fade",
+                fadeEffect: {
+                    crossFade: true //开启淡出。过渡时，原slide透明度从1->0（淡出），过渡中的slide透明度从0->1（淡入），其他slide透明度0。
 
-					},
-                    slideChange: function(mySwiper){
+                },
+                preventLinksPropagation: false, // 阻止点击事件冒泡
+                pagination: {
+                    el: '#idx_solution .banner_sp',
+                    clickable: true,
+                },
+                allowTouchMove: false,
+                on: {
+                    slideChangeTransitionStart: function () { //切换时分类也要改变状态
+                        var d = this.activeIndex;
+                        $(".idx_solve .swiper_box .topbox .swiper_list .item_box .item").eq(d).addClass("active").siblings().removeClass("active");
+
+                    },
+                    slideChange: function (mySwiper) {
                         $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty()
                     },
-				},
-			});
+                },
+            });
 
-			$(".idx_solve .swiper_box .topbox .swiper_list .item_box .item").click(function () {
-                
-				var a = $(this).index();
-				$(this).addClass('active').siblings().removeClass('active');
-				slide.slideTo($(this).index());
-			});
+            $(".idx_solve .swiper_box .topbox .swiper_list .item_box .item").click(function () {
+
+                var a = $(this).index();
+                $(this).addClass('active').siblings().removeClass('active');
+                slide.slideTo($(this).index());
+            });
 
 
-          
+
         }
     }
     indexSolution();
     // 首页- 客户案例
-	function idx_case() {
+    function idx_case() {
         var box = $('#idx_solve');
         if (box.length) {
-            var swiper = box.find(".swiper_box"), 
-            num = swiper.find(".center_box");
+            var swiper = box.find(".swiper_box"),
+                num = swiper.find(".center_box");
             var s0 = new Swiper(swiper, {
-                slidesPerView: 1, speed: 800, allowTouchMove: false,
-                effect: 'fade', fadeEffect: { crossFade: true, },
+                slidesPerView: 1,
+                speed: 800,
+                allowTouchMove: false,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true,
+                },
                 on: {
-                    init() { swiperAnimateCache(this); swiperAnimate(this); },
-                    slideChangeTransitionEnd() { swiperAnimate(this); },
+                    init() {
+                        swiperAnimateCache(this);
+                        swiperAnimate(this);
+                    },
+                    slideChangeTransitionEnd() {
+                        swiperAnimate(this);
+                    },
                 },
             })
             num.each(function (e) {
-                var _this = $(this), 
-                swiper_img = _this.find('.swiper_img'), 
-                swiper_text = _this.find('.swiper_text'), 
-                pagination = _this.find('.idxPageHide'), 
-                item = _this.find(".swiper_list  .item_box .item");
+                var _this = $(this),
+                    swiper_img = _this.find('.swiper_img'),
+                    swiper_text = _this.find('.swiper_text'),
+                    pagination = _this.find('.idxPageHide'),
+                    item = _this.find(".swiper_list  .item_box .item");
                 var s1 = new Swiper(swiper_img, {
                     effect: 'fade',
-                    slidesPerView: 1, speed: 1200,
+                    slidesPerView: 1,
+                    speed: 1200,
                     allowTouchMove: false,
                 })
                 var s2 = new Swiper(swiper_text, {
-                    slidesPerView: 1, speed: 800,
-                    effect: 'fade', fadeEffect: { crossFade: true, },
+                    slidesPerView: 1,
+                    speed: 800,
+                    effect: 'fade',
+                    fadeEffect: {
+                        crossFade: true,
+                    },
                     // pagination: { el: pagination, clickable: true, }, allowTouchMove: false,
                     breakpoints: {
-                        768: { allowTouchMove: true, },
+                        768: {
+                            allowTouchMove: true,
+                        },
                     },
                     navigation: {
                         nextEl: '.pre-next-button .nextbtn',
                         prevEl: '.pre-next-button .prebtn',
                     },
                     on: {
-                        init() { swiperAnimateCache(this); swiperAnimate(this); },
-                        slideChangeTransitionEnd() {swiperAnimateCache(this); swiperAnimate(this); },
+                        init() {
+                            swiperAnimateCache(this);
+                            swiperAnimate(this);
+                        },
+                        slideChangeTransitionEnd() {
+                            swiperAnimateCache(this);
+                            swiperAnimate(this);
+                        },
                         slideChangeTransitionStart: function () {
                             swiperAnimateCache(this);
                             swiperAnimate(this);
@@ -407,7 +438,7 @@ $(function () {
                             item.removeClass("active").eq(index).addClass("active");
                         },
                     },
-                    
+
 
                 })
                 item.click(function () {
@@ -415,8 +446,8 @@ $(function () {
                     s2.slideTo(index)
                 })
             })
-    
-            
+
+
             $(".idx_solve .idx_title .item_box .item").click(function () {
                 $(this).addClass("active").siblings().removeClass("active");
                 var index = $(this).index();
@@ -425,6 +456,103 @@ $(function () {
         }
     }
     idx_case();
+
+    // 解决方案列表
+    function solutionList() {
+        var slide = new Swiper('.solutionlist', {
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            slidesPerView: 3.3,
+            spaceBetween: 22,
+            preventLinksPropagation: false, // 阻止点击事件冒泡
+            pagination: {
+                el: '#idx_solution .banner_sp',
+                clickable: true,
+            },
+            allowTouchMove: false,
+            breakpoints: {
+                480: {
+                    slidesPerView: 1,
+                    spaceBetween: 15,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                990: {
+                    slidesPerView: 2.8,
+                    spaceBetween: 20,
+                },
+                1280: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+            },
+
+        });
+    }
+    solutionList()
+    // 关于我们--合作伙伴
+
+
+    function cooperationOne() {
+        var mySwiper = new Swiper('.cooperation-wrap .cooperate1', {
+            // loop : true,//可选选项，开启循环
+            slidesPerView: 5,
+            spaceBetween: 20,
+            allowTouchMove: false,
+            speed: 8000,
+            // autoplay:true,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 4,
+                },
+                640: {
+                    slidesPerView: 3,
+                },
+                480: {
+                    slidesPerView: 2,
+                },
+            }
+        })
+    }
+    cooperationOne();
+
+    function cooperationTwo() {
+        var mySwiper = new Swiper('.cooperation-wrap .cooperate2', {
+            // loop : true,//可选选项，开启循环
+            slidesPerView: 5,
+            spaceBetween: 20,
+            allowTouchMove: false,
+            speed: 8000,
+
+            // autoplay:true,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 4,
+                },
+                640: {
+                    slidesPerView: 3,
+                },
+                480: {
+                    slidesPerView: 2,
+                },
+            }
+        })
+    }
+    cooperationTwo();
+
+
 })
 
 
@@ -559,3 +687,7 @@ function imousehover(obj, obj2) {
         cursor.init();
     }
 }
+
+
+// 鼠标弹窗
+// 首页视频弹窗

@@ -195,6 +195,13 @@ $(function () {
         });
       });
     }
+  }); // 关于我们--弹窗
+
+  $(document).on("click", "#video-pop", function () {
+    $(".bullet_box").addClass('active');
+  });
+  $(document).on("click", ".bullet_box .close,.bullet_box", function () {
+    $(".bullet_box").removeClass('active');
   }); // 点击展开
 
   function tabUl() {
@@ -434,7 +441,101 @@ $(function () {
     }
   }
 
-  idx_case();
+  idx_case(); // 解决方案列表
+
+  function solutionList() {
+    var slide = new Swiper('.solutionlist', {
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      slidesPerView: 3.3,
+      spaceBetween: 22,
+      preventLinksPropagation: false,
+      // 阻止点击事件冒泡
+      pagination: {
+        el: '#idx_solution .banner_sp',
+        clickable: true
+      },
+      allowTouchMove: false,
+      breakpoints: {
+        480: {
+          slidesPerView: 1,
+          spaceBetween: 15
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        990: {
+          slidesPerView: 2.8,
+          spaceBetween: 20
+        },
+        1280: {
+          slidesPerView: 3,
+          spaceBetween: 40
+        }
+      }
+    });
+  }
+
+  solutionList(); // 关于我们--合作伙伴
+
+  function cooperationOne() {
+    var mySwiper = new Swiper('.cooperation-wrap .cooperate1', {
+      // loop : true,//可选选项，开启循环
+      slidesPerView: 5,
+      spaceBetween: 20,
+      allowTouchMove: false,
+      speed: 8000,
+      // autoplay:true,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 4
+        },
+        640: {
+          slidesPerView: 3
+        },
+        480: {
+          slidesPerView: 2
+        }
+      }
+    });
+  }
+
+  cooperationOne();
+
+  function cooperationTwo() {
+    var mySwiper = new Swiper('.cooperation-wrap .cooperate2', {
+      // loop : true,//可选选项，开启循环
+      slidesPerView: 5,
+      spaceBetween: 20,
+      allowTouchMove: false,
+      speed: 8000,
+      // autoplay:true,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 4
+        },
+        640: {
+          slidesPerView: 3
+        },
+        480: {
+          slidesPerView: 2
+        }
+      }
+    });
+  }
+
+  cooperationTwo();
 }); // 鼠标跟随
 
 function imousehover(obj, obj2) {
@@ -591,4 +692,5 @@ function imousehover(obj, obj2) {
     var cursor = new CustomCursor(obj2);
     cursor.init();
   }
-}
+} // 鼠标弹窗
+// 首页视频弹窗
