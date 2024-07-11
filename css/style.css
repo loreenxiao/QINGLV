@@ -1799,6 +1799,32 @@ button {
 #header .header-pc .header-wrap .header-right .column .header-lang .up .menu {
   margin-left: 0.48rem;
 }
+#header .header-pc .header-wrap .header-right .column .header-lang .up .language_box {
+  position: relative;
+}
+#header .header-pc .header-wrap .header-right .column .header-lang .up .language_box .language_panel {
+  width: fit-content;
+  height: auto;
+  position: absolute;
+  top: 0.58rem;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 14px;
+  border-radius: 0px 0px 6px 6px;
+  transition: all 0.3s ease;
+  visibility: hidden;
+  opacity: 0;
+}
+#header .header-pc .header-wrap .header-right .column .header-lang .up .language_box .language_panel a:hover span {
+  color: var(--active-color);
+}
+#header .header-pc .header-wrap .header-right .column .header-lang .up .language_box:hover .language_panel {
+  visibility: visible;
+  opacity: 1;
+}
 @media (max-width:1024px) {
   #header .header-pc {
     display: none;
@@ -5675,7 +5701,6 @@ button {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #fff;
 }
 .index-news .new-list .item .image img {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);

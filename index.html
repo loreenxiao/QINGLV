@@ -684,7 +684,7 @@
 
                             </div>
                             <div class="image">
-                                <div class="coverbg img1">
+                                <div class="coverbg">
                                 </div>
                                 <img src="./images/index-news1.png" alt="">
                             </div>
@@ -701,7 +701,7 @@
 
                             </div>
                             <div class="image">
-                                <div class="coverbg img2">
+                                <div class="coverbg">
                                 </div>
                                 <img src="./images/index-news2.png" alt="">
 
@@ -720,7 +720,7 @@
                             </div>
                             <div class="image">
 
-                                <div class="coverbg img3">
+                                <div class="coverbg">
                                 </div>
                                 <img src="./images/index-news3.png" alt="">
                             </div>
@@ -834,33 +834,33 @@
 
 
             // 7.新闻动态
-            const t1 = gsap.timeline();
-            t1.to(".index-news .image .img1", {
-                // width: '100%',
-                left: '120%',
-                duration: 0.01,
-                scrollTrigger: {
-                    trigger: ".index-news .news-top",
-                    scrub: 0,// 触发器1秒后跟上滚动条
-                },
-            })
-                .to(".index-news .image .img2", {
-                    // width: '100%',
-                    left: '120%',
-                    duration: 0.1,
-                    scrollTrigger: {
-                        trigger: ".index-news .image .img1",
-                        scrub: 0,// 触发器1秒后跟上滚动条
-                    },
-                }).to(".index-news .image .img3", {
-                    // width: '100%',
-                    left: '120%',
-                    duration: 0.1,
-                    scrollTrigger: {
-                        trigger: ".index-news .image .img2",
-                        scrub: 0,// 触发器1秒后跟上滚动条
-                    },
-                });
+            // const t1 = gsap.timeline();
+            // t1.to(".index-news .image .img1", {
+            //     // width: '100%',
+            //     left: '120%',
+            //     duration: 0.01,
+            //     scrollTrigger: {
+            //         trigger: ".index-news .news-top",
+            //         scrub: 0,// 触发器1秒后跟上滚动条
+            //     },
+            // })
+            //     .to(".index-news .image .img2", {
+            //         // width: '100%',
+            //         left: '120%',
+            //         duration: 0.1,
+            //         scrollTrigger: {
+            //             trigger: ".index-news .image .img1",
+            //             scrub: 0,// 触发器1秒后跟上滚动条
+            //         },
+            //     }).to(".index-news .image .img3", {
+            //         // width: '100%',
+            //         left: '120%',
+            //         duration: 0.1,
+            //         scrollTrigger: {
+            //             trigger: ".index-news .image .img2",
+            //             scrub: 0,// 触发器1秒后跟上滚动条
+            //         },
+            //     });
             // 8.业务咨询
             // gsap.fromTo(".index-business-consulting", {
             //     backgroundPositionY: `-${window.innerHeight / 1.5}px`
