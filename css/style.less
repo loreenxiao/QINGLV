@@ -695,7 +695,7 @@ button {
   }
 }
 @media @max1540 {
-  .w1440 {
+  .w1540 {
     max-width: 100%;
     padding: 0 60px;
   }
@@ -849,6 +849,7 @@ button {
    --font70: .7rem;
    --font72: .72rem;
    --font80: .8rem;
+   --font96: .96rem;
    --font100: 1rem;
    --font120: 1.2rem;
    --font160: 1.6rem;
@@ -974,6 +975,9 @@ button {
  .font80 {
    font-size: .8rem;
  }
+ .font96 {
+  font-size: .96rem;
+}
  .font100 {
    font-size: 1rem;
  }
@@ -1087,6 +1091,7 @@ button {
      --font70: .5rem;
      --font72: .5rem;
      --font80: .5rem;
+     --font96: .5rem;
      --font100: .5rem;
      --font120: .5rem;
      --font160: .5rem;
@@ -1184,6 +1189,9 @@ button {
    .font80 {
      font-size: .5rem;
    }
+   .font96 {
+    font-size: .5rem;
+  }
    .font100 {
      font-size: .5rem;
    }
@@ -1443,7 +1451,7 @@ button {
     display: flex;
     .title{.flex;.a_center;.j_center;
       color: var(--black-999);
-      transition: all .6s ease-in-out;
+      transition: all .3s ease-in-out;
       padding: 0 .56rem;
       height: .65rem;
       margin-right: .08rem;
@@ -1454,7 +1462,7 @@ button {
       // background-size: contain;
     }
     .icon{.flex;.a_center;.j_center;
-      transition: all .6s ease-in-out;
+      transition: all .3s ease-in-out;
       width: .65rem;
       height: .65rem;
       // background: linear-gradient(to top right, rgb(221 221 221 / 0%), rgb(221 221 221 / 60%));
@@ -1466,12 +1474,12 @@ button {
     }
     &:hover{
       .title{
-        transition: all .6s ease-in-out;
+        transition: all .3s ease-in-out;
         transform: translateX(.73rem);
         z-index: 1;
       }
       .icon{
-        transition: all .6s ease-in-out;
+        transition: all .3s ease-in-out;
         transform: translateX(-1.82rem);
         z-index: 2;
       }
@@ -1676,7 +1684,7 @@ button {
           .flex;
           gap: .16rem;
           .grid_gap(0,20);
-          .header-btn {cursor: pointer;
+          .header-btn {cursor: pointer; 
             .up {
               height: 100%;
               .flex;
@@ -1773,7 +1781,46 @@ button {
                 }
               }
             }
+            
           }
+          .searchbox{
+            .searchkey{
+              position: absolute;
+              top: 0;
+              z-index: 10;
+              right: 20px;
+              padding-right: 10px;
+              opacity: 0;
+              visibility: hidden;
+              -webkit-transition: all 0.3s ease;
+              -o-transition: all 0.3s ease;
+              transition: all 0.3s ease;
+              transform: translateX(20px);
+              display: flex;
+              align-items: center;
+              height: 100%;
+              input{
+                width: 240px;
+                font-size: var(--font14);
+                border-radius: 100px;
+                overflow: hidden;
+                height: 40px;
+                padding: 10px 20px;
+                border: 0;
+                background: #FFFFFF;
+                box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+              }
+            }
+            &:hover{
+              .searchkey{
+                visibility: visible;
+                opacity: 1;
+                transform: translateX(0px);
+                transition: all 0.3s ease;
+              }
+            }
+          }
+
           .header-lang{
             .up{
               .flex;gap:.16rem;
@@ -1854,8 +1901,8 @@ button {
       margin-top: .24rem;
       .left-navlist{display: inline-grid;
         a{position: relative;
-          .font40;color: var(--black-000);
-          span{.font40;position: relative; z-index: 2;}
+         font-size: var(--font40); color: var(--black-000);
+          span{font-size: var(--font40); position: relative; z-index: 2;}
           &:after{
             position: absolute;
             content: '';
@@ -1893,7 +1940,7 @@ button {
           .top{.flex; .j_justify; .a_start;
             .title{color: var(--black-ccc)}
             .mediabox{
-              .num{.font48;color: var(--black-000); font-weight: 500; line-height: 1;}
+              .num{font-size: var(--font48); color: var(--black-000); font-weight: 500; line-height: 1;}
               .email{margin-top:.16rem;color: var(--black-999)}
               .address{color: var(--black-999)}
               .media{.flex;gap: .32rem; margin-top:.43rem;
@@ -2541,7 +2588,7 @@ button {
       .f-phone{
         margin-top: .72rem;
         .title{}
-        .num{.font32; color: var(--black-000);}
+        .num{font-size: var(--font32); color: var(--black-000);}
       }
       .f-email{
         margin-top: .04rem;
@@ -2588,7 +2635,7 @@ button {
       .navlist{
         .flex;.a_start; .j_around;
         .item{
-          .title{.font20; color: var(--black-000);}
+          .title{font-size: var(--font20); color: var(--black-000);}
           ul{
             margin-top: .32rem;
             li{
@@ -2777,7 +2824,8 @@ button {
             ul {margin-top: 0;
               li{
                 a{
-                  .font14;
+                
+                  font-size: var(--font14);
                 }
               }
             }
@@ -2810,7 +2858,7 @@ button {
           width: 100%;
           .left-text{
             .j_start;
-            a{.font14}
+            a{font-size: var(--font14);}
           }
           .right-media{
             margin-top: .15rem;
@@ -2822,8 +2870,8 @@ button {
           }
         }
         .nav-version-bottom {
-          .left{.font14}
-          .right{a{.font14}}
+          .left{font-size: var(--font14);}
+          .right{a{font-size: var(--font14);}}
         }
       }
     }
@@ -3783,6 +3831,9 @@ button {
 .black0{
   color: var(--black-000)
 }
+.black3{
+  color: var(--black-333)
+}
 .black6{
   color: var(--black-666)
 }
@@ -3811,7 +3862,7 @@ button {
 // 公用字体一半颜色
 .public-opacity-title{
   font-weight: 700;
-  span{.font48;
+  span{font-size: var(--font48);
     font-weight: 700;
   }
   .one{
@@ -3821,7 +3872,8 @@ button {
   .two{color: var(--black-999);}
   @media @max768 {
     .one,.two{
-      .font28 !important;
+     
+      font-size: var(--font28) !important;
     }
   }
 
@@ -3884,12 +3936,12 @@ button {
 
 // 标题文字-公用
 .public-title{
-  p,span{.font42; font-weight: 700;}
+  p,span{font-size: var(--font42); font-weight: 700;}
   p{color: var(--black-000);}
   span{color: var(--color-active);}
 }
 .public-title-active{
-  p,span{.font42; font-weight: 700;}
+  p,span{font-size: var(--font42); font-weight: 700;}
   p{color: var(--white-color);}
   span{color: var(--color-active);}
 }
@@ -3920,7 +3972,7 @@ button {
     }
     .swiper-button-prev,.swiper-button-next{
       .boxsize{.flex;.a_center;.j_center; gap: 10px; position: relative; width: .5rem;height:.5rem;border-radius: 30px; border: solid 1px var(--white-color);
-        span{.font22}
+        span{font-size: var(--font22);}
         &:hover{background-color: var(--color-active);border: none;}
       }
       .active{
@@ -3972,7 +4024,7 @@ button {
       margin-bottom: 1.2rem;
       .index-p-title{.dh;}
       .global-title{margin-top: .4rem;.dh;
-        .swipertitle{.flex;.a_center; .font64;font-weight: 700;position: relative; z-index: 12;overflow: hidden;
+        .swipertitle{.flex;.a_center; font-size: var(--font64); font-weight: 700;position: relative; z-index: 12;overflow: hidden;
           .namelists{display: inline-block;
             // .item{.dh;
             //   display: none;
@@ -3981,7 +4033,7 @@ button {
             //   }
             // }
             .active{
-              .emm{.font64;font-weight: 700;
+              .emm{font-size: var(--font64); font-weight: 700;
                 -webkit-animation: fadeIn .4s  1 forwards;
                 animation: fadeIn .4s  1 forwards;
               }
@@ -3989,8 +4041,8 @@ button {
             }
           }
           span{
-            .font64;font-weight: 700;
-            .emm{.font64;font-weight: 700;}
+             font-size: var(--font64);font-weight: 700;
+            .emm{font-size: var(--font64);font-weight: 700;}
           }
           .item  + .item  {
             display: none;
@@ -4006,7 +4058,7 @@ button {
           }
         }
         .min-title{
-          margin-top: 60px;
+          margin-top: 8px;
         }
       }
       .swiperinfo {overflow: hidden;}
@@ -4040,15 +4092,15 @@ button {
       top: 1rem;
       .info {
         margin-bottom: 0rem;
-       .global-title .swipertitle {.font34;
+       .global-title .swipertitle {font-size: var(--font34);
         span{
-          .font34;
+          font-size: var(--font34);
           .emm{
-            .font34;
+            font-size: var(--font34);
           }
         }
         .namelists .active .emm{
-          .font34;
+          font-size: var(--font34);
         }
        }
        .index-p-more{
@@ -4162,9 +4214,9 @@ button {
 
       }
       .global-title{margin-top: .49rem;
-        p{.flex;.a_center; .font64;font-weight: 700;
+        p{.flex;.a_center; font-size: var(--font64);font-weight: 700;
           span{
-            .font64;font-weight: 700;
+            font-size: var(--font64);font-weight: 700;
           }
           img{
             width: .56rem;
@@ -4301,9 +4353,9 @@ button {
   }
   @media @max768 {
    .bannerbox .info {padding: 1rem 0;
-    .global-title p {.font28;
+    .global-title p {font-size: var(--font28);
       span{
-        .font28;
+        font-size: var(--font28);
       }
      }
    }
@@ -4331,7 +4383,7 @@ button {
           width: 25.3%;
           .global-title{
             margin-top: .32rem;
-            p{.font48;
+            p{font-size: var(--font48);
               font-weight: 700;
               line-height: 1.2;
             }
@@ -4374,7 +4426,7 @@ button {
         .flex; .j_justify; 
       }
       .left {width: 25.3%;
-          .num{.font18;color: var(--black-999); padding-top: .24rem; border-top: solid 1px var(--black-999);}
+          .num{font-size: var(--font18);color: var(--black-999); padding-top: .24rem; border-top: solid 1px var(--black-999);}
           .info{
             .solicon{
               cursor: pointer;
@@ -4385,7 +4437,7 @@ button {
               // }
             }
             .s-title{
-              .font28;
+              font-size: var(--font28);
               margin-top: .48rem;
               color: var(--black-000);
             }
@@ -4437,7 +4489,7 @@ button {
       .leftside{
         width: 100%;
         .global-title p{
-          .font28;
+          font-size: var(--font28);
         }
       }
     }
@@ -4503,7 +4555,7 @@ button {
       .right {.flex; .a_center; padding: 1.82rem 0; width: 100%; height: 100%; position: relative; z-index: 3;
         .index-p-title{color: #fff;background-image: linear-gradient(to right, rgb(255 255 255 / 30%), rgb(255 255 255 / 0%));}
         .sectitle{margin-top: .4rem;
-          p{ .font48;font-weight: 700;line-height: 1.2;}
+          p{ font-size: var(--font48);font-weight: 700;line-height: 1.2;}
           .title1{
             color: #ffffff;
           }
@@ -4595,7 +4647,7 @@ button {
               padding: .48rem .64rem;
               .title{
                 p{
-                  .font24;color: var(--black-000);font-weight: 500;
+                  font-size: var(--font24);color: var(--black-000);font-weight: 500;
                 }
               }
               .info{color: var(--black-666);line-height: 24px;margin-top: .32rem; padding-top: .32rem; border-top: solid 1px var(--black-ccc)}
@@ -4612,9 +4664,9 @@ button {
                     color: #FF9D2A;
 
                   }
-                  .percent{.font40;color: var(--black-000);font-weight: 700;
+                  .percent{font-size: var(--font40);color: var(--black-000);font-weight: 700;
                     .jump-num{
-                      .font40;font-weight: 700;
+                      font-size: var(--font40);font-weight: 700;
                     }
                   }
                   .content{color: var(--black-666);font-weight: 300;}
@@ -4663,7 +4715,7 @@ button {
       padding: 0.6rem 0;
       .sectitle {margin-top: 0.2rem;
         p{
-          .font28;
+          font-size: var(--font28);
         }
       }
       .pre-next-button{
@@ -4712,7 +4764,7 @@ button {
       .sec-title{
          margin-top: .41rem;
          p{
-          .font48;font-weight: 700;line-height: 1.2;
+          font-size: var(--font48);font-weight: 700;line-height: 1.2;
          }
         .greytitle{color: var(--black-999);
          
@@ -4749,11 +4801,11 @@ button {
           &:last-child{
             border-right:0;
           }
-          .num{.font18;margin-top: .32rem; color: var(--black-ccc);}
+          .num{font-size: var(--font18);margin-top: .32rem; color: var(--black-ccc);}
           .icon{max-width: 56px; margin-top: 2.27rem;width: 56px; height: 56px;
 
           }
-          .title{.font24;font-weight: 700; color: var(--black-000);margin-top: .24rem;}
+          .title{font-size: var(--font24);font-weight: 700; color: var(--black-000);margin-top: .24rem;}
 
         }
     }
@@ -4789,7 +4841,7 @@ button {
         .item {
           padding-left: .1rem;
           .title {
-            .font16;
+            font-size: var(--font16);
           }
           .icon{
             margin-top: 1.5rem;
@@ -4843,7 +4895,7 @@ button {
         .item{padding: .4rem 0;
           .data{.flex; .a_start;
             line-height: 1; position: relative;  color: var(--black-000);
-            .num{.font64;font-weight: 700;}
+            .num{font-size: var(--font64);font-weight: 700;}
             .dw{font-weight: 700;}
             .year{font-weight: 700;}
           }
@@ -4895,7 +4947,7 @@ button {
   }
   @media @max768 {
     .info .right-box .itemrow .item .data .num{
-      .font32;
+      font-size: var(--font32);
     }
   }
   @media @max480 {
@@ -4939,8 +4991,8 @@ button {
         border-top: solid 1px var(--black-ccc);
       }
       .info{width: 24.7%; max-width: 443px;
-        .num{.font18; color: var(--black-999);  }
-        .title{.font24; color: var(--black-000);margin-top: 1.43rem}
+        .num{font-size: var(--font18); color: var(--black-999);  }
+        .title{font-size: var(--font24); color: var(--black-000);margin-top: 1.43rem}
         .sec-title{color: var(--black-666);margin-top: 0.16rem}
         .news-more{
           color: var(--black-999);
@@ -5083,7 +5135,7 @@ button {
     padding: 1.36rem 0;
     align-content: center;
     .sec-title{margin-top: .32rem;font-weight: 700;}
-    .third-title{margin-top: .12rem; .font48}
+    .third-title{margin-top: .12rem; font-size: var(--font48);}
     .index-more{margin-top: .64rem;}
     .index-p-more{
       margin-top: .64rem;
@@ -5183,8 +5235,8 @@ button {
     }
   }
   .public-title{.flex; gap: .24rem;line-height: 1.1666;
-    .font48;font-weight: 700;
-    .active{.flex;.a_center; .font24;font-weight: 700; color: var(--active-color);
+    font-size: var(--font48);font-weight: 700;
+    .active{.flex;.a_center; font-size: var(--font24);font-weight: 700; color: var(--active-color);
       padding: 0 .69rem 0 .24rem ;
       color: var(--active-color);
       border-radius: 60px;
@@ -5200,19 +5252,37 @@ button {
       cursor: pointer;
       padding: .48rem .56rem;
       background-color: var(--white-color);
-      .title{.dh;.font24;font-weight: 700}
-      .content{.black6; margin-top: .24rem; padding-top: .24rem;line-height: 1.167;
+      transition: .5s ease-in-out;
+      .title{.dh;font-size: var(--font24); font-weight: 700}
+      .content{.black6; margin-top: .24rem; padding-top: .24rem;line-height: 1.167; position: relative;
         border-top: solid 1px rgb(102 102 102 / 10%);
+        &::before{
+          position: absolute;
+          content: "";
+          width: 0;
+          left: 0;
+          top: 0;
+          height: 1px;
+          background-color:var(--active-color);
+          transition: .5s ease-in-out;
+        }
       }
       .image{.dh;margin-top: 1.43rem;
-        width: .4rem; height: .4rem;
+        width: 40px; height: 40px;
         img{.dh;
           width: 100%; height: 100%; object-fit: cover;
           filter: brightness(0.6) invert(1);
         }
       }
       &:hover{
+        transform: translateY(-10px);
         .title{.dh;color: var(--active-color);}
+        .content{
+          &:before{
+            width: 100%;
+            transition: .5s ease-in-out;
+          }
+        }
         .image{
           
           img{.dh;
@@ -5225,6 +5295,25 @@ button {
   .list1{
     display: grid;
     grid-template-columns: repeat(1,1fr);
+    margin-top: .32rem;
+    max-width: 656px;
+    padding-bottom: .8rem;
+    .item {
+      .content{
+        border-top: inherit;
+        padding-top: 0;
+        margin-top: 0;
+      }
+      &:hover{
+        transform: inherit;
+        .content{
+          &:before{
+            width: 0;
+          }
+        }
+      }
+    }
+
   }
   .list2{
     display: grid;
@@ -5263,7 +5352,7 @@ button {
   background-color: inherit;
  .innerbox{
     background-image: url(../images/section7-bg.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     padding-top: .96rem;
     padding-left: .8rem;
@@ -5290,10 +5379,11 @@ button {
       .image{
         .pb{
           padding-bottom: 133.713%;
-          img{transition: .5s ease-in-out; 
+          img{ 
             width: 100%; height: 100%; object-fit: cover;
           }
-          
+          .nomal{transition: 1s ease-in-out; }
+          .select{height: 0; transition: 1s ease-in-out; }
         }
         
       }
@@ -5307,7 +5397,8 @@ button {
         z-index: 10;
         .info{
           p{
-            .font28;
+            // .font28;
+            font-size: var(--font28);
             font-weight: 500;
             color: #FFF;
             line-height: 1.2;
@@ -5329,8 +5420,8 @@ button {
       &:hover{
         cursor: pointer;
         .image{
-          .nomal{display: none;transition: .5s ease-in-out; }
-          .select{.dh;display: inline-block;transition: .5s ease-in-out; }
+          .nomal{display: none;transition: 1s ease-in-out; }
+          .select{height: 100%;display: inline-block;transition: 1s ease-in-out; }
         }
         .info{
           .desc{.dh;
@@ -5350,9 +5441,9 @@ button {
   margin-top: 1.6rem;
   padding-bottom: .8rem;
   .titletop{.flex; 
-    .title{.font48;width: 50%; font-weight: 700;}
-    .info{.font24;width: 50%; max-width: 3.2rem;
-      span{.font24;}
+    .title{font-size: var(--font48); width: 50%; font-weight: 700;}
+    .info{font-size: var(--font24);width: 50%; max-width: 3.2rem;
+      span{font-size: var(--font24);}
     }
 
   }
@@ -5361,8 +5452,8 @@ button {
     grid-template-columns: repeat(2,1fr); 
     .item{.flex; .j_justify; .a_end; cursor: pointer; column-gap: 1.37rem; padding: .24rem 0 .8rem 0;border-top: solid 1px #dddddd;
       .left{
-        .num{.font18; .black9; opacity: 0.8;}
-        .title{.dh;.font24; margin-top: .4rem;.black0; font-weight: 700;}
+        .num{.dh;font-size: var(--font18); .black9; opacity: 0.8;}
+        .title{.dh;font-size: var(--font24); margin-top: .4rem;.black0; font-weight: 700;}
         .info{margin-top: .16rem;.black6;}
 
       }
@@ -5373,10 +5464,22 @@ button {
         text-align: center;
         img{
           // width: 100%; height: 100%; object-fit: cover;
+          transition: .5s ease-in-out;
         }
       }
       &:hover{
-        .title{.dh;.activecolor;}
+        .left{
+          .num{.dh;.black0; }
+          .title{.dh;.activecolor;}
+  
+        }
+        .right{
+          img{
+            transition: .5s ease-in-out;
+            transform: translateX(10px);
+          }
+        }
+        
       }
     }
     .item:nth-child(odd){
@@ -5420,14 +5523,29 @@ button {
       border-bottom: solid 2px var(--active-color);
     }
   }
+  @media @max990{
+    ul{
+      column-gap: .8rem;
+    }
+  }
+  @media @max768{
+    ul{
+      column-gap: .5rem;
+    }
+  }
+  @media @max640{
+    ul{
+      column-gap: .2rem;
+    }
+  }
 }
 // --------------------------------------------- 青绿关于我们--青绿环境
 .about-enviroment{margin-top: 1.28rem;
   .innerbox{.flex; .j_justify;
     .leftwrap{
       max-width: 192px;
-      .title{.font48;font-weight: 700;}
-      .videowrap{margin-top: .64rem;
+      .title{font-size: var(--font48);font-weight: 700;}
+      .videowrap{margin-top: .64rem; cursor: pointer;
         p{
           margin-top: .16rem;
         }
@@ -5443,10 +5561,16 @@ button {
       .itemlist{
         margin-top: .64rem;
         .itemrow{.flex;.j_justify; gap: .7rem; 
+          
           .item{padding: .4rem 0;
+            &:first-child{
+              .data{
+                .a_start;
+              }
+            }
             .data{.flex; .a_end;
               line-height: 1; position: relative;  color: var(--black-000);
-              .num{.font64;font-weight: 700;}
+              .num{font-size: var(--font64);font-weight: 700;}
               .dw{font-weight: 700;}
               .year{font-weight: 700;}
             }
@@ -5470,139 +5594,176 @@ button {
     }
 
   }
+  @media @max990{
+    
+  }
+  @media @max768{
+    .innerbox{
+      display: inline-block;
+      width: 100%;
+      .rightwrap{width: 100%;}
+    }
+  }
 }
 // --------------------------------------------- 青绿关于我们--使命愿景
 
 .mission-vision{margin-top: 1.6rem;
   .ptitle{
-    .black0;.font48; font-weight: 700;
+    .black0;font-size: var(--font48); font-weight: 700;
   }
   .itemlist{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: .24rem;
     margin-top: .64rem;
-    .item{.flex; gap: .97rem; padding: .48rem .64rem;
+    .item{.flex; gap: .97rem; padding: .48rem .64rem; transition: all .5s ease-in-out; cursor: pointer;
       background-color: var(--white-color);
       .leftwrap{
-        .num{}
+        .num{.black9;}
         .title{margin-top: 2.22rem;}
-        .info{margin-top: .24rem;width: 74%;}
+        .info{font-size: var(--font28); margin-top: .24rem;width: 90%;line-height: 1.18;}
 
       }
       .rightwrap{
-        
+        max-width: 2.23rem;
+      }
+      &:hover{
+        transition: all .5s ease-in-out;
+        transform: translateY(-10px);
       }
     }
   }
+  @media @max990{
+    .itemlist{
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 }
-// --------------------------------------------- 青绿关于我们--合作伙伴
-.cooperation-wrap{background-color: var(--white-color);
-  padding: 1.6rem 1.27rem;
-  .title{.font48; font-weight: 700;}
-  .itemlist{ margin-top: 1.55rem;
-    .cooperate1,.cooperate2{
-      padding: .67rem;
-      border-top: solid 1px #DDDDDD;
-      overflow: hidden;
-      .pb{
-        padding-bottom: 37.5%;
+// --------------------------------------------- 青绿关于我们--发展历程
+.develoment-wrap{position: relative; margin-top: 1.28rem;
+  .info{.flex; position: absolute;
+    padding: 1.28rem 1.9rem 1.07rem 1.9rem;
+    z-index: 5;
+    width: 100%;
+    .leftwrap{width: 50%;
+      .index-p-title{
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)) !important;
+        color: #fff;
+      }
+      .title{color: var(--white-color);
+        .font48;.bold;margin-top: .3rem;
       }
     }
-  
+    .rightwrap{width: 50%;margin-top:2.84rem; .flex; gap: .96rem;
+      .yeartab{
+        li{.flex;.a_center;cursor: pointer; margin-bottom: .06rem;
+          img{margin-right: .2rem;width: 16px; opacity: 0.4;
+            height: 18px;}
+          span{.black9;.bold;}
+        }
+        .active{
+          img{
+            opacity: 1;
+          }
+          span{color: #fff;}
+        }
+      }
+      .scrollcontent{color: var(--white-color); height: 2.96rem;overflow: hidden;
+        .year{font-size: var(--font96); font-weight: 700;line-height: 1;}
+        .introduce{margin-top:.16rem ;
+          p{
+            .font24;
+          }
+        }
+
+      }
+    }
+
+  }
+  .riverbg{
+    position: relative;
+    height: 100%;
+    margin-left: 3.334%;
   }
  
+  .svg_box { width: 100%; height: auto; position: absolute; z-index: 2; top: 0; left: 0;  --dashsf: 2750; overflow: hidden;
+    .svg { width: 106%; transform: translateX(-3%); 
+      svg .line { stroke-dasharray: 2750; stroke-dashoffset: var(--dashsf); .dh(1); }
+    }
+    &.active { --dashsf: 0; }
+  }
+  
+
 }
 
+
+// --------------------------------------------- 青绿关于我们--合作伙伴
+.cooperation-wrap{position: relative; 
+  
+  .container{
+    background-color: var(--white-color);
+    padding-top: 1.6rem;
+    .title{font-size: var(--font48); font-weight: 700; padding: 0 1.27rem;}
+    .itemlist{ margin-top: .88rem;padding: 0 1.27rem;padding-bottom: 1.05rem;
+      .cooperate1,.cooperate2{
+        padding: .67rem;
+        border-top: solid 1px #DDDDDD;
+        overflow: hidden;
+        .pb{
+          padding-bottom: 37.5%;
+          img{
+            width: 100%; height: 100%; object-fit: contain;
+          }
+        }
+        .swiper-wrapper {
+          transition-timing-function: linear !important; /* 自动轮播匀速不停顿 */
+        }
+    
+      }
+    
+    }
+  }
+  
+ 
+}
+// 关于我们--立足中国 服务全球
 .about-global{
   position: relative;
-  // padding: 1.6rem 0;
   padding: 1.6rem 0 2.6rem 0;
-
   background-color: rgb(230 230 230 / 20%);
-  // height: 948px;
   overflow: hidden;
-  .info{.flex;.a_center;.j_justify;
-    .left-box{width: 40.79%;z-index: 2;
-      .index-p-title{}
-      .public-opacity-title{margin-top: .32rem;}
-      .teac-title{
-        margin-top: .24rem;
+  .inenrbox{.flex; .j_justify;
+    .leftwrap{
+      width: 23.65%;
+      max-width: 300px;
+      .info{
+        
       }
-      .sec-title{margin-top: .24rem; color: var(--black-666);}
-
-      .index-p-more{margin-top: .8rem;
-        .title{
-          // background-image: url("../images/section6-one.png");
-        }
+      .image{
+        
+      }
+      
+      .info{margin-top: 2.57rem; .black3;}
+      .index-p-more{margin-top:.4rem;
         .icon{
           background-image: url("../images/more-icon-color.png");
         }
       }
     }
-    .right-box{
-      min-width: 25.33%;z-index: 2;
-      .itemrow{.flex;.j_justify; gap: .7rem; border-top: solid 1px var(--black-000);
-        &:first-child{
-          border-top: none;
-        }
-        .item{padding: .4rem 0;
-          .data{.flex; .a_start;
-            line-height: 1; position: relative;  color: var(--black-000);
-            .num{.font64;font-weight: 700;}
-            .dw{font-weight: 700;}
-            .year{font-weight: 700;}
-          }
-          .title{
-            color: var(--black-666);
-            margin-top: .04rem;
-            max-width: 127px
-          }
-        }
-
-      }
-      .itemrow2{
-        .item{
-          .data{.a_end;
-
-          }
-        }
-
-      }
+    .rightwrap{
+      width: 76.35%;
     }
 
   }
-  .image{
-    width: 60%;
-    margin: auto;
-    text-align: center;
-    transform: translateY(-76px);
-  }
+
   @media @max1280{
     padding: 1rem 0;
   }
   @media @max990 {
-    .info{
-      position: relative;
-      z-index: 10;
-      display: inline-block;
-      width: 100%;
-      .left-box {
-        width: 100%;
-      }
-      .right-box{
-        width: 100%;
-        margin-top: .4rem;
-        .itemrow{
-          .j_start;
-        }
-      }
-    }
+    
   }
   @media @max768 {
-    .info .right-box .itemrow .item .data .num{
-      .font32;
-    }
+    
   }
   @media @max480 {
 

@@ -1,4 +1,14 @@
 $(function () {
+    /* 全局公共属性 */
+    let wH = window.innerHeight,
+    wW = window.innerWidth,
+    c = "active";
+
+
+
+
+
+
 
     // 使用IE浏览器提示
     function hiUpgrade() {
@@ -35,16 +45,6 @@ $(function () {
         }
     }
     hiUpgrade();
-
-    // 窗口发生改变刷新页面
-    // var windoWidth = $(window).width();
-    // $(window).resize(function () {
-    //     if (Math.abs($(this).width() - windoWidth) > 20) {
-    //         window.location.href = "";
-    //     }
-    // });
-
-
 
     // 导航
     function headNav() {
@@ -181,7 +181,7 @@ $(function () {
     //数字跳动
     $('.jump-num').countUp({
         delay: 5,
-        time: 2000
+        time: 5000
     });
     // 返回顶部
     $(document).ready(function () {
@@ -262,63 +262,12 @@ $(function () {
     visualData($(".num-move"));
 
 
-    // 首页-banner--文字区轮播
-    // function indexSlideText() {
-    //     var slidetext = new Swiper('.index-environment .info', {
-    //         // autoplay: {
-    //         //     delay: 4000,
-    //         //     disableOnInteraction: false,
-    //         // },
-    //         effect:"fade",
-    //         fadeEffect:{
-    //             crossFade:true  //开启淡出。过渡时，原slide透明度从1->0（淡出），过渡中的slide透明度从0->1（淡入），其他slide透明度0。
-    //         },
-    //         watchOverflow: true, //因为仅有1个slide，swiper无效
-    //         preventLinksPropagation: false, // 阻止点击事件冒泡
-    //         pagination: {
-    //             el: '.index-environment .info .swiper-pagination',
-    //             clickable: true,
-    //         },
-    //     });
-    //     // 背景图轮播
-    //     var slidebg = new Swiper('.indexbanner .bannerbox', {
-    //         // autoplay: {
-    //         //     delay: 4000,
-    //         //     disableOnInteraction: false,
-    //         // },
-    //         effect: 'fade',
-    //         watchOverflow: true, //因为仅有1个slide，swiper无效
-    //         preventLinksPropagation: false, // 阻止点击事件冒泡
-    //         navigation: {
-    //             nextEl: '.indexbanner .bannerbox .swiper-button-next',
-    //             prevEl: '.indexbanner .bannerbox .swiper-button-prev',
-    //         },
-    //         pagination: {
-    //             el: '.indexbanner .bannerbox .swiper-pagination',
-    //             clickable: true,
-    //         },
-    //         on: {
-    //             slideChangeTransitionStart: function () {
-    //                 console.log("2121")
-    //                 var d = this.realIndex;
-    //                 console.log("2121")
-    //                 $(".index-environment .info .swiper-pagination-bullet").eq(d).click();
-    //             },
-    //         }
-    //     });
-
-
-    // }
-    // indexSlideText();
-
+   
     // 首页-banner--背景轮播
     function indexBgSlide() {
 
     }
     indexBgSlide();
-
-
-
 
 
     // 解决方案
@@ -384,8 +333,8 @@ $(function () {
                 },
                 on: {
                     init() {
-                        swiperAnimateCache(this);
-                        swiperAnimate(this);
+                        // swiperAnimateCache(this);
+                        // swiperAnimate(this);
                     },
                     slideChangeTransitionEnd() {
                         swiperAnimate(this);
@@ -423,8 +372,8 @@ $(function () {
                     },
                     on: {
                         init() {
-                            swiperAnimateCache(this);
-                            swiperAnimate(this);
+                            // swiperAnimateCache(this);
+                            // swiperAnimate(this);
                         },
                         slideChangeTransitionEnd() {
                             swiperAnimateCache(this);
@@ -464,6 +413,7 @@ $(function () {
                 delay: 5000,
                 disableOnInteraction: false,
             },
+            speed:1000,
             slidesPerView: 3.3,
             spaceBetween: 22,
             preventLinksPropagation: false, // 阻止点击事件冒泡
@@ -472,6 +422,7 @@ $(function () {
                 clickable: true,
             },
             allowTouchMove: false,
+            
             breakpoints: {
                 480: {
                     slidesPerView: 1,
@@ -494,20 +445,59 @@ $(function () {
         });
     }
     solutionList()
-    // 关于我们--合作伙伴
+    // 关于我们--发展历程
+    function development(){
+        var mySwiper = new Swiper('.develoment-wrap .scrollcontent', {
+            // loop : true,//可选选项，开启循环
+            direction:"vertical",
+            spaceBetween: 10,
+            slidesPerView: 1.5,
+            speed: 1000,
+            // autoplay:true,
+            // autoplay: {
+            //     delay: 0,//自动播放间隔
+            //     disableOnInteraction: false,//用户操作后是否停止自动播放
+            // },
+            
+        })
+        $(".develoment-wrap .info .rightwrap .yeartab li").click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            var index = $(this).index();
+            mySwiper.slideTo(index)
+        })
+    }
+    development();
+    // 关于我们--发展历程线运动轨迹
+   
+    function idx_development() {
+        var box = $(".develoment-wrap");
+        var height = window.innerHeight + window.innerHeight / 5;
+        if (box.length) {
+            ScrollTrigger.create({
+                trigger: box, start: "top top", end: "+=" + height, scrub: true,
+                onUpdate: self => {
+                    var idx = self.progress; 
+                    if (idx > 0) { $(".develoment-wrap .svg_box").addClass("active"); } 
+                    else { $(".develoment-wrap .svg_box").removeClass("active"); }
+                }
+            });
+        }
+	}
+	idx_development();
 
 
+    // 关于我们--合作伙伴1,2
     function cooperationOne() {
         var mySwiper = new Swiper('.cooperation-wrap .cooperate1', {
-            // loop : true,//可选选项，开启循环
+            loop : true,//可选选项，开启循环
             slidesPerView: 5,
             spaceBetween: 20,
             allowTouchMove: false,
             speed: 8000,
             // autoplay:true,
             autoplay: {
-                delay: 0,
-                disableOnInteraction: false,
+                delay: 0,//自动播放间隔
+                disableOnInteraction: false,//用户操作后是否停止自动播放
             },
             breakpoints: {
                 768: {
@@ -522,11 +512,10 @@ $(function () {
             }
         })
     }
-    cooperationOne();
-
+    cooperationOne();  
     function cooperationTwo() {
         var mySwiper = new Swiper('.cooperation-wrap .cooperate2', {
-            // loop : true,//可选选项，开启循环
+            loop : true,//可选选项，开启循环
             slidesPerView: 5,
             spaceBetween: 20,
             allowTouchMove: false,
@@ -551,7 +540,7 @@ $(function () {
         })
     }
     cooperationTwo();
-
+    
 
 })
 

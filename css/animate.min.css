@@ -861,3 +861,39 @@
 	to { visibility: hidden; -webkit-transform: translate3d(0, -25px, 0); transform: translate3d(0, -25px, 0) }
 }
 .slideOutUp { -webkit-animation-name: slideOutUp; animation-name: slideOutUp }
+
+
+
+/* -------------------------------------------------- 自己写的入场动画 */
+
+/* -------------------------------------------------------------------------------------- */
+@-webkit-keyframes s_leftT {
+	0% { opacity: 1; -webkit-transform: translate3d(30%, 0, 0); transform: translate3d(30%, 0, 0); }
+	to { opacity: 1; -webkit-transform: translate3d(0px, 0, 0); transform: translate3d(0px, 0, 0); } 
+}
+@keyframes s_leftT {
+	0% { opacity: 1; -webkit-transform: translate3d(30%, 0, 0); transform: translate3d(30%, 0, 0); }
+	to { opacity: 1; -webkit-transform: translate3d(0px, 0, 0); transform: translate3d(0px, 0, 0); } 
+}
+.s_leftT { -webkit-animation-name: s_leftT; animation-name: s_leftT; }
+
+/* -------------------------------------------------------------------------------------- */
+@-webkit-keyframes s_rightT {
+	0% { opacity: 1; -webkit-transform: translate3d(-30px, 0, 0); transform: translate3d(-30px, 0, 0); }
+	to { opacity: 1; -webkit-transform: translate3d(0px, 0, 0); transform: translate3d(0px, 0, 0); } 
+}
+@keyframes s_rightT {
+	0% { opacity: 1; -webkit-transform: translate3d(-30px, 0, 0); transform: translate3d(-30px, 0, 0); }
+	to { opacity: 1; -webkit-transform: translate3d(0px, 0, 0); transform: translate3d(0px, 0, 0); } 
+}
+.s_rightT { -webkit-animation-name: s_rightT; animation-name: s_rightT; }
+@-webkit-keyframes s_topT {
+	0% { opacity: 1; -webkit-transform: translate3d(-30px, 0, 0); transform: translate3d(-30px, 0, 0); }
+	to { opacity: 1; -webkit-transform: translate3d(0px, 0, 0); transform: translate3d(0px, 0, 0); } 
+}
+@keyframes s_topT {
+	0% { opacity: 1; -webkit-transform: translate3d(0, 50px, 0); transform: translate3d(0, 50px, 0); }
+	to { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); } 
+}
+.s_topT { -webkit-animation-name: s_topT; animation-name: s_topT; }
+/* -------------------------------------------------------------------------------------- */

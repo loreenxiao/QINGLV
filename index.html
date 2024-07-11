@@ -30,6 +30,7 @@
     <!-- JavaScript语言 -->
     <script type="text/javascript" src="js/svg-inject.min.js"></script>
     <script type="text/javascript" src="js/extend.js"></script>
+    
 
 
 </head>
@@ -70,7 +71,15 @@
                                             </span>
                                         </p>
                                         <p class="swipertitle black6 wow fadeInLeft">的智慧分选解决方案</p>
-
+                                        <div class="index-p-more wow fadeInLeft">
+                                            <a href="">
+                                                <span class="title">了解更多</span>
+                                                <span class="icon">
+                                                    <!-- <img src="./images/icon-more.png" alt=""> -->
+                                                </span>
+                                            </a>
+                
+                                        </div>
                                     </div>
                                 </li>
                                 <li class="swiper-slide">
@@ -79,21 +88,22 @@
                                         <p class="min-title black6 wow fadeInLeft">Make industry and ecology evergreen
                                         </p>
                                     </div>
+                                    <div class="index-p-more wow fadeInLeft">
+                                        <a href="">
+                                            <span class="title">了解更多</span>
+                                            <span class="icon">
+                                                <!-- <img src="./images/icon-more.png" alt=""> -->
+                                            </span>
+                                        </a>
+            
+                                    </div>
                                 </li>
                             </ul>
                         </div>
 
                         <div class="swiper-pagination"></div>
 
-                        <div class="index-p-more wow fadeInLeft">
-                            <a href="">
-                                <span class="title">了解更多</span>
-                                <span class="icon">
-                                    <!-- <img src="./images/icon-more.png" alt=""> -->
-                                </span>
-                            </a>
-
-                        </div>
+                        
                     </div>
 
                 </div>
@@ -650,7 +660,7 @@
                             <a href="">
                                 <span class="title ">更多动态</span>
                                 <span class="icon">
-                                    <!-- <img src="./images/icon-more.png" alt="" > -->
+                                    <img src="./images/icon-more.png" alt="" >
                                 </span>
                             </a>
 
@@ -665,7 +675,7 @@
                             <div class="sec-title">青绿环境以固废资源化智能分选设备的自主研发制造为基础，致力于为全...</div>
                             <div class="news-more">
                                 <span>了解更多</span>
-                                <!-- <img src="./images/icon-more.png" alt=""> -->
+                                <img src="./images/icon-more.png" alt="">
                             </div>
 
                         </div>
@@ -682,7 +692,7 @@
                             <div class="sec-title">青绿环境以固废资源化智能分选设备的自主研发制造为基础，致力于为全...</div>
                             <div class="news-more">
                                 <span>了解更多</span>
-                                <!-- <img src="./images/icon-more.png" alt=""> -->
+                                <img src="./images/icon-more.png" alt="">
                             </div>
 
                         </div>
@@ -701,7 +711,7 @@
                             <div class="sec-title">青绿环境以固废资源化智能分选设备的自主研发制造为基础，致力于为全...</div>
                             <div class="news-more">
                                 <span>了解更多</span>
-                                <!-- <img src="./images/icon-more.png" alt=""> -->
+                                <img src="./images/icon-more.png" alt="">
                             </div>
                         </div>
                         <div class="image">
@@ -760,7 +770,10 @@
     <script type="text/javascript" src="layui/layui.js"></script>
     <script type="text/javascript" src="js/jquery.countup.min.js"></script>
     <script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="js/ie-error.js"></script>
     <script type="text/javascript" src="js/pack.js"></script>
+  
+
     <script src="js/gsap.min.js"></script>
     <script src="js/ScrollTrigger.min.js"></script>
 
@@ -954,25 +967,9 @@
     </script>
     <!-- 首屏 --粘性定位增加active改变字体颜色+scroll鼠标事件 -->
     <script>
-        window.onscroll = function () {
-            // 超过首屏球体高度隐藏
-            let infoBoxHeight = $(".index-screen1 .index-environment .info").height()
-            if (window.scrollY > infoBoxHeight) { // 当滚动超过100px时
-                $(".index-environment").parent().addClass("activewhite");
-                $(".index-enviroment-circle").css("display", "none");
-                // 背景图移入到文字区域才让文字轮播--关联背景切换事件
-                $(".index-environment .info .swiper-pagination-bullet").eq(0).click();
+        setTimeout(function () {
 
-            } else {
-                $(".index-environment").parent().removeClass("activewhite");
-                $(".index-enviroment-circle").css("display", "block");
-
-            }
-
-        };
-
-        // 青绿环境 - 首页banner
-        function indexbanner() {
+             // 青绿环境 - 首页banner
             // 文字区轮播
             var slidetext = new Swiper('.index-environment .swiperinfo', {
                 effect: "fade",
@@ -1028,8 +1025,61 @@
                 },
             });
             $('.banner_sp span').eq(0).html(svg)
-        }
-        indexbanner();
+
+            window.addEventListener('scroll', function () {
+                var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+                var triggerPoint = $(".index-screen1 .index-environment .info").height();
+
+                if (scrollPosition > triggerPoint) {
+                    mySwiper.autoplay.start();
+                    console.log(111);
+                    $(".index-environment").parent().addClass("activewhite");
+                    $(".index-enviroment-circle").css("display", "none");
+                } else {
+                    mySwiper.autoplay.stop();
+                    console.log(2222);
+                    $(".index-environment").parent().removeClass("activewhite");
+                    $(".index-enviroment-circle").css("display", "block");
+
+                }
+            });
+
+            window.addEventListener('scroll', function () {
+                var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+                if (scrollPosition === 0) {
+                    mySwiper.autoplay.stop();
+                    mySwiper.slideToLoop(0, 0);
+                    console.log(333);
+                }
+            });
+
+
+
+
+
+
+            // window.onscroll = function () {
+            // // 超过首屏球体高度隐藏
+            // let infoBoxHeight = $(".index-screen1 .index-environment .info").height()
+            // if (window.scrollY > infoBoxHeight) { // 当滚动超过100px时
+            //     $(".index-environment").parent().addClass("activewhite");
+            //     $(".index-enviroment-circle").css("display", "none");
+            //     // 背景图移入到文字区域才让文字轮播--关联背景切换事件
+            //     $(".index-environment .info .swiper-pagination-bullet").eq(0).click();
+
+            // } else {
+            //     $(".index-environment").parent().removeClass("activewhite");
+            //     $(".index-enviroment-circle").css("display", "block");
+
+            // }
+
+        // };
+
+    
+
+
+        }, "400");
+        
 
     </script>
 
