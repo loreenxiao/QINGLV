@@ -470,6 +470,18 @@ button {
 /* 图片放大 */
 .fd(@size) { -webkit-transform: scale((@size)); -ms-transform: scale((@size)); -o-transform: scale((@size)); transform: scale((@size)) }
 
+
+@-webkit-keyframes fadeInLeft {
+	0% { opacity: 0; -webkit-transform: translate3d(-50px, 0, 0); transform: translate3d(-50px, 0, 0) }
+	to { opacity: 1; -webkit-transform: none; transform: none }
+}
+@keyframes fadeInLeft {
+	0% { opacity: 0; -webkit-transform: translate3d(-50px, 0, 0); transform: translate3d(-50px, 0, 0) }
+	to { opacity: 1; -webkit-transform: none; transform: none }
+}
+
+
+
 /* 动画 */
 .dh {
   -webkit-transition: all .45s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -1451,7 +1463,7 @@ button {
     display: flex;
     .title{.flex;.a_center;.j_center;
       color: var(--black-999);
-      transition: all .3s ease-in-out;
+      transition: all .5s ease-in-out;
       padding: 0 .56rem;
       height: .65rem;
       margin-right: .08rem;
@@ -1462,7 +1474,7 @@ button {
       // background-size: contain;
     }
     .icon{.flex;.a_center;.j_center;
-      transition: all .3s ease-in-out;
+      transition: all .5s ease-in-out;
       width: .65rem;
       height: .65rem;
       // background: linear-gradient(to top right, rgb(221 221 221 / 0%), rgb(221 221 221 / 60%));
@@ -1474,12 +1486,12 @@ button {
     }
     &:hover{
       .title{
-        transition: all .3s ease-in-out;
+        transition: all .5s ease-in-out;
         transform: translateX(.73rem);
         z-index: 1;
       }
       .icon{
-        transition: all .3s ease-in-out;
+        transition: all .5s ease-in-out;
         transform: translateX(-1.82rem);
         z-index: 2;
       }
@@ -5038,29 +5050,16 @@ button {
       }
       .image{position: relative;
         width: 32.42%; overflow: hidden;
-        .coverbg{
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          
-        }
+       
         img{.dh;
           width: 100%; height: 100%; object-fit: cover;
-          // transform: translate3d(0px, 0px, 0px);
-          // transform: translateX(0px)
+          
         }
-        .img1,.img2,.img3{
-          // transform: translateX(-500px)
-        }
+       
         .active{
           animation: newsrotateRight 3s ;
         }
-        // &:hover{
-        //   img{.dh; .fd(1.1)
-        //   }
-        // }
+       
       }
 
       &:hover{

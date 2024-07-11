@@ -415,6 +415,30 @@ button {
   font-weight: bold;
 }
 /* 图片放大 */
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-50px, 0, 0);
+    transform: translate3d(-50px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-50px, 0, 0);
+    transform: translate3d(-50px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
 /* 动画 */
 .dh {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -1334,7 +1358,7 @@ button {
   -webkit-justify-content: center;
   justify-content: center;
   color: var(--black-999);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   padding: 0 0.56rem;
   height: 0.65rem;
   margin-right: 0.08rem;
@@ -1356,7 +1380,7 @@ button {
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   width: 0.65rem;
   height: 0.65rem;
   cursor: pointer;
@@ -1368,12 +1392,12 @@ button {
   display: block;
 }
 .index-p-more a:hover .title {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   transform: translateX(0.73rem);
   z-index: 1;
 }
 .index-p-more a:hover .icon {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   transform: translateX(-1.82rem);
   z-index: 2;
 }
@@ -5696,13 +5720,6 @@ button {
   position: relative;
   width: 32.42%;
   overflow: hidden;
-}
-.index-news .new-list .item .image .coverbg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
 }
 .index-news .new-list .item .image img {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);

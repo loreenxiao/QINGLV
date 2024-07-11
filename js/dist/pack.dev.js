@@ -1572,9 +1572,9 @@ $(function () {
           slidesPerView: 1,
           speed: 800,
           effect: 'fade',
-          fadeEffect: {
-            crossFade: true
-          },
+          // fadeEffect: {
+          //     crossFade: true,
+          // },
           // pagination: { el: pagination, clickable: true, }, allowTouchMove: false,
           breakpoints: {
             768: {
