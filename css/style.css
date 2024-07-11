@@ -1735,6 +1735,9 @@ button {
     max-height: 12px;
   }
 }
+#header .header-pc .header-wrap .header-right .column .searchbox {
+  position: relative;
+}
 #header .header-pc .header-wrap .header-right .column .searchbox .searchkey {
   position: absolute;
   top: 0;
@@ -4848,13 +4851,6 @@ button {
   min-height: 400px;
   object-fit: cover;
   transition: all 0.5s ease-in-out;
-}
-.index-solution .idx_solve .center_box .right:hover img {
-  -webkit-transform: scale(1.03);
-  -ms-transform: scale(1.03);
-  -o-transform: scale(1.03);
-  transform: scale(1.03);
-  transition: all 1s ease-in-out;
 }
 .index-solution .idx_solve .center_box .swiper-pagination {
   position: absolute;

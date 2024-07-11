@@ -483,6 +483,46 @@
 版本：3.7.2
 官网：https://animate.style/
 */
+@-webkit-keyframes fn3 {
+  0% {
+    opacity: 0;
+    transform: matrix(1, 0.1, 0, 1, 0, 20);
+  }
+  100% {
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+}
+@keyframes fn3 {
+  0% {
+    opacity: 0;
+    transform: matrix(1, 0.1, 0, 1, 0, 20);
+  }
+  100% {
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+}
+@-webkit-keyframes scaleInImg {
+  0% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes scaleInImg {
+  0% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
 @-webkit-keyframes scrollScale {
   0% {
     transform: scale(1.25, 1.25);
@@ -1234,6 +1274,18 @@
   to {
     bottom: 12px;
   }
+}
+.fn3 {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-animation: fn3 1.2s cubic-bezier(0.49, 0.54, 0.16, 1);
+  animation: fn3 1.2s cubic-bezier(0.49, 0.54, 0.16, 1);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.scaleInImg {
+  -webkit-animation-name: scaleInImg;
+  animation-name: scaleInImg;
 }
 .gsap-fadeInUp {
   opacity: 0;
