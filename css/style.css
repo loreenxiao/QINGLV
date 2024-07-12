@@ -1385,7 +1385,7 @@ button {
   -webkit-justify-content: center;
   justify-content: center;
   color: var(--black-999);
-  transition: all 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   padding: 0 0.56rem;
   height: 0.65rem;
   margin-right: 0.08rem;
@@ -1423,7 +1423,7 @@ button {
   animation: arrowMoveR 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.3s;
 }
 .index-p-more a:hover .title {
-  transition: all 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   transform: translateX(0.1rem);
   z-index: 1;
 }
@@ -1436,6 +1436,9 @@ button {
 }
 .index-p-more a:hover .iconlast {
   opacity: 0;
+  transform: translateX(-1rem);
+  z-index: -1;
+  transition: 0.5s ease-out;
 }
 @media (max-width: 1280px) {
   .index-p-more a:hover .title {
@@ -2989,6 +2992,15 @@ button {
   height: 16px;
   background-color: var(--black-ccc);
 }
+@media (max-width: 1580px) {
+  .footer-wrapper .footerlist .right-item .navlist {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
 @media (max-width:1400px) {
   .footer-wrapper .footerlist .right-item .nav-version-bottom {
     display: inline-block;
@@ -4087,6 +4099,29 @@ button {
     transform: translateX(0);
   }
 }
+@keyframes arrowMoveL {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(3px);
+  }
+  60% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 .pagerBox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4414,7 +4449,7 @@ button {
   overflow: hidden;
 }
 .index-screen1 .index-environment .info {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.8rem;
 }
 .index-screen1 .index-environment .info .index-p-title {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -4486,9 +4521,6 @@ button {
   margin-top: 0.64rem;
 }
 .index-screen1 .index-environment .info .index-p-more .title {
-  -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
-  -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   z-index: 2;
 }
 .index-screen1 .index-environment .info .index-p-more .icon {

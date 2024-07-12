@@ -1490,7 +1490,7 @@ button {
     display: flex;
     .title{.flex;.a_center;.j_center;
       color: var(--black-999);
-      transition: all .3s ease-in-out;
+      transition: .3s ease-in-out;
       padding: 0 .56rem;
       height: .65rem;
       margin-right: .08rem;
@@ -1498,7 +1498,6 @@ button {
       width: fit-content;
       cursor: pointer;
       z-index: 2;
-      // background-size: contain;
     }
     .icon{.flex;.a_center;.j_center;
       transition: all .5s ease-in-out;
@@ -1517,21 +1516,22 @@ button {
     }
     &:hover{
       .title{
-        transition: all .3s ease-in-out;
+        transition: .3s ease-in-out;
         transform: translateX(.1rem);
         z-index: 1;
       }
       .icon{
         transition: all .5s ease-in-out;
-        // transform: translateX(-1.82rem);
         z-index: 2;
       }
       .iconfirst{
         display: inline-block;
-        // transform: translateX(0);
       }
       .iconlast{
         opacity: 0;
+        transform: translateX(-1rem);
+        z-index: -1;
+        transition: .5s ease-out;
       }
 
     }
@@ -1569,10 +1569,6 @@ button {
 }
 
 /* 公共样式 - 结束 */
-
-
-
-
 // --------------------------------------------- 头部
 #header {
   position: fixed;
@@ -1582,17 +1578,6 @@ button {
   width: 100%;
   z-index: 99;
   margin: auto;
-
-  &.active,
-  &.header-white-bg,
-  &.header-bg {
-    .header-pc {
-      // background-color: var(--color-white);
-      .header-wrap {
-        // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-    }
-  }
 
   .header-pc {.dh;
     position: relative;
@@ -1619,7 +1604,6 @@ button {
       @media @max1366 {
         padding: 0 .4rem;
       }
-
       .logo {
         width: 140px;
         // height: var(--header-height);
@@ -2828,7 +2812,12 @@ button {
 
     }
   }
-
+  @media @max1580 {
+    .footerlist .right-item .navlist{
+      .j_justify;
+      gap: 0;
+    }
+  }
   @media @max1400 {
     .footerlist {
       .right-item {
@@ -3902,6 +3891,30 @@ button {
   }
 }
 
+@keyframes arrowMoveL {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(3px);
+  }
+  60% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 // --------------------------------------------- 分页
 .pagerBox {
 	.flex;
@@ -4137,10 +4150,6 @@ button {
 
 // --------------------------------------------- 公用结束
 
-
-
-
-// --------------------------------------------- 首页
 // --------------------------------------------- 首页-青绿环境 QINGLV
 
 .index-screen1{
@@ -4150,9 +4159,9 @@ button {
     z-index: 3;
     padding-bottom: 1.2rem;
     overflow: hidden;
-     
     .info{
-      margin-bottom: 1.2rem;
+      // margin-bottom: 1.2rem;
+      margin-bottom: 1.8rem;
       .index-p-title{.dh;}
       .global-title{margin-top: .4rem;.dh;
         .swipertitle{.flex;.a_center; font-size: var(--font64); font-weight: 700;position: relative; z-index: 12;overflow: hidden;transition: color 1s ease-in-out;
@@ -4188,7 +4197,7 @@ button {
       .swiperinfo {overflow: hidden;}
       .swiper-pagination{display: none;}
       .index-p-more{margin-top: .64rem;
-        .title{.dh;
+        .title{
           z-index: 2;
         }
         .icon{.dh;
