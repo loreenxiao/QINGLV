@@ -439,6 +439,19 @@ button {
     transform: none;
   }
 }
+@keyframes fadeInLeftCubic {
+  from {
+    opacity: 0;
+    transform: translate3d(-50px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fadeInLeftCubic {
+  animation: fadeInLeftCubic 2s cubic-bezier(0.55, 0.055, 0.675, 0.19) both;
+}
 @keyframes bounce {
   0% {
     transform: translateY(0);
@@ -5704,6 +5717,9 @@ button {
   border-top: solid 1px var(--black-ccc);
 }
 .index-news .new-list .item .info {
+  -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 24.7%;
   max-width: 443px;
 }
@@ -5750,6 +5766,12 @@ button {
 }
 .index-news .new-list .item .image .active {
   animation: newsrotateRight 3s ;
+}
+.index-news .new-list .item:hover .info .title {
+  -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  color: var(--active-color);
 }
 .index-news .new-list .item:hover .news-more span {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
