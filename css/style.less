@@ -501,11 +501,11 @@ button {
 // 自定义弹跳效果
 @keyframes bounce {
   0% {transform: translateY(0);}
-  50% {transform: translateY(-50px);}
+  50% {transform: translateY(-30px);}
   100% {transform: translateY(0);}
 }
 .bounce {
-  animation: bounce 1s infinite cubic-bezier(0.25, 0.4, 0.4, 1);
+  animation: bounce 5s infinite cubic-bezier(0.25, 0.4, 0.4, 1);
 }
 
 
@@ -1490,7 +1490,7 @@ button {
     display: flex;
     .title{.flex;.a_center;.j_center;
       color: var(--black-999);
-      transition: all .5s ease-in-out;
+      transition: all .3s ease-in-out;
       padding: 0 .56rem;
       height: .65rem;
       margin-right: .08rem;
@@ -1511,17 +1511,29 @@ button {
       z-index: 1;
       span{display: block;}
     }
+    .iconfirst{
+      display: none;
+      animation: arrowMoveR 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.3s;
+    }
     &:hover{
       .title{
-        transition: all .5s ease-in-out;
-        transform: translateX(.73rem);
+        transition: all .3s ease-in-out;
+        transform: translateX(.1rem);
         z-index: 1;
       }
       .icon{
         transition: all .5s ease-in-out;
-        transform: translateX(-1.82rem);
+        // transform: translateX(-1.82rem);
         z-index: 2;
       }
+      .iconfirst{
+        display: inline-block;
+        // transform: translateX(0);
+      }
+      .iconlast{
+        opacity: 0;
+      }
+
     }
   }
   @media (max-width:1280px) {
@@ -2732,7 +2744,7 @@ button {
     .right-item{
       width: 57.76%;
       .navlist{
-        .flex;.a_start; .j_around;
+        .flex;.a_start; .j_start;gap: 2rem;
         .item{
           .title{font-size: var(--font20); color: var(--black-000);}
           ul{
@@ -3865,8 +3877,30 @@ button {
 	-webkit-animation-name: TopBtn;
 	animation-name: TopBtn
 }
-
-
+// 按钮左右敲击
+@keyframes arrowMoveR {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(3px);
+  }
+  60% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 
 // --------------------------------------------- 分页
 .pagerBox {
@@ -4116,11 +4150,6 @@ button {
     z-index: 3;
     padding-bottom: 1.2rem;
     overflow: hidden;
-      // overflow: hidden;
-      // position: relative;
-      // background-repeat: no-repeat;
-      // background-image: url(../images/global-big.png);
-      // background-position: 115% 100%;
      
     .info{
       margin-bottom: 1.2rem;
@@ -4128,18 +4157,11 @@ button {
       .global-title{margin-top: .4rem;.dh;
         .swipertitle{.flex;.a_center; font-size: var(--font64); font-weight: 700;position: relative; z-index: 12;overflow: hidden;transition: color 1s ease-in-out;
           .namelists{display: inline-block;
-            // .item{.dh;
-            //   display: none;
-            //   &:first-child{
-            //     display: inline-block;
-            //   }
-            // }
             .active{
               .emm{font-size: var(--font64); font-weight: 700;
                 -webkit-animation: fadeIn .4s  1 forwards;
                 animation: fadeIn .4s  1 forwards;
               }
-           
             }
           }
           span{
@@ -4167,18 +4189,13 @@ button {
       .swiper-pagination{display: none;}
       .index-p-more{margin-top: .64rem;
         .title{.dh;
-          // background-image: url("../images/section1-one.png");
           z-index: 2;
-          
         }
         .icon{.dh;
           background-image: url("../images/more-icon-color.png");
           z-index: 1;
-          
         }
-  
       }
-  
     }
     .image{
       position: absolute;
