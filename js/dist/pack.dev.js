@@ -1400,7 +1400,14 @@ $(function () {
     }
   }
 
-  headInit(); //数字跳动
+  headInit(); // 窗口发生改变刷新页面
+
+  var windoWidth = $(window).width();
+  $(window).resize(function () {
+    if (Math.abs($(this).width() - windoWidth) > 20) {
+      window.location.href = "";
+    }
+  }); //数字跳动
 
   $('.jump-num').countUp({
     delay: 5,
@@ -1651,7 +1658,7 @@ $(function () {
         delay: 5000,
         disableOnInteraction: false
       },
-      speed: 1000,
+      // speed:1000,
       slidesPerView: 3.3,
       spaceBetween: 22,
       preventLinksPropagation: false,

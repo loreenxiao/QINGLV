@@ -4402,6 +4402,7 @@ button {
   position: relative;
   z-index: 12;
   overflow: hidden;
+  transition: color 1s ease-in-out;
 }
 .index-screen1 .index-environment .info .global-title .swipertitle .namelists {
   display: inline-block;
@@ -4554,16 +4555,12 @@ button {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)) !important;
 }
 .activewhite .index-environment .info .global-title .swipertitle {
-  -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
-  -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   color: #fff;
+  transition: color 1s ease-in-out;
 }
 .activewhite .index-environment .info .global-title .swipertitle span {
-  -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
-  -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   color: #fff;
+  transition: color 1s ease-in-out;
 }
 .activewhite .index-environment .info .global-title .min-title {
   color: #fff;
@@ -4866,6 +4863,9 @@ button {
   width: 10px;
   opacity: 0;
   margin-right: 0.14rem;
+  transform: translateX(-10px) rotate(-50deg);
+  position: absolute;
+  left: -34px;
 }
 .index-solution .idx_solve .swiper_box .topbox .swiper_list .item_box .item:hover {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -4878,7 +4878,8 @@ button {
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   opacity: 1;
-  transform: translateX(-10px);
+  transform: translateX(0px);
+  left: -24px;
 }
 .index-solution .idx_solve .swiper_box .topbox .swiper_list .item_box .active {
   color: var(--black-000);
@@ -4888,7 +4889,8 @@ button {
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   opacity: 1;
-  transform: translateX(-10px);
+  transform: translateX(0px);
+  left: -24px;
 }
 .index-solution .idx_solve .swiper_box ul li {
   pointer-events: none;
@@ -5280,10 +5282,13 @@ button {
 }
 .index-case .idx_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide.swiper-slide-active {
   pointer-events: inherit;
-  z-index: 2;
+}
+.index-case .idx_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide.swiper-slide-active .centerInfo {
+  display: block;
 }
 .index-case .idx_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo {
   padding: 0.48rem 0.64rem;
+  display: none;
 }
 .index-case .idx_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .title p {
   font-size: var(--font24);
