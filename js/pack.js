@@ -1314,7 +1314,31 @@ $(function () {
     }
     visualData($(".num-move"));
 
-
+    // 文字过渡动画
+	function aniText() {
+		var PC = $(window).width() > 1200,
+			mobile = $(window).width() <= 1200,
+			winWidth = $(window).width(),
+			winHeight = $(window).height();
+		if (mobile) { }
+		if (PC) {
+			const textElements = gsap.utils.toArray('.ani-text-opacity');
+			textElements.forEach(text => {
+				gsap.to(text, {
+					backgroundSize: '100%',
+					ease: 'none',
+					scrollTrigger: {
+						trigger: text,
+						start: 'center 80%',
+						end: 'center 50%',
+						scrub: true,
+						// markers: {startColor: "red", endColor: "red", fontSize: "18px", fontWeight: "bold", indent: 20},
+					},
+				});
+			});
+		}
+	}
+	aniText();
    
     // 首页-banner--背景轮播
     function indexBgSlide() {

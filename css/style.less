@@ -1478,7 +1478,7 @@ button {
   width: fit-content;
   border-radius: 60px;
   // padding: 0.085rem 0.485rem;
-  padding: 0.085rem 0;
+  padding: 0.0725rem 0;
   text-indent: 20px;
   min-width: 1.61rem;
   color: var(--active-color);
@@ -1528,6 +1528,24 @@ button {
 
 }
 
+/* 动效文字 */
+.ani-text-opacity {
+  display: initial;
+  background: rgba(255, 255, 255, 0.3) -webkit-linear-gradient(to right, #fff, #fff) no-repeat;
+  background: rgba(255, 255, 255, 0.3) linear-gradient(to right, #fff, #fff) no-repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-size: 0 100%;
+  -webkit-transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+}
+@media (max-width:1200px) {
+  .ani-text-opacity {
+    background: transparent;
+    -webkit-text-fill-color: inherit;
+    -webkit-background-clip: initial;
+  }
+}
 
 /* 公共样式 - 结束 */
 
@@ -2729,6 +2747,7 @@ button {
                   transform: scaleX(0);
                 }
                 &:hover{
+                  .dh;.black6;
                   &:after{
                     transform-origin: 0 50%;
                     transform: scaleX(1);
@@ -4753,6 +4772,15 @@ button {
     }
 
   }
+  .swiper-slide {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .swiper-slide-active {
+    opacity: 1;
+  }
+
   @media @max1280 {
     margin-top: .5rem;
     .idx_solve .center_box .right{
@@ -5065,7 +5093,7 @@ button {
       }
       .info{.dh;width: 24.7%; max-width: 443px;
         .num{font-size: var(--font18); color: var(--black-999);  }
-        .title{font-size: var(--font24); color: var(--black-000);margin-top: 1.43rem}
+        .title{.dh; font-size: var(--font24); color: var(--black-000);margin-top: 1.43rem}
         .sec-title{color: var(--black-666);margin-top: 0.16rem}
         .news-more{
           color: var(--black-999);
@@ -5197,8 +5225,8 @@ button {
     color: var(--white-color);
     padding: 1.36rem 0;
     align-content: center;
-    .sec-title{margin-top: .32rem;font-weight: 700;}
-    .third-title{margin-top: .12rem; font-size: var(--font48);}
+    .sec-title{margin-top: .12rem;}
+    .third-title{margin-top: .32rem;font-weight: 700; font-size: var(--font48);}
     .index-more{margin-top: .64rem;}
     .index-p-more{
       margin-top: .64rem;

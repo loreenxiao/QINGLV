@@ -1351,7 +1351,7 @@ button {
   background-image: linear-gradient(to right, rgba(37, 187, 15, 0.1), rgba(37, 187, 15, 0));
   width: fit-content;
   border-radius: 60px;
-  padding: 0.085rem 0;
+  padding: 0.0725rem 0;
   text-indent: 20px;
   min-width: 1.61rem;
   color: var(--active-color);
@@ -1427,6 +1427,24 @@ button {
   transition: all 0.5s ease-in-out;
   transform: translateX(-1.82rem);
   z-index: 2;
+}
+/* 动效文字 */
+.ani-text-opacity {
+  display: initial;
+  background: rgba(255, 255, 255, 0.3) -webkit-linear-gradient(to right, #fff, #fff) no-repeat;
+  background: rgba(255, 255, 255, 0.3) linear-gradient(to right, #fff, #fff) no-repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-size: 0 100%;
+  -webkit-transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+}
+@media (max-width: 1200px) {
+  .ani-text-opacity {
+    background: transparent;
+    -webkit-text-fill-color: inherit;
+    -webkit-background-clip: initial;
+  }
 }
 /* 公共样式 - 结束 */
 #header {
@@ -2833,6 +2851,12 @@ button {
   transition: transform 0.4s ease, background-color 0.4s ease;
   transform-origin: 100% 50%;
   transform: scaleX(0);
+}
+.footer-wrapper .footerlist .right-item .navlist .item ul li a:hover {
+  -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  color: var(--black-666);
 }
 .footer-wrapper .footerlist .right-item .navlist .item ul li a:hover:after {
   transform-origin: 0 50%;
@@ -5318,6 +5342,13 @@ button {
   color: var(--black-666);
   font-weight: 300;
 }
+.index-case .swiper-slide {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.index-case .swiper-slide-active {
+  opacity: 1;
+}
 @media (max-width:1280px) {
   .index-case {
     margin-top: 0.5rem;
@@ -5726,6 +5757,9 @@ button {
   color: var(--black-999);
 }
 .index-news .new-list .item .info .title {
+  -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   font-size: var(--font24);
   color: var(--black-000);
   margin-top: 1.43rem;
@@ -5859,11 +5893,11 @@ button {
   align-content: center;
 }
 .index-business-consulting .content .sec-title {
-  margin-top: 0.32rem;
-  font-weight: 700;
+  margin-top: 0.12rem;
 }
 .index-business-consulting .content .third-title {
-  margin-top: 0.12rem;
+  margin-top: 0.32rem;
+  font-weight: 700;
   font-size: var(--font48);
 }
 .index-business-consulting .content .index-more {
