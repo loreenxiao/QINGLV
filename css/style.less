@@ -1524,13 +1524,22 @@ button {
       }
     }
   }
-  
+  @media (max-width:1280px) {
+    a:hover {
+      .title{
+        transform: translateX(0.5rem);
+      }
+      .icon{
+        transform: translateX(-2.5rem);
+      }
+    }
+  }
 
 }
 
 /* 动效文字 */
 .ani-text-opacity {
-  display: initial;
+  // display: initial;
   background: rgba(255, 255, 255, 0.3) -webkit-linear-gradient(to right, #fff, #fff) no-repeat;
   background: rgba(255, 255, 255, 0.3) linear-gradient(to right, #fff, #fff) no-repeat;
   -webkit-text-fill-color: transparent;
@@ -1998,7 +2007,7 @@ button {
             content: '';
             left: 0;
             width: 0;
-            height: 24px;
+            height: .24rem;
             bottom: -5px;
             background-image: linear-gradient(to bottom, #29BD14, #fff);
           }
@@ -2015,7 +2024,7 @@ button {
             content: '';
             left: 0;
             width: 100%;
-            height: 24px;
+            height: .24rem;
             bottom: -5px;
             background-image: linear-gradient(to bottom, #29BD14, #fff);
             
@@ -4204,6 +4213,7 @@ button {
   
     }
     @media @max480 {
+      padding-bottom: 0;
       margin-top: 2.2rem;
       .info {
         margin-bottom: 1rem;
@@ -4254,6 +4264,9 @@ button {
     right: -9%;
     top: 2.4rem;
     z-index: 0;
+    @media @max480 {
+      top: 4.5rem;
+    }
   }
 }
 .activewhite{
@@ -4295,8 +4308,6 @@ button {
 
 // --------------------------------------------- 首页-青绿环境 banner
 .index-environment-banner{position: relative;
-           
-  
   .bannerbox{
     .info{
       padding: 2.4rem 0 3.59rem 0;
@@ -4440,7 +4451,13 @@ button {
 
     }
   }
-  
+  @media @max1280 {
+    .scrollbar{
+      bottom: 14%;
+    }
+    
+  }
+
   @media @max990 {
     .scrollbar{display: none;}
     .bannerbox .info{
@@ -4572,8 +4589,12 @@ button {
       }
       .swiper-pagination{
         position: absolute;
-        left: 60%;
         bottom: 9%;
+        width: 67%;
+        left: 33%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
       }
       
     }
@@ -4636,17 +4657,17 @@ button {
 
       }
     }
-    .swiper_box { width: 100%; height: auto;
-      ul li { pointer-events: none; position: relative; z-index: 1;
-        &.swiper-slide-active { pointer-events: inherit; z-index: 2; }
-      }
-    }
+    // .swiper_box { width: 100%; height: auto;
+    //   ul li { pointer-events: none; position: relative; z-index: 1;
+    //     &.swiper-slide-active { pointer-events: inherit; z-index: 2; }
+    //   }
+    // }
     .center_box { width: 100%; height: 100%; position: relative; .flex; .j_justify; 
       .left { width: 100%; height: 100%;  position: absolute; z-index: 2;
         .swiper_img { width: 100%; height: 100%; overflow: hidden;
           .swiper-wrapper .swiper-slide { width: 0; pointer-events: none; position: relative; z-index: 1; height: 100% !important;
-            &.swiper-slide-active { pointer-events: inherit; z-index: 2;
-            }
+            // &.swiper-slide-active { pointer-events: inherit; z-index: 2;
+            // }
             .centerInfo { width: 100%; height: 100%;font-size: 0px; 
               overflow: hidden;
               img { width: 100%; height: 100%; object-fit: cover; }
@@ -4689,10 +4710,16 @@ button {
                 filter: brightness(0) invert(1);
                 margin-right: .24rem;
               }
+              &:hover{.dh;
+                color: var(--white-color);
+                img{.dh;
+                  display: inline-block;
+                }
+              }
             }
-            .active{
+            .active{.dh;
               color: #FFF;
-              img{
+              img{.dh;
                 display: inline-block;
               }
             }
@@ -4712,7 +4739,7 @@ button {
             min-width: 50px;
             min-height: 50px;
           }
-          .prebtn{.dh;
+          .prebtn{.dh; cursor: pointer;
             background: linear-gradient(to bottom right, rgb(255 255 255 / 0%), rgb(255 255 255 / 80%));
             img{.dh;
               filter: brightness(0) invert(1);
@@ -4724,7 +4751,7 @@ button {
               }
             }
           }
-          .nextbtn{
+          .nextbtn{cursor: pointer;
             background: linear-gradient(to bottom right, rgb(255 255 255 / 0%), rgb(255 255 255 / 80%));
             
             img{.dh;
@@ -4787,14 +4814,14 @@ button {
     }
 
   }
-  .swiper-slide {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
+  // .swiper-slide {
+  //   opacity: 0;
+  //   transition: opacity 0.5s ease;
+  // }
   
-  .swiper-slide-active {
-    opacity: 1;
-  }
+  // .swiper-slide-active {
+  //   opacity: 1;
+  // }
 
   @media @max1280 {
     margin-top: .5rem;

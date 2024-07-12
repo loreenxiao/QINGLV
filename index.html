@@ -740,7 +740,7 @@
                                 <a href="">
                                     <span class="title ">更多动态</span>
                                     <span class="icon">
-                                        <img src="./images/icon-more.png" alt="">
+                                        <!-- <img src="./images/icon-more.png" alt=""> -->
                                     </span>
                                 </a>
 
@@ -858,10 +858,6 @@
             });
 
 
-
-
-
-
             // 7.关于青绿固定并调低透明度
             ScrollTrigger.create({
                 trigger: '.index-about',
@@ -880,8 +876,9 @@
             // 6.关于青绿
             // 鼠标滚动时候地图展示完整
             gsap.to(".index-about .image", {
-                y: -400,
-                duration: 1,
+                y: -400,// Y轴最终位置的偏移量，正值向下移动，负值向上移动
+                duration: 2,// 动画持续的时间，单位是秒
+                ease: 'power2.inOut', 
                 scrollTrigger: {
                     trigger: ".index-about .image",
                     scrub: 1,
@@ -1107,31 +1104,6 @@
                     mySwiper.slideToLoop(0, 0);
                 }
             });
-
-
-
-
-
-
-            // window.onscroll = function () {
-            // // 超过首屏球体高度隐藏
-            // let infoBoxHeight = $(".index-screen1 .index-environment .info").height()
-            // if (window.scrollY > infoBoxHeight) { // 当滚动超过100px时
-            //     $(".index-environment").parent().addClass("activewhite");
-            //     $(".index-enviroment-circle").css("display", "none");
-            //     // 背景图移入到文字区域才让文字轮播--关联背景切换事件
-            //     $(".index-environment .info .swiper-pagination-bullet").eq(0).click();
-
-            // } else {
-            //     $(".index-environment").parent().removeClass("activewhite");
-            //     $(".index-enviroment-circle").css("display", "block");
-
-            // }
-
-            // };
-
-
-
 
         }, "400");
 
