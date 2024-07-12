@@ -176,6 +176,7 @@ audio, canvas, progress, video {
 @font-face {font-family: 'HarmonyOS'; src: url('../fonts/HarmonyOS_Sans_Regular.ttf'); font-weight: normal;}
 @font-face {font-family: 'HarmonyOS'; src: url('../fonts/HarmonyOS_Sans_Medium.ttf'); font-weight: 500;}
 @font-face {font-family: 'HarmonyOS'; src: url('../fonts/HarmonyOS_Sans_Bold.ttf'); font-weight: 700;}
+@font-face {font-family: 'HarmonyOS-TC'; src: url('../fonts/HarmonyOS_Sans_TC_Bold.ttf'); font-weight: 700;}
 
 
 
@@ -4017,8 +4018,9 @@ button {
   .one{
     font-weight: 700;
     color: var(--black-000);
+    font-family: 'HarmonyOS-TC';
   }
-  .two{color: var(--black-999);}
+  .two{color: var(--black-999); font-family: 'HarmonyOS-TC';}
   @media @max768 {
     .one,.two{
      
@@ -4160,11 +4162,10 @@ button {
     padding-bottom: 1.2rem;
     overflow: hidden;
     .info{
-      // margin-bottom: 1.2rem;
       margin-bottom: 1.8rem;
       .index-p-title{.dh;}
       .global-title{margin-top: .4rem;.dh;
-        .swipertitle{.flex;.a_center; font-size: var(--font64); font-weight: 700;position: relative; z-index: 12;overflow: hidden;transition: color 1s ease-in-out;
+        .swipertitle{.flex;.a_center;font-family: 'HarmonyOS-TC'; font-size: var(--font64); font-weight: 700;position: relative; z-index: 12;overflow: hidden;transition: color 1s ease-in-out;
           .namelists{display: inline-block;
             .active{
               .emm{font-size: var(--font64); font-weight: 700;
@@ -4174,7 +4175,7 @@ button {
             }
           }
           span{
-             font-size: var(--font64);font-weight: 700;
+             font-size: var(--font64);font-weight: 700;font-family: 'HarmonyOS-TC';
             .emm{font-size: var(--font64);font-weight: 700;}
           }
           .item  + .item  {
@@ -4288,7 +4289,7 @@ button {
     position: fixed;
     width: 45%;
     right: -9%;
-    top: 2.4rem;
+    top: 2.7rem;
     z-index: 0;
     @media @max480 {
       top: 4.5rem;
@@ -4525,6 +4526,7 @@ button {
             p{font-size: var(--font48);
               font-weight: 700;
               line-height: 1.2;
+              font-family: 'HarmonyOS-TC'
             }
           }
         }
@@ -4683,11 +4685,6 @@ button {
 
       }
     }
-    // .swiper_box { width: 100%; height: auto;
-    //   ul li { pointer-events: none; position: relative; z-index: 1;
-    //     &.swiper-slide-active { pointer-events: inherit; z-index: 2; }
-    //   }
-    // }
     .center_box { width: 100%; height: 100%; position: relative; .flex; .j_justify; 
       .left { width: 100%; height: 100%;  position: absolute; z-index: 2;
         .swiper_img { width: 100%; height: 100%; overflow: hidden;
@@ -4707,9 +4704,11 @@ button {
           p{ font-size: var(--font48);font-weight: 700;line-height: 1.2;}
           .title1{
             color: #ffffff;
+            font-family: 'HarmonyOS-TC'
           }
           .title2{
             color: #BBBBBB;
+            font-family: 'HarmonyOS-TC'
           }
 
         }
@@ -4932,7 +4931,7 @@ button {
     .leftbox{
       .sec-title{
          margin-top: .41rem;
-         p{
+         p{font-family: 'HarmonyOS-TC';
           font-size: var(--font48);font-weight: 700;line-height: 1.2;
          }
         .greytitle{color: var(--black-999);
@@ -5140,6 +5139,7 @@ button {
       .public-opacity-title {
         span{
           font-weight: 700;
+          font-family: 'HarmonyOS-TC';
         }
       }
       .index-p-more{
@@ -5294,7 +5294,7 @@ button {
     padding: 1.36rem 0;
     align-content: center;
     .sec-title{margin-top: .12rem;}
-    .third-title{margin-top: .32rem;font-weight: 700; font-size: var(--font48);}
+    .third-title{font-family: 'HarmonyOS-TC'; margin-top: .32rem;font-weight: 700; font-size: var(--font48);}
     .index-more{margin-top: .64rem;}
     .index-p-more{
       margin-top: .64rem;
