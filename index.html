@@ -833,7 +833,9 @@
             ScrollTrigger.create({
                 trigger: '.index-environment-banner',
                 start: 'top top',
-                end: "100px", // 锁定滚动在距离顶部100px的位置
+                end: "0px", // 锁定滚动在距离顶部100px的位置
+                // end: "100px", // 锁定滚动在距离顶部100px的位置
+                // end: "+=" + height, //动画结束的位置。这里的height应该是trigger元素的高度。"+="表示从start的位置基础上增加trigger元素的高度作为结束位置。这意味着动画将在trigger元素完全滑出视口之前结束
                 pin: true, // 锁定滚动
                 pinSpacing: false, // 不设置间距
                 scrub: 1, // 平滑滚动效果

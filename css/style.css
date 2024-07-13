@@ -6401,6 +6401,14 @@ button {
     padding-left: 20px;
   }
 }
+@media (max-width:480px) {
+  .solution-wrap .solutionlist .innerbox .image .pb {
+    padding-bottom: 100%;
+  }
+  .solution-wrap .solutionlist .innerbox .content .more {
+    width: 80px;
+  }
+}
 .chooseQINGLV {
   margin-top: 1.6rem;
   padding-bottom: 0.8rem;
