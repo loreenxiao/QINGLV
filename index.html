@@ -985,9 +985,10 @@
                 }
             });
             hoverBox.on("mousemove", function (e) {
-                let xNum = 30 - (e.clientX / winW) * 160, yNum = 30 - (e.clientY / winH) * 60;
+                let xNum = 30 - (e.clientX / winW) * 100, yNum = 30 - (e.clientY / winH) * 60;
                 gsap.to(menuBox, { right: xNum, bottom: yNum, autoAlpha: 1 })
             });
+
         });
 
     </script>

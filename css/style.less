@@ -1495,7 +1495,7 @@ button {
       padding: 0 .56rem;
       height: .65rem;
       margin-right: .08rem;
-      background: linear-gradient(to right, rgb(221 221 221 / 10%), rgb(221 221 221 / 100%));
+      background: linear-gradient(to right, rgb(221 221 221 / 30%), rgb(221 221 221 / 100%));
       width: fit-content;
       cursor: pointer;
       z-index: 2;
@@ -1517,12 +1517,13 @@ button {
     }
     &:hover{
       .title{
-        transition: .3s ease-in-out;
+        // transition: .3s ease-in-out;
+        animation:  2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.3s;
         transform: translateX(.1rem);
         z-index: 1;
       }
       .icon{
-        transition: all .5s ease-in-out;
+        transition: all .3s ease-in-out;
         z-index: 2;
       }
       .iconfirst{
@@ -1530,9 +1531,10 @@ button {
       }
       .iconlast{
         opacity: 0;
-        transform: translateX(-1rem);
+        transform: translateX(-1.8rem);
         z-index: -1;
-        transition: .5s ease-out;
+        // transition: .3s ease-out;
+        animation:  2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.3s;
       }
 
     }
@@ -2675,7 +2677,7 @@ button {
   color: var(--black-999);
   .footerlist{
     .flex;.j_justify;
-    padding: 1.37rem 0rem;
+    padding: 1.37rem 0rem 1.1rem 0;
     .left-item{
       width: 42.24%;
       .logo{
@@ -2684,7 +2686,7 @@ button {
       .f-phone{
         margin-top: .72rem;
         .title{}
-        .num{font-size: var(--font32); color: var(--black-000);}
+        .num{font-size: var(--font32); color: var(--black-000); font-weight: 700;}
       }
       .f-email{
         margin-top: .04rem;
@@ -2699,7 +2701,7 @@ button {
         float: right;
         padding-right: 64px;
         writing-mode: tb;
-        bottom: 170px;
+        bottom: 2.4rem;
         left: 64px;
         cursor: pointer;
       &:before{
@@ -2978,6 +2980,11 @@ button {
           .right{a{font-size: var(--font14);}}
         }
       }
+    }
+  }
+  @media @max360 {
+    .footerlist .left-item .logo {
+      width: 50%;
     }
   }
 }
@@ -4081,6 +4088,9 @@ button {
     &:before{ opacity: 1 !important;}
 
   }
+  @media @max480 {
+    padding-left: 0;
+  }
 }
 
 
@@ -4530,7 +4540,7 @@ button {
             }
           }
         }
-        .swiper_list{ margin-top: 68px;
+        .swiper_list{ margin-top: .68rem;
           .item_box{
             display: grid;grid-template-columns: repeat(2,1fr); column-gap: 1.38rem;
             .item{.dh; .flex; .a_center; cursor: pointer;
@@ -4641,6 +4651,7 @@ button {
         width: 100%;
         .global-title p{
           font-size: var(--font28);
+          line-height: inherit;
         }
       }
     }
@@ -4673,6 +4684,25 @@ button {
     }
 
 
+  }
+  @media @max480 {
+    .idx_solve {
+      .swiper_box .topbox .swiper_list{
+        margin-top: 0.3rem;
+        .item_box{
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+      .center_box {
+        .right img{
+          min-height: 300px;
+        }
+        .swiper-pagination{
+          bottom: 0.8rem;
+          left: 0;
+        }
+      }
+    }
   }
 }
 
@@ -4997,7 +5027,7 @@ button {
     padding: 1rem 0;
     .top-info {display: inline-block;width: 100%;
       .leftbox .sec-title p {
-        font-size: 0.24rem;
+        
       }
       .rightbox{
         margin-top: .3rem;
@@ -5032,7 +5062,6 @@ button {
   position: relative;
   // padding: 1.6rem 0;
   padding: 1.6rem 0 2.6rem 0;
-
   background-color: rgb(230 230 230 / 20%);
   // height: 948px;
   overflow: hidden;
@@ -5119,7 +5148,15 @@ button {
     }
   }
   @media @max480 {
-
+    .info .right-box .itemrow{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 0.3rem;
+      row-gap: 0;
+      .item{
+        padding: 0.3rem 0;
+      }
+    }
   }
 }
 // --------------------------------------------- 首页-新闻动态
@@ -5495,15 +5532,25 @@ button {
 
   }
   @media @max768{
+    padding: 1rem 0;
     .list3,.list4{
       display: grid;
       grid-template-columns: repeat(2,1fr);
     }
   }
   @media @max640{
-    .list3,.list4{
+    padding: 0.8rem 0;
+    .list2,.list3,.list4{
       display: grid;
       grid-template-columns: repeat(1,1fr);
+    }
+  }
+  @media @max480{
+    .public-title{
+      padding-left: 16px;
+    }
+    .itemlist .item .image{
+      margin-top: 0.8rem;
     }
   }
 }
@@ -5515,15 +5562,23 @@ button {
     background-repeat: no-repeat;
     padding-top: .96rem;
     padding-left: .8rem;
-  .itemlist {
-    .item{
-      background-color: inherit;
-      .image{
-        margin-top: .88rem;
+    .itemlist {
+      .item{
+        background-color: inherit;
+        .image{
+          margin-top: .88rem;
+        }
       }
     }
   }
- }
+  @media @max768{
+    .innerbox{
+      padding: 0.48rem 0.56rem;
+      .itemlist .item{
+        padding: 0;
+      }
+    }
+  }
   
 }
 
@@ -5797,6 +5852,22 @@ button {
       grid-template-columns: repeat(1, 1fr);
     }
   }
+  @media @max768{
+    .itemlist .item{
+      justify-content: space-between;
+      .leftwrap .title{
+        margin-top: 1rem;
+      }
+    }
+  }
+  @media @max480{
+    .itemlist .item{
+      padding: 0.35rem;
+      .leftwrap .title{
+        margin-top: 0.5rem;
+      }
+    }
+  }
 }
 // --------------------------------------------- 青绿关于我们--发展历程
 .develoment-wrap{position: relative; margin-top: 1.28rem;
@@ -5832,7 +5903,7 @@ button {
         .year{font-size: var(--font96); font-weight: 700;line-height: 1;}
         .introduce{margin-top:.16rem ;
           p{
-            .font24;
+            font-size: var(--font24);
           }
         }
 
@@ -5852,8 +5923,36 @@ button {
     }
     &.active { --dashsf: 0; }
   }
-  
+  @media @max1280{
+    .info .rightwrap .scrollcontent .year{
+      font-size: var(--font60);
+    }
+  }
+  @media @max1200{
+    .info .rightwrap{
+      margin-top: 1.6rem;
+    }
 
+  }
+  @media @max990{
+    .info .rightwrap{
+      margin-top: 1rem;
+    }
+
+  }
+  @media @max768{
+   
+    .info {
+      padding: 0.7rem 1rem;
+      .rightwrap{
+        margin-top: 0.5rem;
+      }
+    }
+    .riverbg{
+      margin-left: 0;
+    }
+
+  }
 }
 
 
@@ -5894,15 +5993,9 @@ button {
   overflow: hidden;
   .inenrbox{.flex; .j_justify;
     .leftwrap{
-      width: 23.65%;
+      // width: 23.65%;
       max-width: 300px;
-      .info{
-        
-      }
-      .image{
-        
-      }
-      
+      z-index: 2;
       .info{margin-top: 2.57rem; .black3;}
       .index-p-more{margin-top:.4rem;
         .icon{
@@ -5912,6 +6005,7 @@ button {
     }
     .rightwrap{
       width: 76.35%;
+      
     }
 
   }
@@ -5923,6 +6017,18 @@ button {
     
   }
   @media @max768 {
+    padding: 1.8rem 0;
+    .inenrbox {
+      .leftwrap .info{
+        margin-top: 1rem;
+      }
+      .rightwrap{
+        width: 65%;
+        position: absolute;
+        top: 1rem;
+        left: 35%;
+      }
+    }
     
   }
   @media @max480 {

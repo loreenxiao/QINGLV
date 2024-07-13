@@ -1697,12 +1697,18 @@ $(function () {
       direction: "vertical",
       spaceBetween: 10,
       slidesPerView: 1.5,
-      speed: 1000 // autoplay:true,
-      // autoplay: {
-      //     delay: 0,//自动播放间隔
-      //     disableOnInteraction: false,//用户操作后是否停止自动播放
-      // },
-
+      speed: 1000,
+      breakpoints: {
+        768: {
+          slidesPerView: 1
+        },
+        990: {
+          slidesPerView: 1.8
+        },
+        1280: {
+          slidesPerView: 2
+        }
+      }
     });
     $(".develoment-wrap .info .rightwrap .yeartab li").click(function () {
       $(this).addClass("active").siblings().removeClass("active");
@@ -1720,7 +1726,7 @@ $(function () {
     if (box.length) {
       ScrollTrigger.create({
         trigger: box,
-        start: "top top",
+        start: "top 300px",
         end: "+=" + height,
         scrub: true,
         onUpdate: function onUpdate(self) {

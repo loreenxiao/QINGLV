@@ -1538,11 +1538,18 @@ $(function () {
             spaceBetween: 10,
             slidesPerView: 1.5,
             speed: 1000,
-            // autoplay:true,
-            // autoplay: {
-            //     delay: 0,//自动播放间隔
-            //     disableOnInteraction: false,//用户操作后是否停止自动播放
-            // },
+            breakpoints: {
+               
+                768: {
+                    slidesPerView: 1,
+                },
+                990: {
+                    slidesPerView: 1.8,
+                },
+                1280: {
+                    slidesPerView: 2,
+                },
+            },
             
         })
         $(".develoment-wrap .info .rightwrap .yeartab li").click(function () {
@@ -1559,7 +1566,7 @@ $(function () {
         var height = window.innerHeight + window.innerHeight / 5;
         if (box.length) {
             ScrollTrigger.create({
-                trigger: box, start: "top top", end: "+=" + height, scrub: true,
+                trigger: box, start: "top 300px", end: "+=" + height, scrub: true,
                 onUpdate: self => {
                     var idx = self.progress; 
                     if (idx > 0) { $(".develoment-wrap .svg_box").addClass("active"); } 
