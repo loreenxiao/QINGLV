@@ -4677,6 +4677,9 @@ button {
 .index-environment-banner {
   position: relative;
 }
+.index-environment-banner .bannerbox {
+  overflow: hidden;
+}
 .index-environment-banner .bannerbox .info {
   padding: 2.4rem 0 3.59rem 0;
   color: #fff;
