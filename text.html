@@ -39,24 +39,14 @@
       <div class="WYBox">
         <div class="" style="height: 80vh;" ></div>
         <div class="item_box" style="padding-top: 20vh;">
-          <div class="item s-animate" style="--color: rgb(9, 255, 0);min-height: 50vh; font-size: 20px;  " >为全球 客户创造低成本</div>
-          <div class="item s-animate" style="--color: red; min-height: 50vh; font-size: 20px;" >为全球 客户创造低成本</div>
-          <div class="item s-animate" style="--color: rgb(94, 255, 0); min-height: 50vh; font-size: 20px;" >为全球 客户创造低成本</div>
-          <div class="item s-animate" style="--color: rgb(0, 247, 255); min-height: 50vh; font-size: 20px;" >为全球 客户创造低成本</div>
-          <div class="item s-animate" style="--color: rgb(25, 0, 255); min-height: 50vh; font-size: 20px;" >为全球 客户创造低成本</div>
-          <div class="item s-animate" style="--color: rgb(247, 0, 255); min-height: 50vh; font-size: 20px;" >为全球 客户创造低成本</div>
-          <div class="item s-animate" style="--color: rgb(9, 255, 0);min-height: 50vh; font-size: 20px;  " >为全球 客户创造低成本</div>
-          <div class="item s-animate" style="--color: red; min-height: 50vh; font-size: 20px;" >为全球 客户创造低成本</div>
-          <div class="item s-animate" style="--color: rgb(94, 255, 0); min-height: 50vh; font-size: 20px;" >为全球 客户创造低成本</div>
-          <div class="item s-animate" style="--color: rgb(0, 247, 255); min-height: 50vh; font-size: 20px;" >为全球 客户创造低成本</div>
-          <div class="item s-animate" style="--color: rgb(25, 0, 255); min-height: 50vh; font-size: 20px;" >为全球 客户创造低成本</div>
-          <div class="item s-animate1" style="--color: rgb(247, 0, 255); min-height: 50vh; font-size: 20px;" >为全球 客户创造低成本</div>
-          <div class="item s-animate1" style="--color: rgb(9, 255, 0);min-height: 50vh; font-size: 20px;  " >为全球 客户创造低成本</div>
-          <div class="item s-animate1" style="--color: red; min-height: 50vh; font-size: 20px;" >为全球 客户创造低成本</div>
-          <div class="item s-animate1" style="--color: rgb(94, 255, 0); min-height: 50vh; font-size: 20px;" >为全球 客户创造低成本</div>
-          <div class="item s-animate1" style="--color: rgb(0, 247, 255); min-height: 50vh; font-size: 20px;" >为全球 客户创造低成本</div>
-          <div class="item s-animate1" style="--color: rgb(25, 0, 255); min-height: 50vh; font-size: 20px;" >为全球 客户创造低成本</div>
-          <div class="item s-animate1" style="--color: rgb(247, 0, 255); min-height: 50vh; font-size: 20px;" >为全球 客户创造低成本</div>
+          <div class="svgBox2">
+              <div class="item svgBox3" style="background-color: #ff9b9b;" data-time="000">判断元素出现在可视窗口的时候添加clsss</div>
+              <div class="item svgBox3" style="background-color: #ffe89c;" data-time="100">需要出现在窗口的类名</div>
+              <div class="item svgBox3" style="background-color: #e0ff8c;" data-time="200">需要再窗口出现位置</div>
+              <div class="item svgBox3" style="background-color: #9bffb0;" data-time="300">判断元素出现在可视窗口的时候添加clsss</div>
+              <div class="item svgBox3" style="background-color: #adcaff;" data-time="400">需要出现在窗口的类名</div>
+              <div class="item svgBox3" style="background-color: #daadff;" data-time="500">需要再窗口出现位置</div>
+          </div>
         </div>
       </div>
     </main>
@@ -89,11 +79,12 @@ function wowFun(a,b,c) {
 	if(c > 1 || c < 0 || c == 0) { c = 1 }
 	if (box != "" || box != null) {
 		box.each(function () {
-			var  _this = $(this), topNum = _this.offset().top, scrollTop = $(window).scrollTop() + (wH * c);
-			if (scrollTop > topNum) { _this.addClass(b); } else { _this.removeClass(b); }
+			var  _this = $(this), topNum = _this.offset().top, scrollTop = $(window).scrollTop() + (wH * c), d = _this.attr("data-time");
+			if(d == null || d == "undefined" || d == 0 ){ d = 0; }
+			if (scrollTop > topNum) { setTimeout(function(){  _this.addClass(b); }, d)} else { _this.removeClass(b); }
 			$(window).scroll(function () {
 				topNum = _this.offset().top, scrollTop = $(window).scrollTop() + (wH * c), scrollTop_wH = $(window).scrollTop() + wH;
-				if (scrollTop > topNum) { _this.addClass(b); } else if(scrollTop_wH < topNum || scrollTop_wH == topNum ) {  _this.removeClass(b); }
+				if (scrollTop > topNum) { setTimeout(function(){ _this.addClass(b);}, d) } else if(scrollTop_wH < topNum || scrollTop_wH == topNum ) {  _this.removeClass(b); }
 			});
 		})
 	}
@@ -106,6 +97,7 @@ $(function () {
 
     wowFun(".s-animate","active",1);
     wowFun(".s-animate1","active",1);
+    wowFun(".svgBox3","slideInRight",1);
 
   // function wowFun() {
   //   var box = $(".s-animate");
