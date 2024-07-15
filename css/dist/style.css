@@ -4835,6 +4835,9 @@ button {
     font-size: var(--font28);
   }
 }
+.index-environment-banner .banner_sp {
+  bottom: 4%;
+}
 .index-solution {
   padding: 1.8rem 0;
   background-image: url(../images/solution-global.png);

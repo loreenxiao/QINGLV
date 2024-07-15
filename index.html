@@ -849,7 +849,7 @@
                 trigger: '.index-about',
                 start: 'top top',
                 // end: headerHeight.offsetHeight, // 固定距离为当前元素高度
-                end: "1300px", // 固定距离为当前元素高度
+                end: "1350px", // 固定距离为当前元素高度
                 pin: true, // 固定
                 delay: 5,
                 pinSpacing: false, // 不设置间距
@@ -859,8 +859,7 @@
             });
 
 
-            // 6.关于青绿
-            // 鼠标滚动时候地图展示完整
+            // 6.关于青绿--鼠标滚动时候地图展示完整
             gsap.to(".index-about .image", {
                 y: -400,// Y轴最终位置的偏移量，正值向下移动，负值向上移动
                 duration: 2,// 动画持续的时间，单位是秒
@@ -873,44 +872,7 @@
 
 
 
-            // 7.新闻动态
-            // const t1 = gsap.timeline();
-            // t1.to(".index-news .image .img1", {
-            //     // width: '100%',
-            //     left: '120%',
-            //     duration: 0.01,
-            //     scrollTrigger: {
-            //         trigger: ".index-news .news-top",
-            //         scrub: 0,// 触发器1秒后跟上滚动条
-            //     },
-            // })
-            //     .to(".index-news .image .img2", {
-            //         // width: '100%',
-            //         left: '120%',
-            //         duration: 0.1,
-            //         scrollTrigger: {
-            //             trigger: ".index-news .image .img1",
-            //             scrub: 0,// 触发器1秒后跟上滚动条
-            //         },
-            //     }).to(".index-news .image .img3", {
-            //         // width: '100%',
-            //         left: '120%',
-            //         duration: 0.1,
-            //         scrollTrigger: {
-            //             trigger: ".index-news .image .img2",
-            //             scrub: 0,// 触发器1秒后跟上滚动条
-            //         },
-            //     });
-            // 8.业务咨询
-            // gsap.fromTo(".index-business-consulting", {
-            //     backgroundPositionY: `-${window.innerHeight / 1.5}px`
-            // }, { backgroundPositionY: `${window.innerHeight / 1.5}px`,
-            //     ease: 'none',
-            //     scrollTrigger: {
-            //         trigger: ".index-business-consulting",
-            //         scrub: true
-            //     }
-            // });
+          
 
 
         })
@@ -987,7 +949,7 @@
                 }
             });
             hoverBox.on("mousemove", function (e) {
-                let xNum = 30 - (e.clientX / winW) * 100, yNum = 30 - (e.clientY / winH) * 60;
+                let xNum = 30 - (e.clientX / winW) * 50, yNum = 30 - (e.clientY / winH) * 60;
                 gsap.to(menuBox, { right: xNum, bottom: yNum, autoAlpha: 1 })
             });
 
