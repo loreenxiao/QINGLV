@@ -1523,7 +1523,7 @@ button {
   }
 }
 #header .header-pc .header-wrap .logo {
-  width: 140px;
+  width: 1.4rem;
   color: #282828;
   font-weight: bold;
   display: -webkit-box;
