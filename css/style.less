@@ -6079,3 +6079,21 @@ button {
 .bullet_box.active { pointer-events: initial; opacity: 1; visibility: visible;
 	.bullet_main { -webkit-transform: translateY(0); transform: translateY(0); }
 }
+
+
+
+@-webkit-keyframes reveal3 {  from { opacity: 0; transform: translateY(-10px); }  to { opacity: 1; background-color: transparent;  transform: translateY(0px); }  }
+@keyframes reveal3 {  from { opacity: 0; transform: translateY(-10px); }   to { opacity: 1; transform: translateY(0px); background-color: transparent; }  }
+.reveal3 { -webkit-animation-name: reveal3; animation-name: reveal3; }
+
+
+.reveal { overflow: hidden; span { opacity: 0; display: inline-block; } }
+.s-animate { overflow: hidden; span { display: inline-block; opacity: 0; }}
+.s-animate.active { animation: fadeInLeft 0.5s forwards; background-color: var(--color); }
+
+.WYBox { width: 100%; height: 100%; 
+  .item_box { width: 100%; height: 100%; 
+    .item { min-height: unset !important; } 
+    .item1.active { animation: fadeInRight 0.5s forwards; }
+  }
+}

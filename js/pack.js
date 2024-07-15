@@ -1,13 +1,9 @@
+
 $(function () {
     /* 全局公共属性 */
     let wH = window.innerHeight,
     wW = window.innerWidth,
     c = "active";
-
-
-
-
-
 
 
     // 使用IE浏览器提示
@@ -1349,38 +1345,7 @@ $(function () {
    
             
     // 滚动加载入场动画 --开始
-    function wowFun(){
-        var box = $(".c_til");
-        box.each(function(){
-            var _this = $(this);
-            var topNum = _this.offset().top, scrollTop = $(window).scrollTop() + wH;
-                if(scrollTop > topNum){ _this.addClass("active"); }else{ _this.removeClass("active"); }
-            $(window).scroll(function() {
-                topNum = _this.offset().top, scrollTop = $(window).scrollTop() + wH;
-                if(scrollTop > topNum){ _this.addClass("active"); }else{ _this.removeClass("active"); }
-            });
-        })
-    }
-    wowFun();
-
-    $(".c_til").each(function () {
-		// var delayBox = $(this).data("wow-delay");
-		// delayBox = parseFloat(delayBox) > 0 ? parseFloat(delayBox) : 0;
-		var textHtml = [];
-		var brBox, number = 0, time = 300;
-		var arrayAll = $(this).html();
-		arrayAll = arrayAll.replace(/\n/g, "").replace(/\s+/g, " ").replace(/<.+?>/g, "0");
-		for (var i = 0; i < arrayAll.length; i++) {
-			if (arrayAll[i] == " ") { brBox = "&nbsp;"} 
-			else if (arrayAll[i] == "|") { brBox = "<br/>"; } 
-			else {  /* time = (Math.random() * 1).toFixed(2); */  time = time + 100;
-				/* brBox = "<span class='wow fadeInUpB' data-wow-delay='" + time + "s'>" + arrayAll[i] + "</span>" */ 
-				brBox = "<span style='animation-delay:" + time + "ms'>" + arrayAll[i] + "</span>"; number++;
-			}
-			textHtml.push(brBox);
-		};
-		$(this).html(textHtml);
-	});
+    
     // 滚动加载入场动画 --结束
 
 
