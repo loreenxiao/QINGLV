@@ -482,6 +482,8 @@ button {
 	0% { opacity: 0; -webkit-transform: translate3d(-50px, 0, 0); transform: translate3d(-50px, 0, 0) }
 	to { opacity: 1; -webkit-transform: none; transform: none }
 }
+.fadeInLeft { animation: fadeInLeft  forwards ;}
+
 
 
 @keyframes fadeInLeftCubic {
@@ -5295,7 +5297,7 @@ button {
 
 .index-business-consulting{
   position: relative;
-  // height: 100vh;
+  height: 5.6rem;
   background-image: url("../images/index-business-complete.png");
   background-repeat:no-repeat;
   background-attachment: fixed;
@@ -6060,9 +6062,9 @@ button {
 .reveal3 { -webkit-animation-name: reveal3; animation-name: reveal3; }
 
 
-.reveal { overflow: hidden; span { opacity: 0; display: inline-block; } }
-.s-animate { overflow: hidden; span { display: inline-block; opacity: 0; }}
-.s-animate.active { animation: fadeInLeft 0.5s forwards; background-color: var(--color); }
+// .reveal { overflow: hidden; span { opacity: 0; display: inline-block; } }
+// .s-animate { overflow: hidden; span { display: inline-block; opacity: 0; }}
+// .s-animate.active { animation: fadeInLeft 0.5s forwards; background-color: var(--color); }
 
 
 
@@ -6085,4 +6087,12 @@ button {
     // &.active { background: violet; }
     .item { width: 100%; height: auto; min-height: 200px; }
     .svgBox3 { opacity: 0; }
+}
+
+
+.s-animate{
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  opacity: 0;
 }

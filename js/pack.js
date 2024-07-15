@@ -1346,6 +1346,30 @@ $(function () {
             
     // 滚动加载入场动画 --开始
     
+    // 判断元素出现在可视窗口的时候添加clsss  
+    // 传参一： 需要出现在窗口的类名 
+    // 传参二： 需要 
+    // 传参二： 需要再窗口出现位置 取值范围 例如 0.5  就是 vh * 0.5  窗口的一半 
+    // wowFun("svgBox1",0.5); 
+    // let wH = window.innerHeight, wW = window.innerWidth, c = "active";
+    function wowFun(a, b, c) {
+      
+      var box = $(a);
+      if (c > 1 || c < 0 || c == 0) { c = 1 }
+      if (box != "" || box != null) {
+        box.each(function () {
+          var _this = $(this), topNum = _this.offset().top, scrollTop = $(window).scrollTop() + (wH * c), d = _this.attr("data-time");
+          if (d == null || d == "undefined" || d == 0) { d = 0; }
+          if (scrollTop > topNum) { setTimeout(function () { _this.addClass(b); }, d) } else { _this.removeClass(b); }
+          $(window).scroll(function () {
+            topNum = _this.offset().top, scrollTop = $(window).scrollTop() + (wH * c), scrollTop_wH = $(window).scrollTop() + wH;
+            if (scrollTop > topNum) { setTimeout(function () { _this.addClass(b); }, d) } else if (scrollTop_wH < topNum || scrollTop_wH == topNum) { _this.removeClass(b); }
+          });
+        })
+      }
+    }
+    wowFun(".s-animate", "fadeInLeft", 1);
+ 
     // 滚动加载入场动画 --结束
 
 
@@ -1775,6 +1799,3 @@ function imousehover(obj, obj2) {
     }
 }
 
-
-// 鼠标弹窗
-// 首页视频弹窗
