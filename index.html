@@ -979,7 +979,6 @@
         //         });
         //     });
         // });
-
         
 
     </script>
@@ -996,9 +995,6 @@
             }
         }
         globalshow()
-
-        
-
         // 青绿环境 - 首页banner轮播
         setTimeout(function () {
             // 文字区轮播
@@ -1045,7 +1041,7 @@
                         var d = this.realIndex;
                         // $(".index-environment .info .swiper-pagination-bullet").eq(d).click();
 
-                        var hasActiveClass = $(".index-environment-banner").parent().hasClass('activewhite')
+                        var hasActiveClass = $(".index-environment").parent().hasClass('activewhite')
                         if (hasActiveClass == true) {
                             $(".index-environment .info .swiper-pagination-bullet").eq(d).click();
                         } else {
@@ -1057,23 +1053,11 @@
             });
             $('.banner_sp span').eq(0).html(svg)
 
-           
-            // 初始化页面状态--没有滚动时不轮播
-            var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-            if (scrollPosition === 0) {
-                console.log("111")
-                mySwiper.autoplay.stop();
-                mySwiper.slideToLoop(0, 0);
-            }
-           
-           
-           
-            window.addEventListener('scroll', function () {
+            function ifSwiper() {
                 var scrollPosition = window.scrollY || document.documentElement.scrollTop;
                 var triggerPoint = $(".index-screen1 .index-environment .info").height();
 
                 if (scrollPosition > triggerPoint) {
-                    console.log("222")
                     mySwiper.autoplay.start();
                     $(".index-environment").parent().addClass("activewhite");
                     $(".index-enviroment-circle").css("display", "none");
@@ -1083,6 +1067,10 @@
                     $(".index-enviroment-circle").css("display", "block");
 
                 }
+            }
+            ifSwiper()
+            window.addEventListener('scroll', function () {
+                ifSwiper()
             });
 
 
