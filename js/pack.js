@@ -1376,14 +1376,6 @@ $(function () {
 
 
 
-
-    // 首页-banner--背景轮播
-    function indexBgSlide() {
-
-    }
-    indexBgSlide();
-
-
     // 解决方案
     function indexSolution() {
         var box = $('#idx_solution');

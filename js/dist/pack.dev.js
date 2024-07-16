@@ -1568,11 +1568,7 @@ $(function () {
   }
 
   wowFun(".s-animate", "fadeInLeft", 1); // 滚动加载入场动画 --结束
-  // 首页-banner--背景轮播
-
-  function indexBgSlide() {}
-
-  indexBgSlide(); // 解决方案
+  // 解决方案
 
   function indexSolution() {
     var box = $('#idx_solution');
