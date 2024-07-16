@@ -952,31 +952,49 @@
 
     <!--首屏--背景球跟随鼠标移动 -->
     <script>
-        // $(document).ready(function () {
-        //     let hoverBox = $(".index-screen1"), menuBox = hoverBox.find(".index-enviroment-circle"), winW = window.innerWidth, winH = window.innerHeight;
-        //     hoverBox.hover(function (event) {
-        //         if (event.type != "mouseenter") {
-        //             gsap.to(menuBox, { right: 0, bottom: 0, autoAlpha: 1 })
-        //         }
-        //     });
-        //     hoverBox.on("mousemove", function (e) {
-        //         let xNum = 30 - (e.clientX / winW) * 50, yNum = 30 - (e.clientY / winH) * 60;
-        //         gsap.to(menuBox, { right: xNum, bottom: yNum, autoAlpha: 1 })
-        //     });
+        $(document).ready(function () {
+            let hoverBox = $(".index-screen1"), menuBox = hoverBox.find(".index-enviroment-circle"), winW = window.innerWidth, winH = window.innerHeight;
+            hoverBox.hover(function (event) {
+                if (event.type != "mouseenter") {
+                    gsap.to(menuBox, { right: '-9%', bottom: 0, autoAlpha: 1 })
+                }
+            });
+            hoverBox.on("mousemove", function (e) {
+                let xNum = 30 - (e.clientX / winW) * 150, yNum = 30 - (e.clientY / winH) * 60;
+                gsap.to(menuBox, { right: xNum, bottom: yNum, autoAlpha: 1 })
+            });
 
-        // });
+        });
 
 
         // 优化球体位移
+        // x坐标轴区间 1.right: -2% - -9%
+        // y坐标轴区间 1.top: 2.7rem-3.3rem
+
         // $(document).ready(function () {
         //     var $element = $('.index-enviroment-circle');
         //     $(document).on('mousemove', function (event) {
         //         var x = event.clientX;
         //         var y = event.clientY;
+        //         console.log("x",x)
+        //         console.log("y",y)
+        //         // x:1050-1240
+        //         // y:280-320
+        //         if(x > 1240){
+        //             x = 1240
+        //         }else if(x < 1050){
+        //             x = 1050
+        //         }
+        //         if(y > 320){
+        //             y = 320
+        //         }else if(y < 280){
+        //             y = 280
+        //         }
+
         //         $element.css({
         //             left: x - 25, // 减去元素宽度的一半，使其中心对准鼠标
         //             top: y - 25  // 减去元素高度的一半
-        //         });
+        //         },1000);
         //     });
         // });
         
@@ -1069,12 +1087,9 @@
                 }
             }
             ifSwiper()
+
             window.addEventListener('scroll', function () {
                 ifSwiper()
-            });
-
-
-            window.addEventListener('scroll', function () {
                 var scrollPosition = window.scrollY || document.documentElement.scrollTop;
                 if (scrollPosition === 0) {
                     mySwiper.autoplay.stop();
