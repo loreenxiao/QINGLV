@@ -473,7 +473,7 @@ button {
 .fd(@size) { -webkit-transform: scale((@size)); -ms-transform: scale((@size)); -o-transform: scale((@size)); transform: scale((@size)) }
 
 
-// 入场效果
+// 入场效果--左进场
 @-webkit-keyframes fadeInLeft {
 	0% { opacity: 0; -webkit-transform: translate3d(-50px, 0, 0); transform: translate3d(-50px, 0, 0) }
 	to { opacity: 1; -webkit-transform: none; transform: none }
@@ -483,6 +483,17 @@ button {
 	to { opacity: 1; -webkit-transform: none; transform: none }
 }
 .fadeInLeft { animation: fadeInLeft  forwards ;}
+
+// 入场效果--从下往上进场
+@-webkit-keyframes fadeInUp {
+  0% {opacity: 0; -webkit-transform: translate3d(0, 60px, 0);transform: translate3d(0, 60px, 0); }
+  to { opacity: 1;-webkit-transform: translateZ(0);transform: translateZ(0); }
+}
+@keyframes fadeInUp {
+  0% {opacity: 0;-webkit-transform: translate3d(0, 60px, 0);transform: translate3d(0, 60px, 0);}
+  to {opacity: 1;-webkit-transform: translateZ(0);transform: translateZ(0);}
+}
+.fadeInUp { -webkit-animation-name: fadeInUp;animation-name: fadeInUp;}
 
 
 
@@ -643,9 +654,10 @@ button {
   margin: 0 auto;
 }
 .w1540 {
-  width: 100%;
-  max-width: 1540px;
+  width: 80.2%;
+  // max-width: 1540px;
   margin: 0 auto;
+  
 }
 .w1440 {
   width: 100%;
@@ -5575,7 +5587,12 @@ button {
             width: 100%; height: 100%; object-fit: cover;
           }
           .nomal{transition: 1s ease-in-out; }
-          .select{height: 0; transition: 1s ease-in-out; }
+          .select{height: 100%;
+            display: inline-block;
+            transition: 1s ease-in-out;
+            position: absolute;
+            left: 0;
+            width: 0;transition: 0.6s ease-in-out; }
         }
         
       }
@@ -5596,10 +5613,12 @@ button {
             line-height: 1.2;
            
           }
-          .desc{.dh;
+          .desc{
             margin-top: .32rem;
             color: #FFF;
             opacity: 0;
+            transform: translateY(-20px);
+            transition: .5s ease-in-out;
           }
         }
         .more{
@@ -5613,11 +5632,13 @@ button {
         cursor: pointer;
         .image{
           .nomal{display: none;transition: 1s ease-in-out; }
-          .select{height: 100%;display: inline-block;transition: 1s ease-in-out; }
+          .select{height: 100%;display: inline-block;width: 100%; transition: 0.6s ease-in-out; }
         }
         .info{
-          .desc{.dh;
+          .desc{
             opacity: 1;
+            transform: translateY(0px);
+            transition: .5s ease-in-out;
           }
         }
       }
@@ -5741,6 +5762,14 @@ button {
   @media @max640{
     ul{
       column-gap: .2rem;
+    }
+  }
+  @media @max480{
+    ul{
+      li{
+        font-size: var(--font12);
+        white-space: nowrap;
+      }
     }
   }
 }
@@ -5872,15 +5901,15 @@ button {
         background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)) !important;
         color: #fff;
       }
-      .title{color: var(--white-color);
-        .font48;.bold;margin-top: .3rem;
+      .title{color: var(--white-color); font-size: var(--font48);
+        .bold;margin-top: .3rem;
       }
     }
     .rightwrap{width: 50%;margin-top:2.84rem; .flex; gap: .96rem;
       .yeartab{
-        li{.flex;.a_center;cursor: pointer; margin-bottom: .06rem;
-          img{margin-right: .2rem;width: 16px; opacity: 0.4;
-            height: 18px;}
+        li{.flex;.a_center;cursor: pointer; line-height: 1.5;
+          img{margin-right: .2rem;width: 0.16rem; opacity: 0.4;
+            height: 0.18rem; }
           span{.black9;.bold;}
         }
         .active{
@@ -5891,8 +5920,8 @@ button {
         }
       }
       .scrollcontent{color: var(--white-color); height: 100%;overflow: hidden;
-        .year{font-size: var(--font96); font-weight: 700;line-height: 1;}
-        .introduce{margin-top:.16rem ;
+        .year{font-size: var(--font96); font-weight: 700;    line-height: 1.1772;}
+        .introduce{margin-top:.16rem ; line-height: 1.167;
           p{
             font-size: var(--font24);
           }
@@ -5914,6 +5943,16 @@ button {
     }
     &.active { --dashsf: 0; }
   }
+  .swiper-pagination{
+    .swiper-pagination-bullet{
+      background: #fff;
+      opacity: 0.5;
+    }
+    .swiper-pagination-bullet-active{
+      background: var(--color-active);
+      opacity: 1;
+    }
+  }
   @media @max1280{
     .info .rightwrap .scrollcontent .year{
       font-size: var(--font60);
@@ -5932,24 +5971,29 @@ button {
 
   }
   @media @max768{
-   
     .info {
       padding: 0.7rem 1rem;
       .rightwrap{
         margin-top: 0.5rem;
+        .yeartab{
+          display: none;
+        }
       }
     }
     .riverbg{
       margin-left: 0;
     }
-
+  }
+  @media @max480{
+    .info{
+      padding: 0.4rem;
+    }
   }
 }
 
 
 // --------------------------------------------- 青绿关于我们--合作伙伴
 .cooperation-wrap{position: relative; 
-  
   .container{
     background-color: var(--white-color);
     padding-top: 1.6rem;
@@ -5973,7 +6017,13 @@ button {
     
     }
   }
-  
+  @media @max480{
+    .container {
+      .title,.itemlist{
+        padding: 0;
+      }
+    }
+  }
  
 }
 // 关于我们--立足中国 服务全球
@@ -6062,13 +6112,6 @@ button {
 .reveal3 { -webkit-animation-name: reveal3; animation-name: reveal3; }
 
 
-// .reveal { overflow: hidden; span { opacity: 0; display: inline-block; } }
-// .s-animate { overflow: hidden; span { display: inline-block; opacity: 0; }}
-// .s-animate.active { animation: fadeInLeft 0.5s forwards; background-color: var(--color); }
-
-
-
-
 @-webkit-keyframes slideInRight {
   0% { -webkit-transform: translate3d(150px, 0, 0); transform: translate3d(150px, 0, 0); visibility: visible; opacity: 0; }
   to { -webkit-transform: translateZ(0); transform: translateZ(0); opacity: 1; }
@@ -6090,9 +6133,10 @@ button {
 }
 
 
-.s-animate{
+.s-animate,.s-animate-up{
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   opacity: 0;
 }
+

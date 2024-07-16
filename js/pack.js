@@ -1369,7 +1369,8 @@ $(function () {
       }
     }
     wowFun(".s-animate", "fadeInLeft", 1);
- 
+    wowFun(".s-animate-up", "fadeInUp", 1);
+
     // 滚动加载入场动画 --结束
 
 
@@ -1520,6 +1521,7 @@ $(function () {
                 delay: 5000,
                 disableOnInteraction: false,
             },
+            
             // speed:1000,
             slidesPerView: 3.3,
             spaceBetween: 22,
@@ -1561,8 +1563,7 @@ $(function () {
             slidesPerView: 1.5,
             speed: 1000,
             breakpoints: {
-               
-                768: {
+                480: {
                     slidesPerView: 1,
                 },
                 990: {
@@ -1571,6 +1572,10 @@ $(function () {
                 1280: {
                     slidesPerView: 2,
                 },
+            },
+            pagination: {
+                el: '.develoment-wrap .scrollcontent .swiper-pagination',
+                clickable: true,
             },
             
         })
