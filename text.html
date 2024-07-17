@@ -25,8 +25,23 @@
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <!-- JavaScript语言 -->
   <script type="text/javascript" src="js/svg-inject.min.js"></script>
+  <script src="js/jquery.js"></script>
   <script type="text/javascript" src="js/extend.js"></script>
-
+  <style>
+    .layer-toTop {
+      width: 200px;
+      height: 200px;
+      z-index: 10;
+      pointer-events: none;
+      margin: 0 auto;
+      position: absolute;
+      top: 25%;
+      left: 0;
+      right: 0;
+      background-color: #6eb92d;
+      border: solid 1px #ddd;
+    }
+  </style>
 
 </head>
 
@@ -38,6 +53,17 @@
   <main id="main" class="wrapper server-wrap">
     <div class="WYBox">
       <div class="" style="height: 80vh;"></div>
+
+      <div class="wrapgreen" style="text-align: center;">
+
+        <p style="height: 300px;">测试</p>
+        <div class="image" style="height: 300px;margin-top: 20px;"><img src="./images/index-news1.png" alt=""></div>
+        <div class="image" style="height: 300px;margin-top: 20px;"><img src="./images/index-news2.png" alt=""></div>
+        <div class="image" style="height: 300px;margin-top: 20px;"><img src="./images/index-news3.png" alt=""></div>
+      </div>
+
+
+
       <div class="item_box" style="padding-top: 20vh;">
         <div class="svgBox2">
           <div class="item svgBox3" style="background-color: #ff9b9b;" data-time="000">判断元素出现在可视窗口的时候添加clsss</div>
@@ -70,33 +96,34 @@
 
   <body>
 
-  <script>
-    /* 判断元素出现在可视窗口的时候添加clsss  
-      传参一： 需要出现在窗口的类名 
-      传参二： 需要 
-      传参二： 需要再窗口出现位置 取值范围 例如 0.5  就是 vh * 0.5  窗口的一半 
-      wowFun("svgBox1",0.5);
-    */
+    <script>
+      /* 判断元素出现在可视窗口的时候添加clsss  
+        传参一： 需要出现在窗口的类名 
+        传参二： 需要 
+        传参二： 需要再窗口出现位置 取值范围 例如 0.5  就是 vh * 0.5  窗口的一半 
+        wowFun("svgBox1",0.5);
+      */
 
-    let wH = window.innerHeight, wW = window.innerWidth, c = "active";
-    function wowFun(a, b, c) {
-      var box = $(a);
-      if (c > 1 || c < 0 || c == 0) { c = 1 }
-      if (box != "" || box != null) {
-        box.each(function () {
-          var _this = $(this), topNum = _this.offset().top, scrollTop = $(window).scrollTop() + (wH * c), d = _this.attr("data-time");
-          if (d == null || d == "undefined" || d == 0) { d = 0; }
-          if (scrollTop > topNum) { setTimeout(function () { _this.addClass(b); }, d) } else { _this.removeClass(b); }
-          $(window).scroll(function () {
-            topNum = _this.offset().top, scrollTop = $(window).scrollTop() + (wH * c), scrollTop_wH = $(window).scrollTop() + wH;
-            if (scrollTop > topNum) { setTimeout(function () { _this.addClass(b); }, d) } else if (scrollTop_wH < topNum || scrollTop_wH == topNum) { _this.removeClass(b); }
-          });
-        })
+      let wH = window.innerHeight, wW = window.innerWidth, c = "active";
+      function wowFun(a, b, c) {
+        var box = $(a);
+        if (c > 1 || c < 0 || c == 0) { c = 1 }
+        if (box != "" || box != null) {
+          box.each(function () {
+            var _this = $(this), topNum = _this.offset().top, scrollTop = $(window).scrollTop() + (wH * c), d = _this.attr("data-time");
+            if (d == null || d == "undefined" || d == 0) { d = 0; }
+            if (scrollTop > topNum) { setTimeout(function () { _this.addClass(b); }, d) } else { _this.removeClass(b); }
+            $(window).scroll(function () {
+              topNum = _this.offset().top, scrollTop = $(window).scrollTop() + (wH * c), scrollTop_wH = $(window).scrollTop() + wH;
+              if (scrollTop > topNum) { setTimeout(function () { _this.addClass(b); }, d) } else if (scrollTop_wH < topNum || scrollTop_wH == topNum) { _this.removeClass(b); }
+            });
+          })
+        }
       }
-    }
-    wowFun(".s-animate", "fadeInRight animate", 1);
-    wowFun(".s-animate1", "active", 1);
-    wowFun(".svgBox3", "slideInRight", 1);
-  </script>  
-</body>
+      wowFun(".s-animate", "fadeInRight animate", 1);
+      wowFun(".s-animate1", "active", 1);
+      wowFun(".svgBox3", "slideInRight", 1);
+    </script>
+  </body>
+
 </html>

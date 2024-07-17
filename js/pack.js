@@ -1,5 +1,78 @@
 
 $(function () {
+    class Utils {
+        lenisInit() {
+            const initSmoothScrolling = () => {
+                this.lenis = new Lenis({
+                    mouseMultiplier: 1.2,
+                    smooth: true,
+                    smoothTouch: false
+                });
+                const scrollFn = (time) => {
+                    this.lenis.raf(time);
+                    requestAnimationFrame(scrollFn);
+                };
+                requestAnimationFrame(scrollFn);
+            };
+            initSmoothScrolling();
+        }
+    }
+    
+    class App extends Utils {
+        constructor() {
+            super();
+            this.init();
+        }
+    
+        init() {
+            this.lenisInit();
+            this.definedAn();
+        }
+    
+        definedAn() {
+            let that = this;
+            $('.l-morebox').hover(function () {
+                let jttl = gsap.timeline({ paused: true });
+                jttl.to($(this).find('svg.jt'), { xPercent: 100 })
+                    .set($(this).find('svg.jt'), { xPercent: -100 })
+                    .to($(this).find('svg.jt'), { xPercent: 0 });
+                jttl.play();
+            }, function () { });
+    
+            if ($('.index-title').length > 0) {
+                let panels = gsap.utils.toArray(".index-title");
+                panels.forEach((v, i) => {
+                    let name = $(v).find('.name>*');
+                    let nname = $(v).find('.nname>*');
+                    gsap.from(name, {
+                        xPercent: 100,
+                        opacity: 0,
+                        stagger: 0.05,
+                        ease: 'power2.inOut',
+                        scrollTrigger: {
+                            trigger: v,
+                            start: "top bottom",
+                            toggleActions: "play resume resume reset"
+                        }
+                    });
+                    gsap.from(nname, {
+                        xPercent: 100,
+                        opacity: 0,
+                        stagger: 0.05,
+                        ease: 'power2.inOut',
+                        scrollTrigger: {
+                            trigger: v,
+                            start: "top bottom",
+                            toggleActions: "play resume resume reset"
+                        }
+                    });
+                });
+            }
+        }
+    }
+    
+    const _app = new App();
+
     /* 全局公共属性 */
     let wH = window.innerHeight,
     wW = window.innerWidth,
@@ -152,7 +225,7 @@ $(function () {
     headNav();
 
 
-    // 滚轮下滑
+    // 滚轮下滑--头部添加active
     $(window).scroll(function () {
         headInit();
     })
@@ -203,7 +276,7 @@ $(function () {
     });
 
 
-    // 点击展开
+    // 列表点击展开
     function tabUl() {
         $(".tab-ul ul li:eq(0)").addClass("active");
         $(".tab-ul ul li:eq(0) .bom").slideToggle();
@@ -220,43 +293,6 @@ $(function () {
     }
     tabUl();
 
-    // 可视化数据滚动
-    function visualData(obj) {
-        $(window).load(function () {
-            obj.each(function () {
-                var h = Number($(this).html());
-                var t = "";
-                var n = Math.ceil(h / 20);
-                var a = true;
-                var This = $(this);
-                if ($(this).length != 0) {
-                    t = $(this).offset().top;
-                }
-                This.html(0);
-                fn1();
-                $(window).scroll(function () {
-                    fn1();
-                });
-
-                function fn1() {
-                    var wT = $(window).scrollTop();
-                    if (wT > t - $(window).height() + 50 && wT < t - 50 && a == true) {
-                        a = false;
-                        var y = 0;
-                        var timer2 = setInterval(function () {
-                            if (y >= h) {
-                                y = h;
-                                clearInterval(timer2);
-                            }
-                            This.html(y);
-                            y += n;
-                        }, 100);
-                    }
-                }
-            });
-        });
-    }
-    visualData($(".num-move"));
 
     // 文字过渡动画
 	function aniText() {
@@ -315,6 +351,8 @@ $(function () {
     // 滚动加载入场动画 --结束
 
 
+    
+    
 
 
 
@@ -736,4 +774,9 @@ function imousehover(obj, obj2) {
         cursor.init();
     }
 }
+
+// 鼠标滚动图片上下位移
+
+
+    
 

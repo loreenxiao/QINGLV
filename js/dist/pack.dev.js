@@ -1,5 +1,17 @@
 "use strict";
 
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -7,7 +19,121 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 $(function () {
+  var Utils =
+  /*#__PURE__*/
+  function () {
+    function Utils() {
+      _classCallCheck(this, Utils);
+    }
+
+    _createClass(Utils, [{
+      key: "lenisInit",
+      value: function lenisInit() {
+        var _this2 = this;
+
+        var initSmoothScrolling = function initSmoothScrolling() {
+          _this2.lenis = new Lenis({
+            mouseMultiplier: 1.2,
+            smooth: true,
+            smoothTouch: false
+          });
+
+          var scrollFn = function scrollFn(time) {
+            _this2.lenis.raf(time);
+
+            requestAnimationFrame(scrollFn);
+          };
+
+          requestAnimationFrame(scrollFn);
+        };
+
+        initSmoothScrolling();
+      }
+    }]);
+
+    return Utils;
+  }();
+
+  var App =
+  /*#__PURE__*/
+  function (_Utils) {
+    _inherits(App, _Utils);
+
+    function App() {
+      var _this3;
+
+      _classCallCheck(this, App);
+
+      _this3 = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this));
+
+      _this3.init();
+
+      return _this3;
+    }
+
+    _createClass(App, [{
+      key: "init",
+      value: function init() {
+        this.lenisInit();
+        this.definedAn();
+      }
+    }, {
+      key: "definedAn",
+      value: function definedAn() {
+        var that = this;
+        $('.l-morebox').hover(function () {
+          var jttl = gsap.timeline({
+            paused: true
+          });
+          jttl.to($(this).find('svg.jt'), {
+            xPercent: 100
+          }).set($(this).find('svg.jt'), {
+            xPercent: -100
+          }).to($(this).find('svg.jt'), {
+            xPercent: 0
+          });
+          jttl.play();
+        }, function () {});
+
+        if ($('.index-title').length > 0) {
+          var panels = gsap.utils.toArray(".index-title");
+          panels.forEach(function (v, i) {
+            var name = $(v).find('.name>*');
+            var nname = $(v).find('.nname>*');
+            gsap.from(name, {
+              xPercent: 100,
+              opacity: 0,
+              stagger: 0.05,
+              ease: 'power2.inOut',
+              scrollTrigger: {
+                trigger: v,
+                start: "top bottom",
+                toggleActions: "play resume resume reset"
+              }
+            });
+            gsap.from(nname, {
+              xPercent: 100,
+              opacity: 0,
+              stagger: 0.05,
+              ease: 'power2.inOut',
+              scrollTrigger: {
+                trigger: v,
+                start: "top bottom",
+                toggleActions: "play resume resume reset"
+              }
+            });
+          });
+        }
+      }
+    }]);
+
+    return App;
+  }(Utils);
+
+  var _app = new App();
   /* 全局公共属性 */
+
+
   var wH = window.innerHeight,
       wW = window.innerWidth,
       c = "active"; // 使用IE浏览器提示
@@ -151,7 +277,7 @@ $(function () {
     }
   }
 
-  headNav(); // 滚轮下滑
+  headNav(); // 滚轮下滑--头部添加active
 
   $(window).scroll(function () {
     headInit();
@@ -198,7 +324,7 @@ $(function () {
   });
   $(document).on("click", ".bullet_box .close,.bullet_box", function () {
     $(".bullet_box").removeClass('active');
-  }); // 点击展开
+  }); // 列表点击展开
 
   function tabUl() {
     $(".tab-ul ul li:eq(0)").addClass("active");
@@ -215,49 +341,7 @@ $(function () {
     });
   }
 
-  tabUl(); // 可视化数据滚动
-
-  function visualData(obj) {
-    $(window).load(function () {
-      obj.each(function () {
-        var h = Number($(this).html());
-        var t = "";
-        var n = Math.ceil(h / 20);
-        var a = true;
-        var This = $(this);
-
-        if ($(this).length != 0) {
-          t = $(this).offset().top;
-        }
-
-        This.html(0);
-        fn1();
-        $(window).scroll(function () {
-          fn1();
-        });
-
-        function fn1() {
-          var wT = $(window).scrollTop();
-
-          if (wT > t - $(window).height() + 50 && wT < t - 50 && a == true) {
-            a = false;
-            var y = 0;
-            var timer2 = setInterval(function () {
-              if (y >= h) {
-                y = h;
-                clearInterval(timer2);
-              }
-
-              This.html(y);
-              y += n;
-            }, 100);
-          }
-        }
-      });
-    });
-  }
-
-  visualData($(".num-move")); // 文字过渡动画
+  tabUl(); // 文字过渡动画
 
   function aniText() {
     var PC = $(window).width() > 1200,
@@ -653,20 +737,20 @@ function imousehover(obj, obj2) {
     }, {
       key: "initCursor",
       value: function initCursor() {
-        var _this2 = this;
+        var _this4 = this;
 
         this.pageX = $(window).width() / 2 - 50;
         this.pageY = $(window).height() / 2 - 50;
         $(document).on("mousemove", function (e) {
-          _this2.pageX = e.clientX;
-          _this2.pageY = e.clientY;
+          _this4.pageX = e.clientX;
+          _this4.pageY = e.clientY;
         });
 
         var render = function render() {
-          if (_this2.move) {
-            window.TweenMax.to(_this2.cursor, 0.5, {
-              x: _this2.pageX,
-              y: _this2.pageY,
+          if (_this4.move) {
+            window.TweenMax.to(_this4.cursor, 0.5, {
+              x: _this4.pageX,
+              y: _this4.pageY,
               ease: "Power1.easeOut"
             });
           }
@@ -679,10 +763,10 @@ function imousehover(obj, obj2) {
     }, {
       key: "initHovers",
       value: function initHovers() {
-        var _this3 = this;
+        var _this5 = this;
 
         var handleMouseEnter = function handleMouseEnter(e) {
-          window.TweenMax.to(_this3.cursor, 0.5, {
+          window.TweenMax.to(_this5.cursor, 0.5, {
             scale: 1,
             opacity: 1,
             ease: "Power1.easeOut"
@@ -691,7 +775,7 @@ function imousehover(obj, obj2) {
         };
 
         var handleMouseLeave = function handleMouseLeave() {
-          window.TweenMax.to(_this3.cursor, 0.5, {
+          window.TweenMax.to(_this5.cursor, 0.5, {
             scale: 0,
             opacity: 0,
             ease: "Power1.easeOut"
@@ -706,36 +790,36 @@ function imousehover(obj, obj2) {
     }, {
       key: "initMove",
       value: function initMove() {
-        var _this4 = this;
+        var _this6 = this;
 
         var handleMouseMove = function handleMouseMove(e) {
           if ($(e.target).closest('.owl-nav')[0]) {
-            _this4.initCircle(e.target, "[class*='owl-']");
+            _this6.initCircle(e.target, "[class*='owl-']");
           } else if ($(e.target).closest('.searchOnOff')[0]) {
-            _this4.initCircle(e.target, ".searchOnOff");
+            _this6.initCircle(e.target, ".searchOnOff");
           } else {
-            window.TweenMax.to(_this4.cursor, 0.5, {
+            window.TweenMax.to(_this6.cursor, 0.5, {
               scale: 1,
               // background: 'yellow',
               ease: "Power1.easeOut"
             });
-            window.TweenMax.to(_this4.cursorInner, 0.5, {
+            window.TweenMax.to(_this6.cursorInner, 0.5, {
               opacity: 1,
               ease: "Power1.easeOut"
             });
-            _this4.move = true;
+            _this6.move = true;
           }
 
           if ($(e.currentTarget).hasClass('ff_topSlider') || $(e.currentTarget).parents('.mlist.project')[0]) {
             // const sxPos = (e.clientX / window.innerWidth) * 200 - 100;
             // this.cursor.toggleClass("next", sxPos > 0);
-            _this4.cursor.addClass('more');
+            _this6.cursor.addClass('more');
           } else if ($(e.currentTarget).hasClass('videom') || $(e.currentTarget).parents('.bodyvideom')[0]) {
-            _this4.cursor.addClass('play');
+            _this6.cursor.addClass('play');
           } else if ($(e.currentTarget).parents('.team_tabs')[0]) {
-            _this4.cursor.addClass('drag');
+            _this6.cursor.addClass('drag');
           } else if ($(e.currentTarget).hasClass('post-next')) {
-            _this4.cursor.addClass('next');
+            _this6.cursor.addClass('next');
           }
         };
 
@@ -777,4 +861,4 @@ function imousehover(obj, obj2) {
     var cursor = new CustomCursor(obj2);
     cursor.init();
   }
-}
+} // 鼠标滚动图片上下位移

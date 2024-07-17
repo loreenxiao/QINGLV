@@ -7135,20 +7135,6 @@ button {
 .slideInRight {
   animation: slideInRight 0.5s forwards;
 }
-.svgBox2 {
-  width: 100%;
-  height: auto;
-  min-height: 80vh;
-  border-top: 1px solid #e5e5e5;
-}
-.svgBox2 .item {
-  width: 100%;
-  height: auto;
-  min-height: 200px;
-}
-.svgBox2 .svgBox3 {
-  opacity: 0;
-}
 .s-animate,
 .s-animate-up {
   animation-duration: 1s;
