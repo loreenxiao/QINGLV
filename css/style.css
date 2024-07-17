@@ -51,7 +51,6 @@ body {
   min-height: 100%;
   font-family: 'PingFang SC', 'Microsoft YaHei', 'Microsoft YaHei UI', 'SimSun', 'SimHei', 'Arial';
   font-size: 16px;
-  line-height: 1.47;
   color: #000;
   background: #fff;
 }
@@ -779,7 +778,6 @@ button {
   --font70: 0.7rem;
   --font72: 0.72rem;
   --font80: 0.8rem;
-  --font96: 0.96rem;
   --font100: 1rem;
   --font120: 1.2rem;
   --font160: 1.6rem;
@@ -806,6 +804,7 @@ button {
 }
 @media (max-width:1366px) {
   :root {
+    --font14: 13px;
     --font16: 14px;
     --font17: 14px;
     --font18: 14px;
@@ -913,9 +912,6 @@ button {
 .font80 {
   font-size: 0.8rem;
 }
-.font96 {
-  font-size: 0.96rem;
-}
 .font100 {
   font-size: 1rem;
 }
@@ -961,6 +957,9 @@ button {
   }
 }
 @media (max-width:1366px) {
+  .font14 {
+    font-size: 13px;
+  }
   .font16 {
     font-size: 14px;
   }
@@ -1024,12 +1023,10 @@ button {
     --font56: 0.46rem;
     --font58: 0.48rem;
     --font60: 0.48rem;
-    --font64: 0.5rem;
     --font66: 0.5rem;
     --font70: 0.5rem;
     --font72: 0.5rem;
     --font80: 0.5rem;
-    --font96: 0.5rem;
     --font100: 0.5rem;
     --font120: 0.5rem;
     --font160: 0.5rem;
@@ -1112,9 +1109,6 @@ button {
   .font60 {
     font-size: 0.48rem;
   }
-  .font64 {
-    font-size: 0.5rem;
-  }
   .font66 {
     font-size: 0.5rem;
   }
@@ -1125,9 +1119,6 @@ button {
     font-size: 0.5rem;
   }
   .font80 {
-    font-size: 0.5rem;
-  }
-  .font96 {
     font-size: 0.5rem;
   }
   .font100 {
@@ -4868,7 +4859,8 @@ button {
   padding: 1.8rem 0;
   background-image: url(../images/solution-global.png);
   background-repeat: no-repeat;
-  background-position: 100% 40%;
+  background-size: 8.12rem 11.19rem;
+  background-position: right 0.66rem;
 }
 .index-solution .idx_solve {
   width: 100%;
@@ -5099,11 +5091,6 @@ button {
   text-align: center;
   display: flex;
   justify-content: center;
-}
-@media (max-width:1280px) {
-  .index-solution {
-    background-size: contain ;
-  }
 }
 @media (max-width:768px) {
   .index-solution {
@@ -5426,7 +5413,7 @@ button {
   width: 27.24%;
   height: auto;
   padding-bottom: 2px;
-  background: linear-gradient(to bottom, rgba(251, 251, 251, 0.9), #FFFFFF);
+  background-image: url("../images/Subtract.png");
 }
 .index-case .idx_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide {
   pointer-events: none;
@@ -5450,7 +5437,7 @@ button {
 }
 .index-case .idx_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .info {
   color: var(--black-666);
-  line-height: 24px;
+  line-height: 1.5;
   margin-top: 0.32rem;
   padding-top: 0.32rem;
   border-top: solid 1px var(--black-ccc);
