@@ -6091,8 +6091,12 @@ button {
   margin-top: 0.32rem;
 }
 .server-head .head-info .left p {
-  line-height: 1.3;
+  line-height: calc(56/48);
   font-weight: 700;
+  font-family: 'HarmonyOS-TC';
+}
+.server-head .head-info .left p span {
+  font-family: 'HarmonyOS-TC';
 }
 .server-head .head-info .right-nav {
   color: var(--black-999);
@@ -6110,6 +6114,7 @@ button {
   }
 }
 .server-bg {
+  height: 6.38rem;
   padding-left: 0.64rem;
   margin-top: 0.83rem;
 }
@@ -6541,7 +6546,7 @@ button {
 }
 .about-list ul li {
   color: var(--black-999);
-  padding: 0.38rem 0;
+  padding: 0.365rem 0;
 }
 .about-list ul .active {
   color: var(--black-000);
@@ -6594,6 +6599,8 @@ button {
 }
 .about-enviroment .innerbox .leftwrap .videowrap p {
   margin-top: 0.16rem;
+  text-transform: uppercase;
+  max-width: 118px;
 }
 .about-enviroment .innerbox .rightwrap {
   width: 60%;
@@ -6603,6 +6610,7 @@ button {
 }
 .about-enviroment .innerbox .rightwrap .info p {
   margin-top: 0.4rem;
+  line-height: calc(24/16);
 }
 .about-enviroment .innerbox .rightwrap .itemlist {
   margin-top: 0.64rem;
@@ -6660,6 +6668,7 @@ button {
 }
 .about-enviroment .innerbox .rightwrap .business-scope .title {
   font-weight: 500;
+  font-size: var(--font24);
 }
 .about-enviroment .innerbox .rightwrap .business-scope .info {
   margin-top: 0.2rem;
