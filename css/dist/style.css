@@ -3103,9 +3103,6 @@ button {
   .footer-wrapper .footerlist {
     padding: 0.4rem 0;
   }
-  .footer-wrapper .footerlist .left-item .f-phone {
-    margin-top: 0.3rem;
-  }
   .footer-wrapper .footerlist .right-item {
     margin-top: 0.3rem;
   }
@@ -3131,12 +3128,6 @@ button {
   }
 }
 @media (max-width:480px) {
-  .footer-wrapper .footerlist .left-item .f-phone {
-    margin-top: 0.3rem;
-  }
-  .footer-wrapper .footerlist .left-item .f-phone .num {
-    margin-top: 0.1rem;
-  }
   .footer-wrapper .footerlist .right-item .nav-media-center {
     display: inline-block;
     width: 100%;
@@ -3170,7 +3161,7 @@ button {
 }
 @media (max-width:360px) {
   .footer-wrapper .footerlist .left-item .logo {
-    width: 50%;
+    width: 40%;
   }
 }
 #hi-upgrade {
@@ -4847,6 +4838,11 @@ button {
   }
   .index-environment-banner .bannerbox .info .global-title p span {
     font-size: var(--font28);
+  }
+}
+@media (max-width:480px) {
+  .index-environment-banner .banner_sp {
+    bottom: 4%;
   }
 }
 .index-solution {
