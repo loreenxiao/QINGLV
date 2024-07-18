@@ -123,7 +123,7 @@
                         </ul>
                         <div class="swiper-pagination banner_sp "></div>
                     </div>
-                    <div class="scrollbar wow fadeInRight">
+                    <div class="scrollbar">
                         Scrol
                     </div>
                 </div>
@@ -906,7 +906,7 @@
     </script>
 
     <!-- 首页第一屏文字打印效果 -->
-    <script>
+    <!-- <script>
         // 获取当前第n个item
         $(document).ready(function () {
             var text = $(".index-environment .info .global-title .swipertitle .active").text(); // 获取文本内容
@@ -924,31 +924,31 @@
         });
         // 显示当前第n个item并打印
 
-    </script>
+    </script> -->
 
     <!--首屏-- 文字一个一个出现效果 -->
     <script>
         $(".c_til").each(function () {
-            var z_delay = $(this).data("wow-delay");
-            z_delay = parseFloat(z_delay) > 0 ? parseFloat(z_delay) : 0;
-            var z_html = [];
-            var z_em, z_num = 0, z_sum;
-            var z_array = $(this).html();
-            z_array = z_array.replace(/\n/g, "").replace(/\s+/g, " ").replace(/<.+?>/g, "0");
-            for (var i = 0; i < z_array.length; i++) {
-                if (z_array[i] == " ") {
-                    z_em = "&nbsp;"
-                } else if (z_array[i] == "0") {
-                    z_em = "<br/>";
-                } else {
-                    z_sum = z_delay + z_num * 0.1;
-                    z_em = "<span class='emm wow fadeIn' data-wow-delay='" + z_sum + "s'>" + z_array[i] + "</span>"
-                    z_num++;
-                }
-                z_html.push(z_em);
-            };
-            $(this).html(z_html);
-        });
+                var z_delay = $(this).data("wow-delay");
+                z_delay = parseFloat(z_delay) > 0 ? parseFloat(z_delay) : 0;
+                var z_html = [];
+                var z_em, z_num = 0, z_sum;
+                var z_array = $(this).html();
+                z_array = z_array.replace(/\n/g, "").replace(/\s+/g, " ").replace(/<.+?>/g, "0");
+                for (var i = 0; i < z_array.length; i++) {
+                    if (z_array[i] == " ") {
+                        z_em = "&nbsp;"
+                    } else if (z_array[i] == "0") {
+                        z_em = "<br/>";
+                    } else {
+                        z_sum = z_delay + z_num * 0.1;
+                        z_em = "<span class='emm wow animated' data-wow-delay='" + z_sum + "s' + style='animation-delay:" + z_sum + "s; ''>" + z_array[i] + "</span>"
+                        z_num++;
+                    }
+                    z_html.push(z_em);
+                };
+                $(this).html(z_html);
+            });
     </script>
 
     <!--首屏--背景球跟随鼠标移动 -->

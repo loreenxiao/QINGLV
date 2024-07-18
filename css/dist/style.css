@@ -2841,7 +2841,7 @@ button {
 }
 .footer-wrapper .footerlist .left-item .scrollbar:before {
   position: absolute;
-  height: 96px;
+  height: 0.96rem;
   width: 1px;
   content: '';
   top: 82px;
@@ -2851,7 +2851,7 @@ button {
 }
 .footer-wrapper .footerlist .left-item .scrollbar:after {
   position: absolute;
-  height: 48px;
+  height: 0.4rem;
   width: 1px;
   content: '';
   top: 83px;
@@ -2886,7 +2886,7 @@ button {
 }
 .footer-wrapper .footerlist .right-item .navlist .item ul li {
   position: relative;
-  line-height: 28px;
+  line-height: 1.75;
 }
 .footer-wrapper .footerlist .right-item .navlist .item ul li a {
   position: relative;
@@ -2973,8 +2973,8 @@ button {
   gap: 32px;
 }
 .footer-wrapper .footerlist .right-item .nav-media-center .right-media .media {
-  width: 32px;
-  height: 32px;
+  width: 0.32rem;
+  height: 0.32rem;
 }
 .footer-wrapper .footerlist .right-item .nav-media-center .right-media .media img {
   width: 100%;
@@ -4515,8 +4515,10 @@ button {
 .index-screen1 .index-environment .info .global-title .swipertitle .namelists .active .emm {
   font-size: var(--font64);
   font-weight: 700;
-  -webkit-animation: fadeIn 0.4s 1 forwards;
-  animation: fadeIn 0.4s 1 forwards;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-visibility: visible;
+  visibility: visible;
 }
 .index-screen1 .index-environment .info .global-title .swipertitle span {
   font-size: var(--font64);
@@ -4526,6 +4528,7 @@ button {
 .index-screen1 .index-environment .info .global-title .swipertitle span .emm {
   font-size: var(--font64);
   font-weight: 700;
+  visibility: hidden;
 }
 .index-screen1 .index-environment .info .global-title .swipertitle .item + .item {
   display: none;
@@ -4645,7 +4648,7 @@ button {
   position: fixed;
   width: 45%;
   right: -9%;
-  top: 2.7rem;
+  top: 2.3rem;
   z-index: 0;
 }
 @media (max-width:480px) {
@@ -4770,7 +4773,7 @@ button {
 }
 .index-environment-banner .scrollbar:before {
   position: absolute;
-  height: 96px;
+  height: 0.96rem;
   width: 1px;
   content: '';
   top: 48px;
@@ -4780,7 +4783,7 @@ button {
 }
 .index-environment-banner .scrollbar:after {
   position: absolute;
-  height: 48px;
+  height: 0.4rem;
   width: 1px;
   content: '';
   top: 48px;
@@ -4793,7 +4796,7 @@ button {
 }
 .index-environment-banner .banner_sp {
   position: absolute;
-  bottom: 10%;
+  bottom: 0.96rem;
   display: flex;
   text-align: left;
   align-items: center;
@@ -4855,9 +4858,6 @@ button {
   .index-environment-banner .bannerbox .info .global-title p span {
     font-size: var(--font28);
   }
-}
-.index-environment-banner .banner_sp {
-  bottom: 4%;
 }
 .index-solution {
   padding: 1.8rem 0;
