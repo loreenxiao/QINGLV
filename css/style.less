@@ -1553,14 +1553,19 @@ button {
       .title{
         transform: translateX(0.1rem);
       }
-      // .icon{
-      //   transform: translateX(-2.5rem);
-      // }
     }
-   
   }
-
-
+  @media (max-width:480px) {
+    a {
+      .title{
+        min-height: inherit;
+      }
+      .icon{
+        min-width: inherit;
+        min-height: inherit;
+      }
+    }
+  }
 }
 
 /* 动效文字 */
@@ -2798,7 +2803,7 @@ button {
           }
         }
         .right-media{.flex;.a_center; .j_justify; gap: 32px;
-          .media{width: 0.32rem;height: 0.32rem;
+          .media{width: 0.32rem;height: 0.32rem;min-width: 28px;min-height: 28px;
               img{
                 width: 100%; height: 100%; object-fit: cover; visibility: visible !important;
               }
@@ -2909,19 +2914,13 @@ button {
         .f-phone{
           margin-top: 0.3rem;
         }
-        .f-address{
-          margin-top: 0rem;
-        }
+        
       }
       .right-item {margin-top: 0.3rem;
         .navlist{
           .j_justify;
           gap: .1rem;
-          .item{
-            ul{
-              margin-top: 0.15rem;
-            }
-          }
+         
         }
         .nav-media-center{
           margin-top: 0.3rem;
@@ -2940,19 +2939,7 @@ button {
         .navlist{
           display: inline-block;
           width: 100%;
-          .item {
-            .title{
-              margin-top: .1rem;
-            }
-            ul {margin-top: 0;
-              li{
-                a{
-                
-                  font-size: var(--font14);
-                }
-              }
-            }
-          }
+         
         }
       }
     }
@@ -2961,18 +2948,13 @@ button {
   @media @max480 {
     .footerlist {
       .left-item{
-        .f-email{
-          margin-top: .1rem;
-        }
         .f-phone{
           margin-top: 0.3rem;
           .num{
             margin-top: .1rem;
           }
         }
-        .f-address{
-          margin-top: .1rem;
-        }
+        
       }
 
       .right-item {
@@ -4674,6 +4656,8 @@ button {
   }
   @media @max768 {
     padding: 0.5rem 0;
+    background-size: 50%;
+    background-position: 100% 10%;
     .idx_solve .swiper_box .topbox{
       display: inline-block;
       width: 100%;
@@ -4943,6 +4927,7 @@ button {
         width: 100%;
         top: .3rem;
         right: 0;
+        background-size: cover;
         
       }
     }
@@ -5039,6 +5024,43 @@ button {
            
           }
         }
+      }
+    }
+  }
+  @media @max480 {
+    .bottom-info {
+      border-top: none;
+      .itemlist {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        .item {
+          // border-top: solid 1px var(--black-ddd);
+          padding-bottom: 0.2rem;
+          border-right: none;
+          &:last-child{
+            border-right: none;
+          }
+          /* 选择第1、2、3、4项 */
+          &:nth-child(-n+4){
+            border-top: solid 1px var(--black-ddd);
+            border-bottom: solid 1px var(--black-ddd);
+            border-right: solid 1px var(--black-ddd);
+          }
+          /* 选择第5-8项 */
+          &:nth-child(n+5):nth-child(-n+8) {
+            border-bottom: solid 1px var(--black-ddd);
+            border-right: solid 1px var(--black-ddd);
+          }
+          
+          
+          .title{
+            white-space: nowrap;
+          }
+          .icon{
+            margin-top: 0.5rem;
+          }
+        }
+        
       }
     }
   }
