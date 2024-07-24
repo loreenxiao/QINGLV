@@ -496,6 +496,7 @@ $(function () {
     // 解决方案列表
     function solutionList() {
         var slide = new Swiper('.solutionlist', {
+            loop:true,
             autoplay: {
                 delay: 5000,
                 disableOnInteraction: false,
@@ -517,16 +518,16 @@ $(function () {
                     spaceBetween: 15,
                 },
                 768: {
-                    slidesPerView: 2,
+                    slidesPerView: 2.5,
                     spaceBetween: 20,
                 },
                 990: {
-                    slidesPerView: 2.8,
+                    slidesPerView: 3,
                     spaceBetween: 20,
                 },
                 1280: {
-                    slidesPerView: 3,
-                    spaceBetween: 40,
+                    
+                    spaceBetween: 15,
                 },
             },
 
@@ -639,6 +640,203 @@ $(function () {
     }
     cooperationTwo();
     
+
+    // --------------------------------------------- 青绿解决方案详情--分选产物
+    function solutionAdvantageList() {
+        var slide = new Swiper('.sorting-products-wrap .innerbox', {
+            loop:true,
+            autoplay:true,
+          
+            slidesPerView: 4.4,
+            spaceBetween: 22,
+            preventLinksPropagation: false, // 阻止点击事件冒泡
+            pagination: {
+                el: '.sorting-products-wrap .swiper-pagination',
+                clickable: true,
+            },
+            allowTouchMove: false,
+            
+            breakpoints: {
+                480: {
+                    slidesPerView: 1,
+                    spaceBetween: 15,
+                },
+               
+                990: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                1280: {
+                    
+                    spaceBetween: 15,
+                },
+            },
+
+        });
+    }
+    solutionAdvantageList()
+
+    // 青绿解决方案详情--表单
+    
+    $(".choose-btn").click(function () {
+        $(this).find('img').toggleClass('active');
+
+    });
+
+    // --------------------------------------------- 青绿案例详情详情--项目亮点
+    function projectHighlights() {
+        var slide = new Swiper('.project-highlights .innerbox', {
+            loop:true,
+            // autoplay:true,
+          
+            slidesPerView: 4.4,
+            spaceBetween: 22,
+            preventLinksPropagation: false, // 阻止点击事件冒泡
+            pagination: {
+                el: '.project-highlights .swiper-pagination',
+                clickable: true,
+            },
+            allowTouchMove: false,
+            
+            breakpoints: {
+                480: {
+                    slidesPerView: 1,
+                    spaceBetween: 15,
+                },
+               
+                990: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                1280: {
+                    
+                    spaceBetween: 15,
+                },
+            },
+
+        });
+    }
+    projectHighlights()
+// --------------------------------------------- 青绿案例详情详情--采用设备
+    function equimentWrap(){
+        // let divBox = $('.equiment-wrap')
+        // if(divBox.length) {
+        //     // 第一层
+        //     var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#fff" stroke-dasharray="314" stroke-dashoffset="314"/></svg>'
+        //     const swiper1 = new Swiper(".firstcontainer", {
+        //         slidesPerView: 1,
+        //         effect: 'fade',
+        //         fadeEffect: {crossFade: true, },
+        //         spaceBetween: 20,allowTouchMove: false,
+        //         pagination: {
+        //             el: '.equiment-wrap .banner_sp', 
+        //             clickable: true, 
+        //         }
+
+        //     });
+
+
+
+
+
+        //     // 第二层
+        //     // const getDiv = el => divBox.find(el);           
+        //     // let swiperBox = getDiv('.leftitem'),
+        //     //     pager =  getDiv('.pager'),
+        //     //     prev =  getDiv('.prev'),
+        //     //     next =  getDiv('.next'),
+        //     //     speed = 500;
+        
+        //     // const swiper = new Swiper(swiperBox, {
+        //     //     speed,
+        //     //     slidesPerView: 1,
+        //     //     effect: 'fade',
+        //     //     fadeEffect: {crossFade: true, },
+        //     //     spaceBetween: 20,allowTouchMove: false,
+        //     //     pagination: {el: pager, clickable: true, },
+        //     //     navigation: {nextEl: next, prevEl: prev,},
+        //     //     on: {
+        //     //         // init(){swiperAnimateCache(this); swiperAnimate(this);},
+        //     //         // slideChangeTransitionEnd() {swiperAnimate(this);},
+        //     //         // slideChange(){}
+        //     //     },
+                
+        //     // });
+        //     // $(".equiment-wrap .firstcontainer .innerbox .rightitem .caselist .item").hover(function(e){
+        //     //     if(e.type === "mouseenter") {
+        //     //         var index  =  $(this).index();
+        //     //         swiper.slideTo(index);
+        //     //     }
+        //     // })
+        // }
+
+
+        var box = $('.equiment-wrap');
+        var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#333" stroke-dasharray="314" stroke-dashoffset="314"/></svg>'
+        if (box.length) {
+            var slide = new Swiper('.equiment-wrap .firstcontainer', {
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                
+                effect: "fade",
+                fadeEffect: {
+                    crossFade: true //开启淡出。过渡时，原slide透明度从1->0（淡出），过渡中的slide透明度从0->1（淡入），其他slide透明度0。
+
+                },
+                preventLinksPropagation: false, // 阻止点击事件冒泡
+                pagination: {
+                    el: '.equiment-wrap .banner_sp',
+                    clickable: true,
+                },
+                allowTouchMove: false,
+                on: {
+                //     slideChangeTransitionStart: function () { //切换时分类也要改变状态
+                //         var d = this.activeIndex;
+                //         $(".idx_solve .swiper_box .topbox .swiper_list .item_box .item").eq(d).addClass("active").siblings().removeClass("active");
+
+                //     },
+                    slideChange: function (mySwiper) {
+                        $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty()
+                    },
+                },
+            });
+
+            const swiper2 = new Swiper(".equiment-wrap .leftitem", {
+                
+                slidesPerView: 1,
+                effect: 'fade',
+                fadeEffect: {crossFade: true, },
+                spaceBetween: 20,allowTouchMove: false,
+                on: {
+                    // init(){swiperAnimateCache(this); swiperAnimate(this);},
+                    // slideChangeTransitionEnd() {swiperAnimate(this);},
+                    // slideChange(){}
+                },
+                
+            });
+            // $(".equiment-wrap .firstcontainer .innerbox .rightitem .caselist .item").hover(function(e){
+            //     if(e.type === "mouseenter") {
+            //         var index  =  $(this).index();
+            //         swiper2.slideTo(index);
+            //     }
+            // })
+
+
+
+            $(".equiment-wrap .firstcontainer .innerbox .rightitem .caselist .item").click(function () {
+                var a = $(this).index();
+                $(this).addClass('active').siblings().removeClass('active');
+                swiper2.slideTo($(this).index());
+            });
+
+
+
+        }
+
+    }
+    equimentWrap();
 
 })
 

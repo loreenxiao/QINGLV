@@ -57,6 +57,7 @@ body {
   // line-height:1.47;
   color:#000;
   background:#fff;
+  overflow-x: hidden;
   @media @max-lg{
       font-size:14px;
   }
@@ -67,6 +68,11 @@ body {
 }
 // * {font-family:'HarmonyOS';font-size:16px; font-weight: normal;}
 * {font-family:'HarmonyOS';font-size:var(--font16); font-weight: normal;}
+
+@media @max1440{
+  * {font-size:12px;}
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -175,7 +181,7 @@ audio, canvas, progress, video {
 // }
 @font-face {font-family: 'HarmonyOS'; src: url('../fonts/HarmonyOS_Sans_Light.ttf'); font-weight: 300;}
 @font-face {font-family: 'HarmonyOS'; src: url('../fonts/HarmonyOS_Sans_Regular.ttf'); font-weight: normal;}
-@font-face {font-family: 'HarmonyOS'; src: url('../fonts/HarmonyOS_Sans_Medium.ttf'); font-weight: 500;}
+@font-face {font-family: 'HarmonyOS-Medium'; src: url('../fonts/HarmonyOS_Sans_Medium.ttf'); font-weight: 500;}
 @font-face {font-family: 'HarmonyOS'; src: url('../fonts/HarmonyOS_Sans_Bold.ttf'); font-weight: 700;}
 @font-face {font-family: 'HarmonyOS-TC'; src: url('../fonts/HarmonyOS_Sans_TC_Bold.ttf'); font-weight: 700;}
 
@@ -746,13 +752,13 @@ button {
 @media @max1560 {
   .w1540 {
     max-width: 100%;
-    padding: 0 60px;
+    // padding: 0 60px;
   }
 }
 @media @max1540 {
   .w1540 {
     max-width: 100%;
-    padding: 0 60px;
+    // padding: 0 60px;
   }
 }
 
@@ -776,7 +782,11 @@ button {
   }
 }
 
-@media @max1360 {
+@media @max1366 {
+  .w1540 {
+    max-width: 100%;
+    padding: 0px;
+}
   .w1240 {
     padding: 0 60px;
   }
@@ -811,7 +821,8 @@ button {
   .w1240,
   .w1200,
   .w1150 {
-    padding: 0 30px;
+    // padding: 0 30px;
+    padding: 0 ;
   }
 }
 
@@ -831,7 +842,31 @@ button {
   .w1240,
   .w1200,
   .w1150 {
+    // padding: 0 20px;
+    padding: 0 0px;
+
+  }
+}
+@media @max360 {
+
+  .w1800,
+  .w1720,
+  .w1680,
+  .w1640,
+  .w1600,
+  .w1560,
+  .w1540,
+  .w1440,
+  .w1400,
+  .w1350,
+  .w1280,
+  .w1240,
+  .w1200,
+  .w1150 {
+    // padding: 0 20px;
     padding: 0 20px;
+    width: 100%;
+
   }
 }
 
@@ -934,6 +969,9 @@ button {
     --font32: 20px;
     --font34: 22px;
   }
+}
+@media @max1280{
+  --font16: 12px;
 }
 
 /* 公共字体 */
@@ -1112,6 +1150,15 @@ button {
     font-size: 22px;
   }
 }
+@media @max1280 {
+  .font16 {
+    font-size: 14px;
+  }
+ 
+}
+
+
+
 @media @max-xs {
   :root {
     /* 字体大小 */
@@ -2936,11 +2983,7 @@ button {
   @media @max640 {
     .footerlist {
       .right-item {
-        .navlist{
-          display: inline-block;
-          width: 100%;
-         
-        }
+       display: none;
       }
     }
 
@@ -4009,6 +4052,15 @@ button {
 .bold{
   font-weight: 700;
 }
+.wrap{
+  padding-left: 9.9%;
+}
+.publictitle{
+  font-size: var(--font48);
+  font-family: 'HarmonyOS-TC';
+  line-height: calc(56/48);
+  font-weight: 700
+}
 // 更多按钮-公用
 .index_more{.dh;.flex; .a_center; .j_center; width: .31rem; height: .31rem;
   border-radius: 50%;
@@ -4105,6 +4157,7 @@ button {
   p{color: var(--white-color);}
   span{color: var(--color-active);}
 }
+
 
 // 轮播--文字、分页器 --公用
 .public-title-pagination{position: relative; .flex;.a_center; .j_justify;}
@@ -4726,7 +4779,7 @@ button {
   }
 }
 
-// --------------------------------------------- 首页-客户案例
+// --------------------------------------------- 首页-客户案例/经典案例列表
 .index-case{position: relative;
   .idx_solve { width: 100%; height: auto; position: relative; z-index: 2; overflow: hidden;
     .idx_title { width: 100%; height: auto; .flex; .j_justify; .a_center;
@@ -4891,6 +4944,13 @@ button {
     }
 
   }
+  @media @max1680 {
+
+  }
+  @media @max1580 {
+
+  }
+  
   @media @max1280 {
     margin-top: .5rem;
     .idx_solve .center_box .right{
@@ -5391,7 +5451,7 @@ button {
   background-color: var(--bg-f8);
 }
 .server-head{
-  padding-top: 2.12rem;
+  padding-top: 1.86rem;
   .head-info{.flex; .j_justify; .a_end;
     margin-top: .32rem;
     .left{
@@ -5428,6 +5488,9 @@ button {
   }
   @media @max768{
     padding-left: 20px;
+  }
+  @media @max360{
+    margin-top: 30px;
   }
 }
 
@@ -5603,6 +5666,12 @@ button {
 .solution-wrap{
   margin-top: 1.6rem;
   padding-left: 1.9rem;
+  .title {
+    line-height: calc(56/48);
+    font-family: 'HarmonyOS-TC';
+    font-weight: 700;
+    line-height: calc(56/48);
+  }
   .solutionlist{
     margin-top: .8rem;
     overflow: hidden;
@@ -5653,6 +5722,10 @@ button {
           right: 0;
           bottom: 0;
           padding: .4rem;
+          img{
+            width: 0.65rem;
+            height: 0.65rem;
+          }
         }
       }
       &:hover{
@@ -5676,6 +5749,7 @@ button {
     padding-left: 20px;
   }
   @media @max480{
+    margin-top: 1rem;
     .solutionlist .innerbox {
       .image .pb{
         padding-bottom: 100%;
@@ -5688,26 +5762,36 @@ button {
     }
     
   }
+  @media @max360{
+    margin-top: 0.6rem;
+    .solutionlist{
+      margin-top: 0.6rem;
+    }
+  }
 }
 // --------------------------------------------- 青绿解决方案--为什么选择青绿？
 .chooseQINGLV{
   margin-top: 1.6rem;
   padding-bottom: .8rem;
-  .titletop{.flex; 
-    .title{font-size: var(--font48); width: 50%; font-weight: 700;}
-    .info{font-size: var(--font24);width: 50%; max-width: 3.2rem;
+  .titletop{display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .title{font-size: var(--font48);  font-weight: 700; font-family: 'HarmonyOS-TC';line-height: calc(56/48);}
+    .info{font-size: var(--font24); max-width: 3.2rem; color: var(--black-666);margin-left: 1.35rem;
       span{font-size: var(--font24);}
+      .activecolor{
+        font-weight: 700;
+      }
     }
 
   }
-  .itemlist{margin-top: 1.08rem;
+  .itemlist{margin-top: 0.8rem;
     display: grid;
     grid-template-columns: repeat(2,1fr); 
-    .item{.flex; .j_justify; .a_end; cursor: pointer; column-gap: 1.37rem; padding: .24rem 0 .8rem 0;border-top: solid 1px #dddddd;
+    .item{.flex; .j_justify; .a_center; cursor: pointer; column-gap: 1.37rem; padding: .24rem 0 .8rem 0;border-top: solid 1px #dddddd;
       .left{
         .num{.dh;font-size: var(--font18); .black9; opacity: 0.8;}
-        .title{.dh;font-size: var(--font24); margin-top: .4rem;.black0; font-weight: 700;}
-        .info{margin-top: .16rem;.black6;}
+        .title{.dh;font-size: var(--font24); margin-top: .4rem;.black0; font-weight: 700;line-height: calc(28/24);}
+        .info{.dh;margin-top: .16rem;.black6;}
 
       }
       .right{
@@ -5715,21 +5799,21 @@ button {
         height: .66rem;
         min-width: .66rem;
         text-align: center;
-        img{
+        img{.dh;
           // width: 100%; height: 100%; object-fit: cover;
-          transition: .5s ease-in-out;
+          // transition: .5s ease-in-out;
         }
       }
       &:hover{
         .left{
-          .num{.dh;.black0; }
-          .title{.dh;.activecolor;}
-  
+          .num{.dh;.black0;transform: translateX(30px); }
+          .title{.dh;.activecolor; transform: translateX(30px);}
+          .info{.dh;transform: translateX(30px); }
         }
         .right{
-          img{
-            transition: .5s ease-in-out;
-            transform: translateX(10px);
+          img{.dh;
+            // transition: .5s ease-in-out;
+            transform: translateX(30px);
           }
         }
         
@@ -5742,6 +5826,23 @@ button {
       padding-left: 1.39rem;
     }
   }
+  @media @max990{
+    .titletop .info{
+      margin-left: 1rem;
+    }
+    .itemlist {
+      .item{
+        column-gap: 1rem;
+      }
+      .item:nth-child(odd){
+        padding-right: 1rem;
+      }
+      .item:nth-child(even){
+        padding-left: 1rem;
+      }
+    }
+    
+  }
   @media @max768{
     .titletop{
       display: inline-block;
@@ -5753,6 +5854,7 @@ button {
         width: 100%;
         max-width: inherit;
         margin-top: .3rem;
+        margin-left: 0;
       }
     }
     .itemlist{
@@ -5765,7 +5867,9 @@ button {
       }
     }
   }
-
+  @media @max768{
+    margin-top: 1rem;
+  }
 }
 // --------------------------------------------- 青绿关于我们--列表
 .about-list{background-color: var(--white-color);
@@ -6108,6 +6212,761 @@ button {
 
   }
 }
+
+// --------------------------------------------- 青绿解决方案详情--行业痛点
+.pain-points-wrap{padding-top: 1.6rem; padding-bottom:1.28rem ;
+  .innerbox{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    .item{
+
+    }
+    .ileft{
+      // max-width: 6.05rem;
+      width: 78.6%;
+      .title{}
+      .info{margin-top: .32rem;}
+      .address {margin-top: .45rem;}
+
+    }
+    .iright{
+      border-left: solid 1px #DDDDDD;
+      ul{
+        li{.dh;padding: .64rem .8rem;border-bottom: solid 1px #DDDDDD; cursor: pointer;
+          &:first-child{
+            padding-top: 0;
+          }
+          &:last-child{
+            border-bottom: none;
+          }
+          &:hover{.dh;
+            background-color: #fff;
+            border: none;
+            box-shadow: 6px 8px 31px 0 rgb(37 187 15 / 19%);
+            transform: translateY(-2px);
+            .title{color: var(--active-color);}
+          }
+          .title{
+            font-size: var(--font24);
+            color: var(--black-000);
+            font-weight: 500;
+          }
+          .info{
+            color: var(--black-666);
+            margin-top: .24rem;
+            
+          }
+        }
+      }
+    }
+  }
+  
+  @media @max768 {
+    padding-top: 1rem; padding-bottom:1rem ;
+    .innerbox{
+      grid-template-columns: repeat(1, 1fr);
+      .ileft{
+        width: 100%;
+      }
+      .iright{border-left: none;
+        margin-top: 0.5rem;
+        ul li{
+          // border-bottom: none;
+          padding: 0.64rem 0;
+        }
+      }
+    }
+  }
+  @media @max480 {
+    padding-top: 0.5rem; padding-bottom:0.5rem ;
+  }
+}
+// --------------------------------------------- 青绿解决方案详情--青绿优势
+
+.solution-advantage-wrap{position: relative;
+  .innerbox{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    .item{
+      .image{width: 100%;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .ileft{padding-left: 0.64rem; position: relative;
+      .info{position: absolute; width: calc(100% - 1.83rem);left: 1.83rem;z-index: 2; color: #fff;  top: 0.96rem;
+        .videowrap{margin-top: 0.64rem; cursor: pointer;position: absolute; top:4rem;
+          img{width: 0.64rem;height: 0.64rem;filter: brightness(0) invert(1);
+          }
+          p{margin-top: 0.16rem;text-transform: uppercase;max-width: 118px;}
+        }
+
+      }
+
+    }
+    .iright{background-color: #fff;
+      ul{padding: .8rem 1.93rem .56rem .8rem;
+        li{.dh;.flex; border-top: solid 1px #dddddd;padding:.18rem 0 .45rem 0; cursor: pointer;
+          &:hover{
+            .dh;border-top: solid 1px var(--active-color);
+            .num{.dh;color: var(--active-color)}
+          }
+          .num{.dh;color: var(--black-ccc); min-width: .5rem;}
+          .title{.dh;color: var(--black-000); margin-left: 1.28rem;}
+
+        }
+      }
+    }
+  }
+  @media @max1280{
+    .innerbox .iright ul li{
+      padding: 0.18rem 0 0.4rem 0;
+    }
+  }
+  @media @max1200{
+    .innerbox{
+      place-items: center;
+      background-color: #fff;
+    }
+  }
+  @media @max990{
+    .innerbox .iright ul{
+      padding: 0.5rem;
+      li .title{
+        margin-left: 0.5rem;
+      }
+    }
+  }
+  @media @max768{
+    .innerbox{
+      grid-template-columns: repeat(1, 1fr);
+      .iright{
+        width: 100%;
+      }
+    }
+  }
+  @media @max480{
+    .innerbox {
+      .ileft .info {left: 1.2rem;
+        .videowrap{
+          top: 0;
+        }
+      }
+      .iright ul li {
+        .num{
+          min-width: 40px;
+        }
+        .title{
+          margin-left: 0;
+        }
+      }
+    }
+   
+  }
+}
+// --------------------------------------------- 青绿解决方案详情--分选产物
+.sorting-products-wrap{margin-top: 1.28rem; padding-left: 9.9%; position: relative;
+  .innerbox{ overflow: hidden; margin-top: .8rem;
+    li{background-color: #fff; padding: .36rem 0.29rem;
+      .pb{
+        padding-bottom: 67%;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .title{text-align: center;margin-top: .37rem;
+        color: var(--black-999); font-size: var(--font24);
+      }
+    }
+    
+  }
+  .swiper-pagination{
+    display: none;
+  }
+  @media @max768{
+    margin-top: 1rem;
+    .swiper-pagination{
+      display: inline-block;
+      position: relative;
+      margin-top: 30px;
+    }
+  }
+  @media @max480{
+    margin-top: 0.5rem;
+    .innerbox{
+      margin-top: 0.5rem;
+    }
+  }
+}
+// --------------------------------------------- 青绿解决方案详情--典型案例
+.caselist-wrap{margin-top: 1.28rem;padding: 1.28rem 0; background-color: #fff;
+  .titleflex{.flex; .j_justify;
+    .operate{.flex;gap: .64rem;
+      .oper{.flex; .a_center; gap:.16rem ; color: var(--black-999);
+        img{width: .32rem;height: .32rem; min-width: .32rem;}
+      }
+    }
+  }
+  .subject-list{.flex; margin-top: .48rem;border-top: solid 1px #cccccc;
+    .sj-item{.flex;padding-top: .48rem;
+      .title{
+        font-size: var(--font24);
+        font-weight: 700;
+        min-width: 96px;
+        margin-right: .96rem;
+      }
+      .datalist{
+        
+        color: var(--black-999);
+        
+        li{cursor: pointer;margin-bottom: 0.1rem;
+          img{.dh; margin-right: .1rem; opacity: 0;}
+          &:hover{color: var(--black-000);
+            img{.dh;opacity: 1;}
+          }
+        }
+        .active{
+          color: var(--black-000);
+          img{.dh;opacity: 1;}
+        }
+      }
+    }
+    .sj-type{width: 39.5%;
+      .datalist{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: .38rem;
+      }
+    }
+    .sj-place{width: 60.5%;
+      border-left: solid 1px #cccccc;
+      padding-left: .9rem;
+      .datalist{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        width: calc(100% - 2rem);
+      }
+    }
+  }
+  .itemlist{display: grid;grid-template-columns: repeat(2,1fr);gap: .5rem; margin-top: 0.64rem;
+    li{
+      cursor: pointer;
+      .image{
+        overflow: hidden;
+        img{.dh;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .info{
+        .title{padding: .4rem 0; line-height: calc(28/24);}
+        .dataitem{border-top: solid 1px #cccccc;.flex; column-gap: .56rem; position: relative;
+          .d-item{
+            .num{color: var(--black-000);font-weight: 700; margin-top: .4rem; font-size: var(--font40);line-height: calc(34/40);}
+            .area{color: var(--black-666);margin-top: .12rem;font-size: var(--font16);}
+          }
+          &:before{
+            position: absolute;
+            content: '';
+            width: 0;
+            left: 0;
+            top: 0;
+            height: 1px;
+            background-color: var(--active-color);
+            transition: .8s ease-in-out;
+          }
+        }
+        .datalist{.flex;  .a_center; column-gap: 0.56rem; padding-top: .4rem;   border-top: solid 1px #cccccc;
+          .item{
+            .down,.fast{
+              .flex; .a_center; gap: 12px;font-weight: 700;
+            }
+            .down{
+              color: #25BB0F;
+
+            }
+            .fast{
+              color: #FF9D2A;
+
+            }
+            .percent{font-size: var(--font40);color: var(--black-000);font-weight: 700;
+              .jump-num{
+                font-size: var(--font40);font-weight: 700;
+              }
+            }
+            .content{color: var(--black-666);font-weight: 300;}
+
+          }
+        }
+
+      }
+      &:hover{
+        .image{
+          img{.dh;.fd(1.05);}
+          
+        }
+        .info .dataitem{
+          // border-top: solid 1px var(--active-color);
+          &::before{
+            width: 100%;
+          }
+        }
+      }
+      
+    }
+  }
+  .caselist{
+    row-gap: .5rem;
+  }
+  
+
+  @media @max1280{
+    .subject-list {
+      .sj-item .title{
+        margin-right: 0.5rem;
+      }
+      .sj-type .datalist{
+        column-gap: 0.2rem;
+      }
+    }
+    
+  }
+  @media @max1200{
+      .subject-list {
+        .sj-item .title {
+          margin-right: 0.3rem;
+        }
+        .sj-place{
+          padding-left: 0.5rem;
+        }
+      }
+    
+  }
+  @media @max990{
+    .subject-list{
+      display: block;width: 100%;
+      .sj-type,.sj-place{width: 100%;}
+      .sj-place{
+        padding-left: 0;
+        border-left: 0;
+      }
+    }
+    
+  }
+  @media @max768{
+    margin-top: 1rem;
+    padding: 1rem 0;
+    .itemlist{
+      grid-template-columns: repeat(1,1fr);
+    }
+  }
+  @media @max640{
+    .subject-list {
+      .sj-item{display: block;width: 100%;
+        .datalist{margin-top: .5rem;width: 100%;}
+      }
+      
+    }
+    
+  }
+  @media @max480{
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+   .subject-list .sj-place .datalist{
+    grid-template-columns: repeat(3, 1fr);
+   }
+
+  }
+}
+
+// --------------------------------------------- 青绿案例详情--项目亮点
+.project-highlights{margin-top: 1.28rem; padding-left: 9.9%; position: relative;
+  .innerbox{ overflow: hidden; margin-top: .8rem;display: grid;padding: 20px 0;
+    li{position: relative;background-color: #fff; padding: .24rem .24rem 0.48rem 0.56rem; cursor: pointer;
+     .num{text-align: right; color: var(--black-ccc);}
+     .p-icon{.dh;margin-top: 1.02rem;filter: brightness(0.5) invert(1);}
+     .title{.dh; line-height: 1.167;margin-top: .24rem;  color: var(--black-000);font-size: var(--font24);}
+      .bgimage{.dh;
+        position: absolute;
+        bottom: 0;right: 0;opacity: 0; 
+      }
+     &:hover{
+      box-shadow: 6px 8px 31px 0 rgba(37, 187, 15, 0.19);
+      .p-icon{.dh;filter: inherit;}
+      .title{.dh;color: var(--active-color);font-weight: 700;}
+      .bgimage{.dh;opacity: 1; }
+     }
+    }
+    
+  }
+  .swiper-pagination{
+    display: none;
+  }
+  @media @max768{
+    margin-top: 1rem;
+    .swiper-pagination{
+      display: inline-block;
+      position: relative;
+      margin-top: 30px;
+    }
+  }
+  @media @max480{
+    margin-top: 0.5rem;
+    .innerbox{
+      margin-top: 0.5rem;
+    }
+  }
+}
+// --------------------------------------------- 青绿案例详情--采用设备
+
+.equiment-wrap{padding-left: 9.9%;margin-top: 1.28rem; position: relative; 
+  .firstcontainer{background-color: #fff; overflow: hidden;
+    .innerbox{.flex;
+      .leftitem{width: 57.8%; padding-top: .65rem; overflow: hidden;
+        .pb{padding-bottom: 60%;width: 64%;margin: auto;
+          img{width: 100%; height: 100%; object-fit: cover;}
+
+        }
+      }
+      .rightitem{width: 42.2%;border-left: solid 1px #dddddd; padding: 0.8rem 1.13rem 1.28rem 1.13rem;
+        .caselist{margin-top: .89rem; max-width: 404px;
+          .item{display: flex; cursor: pointer; border-top:solid 1px #dddddd ;
+            .image{ display: flex;align-items: center;border-left: solid 1px #dddddd; padding: .16rem .33rem;
+              img{width: 0.67rem; }
+            }
+            .title{ flex: 2; display: flex; font-weight: 700; align-items: center; color: var(--black-ccc); padding-left: .39rem; border-left: solid 1px #dddddd; border-right: solid 1px #dddddd;}
+            &:last-child{
+              border-bottom: solid 1px #dddddd;
+            }
+          }
+        }
+      }
+  
+    }
+    .banner_sp{
+      position: absolute;
+      bottom: 0.63rem;
+      align-items: center;
+      margin-left: 67%;
+      span{
+        &:before{
+          background: #333;
+        }
+      
+      }
+    }
+   
+   
+
+
+
+  }
+  @media @max990{
+    .firstcontainer {
+      .innerbox .rightitem{
+        padding: 0.8rem 0.8rem 1.2rem 0.8rem;
+      }
+      .banner_sp{
+        position: relative;
+        margin-left: 60%;
+      }
+    }
+  }
+  @media @max768{
+    .firstcontainer {
+      .banner_sp{margin-left: 0;}
+      .innerbox{
+        display: inline-block;width: 100%;
+        .leftitem{
+          width: 100%;
+        }
+        .rightitem{border-left: none;
+          width: 100%;
+          .caselist{max-width: inherit;}
+        }
+      }
+    }
+  }
+}
+
+// --------------------------------------------- 青绿案例详情--客户证言
+.verify-wrap{margin-top: 1.28rem; padding-bottom: 1.28rem;
+  .info{
+    margin-top: 0.64rem; padding: 0.64rem 0.64rem 0.53rem 0.64rem;
+    background-color: #fff;
+    background-image: url("../images/verifybg.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    .innerbox{
+      width: 63.079%;
+      .sec-title{
+        margin-top: .12rem;
+      }
+      .user{
+        .flex;margin-top: 1.2rem; gap: .16rem;
+        img{width: .48rem; height: .48rem; border-radius: 30px;}
+        .data{font-size: var(--font14);
+          .id{
+            font-weight: 700;
+          }
+          .time{
+            
+          }
+        }
+    
+      }
+    }
+   
+  }
+  @media @max1280{
+    .info{
+      background-size: 51%;
+    }
+  }
+  @media @max990{
+    .info{
+      background-size: 51%;
+    }
+  }
+ 
+}
+
+
+
+
+
+
+
+// 分页样式
+.pagewrap{position: relative;border-top: solid 1px #dddddd; text-align: center;
+  margin-top: 1.28rem;
+  padding-top: .4rem;
+  .layui-box{
+    width: 100%;
+  }
+  .layui-laypage a, .layui-laypage span{
+    width: .4rem;
+    height: .4rem;
+    min-width: 30px;
+    min-height: 30px;
+    padding: 0;
+    text-align: center;
+    font-size: var(--font16);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    border: solid 1px var(--active-color);
+    background-color: inherit;
+    padding: 0;
+  }
+  .layui-laypage-curr em{color: var(--active-color);}
+  .layui-laypage-prev,.layui-laypage-next{width: 1.1rem !important; min-width: 70px !important; height: .4rem; border: solid 1px #000 !important; }
+  .layui-laypage-prev{
+    position: absolute;
+    left: 0;
+    margin-right: 10px;
+  }
+  .layui-laypage-next{
+    position: absolute;
+    right: 0;
+    margin-left: 10px;
+  }
+  .layui-laypage a:hover{
+    color: var(--black-000);
+  }
+  .layui-laypage>a:first-child, .layui-laypage>a:first-child em,.layui-laypage>a:last-child, .layui-laypage>a:last-child em，.layui-laypage-em{
+    border-radius: 0;
+  }
+  .layui-laypage a, .layui-laypage button, .layui-laypage input, .layui-laypage select, .layui-laypage span{
+    border: none;
+  }
+  .layui-disabled img, .layui-disabled:hover img{
+    filter: brightness(0.5) invert(0.8);
+  }
+  .layui-laypage-next em, .layui-laypage-prev em{
+    font-size: var(--font16);
+  }
+  .layui-laypage-next, .layui-laypage-prev{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .layui-laypage-next img, .layui-laypage-prev img{
+    width: .24rem;
+    min-width: 18px;
+  }
+}
+// --------------------------------------------- 青绿解决方案详情--表单
+.form-wrap{padding: 1.28rem 0; position: relative;
+  
+  .imagebg{
+    position: absolute;
+    width: 52%;
+    height: 100%;
+    img{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .inner{position: relative; z-index: 10;
+    .flex;gap: 1.46rem;
+    .left-wrap{
+      // max-width: 371px;
+      width: 24%;
+      .publictitle{width: 2.88rem;}
+      .sec-title{margin-top: .34rem; color: var(--black-666);}
+    }
+    .right-form{
+      width: 66.23%;
+      background-color: #ffffff;
+      ul{padding: .24rem .8rem 0.64rem .8rem;
+        li{position: relative; padding: 0.4rem 0 0.2rem 0;
+          border-bottom: solid 1px #dddddd;color:var(--black-000);
+          input{width: 90%;
+            color: var(--black-000);
+          }
+          input::-webkit-input-placeholder {
+            color: var(--black-000);
+          }
+          
+          input:-moz-placeholder {
+            color: var(--black-000);
+          }
+          
+          input::-moz-placeholder {
+            color: var(--black-000);
+          }
+          
+          input:-ms-input-placeholder {
+            color: var(--black-000);
+          }
+          textarea{
+            min-height: 0.56rem;
+          }
+          textarea::-webkit-input-placeholder {
+            color: var(--black-000);
+          }
+          
+          textarea:-moz-placeholder {
+            color: var(--black-000);
+          }
+          
+          textarea::-moz-placeholder {
+            color: var(--black-000);
+          }
+          
+          textarea:-ms-input-placeholder {
+            color: var(--black-000);
+          }
+          img{width: .22rem;
+            position: absolute;right: 0;
+          }
+          &:last-child{
+            border-bottom: none;
+          }
+          .submit-content{.flex;.j_justify; .a_center; width: 100%; height: auto;
+            .info{ .flex;.j_justify;.a_center; gap: 7px;
+              .choose-btn{.dh;cursor: pointer; position: relative; width: .24rem;min-width: .24rem; height: .24rem;border-radius: 50%;border: 1px solid #cccccc;
+                img{.dh;opacity: 0; position: absolute;  width: 100%;height: 100%; border-radius: 50%;}
+                .active{.dh;border: none;
+                  .dh;opacity: 1
+                }
+                &:hover{.dh;border: none;
+                  img{.dh;opacity: 1}
+                }
+              }
+              .agree{color: var(--black-999);
+                a{font-weight: 400;text-decoration: underline; color: var(--black-000);}
+              }
+            }
+            .submit-btn{padding: 0.25rem 0.968rem;
+              .flex;.a_center;.j_center; cursor: pointer;background:var(--active-color); color: var(--white-color);line-height: 1;
+            }
+          }
+          
+        }
+      }
+    }
+  }
+  
+  @media @max1440{
+   
+    .inner .right-form ul li .submit-content .submit-btn{
+      padding: 0.2153rem 0.93rem;
+    }
+  }
+  @media @max1280{
+    .imagebg img{
+      position: absolute;
+      bottom: 0.38rem;
+      left: 0;
+    }
+    .inner .right-form ul li .submit-content .submit-btn{
+      padding: 0.224rem 0.8864rem;
+    }
+  }
+  @media @max990{
+   .inner{
+    gap: 1rem;
+   }
+  }
+  @media @max768{
+      padding: 1rem 0;
+    .inner{
+      display: inline-block;
+      width: 100%;
+      .left-wrap{
+        width: 100%;
+        max-width: inherit;
+        .publictitle{
+          width: 100%;
+        }
+      }
+      .right-form{
+        width: 100%;
+        margin-top: .6rem;
+      }
+      
+    }
+  }
+  @media @max640{
+    .inner .right-form ul li .submit-content{
+      display: inline-block;
+      width: 100%;
+    }
+   
+  }
+  @media @max480{
+      padding: 0.5rem 0;
+      .inner .right-form ul{
+        padding: 0.5rem;
+        
+      }
+      .inner .right-form ul li .submit-content .submit-btn{
+        margin-top: 0.5rem;
+      }
+  }
+}
+
+
+
+
+
 
 
 // --------------------------------------------- 青绿关于我们--弹窗
