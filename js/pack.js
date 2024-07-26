@@ -685,7 +685,7 @@ $(function () {
             },
             
             // speed:1000,
-            slidesPerView: 2.3,
+            slidesPerView: 2.24,
             spaceBetween: 32,
             preventLinksPropagation: false, // 阻止点击事件冒泡
             pagination: {
