@@ -6306,10 +6306,11 @@ button {
     .ileft{
       // max-width: 6.05rem;
       width: 78.6%;
-      .title{}
-      .info{margin-top: .32rem;}
-      .address {margin-top: .45rem;}
-
+      .specialpostion{
+        position: sticky;
+        top: 1.2rem;
+        .info{margin-top: .32rem;}
+      }
     }
     .iright{
       border-left: solid 1px #DDDDDD;
@@ -7480,13 +7481,46 @@ button {
   }
 }
 // --------------------------------------------- 产品详情-公司新闻
-.newbanenr-wrap{ padding-left: 0.64rem;
-
+.newbanenr-wrap{padding-left: 0.64rem; position: relative;
+  .innerbox{ .pt120;.pb120; padding-left: 1.28rem; 
+    background-color: #fff;
+    .swiperimg{.flex;
+      .info{
+        width: 34%;
+        margin-left: 1.75rem;
+        .time{color: var(--black-999);}
+        .title{margin-top: .2rem}
+        .sec-title{margin-top: .24rem;color: var(--black-666);}
+        .news-more{margin-top: .48rem;color: var(--black-999);}
+  
+      }
+    }
+    
+  }
+  .banner_sp{
+    position: absolute;
+    bottom: 1.27rem;
+    align-items: center;
+    margin-left: 57%;
+    span:before{
+      background: #CCCCCC;
+    }
+    .swiper-pagination-bullet-active:before{
+      background-color: #25BB0F !important;
+    }
+  }
 }
 
 // --------------------------------------------- 产品详情-公司新闻列表
 .conpany-news{.mt120;.pb120;
-
+  .newswrap{
+    .new-list{display: none;}
+    .active{
+      display: inline-block;
+      width: 100%;
+    }
+  }
+ 
 }
 
 

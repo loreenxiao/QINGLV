@@ -869,6 +869,38 @@ $(function () {
     }
     equimentWrap();
 
+
+
+    // --------------------------------------------- 新闻列表--新闻轮播
+    function newsList(){
+        var box = $('.newbanenr-wrap');
+        var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#25BB0F" stroke-dasharray="314" stroke-dashoffset="314"/></svg>'
+        if (box.length) {
+            var swiper1 = new Swiper('.newbanenr-wrap .innerbox', {
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                effect: "fade",
+                fadeEffect: {
+                    crossFade: true //开启淡出。过渡时，原slide透明度从1->0（淡出），过渡中的slide透明度从0->1（淡入），其他slide透明度0。
+
+                },
+                preventLinksPropagation: false, // 阻止点击事件冒泡
+                pagination: {
+                    el: '.newbanenr-wrap .banner_sp',
+                    clickable: true,
+                },
+                allowTouchMove: false,
+                on: {
+                    slideChange: function (mySwiper) {
+                        $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty()
+                    },
+                },
+            });
+        }
+    }
+    newsList();
 })
 
 // --------------------------------------------- 荣誉资质
@@ -879,6 +911,15 @@ $(".honor-qualification .honor-title li").click(function(){
     $(".honor-qualification .honor-wrap .cardlist").eq(index).addClass("active").siblings().removeClass("active");
 
 })
+// --------------------------------------------- 新闻-荣誉资质
+$(".conpany-news .honor-title li").click(function(){
+    $(this).addClass("active").siblings().removeClass("active");
+    // 切换内容列表
+    var index  =  $(this).index();
+    $(".conpany-news .newswrap .new-list").eq(index).addClass("active").siblings().removeClass("active");
+
+})
+
 
 // --------------------------------------------- 产品详情-产品参数
 function productParams() {
