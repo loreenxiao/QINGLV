@@ -1111,24 +1111,25 @@ projectHighlights(); // --------------------------------------------- 科技创�
 function searchCenterList() {
   var slide = new Swiper('.search-center-wrap .swiperimg', {
     loop: true,
+    //可选选项，开启循环
+    slidesPerView: 5,
+    spaceBetween: 20,
+    allowTouchMove: false,
+    speed: 8000,
+    // autoplay:true,
     autoplay: {
-      delay: 5000,
+      delay: 0,
       disableOnInteraction: false
     },
-    // speed:1000,
-    slidesPerView: 5,
-    spaceBetween: 32,
-    preventLinksPropagation: false,
-    // 阻止点击事件冒泡
-    allowTouchMove: false,
     breakpoints: {
-      480: {
-        slidesPerView: 1,
-        spaceBetween: 15
-      },
       768: {
-        slidesPerView: 2,
-        spaceBetween: 20
+        slidesPerView: 4
+      },
+      640: {
+        slidesPerView: 3
+      },
+      480: {
+        slidesPerView: 2
       }
     }
   });
@@ -1140,7 +1141,7 @@ function developedEquipmentList() {
   var slide = new Swiper('.developed-equipment-wrap .itemlist', {
     loop: true,
     autoplay: {
-      delay: 5000,
+      delay: 2000,
       disableOnInteraction: false
     },
     // speed:1000,
@@ -1148,7 +1149,7 @@ function developedEquipmentList() {
     spaceBetween: 32,
     preventLinksPropagation: false,
     // 阻止点击事件冒泡
-    allowTouchMove: false,
+    // allowTouchMove: false,
     breakpoints: {
       480: {
         slidesPerView: 1,

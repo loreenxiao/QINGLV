@@ -4129,6 +4129,20 @@ button {
 .pb120{
   padding-bottom: 1.2rem;
 }
+@media @max480 {
+  .mt120{
+    margin-top: 0.8rem;
+  }
+  .mb120{
+    margin-bottom: 0.8rem;
+  }
+  .pt120{
+    padding-top: 0.8rem;
+  }
+  .pb120{
+    padding-bottom: 0.8rem;
+  }
+}
 .publictitle{
   font-size: var(--font48);
   font-family: 'HarmonyOS-TC';
@@ -5565,7 +5579,7 @@ button {
     width: 100%; height: 100%; object-fit: cover;
   }
   @media @max768{
-    padding-left: 20px;
+    // padding-left: 20px;
   }
   @media @max360{
     margin-top: 30px;
@@ -6874,6 +6888,12 @@ button {
   .active{
     background-color: var(--active-color);color: var(--white-color);
   }
+  @media @max480{
+    li{
+      padding: 0.2rem 0.3rem;
+    }
+    
+  }
 }
 .honor-qualification{.mt120;.pb120;
   .honor-wrap{
@@ -7517,6 +7537,47 @@ button {
       background-color: #25BB0F !important;
     }
   }
+  @media @max1200 {
+    .banner_sp{
+      bottom: 1rem;
+      margin-left: 53%;
+    }
+    .innerbox .swiperimg .info{
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+  @media @max990 {
+    .banner_sp{
+      bottom: 0.5rem;
+      margin-left: 50%;
+    }
+    .innerbox {
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+      padding-left: 0.8rem;
+      .swiperimg .info{
+        width: 42%;
+        margin-left: 0.6rem;
+        margin-right: 0.6rem;
+      }
+    }
+  }
+  @media @max768 {
+    .innerbox {padding: 0.5rem;
+      .swiperimg{
+        display: inline-block;
+        width: 100%;
+        .image{width: 100%}
+        .info{width: 100%;margin-top: .5rem; margin-left: 0}
+      }
+    }
+  }
+  @media @max480 {
+   .banner_sp{
+
+    }
+  }
 }
 
 // --------------------------------------------- 产品详情-公司新闻列表
@@ -7654,7 +7715,24 @@ button {
    
     
   }
- 
+  @media @max768 {
+    .newswrap .new-list a .item {
+      display: inline-block;width: 100%;
+      .info{
+        width: 100%;
+      }
+      .image{width: 100%; margin-top: .5rem;}
+    }
+  }
+  @media @max480 {
+      margin-top: .8rem;
+      .newswrap .new-list a .item .info .title{
+        margin-top: 0.5rem;
+      }
+      .newswrap .new-list a .item:first-child{
+        border-top:none;
+      }
+  }
 }
 
 
@@ -7908,18 +7986,33 @@ button {
     .sec-title{margin-top: .46rem;}
 
   }
-  .page-wrap{.flex; .j_justify; .a_center;border-top: solid 1px #cccccc;
+  .page-wrap{.flex; .j_justify; .a_end;border-top: solid 1px #cccccc;
     border-bottom: solid 1px #cccccc;
     padding: .48rem 0;
     margin-top: 1.24rem;
-    .item{ 
-      
+    .right{ 
+      .btn{
+        float: right;
+      }
     }
     .btn{ .flex; .a_center; .j_center; margin-top: .32rem;border: solid 1px #000000; width: fit-content;padding: .08rem .2rem;
       gap: .12rem;
       img{width: .24rem;height: .24rem;}
     }
     .return{}
+
+  }
+  @media @max768{
+    .page-wrap{
+      display: inline-block; width:100%;
+      .item{
+        margin-top: .5rem;
+      }
+      .right .btn{
+        float: left;
+      }
+    }
+   
   }
 }
 
@@ -8029,11 +8122,19 @@ button {
       margin-top: 1rem;
     }
   }
+  @media @max640{
+    .innerbox {padding:0.65rem;
+      .itemlist .item .left{
+        width: 70%;
+      }
+    }
+   
+  }
 }
 // --------------------------------------------- 加入我们-员工福利
 .employee-welfare-wrap{padding-left: 1.9rem; padding-right: 1rem;
   .innerbox{.flex;
-    .info{width: 28.06%;margin-top: .53rem;
+    .info{width: 28.06%;margin-top: .53rem;    min-width: 280px;
       .listitem{
         margin-top: .96rem;
         li{.flex; padding: .39rem 0;border-top: solid 1px #dddddd;
@@ -8050,6 +8151,25 @@ button {
 
     }
 
+  }
+  @media @max990{
+    margin-top: 1rem;
+  }
+  @media @max768{
+    .innerbox{
+      display: inline-block;width: 100%;
+      .info{
+        width: 100%;
+      }
+    }
+  }
+  @media @max480{
+    padding: .65rem;
+    padding-top: 0;
+    margin-top: 0;
+    .innerbox .info{
+      margin-top: 0rem;
+    }
   }
 }
 
@@ -8098,7 +8218,7 @@ button {
 }
 // --------------------------------------------- 加入我们-在招岗位
 .recruitment-positions-wrap{.mt120;position: relative;
-  .image{position: absolute;top: 0;}
+  .image{position: absolute;bottom: 0;}
   .info{ position: relative; padding-top: .6rem; padding-bottom: .44rem;
     .innerbox{.flex;.j_justify; .a_center;
       .left{
@@ -8115,6 +8235,14 @@ button {
 
     }
 
+  }
+  @media @max480{
+    .image{
+      height: 100%;
+      img{
+        width: 100%; height: 100%; object-fit: cover;
+      }
+    }
   }
 }
 // --------------------------------------------- 联系我们-公司地址
@@ -8158,7 +8286,7 @@ button {
           li{padding: 0.56rem 0.65rem 0.4rem 0.64rem;
             border-bottom: solid 1px #dddddd;
             .title{color: var(--black-666)}
-            .email{font-size: var(--font32);font-weight: 700;}
+            .email{font-size: var(--font32);font-weight: 700;word-wrap: break-word;}
             &:last-child{
               border-bottom: none;
             }
@@ -8184,7 +8312,37 @@ button {
     }
 
   }
-
+  @media @max990{
+ 
+    .gridlist .item{
+      padding: 0.35rem;
+      .info{
+        min-height: 1rem;
+      }
+    }
+  }
+  @media @max768{
+    .gridlist{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .media-list .info{
+      display: inline-block;width: 100%;
+      .leftbox{
+        width: 100%;
+      }
+      .rightbox{width: 100%; border-left: 0;    padding: 0.65rem;}
+    }
+  }
+  @media @max480{
+    .gridlist{
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .media-list .info .rightbox .media-qrcode{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);gap: 0.2rem;
+    }
+    
+  }
 }
 // --------------------------------------------- 联系我们-分布网络
 .map-wrap{.mt120;padding-left: .64rem;
@@ -8199,6 +8357,17 @@ button {
     }
 
   }
+  @media @max768{
+    .innerbox{
+      display: inline-block;width: 100%;
+      .map{
+        width: 100%;margin: 0; padding: 0.6rem;
+      }
+      .info{
+        width: 100%;margin: 0; padding: 0.6rem;
+      }
+    }
+  }
 }
 // --------------------------------------------- 科技创新-研发中心
 
@@ -8207,39 +8376,62 @@ button {
   padding-left: 0.64rem;
   .centerwrap{background-color: #ffffff; padding:1.28rem 1.9rem .56rem 1.28rem ;
     .innerbox{.flex;
-     
-      .info{width: 27.63%;padding-bottom: .48rem;border-bottom: solid 1px #cccccc;
+      .info{width: 27.63%;padding-bottom: .48rem;border-bottom: solid 1px #cccccc;min-width: 200px;
         .datas{color: var(--black-666);
           p{
             margin-top: .4rem;
           }
         }
         .searchcenter{width: .8rem;height: .8rem;margin-top: 1.32rem; 
-          
         }
-  
       }
       .image{
         margin-left: 1.28rem;
       }
-  
-    
     }
     .swiperimg{ overflow: hidden; margin-top: 1.12rem;
-      .pb{
-        padding-bottom: 39%;
-        img{
-          width: 100%; height: 100%; object-fit: contain;
+      .swiper-wrapper{transition-timing-function:linear !important;
+        .pb{
+          padding-bottom: 39%;
+          img{
+            width: 100%; height: 100%; object-fit: contain;
+          }
         }
+      }
+      
+    }
+  }
+  @media @max1200{
+    .centerwrap .innerbox .image{
+      margin-left: 1rem;
+    }
+  }
+  @media @max990{
+    .centerwrap .innerbox {
+      .image{
+        margin-left: 0.6rem;
+      }
+      .info .searchcenter{
+        margin-top: 1rem;
       }
     }
   }
- 
+  @media @max768{
+    .centerwrap {    padding: 0.65rem;
+      .innerbox{
+        display: inline-block;width: 100%;
+        .info{width: 100%;}
+        .image{margin-left: 0;}
+  
+      }
+    }
+  }
 }
 // ---------------------------------------------科技创新-- 自研设备
 .developed-equipment-wrap{position: relative;
   padding-bottom: 1.28rem;
   .innerbox{padding-left: 1.9rem;
+    .swiper-wrapper{transition-timing-function:linear !important;}
     .itemlist{overflow: hidden;
       margin-top: .64rem;
       .item{
@@ -8283,7 +8475,7 @@ button {
       
     }
     @media @max768{
-     
+      padding-left: .64rem;
     }
     @media @max640{
       .itemlist{
