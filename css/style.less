@@ -939,6 +939,7 @@ button {
   --font70: .7rem;
   --font72: .72rem;
   --font80: .8rem;
+  --font96: 0.96rem;
   --font100: 1rem;
   --font120: 1.2rem;
   --font160: 1.6rem;
@@ -1068,6 +1069,9 @@ button {
 .font80 {
   font-size: .8rem;
 }
+.font96 {
+  font-size: .96rem;
+}
 .font100 {
   font-size: 1rem;
 }
@@ -1192,6 +1196,7 @@ button {
     --font70: .5rem;
     --font72: .5rem;
     --font80: .5rem;
+    --font96: .5rem;
     --font100: .5rem;
     --font120: .5rem;
     --font160: .5rem;
@@ -1284,6 +1289,9 @@ button {
     font-size: .5rem;
   }
   .font80 {
+    font-size: .5rem;
+  }
+  .font96 {
     font-size: .5rem;
   }
   .font100 {
@@ -6036,6 +6044,11 @@ button {
       border-bottom: solid 2px var(--active-color);
     }
   }
+  @media @max1280{
+    ul{
+      li{padding: 0.344rem 0;}
+    }
+  }
   @media @max990{
     ul{
       column-gap: .8rem;
@@ -6053,11 +6066,26 @@ button {
   }
   @media @max480{
     ul{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      padding: 0 0.3rem;
+      padding-bottom: 0.3rem;
+
       li{
+        padding: 0.3rem 0 0 0;
         font-size: var(--font12);
         white-space: nowrap;
+        &:hover{
+          border-bottom: none !important;
+        }
+      }
+      .active{border-bottom: none !important;
+        a{
+          border-bottom: solid 2px var(--active-color);
+        }
       }
     }
+    
   }
 }
 // --------------------------------------------- 青绿关于我们--青绿环境
@@ -6065,28 +6093,30 @@ button {
   .innerbox{.flex; .j_justify;
     .leftwrap{
       max-width: 192px;
-      .title{font-size: var(--font48);font-weight: 700;}
-      .videowrap{margin-top: .64rem; cursor: pointer;
+      .title{ font-family: 'HarmonyOS-TC'; font-size: var(--font48);font-weight: 700;}
+      .videowrap{margin-top: .64rem; cursor: pointer;width: .64rem;height: .64rem;
         p{
           margin-top: 0.16rem;
           text-transform: uppercase;
           max-width: 118px;
+          
         }
+        
       }
 
     }
-    .rightwrap{width: 60%;
+    .rightwrap{width: 61%;
       .info{.black6;
         p{
           margin-top: 0.4rem;
           line-height: calc(24/16);
+          &:first-child{margin-top: 0;}
         }
       }
       .itemlist{
         margin-top: .64rem;
-        .itemrow{.flex;.j_justify; gap: .7rem; 
-          
-          .item{padding: .4rem 0;
+        .itemrow{.flex;gap: .48rem; 
+          .item{
             &:first-child{
               .data{
                 .a_start;
@@ -6094,7 +6124,7 @@ button {
             }
             .data{.flex; .a_end;
               line-height: 1; position: relative;  color: var(--black-000);
-              .num{font-size: var(--font64);font-weight: 700;}
+              .num{font-size: var(--font56);font-weight: 700;}
               .dw{font-weight: 700;}
               .year{font-weight: 700;}
             }
@@ -6109,7 +6139,7 @@ button {
 
       }
       .business-scope{
-        margin-top: .84rem;
+        margin-top: .56rem;
         .title{
           font-weight: 500;
           font-size: var(--font24);
@@ -6120,14 +6150,20 @@ button {
     }
 
   }
-  @media @max990{
-    
+  @media @max1280{
+    .innerbox .rightwrap{
+      width: 68%;
+    }
+    .innerbox .rightwrap .info p{
+      margin-top: 0.2rem;
+    }
+   
   }
   @media @max768{
     .innerbox{
       display: inline-block;
       width: 100%;
-      .rightwrap{width: 100%;}
+      .rightwrap{width: 100%;margin-top: 1rem;}
     }
   }
 }
@@ -6141,21 +6177,39 @@ button {
     grid-template-columns: repeat(2,1fr);
     gap: .24rem;
     margin-top: .64rem;
-    .item{.flex; gap: .97rem; padding: .48rem .64rem; transition: all .5s ease-in-out; cursor: pointer;
+    .item{padding: .48rem .64rem .64rem .64rem; transition: all .5s ease-in-out; cursor: pointer;
       background-color: var(--white-color);
-      .leftwrap{
-        .num{.black9;}
-        .title{margin-top: 2.22rem;}
-        .info{font-size: var(--font28); margin-top: .24rem;width: 90%;line-height: 1.18;}
-
+      .info{.flex; .j_justify;  transition: all .5s ease-in-out;
+        .leftwrap{width: 56%;
+          .num{.black9;}
+          .title{margin-top: 2.22rem;}
+          .info{font-size: var(--font28); margin-top: .24rem;width: 95%;line-height: 1.18;}
+  
+        }
+        .rightwrap{
+          width: 35.7%;
+          img{
+            width: 100%;
+          }
+        }
+        &:hover{
+          transition: all .5s ease-in-out;
+          transform: translateY(-10px);
+        }
+        
       }
-      .rightwrap{
-        max-width: 2.23rem;
+      &:nth-child(2){
+        .leftwrap {
+          width: 65%;
+        }
       }
-      &:hover{
-        transition: all .5s ease-in-out;
-        transform: translateY(-10px);
+      .imagebg{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 55%;
       }
+     
     }
   }
   @media @max990{
@@ -6164,6 +6218,7 @@ button {
     }
   }
   @media @max768{
+    margin-top: 1rem;
     .itemlist .item{
       justify-content: space-between;
       .leftwrap .title{
@@ -6172,6 +6227,7 @@ button {
     }
   }
   @media @max480{
+    margin-top: 0.65rem;
     .itemlist .item{
       padding: 0.35rem;
       .leftwrap .title{
@@ -6197,10 +6253,23 @@ button {
       }
     }
     .rightwrap{width: 50%;margin-top:2.84rem; .flex; gap: .96rem;
+      li{
+        &:nth-child(2){
+          .year{
+            background-image: linear-gradient(to bottom, rgb(255 255 255 / 70%), rgb(255 255 255 / 10%));
+            /* 将渐变背景应用于文字 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            /* 使用渐变背景填充文字 */
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+          }
+        }
+      }
       .yeartab{
-        li{.flex;.a_center;cursor: pointer; line-height: 1.5;
-          img{margin-right: .2rem;width: 0.16rem; opacity: 0.4;
-            height: 0.18rem; }
+        li{.flex;.a_center;cursor: pointer; line-height: 2;
+          img{margin-right: .2rem;opacity: 0.4;
+           }
           span{.black9;.bold;}
         }
         .active{
@@ -6211,13 +6280,19 @@ button {
         }
       }
       .scrollcontent{color: var(--white-color); height: 100%;overflow: hidden;
-        .year{font-size: var(--font96); font-weight: 700;    line-height: 1.1772;}
+        
+        .year{font-size: var(--font96); font-weight: 700;    line-height: 1;
+          
+        }
         .introduce{margin-top:.16rem ; line-height: 1.167;
           p{
             font-size: var(--font24);
           }
         }
 
+      }
+      .swiper-pagination{
+        display: none;
       }
     }
 
@@ -6269,6 +6344,9 @@ button {
         .yeartab{
           display: none;
         }
+        .swiper-pagination{
+          display: inline-block;width: 100%;
+        }
       }
     }
     .riverbg{
@@ -6291,11 +6369,11 @@ button {
     .title{font-size: var(--font48); font-weight: 700; padding: 0 1.27rem;}
     .itemlist{ margin-top: .88rem;padding: 0 1.27rem;padding-bottom: 1.05rem;
       .cooperate1,.cooperate2{
-        padding: .67rem;
+        padding: .67rem 0;
         border-top: solid 1px #DDDDDD;
         overflow: hidden;
         .pb{
-          padding-bottom: 37.5%;
+          padding-bottom: 36.5%;
           img{
             width: 100%; height: 100%; object-fit: contain;
           }
@@ -6320,19 +6398,20 @@ button {
 // 关于我们--立足中国 服务全球
 .about-global{
   position: relative;
-  padding: 1.6rem 0 2.6rem 0;
+  padding: 0.67rem 0 2.6rem 0;
   background-color: rgb(230 230 230 / 20%);
   overflow: hidden;
   .inenrbox{.flex; .j_justify;
     .leftwrap{
-      // width: 23.65%;
-      max-width: 300px;
+      margin-top: .93rem;
+      min-width: 3rem;
+      width: 19.6%;
       z-index: 2;
       .info{margin-top: 2.57rem; .black3;}
       .index-p-more{margin-top:.4rem;
         .icon{
           background-image: url("../images/more-icon-color.png");
-          background-size: auto;
+          // background-size: auto;
         }
       }
     }
@@ -6344,7 +6423,10 @@ button {
   }
 
   @media @max1280{
-    padding: 1rem 0;
+    // padding: 1rem 0;
+    .inenrbox .leftwrap{
+      width: 21.6%;
+    }
   }
   @media @max990 {
     
@@ -6695,6 +6777,7 @@ button {
     
   }
   @media @max1200{
+    margin-top: 0;
       .subject-list {
         .sj-item .title {
           margin-right: 0.3rem;
@@ -6752,6 +6835,12 @@ button {
   }
 
 }
+#section5{
+  
+  .itemlist{
+    margin-top: .64rem;
+  }
+}
 
 // --------------------------------------------- 青绿案例详情--广州白云装饰装修垃圾循环利用项目
 .casesubject-wrap{margin-top: .8rem;
@@ -6782,6 +6871,30 @@ button {
     }
 
   }
+  @media @max1200{
+    .innerbox .info{
+      padding: 0.64rem;
+    }
+  }
+  @media @max990{
+    .innerbox .info{
+      padding: 0.5rem;
+    }
+  }
+  @media @max768{
+    .innerbox{
+      display: inline-block;width: 100%;
+      .image{
+        width: 100%;
+      }
+      .info{
+        width: 100%;
+        .dataitem{
+          padding-top: 1rem;
+        }
+      }
+    }
+  }
 }
 
 // --------------------------------------------- 青绿案例详情--项目亮点
@@ -6809,6 +6922,9 @@ button {
   }
   @media @max768{
     margin-top: 1rem;
+    .innerbox li .num{
+      text-align: left;
+    }
     .swiper-pagination{
       display: inline-block;
       position: relative;
@@ -6819,6 +6935,7 @@ button {
     margin-top: 0.5rem;
     .innerbox{
       margin-top: 0.5rem;
+      padding:0;
     }
   }
 }
@@ -6837,12 +6954,24 @@ button {
         .caselist{margin-top: .89rem; max-width: 404px;
           .item{display: flex; cursor: pointer; border-top:solid 1px #dddddd ;
             .image{ display: flex;align-items: center;border-left: solid 1px #dddddd; padding: .16rem .33rem;
-              img{width: 0.67rem; }
+              img{.dh;width: 0.67rem;filter: grayscale(1); }
             }
-            .title{ flex: 2; display: flex; font-weight: 700; align-items: center; color: var(--black-ccc); padding-left: .39rem; border-left: solid 1px #dddddd; border-right: solid 1px #dddddd;}
+            .title{.dh; flex: 2; display: flex; font-weight: 700; align-items: center; color: var(--black-ccc); padding-left: .39rem; border-left: solid 1px #dddddd; border-right: solid 1px #dddddd;}
             &:last-child{
               border-bottom: solid 1px #dddddd;
             }
+            &:hover{
+              .image{
+                img{.dh;filter: inherit;}
+              }
+              .title{.dh;color: var(--active-color);}
+            }
+          }
+          .active{
+            .image{
+              img{.dh;filter: inherit;}
+            }
+            .title{.dh;color: var(--active-color);}
           }
         }
       }
@@ -6878,6 +7007,7 @@ button {
     }
   }
   @media @max768{
+    margin-top: 0;
     .firstcontainer {
       .banner_sp{margin-left: 0;}
       .innerbox{
@@ -6931,9 +7061,17 @@ button {
   @media @max990{
     .info{
       background-size: 51%;
+      .innerbox{
+        width: 100%;
+      }
     }
   }
- 
+  @media @max768{
+    margin-top: 1rem;
+  }
+  @media @max480{
+    margin-top: 0.5rem;
+  }
 }
 // --------------------------------------------- 荣誉资质
 // ul公用
@@ -7131,56 +7269,122 @@ button {
   padding-top: var(--header-height);
   .bgimage{
     .img1{
-
+      min-height: 8rem;
     }
     .img2{
       position: absolute;
       background-position: right top;
       z-index: 10;
       right: 0;
+      width: 56.5%;
     }
   }
-  // --------------------------------------------- 青绿关于我们--列表
-  .pro-tab{background-color: #fff;
-    .flexwrap{.flex; .j_justify; .a_center; 
-      ul{ display: flex; column-gap: 0.8rem;background-color: var(--white-color); 
-        li{.dh; .black9; padding: .365rem 0;cursor: pointer; border-bottom: solid 2px #fff;
-          &:hover{.dh;
+  .innerbox{
+    .pro-top{
+      position: absolute; width: 100%; top: calc(var(--header-height) + 5%);
+    }
+    .flexwrap{.flex; .j_justify;
+      .productinfo{
+        width: 35.7%;margin-top: 13%;
+        .sec-title{margin-top: .23rem;}
+        .itemlist{
+          display: grid;
+          grid-template-columns: repeat(4,1fr);
+          margin-top: .97rem;
+          .item{
+            border-right: solid 1px #dddddd;
+            padding: 0 .48rem;
+            img{width: .4rem;height: .4rem;}
+            p{margin-top: .24rem;white-space: nowrap;}
+            &:first-child{
+              padding-left: 0;
+            }
+            &:last-child{border-right: 0; padding-right: 0;}
+          }
+        }
+
+      }
+      .prodctimg{
+        width:46.75%;
+        img{
+          width: 100%;
+        }
+      }
+
+    }
+    .pro-tab{background-color: #fff; border-top: solid 1px #eeeeee;position: absolute; bottom: 0; width: 100%;
+      .flexwrap{.flex; .j_justify; .a_center; 
+        ul{ display: flex; column-gap: 0.8rem;background-color: var(--white-color); 
+          li{.dh; .black9; padding: .285rem 0;cursor: pointer; border-bottom: solid 2px #fff;
+            &:hover{.dh;
+              .black0;
+              border-bottom: solid 2px var(--active-color);
+            }
+          }
+          .active{.dh;
             .black0;
             border-bottom: solid 2px var(--active-color);
           }
         }
-        .active{.dh;
-          .black0;
-          border-bottom: solid 2px var(--active-color);
+        .right-nav{ color: var(--black-999);
+         
+          .active{
+            color: var(--black-000);
+          }
         }
-      }
-      @media @max990{
-        ul{
-          column-gap: .8rem;
+        @media @max990{
+          ul{
+            column-gap: .8rem;
+          }
         }
-      }
-      @media @max768{
-        ul{
-          column-gap: .5rem;
+        @media @max768{
+          ul{
+            column-gap: .5rem;
+          }
         }
-      }
-      @media @max640{
-        ul{
-          column-gap: .2rem;
+        @media @max640{
+          ul{
+            column-gap: .2rem;
+          }
         }
-      }
-      @media @max480{
-        ul{
-          li{
-            font-size: var(--font12);
-            white-space: nowrap;
+        @media @max480{
+          ul{
+            li{
+              font-size: var(--font12);
+              white-space: nowrap;
+            }
           }
         }
       }
+      
     }
-    
   }
+  @media @max990{
+    .innerbox .pro-tab .flexwrap .right-nav{display: none;}
+
+  }
+  @media @max640{
+    .innerbox .flexwrap{
+      display: inline-block;width: 100%;
+      .productinfo{width: 100%;}
+      .prodctimg{
+        margin-top: .8rem;
+      }
+    }
+    .bgimage .img1{
+      min-height: 13rem;
+    }
+  }
+ 
+  @media @max480{
+    .bgimage .img1{
+      min-height: 9rem;
+    }
+    .innerbox .pro-tab{
+      bottom: inherit;
+    }
+  }
+  
 }
 // ---------------------------------------------产品详情-- 热门产品推荐
 .hot-product-wrap{position: relative;
@@ -7232,7 +7436,9 @@ button {
     
   }
   @media @max768{
-   
+    .itemlist{
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   @media @max640{
     .itemlist{
@@ -7254,7 +7460,7 @@ button {
       width: 49.36%;
       .swiper-img{margin-top: 1.08rem; overflow: hidden;
         .image{
-          
+          width: 79%;
         }
       }
       
@@ -7287,13 +7493,76 @@ button {
     }
 
   }
+  @media @max768{
+    .innerbox{
+      display: inline-block;width: 100%;
+      .left-box .swiper-img .image{
+        width: 100%;
+      }
+      .right-box{margin-top: .65rem;
+        width: 100%;
+      }
+    }
+  }
+  @media @max640{
+  
+
+  }
+  @media @max480{
+   
+
+  }
 }
 
 // --------------------------------------------- 青绿案例详情--3D分选机介绍
-.product-introduce-wrap{.mt120;
+.product-introduce-wrap{.mt120; 
+  .swiperbox{
+    position: relative;
+    .pre-next-button{
+      position: absolute;
+      top: .4rem;
+      left: .4rem;
+      width: .65rem;
+      min-width: 50px;
+      min-height: 50px;
+      z-index: 10;
+      .btn{.flex; .a_center; .j_center;
+        width: .65rem;
+        height: .65rem;
+        min-width: 50px;
+        min-height: 50px;
+        border: solid 1px #dddddd;
+      }
+      .prebtn{.dh; cursor: pointer;
+        img{.dh;
+          
+        }
+        &:hover{.dh;
+          background-color: var(--active-color);
+          img{.dh;
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+      .nextbtn{.dh;cursor: pointer;
+        border-top: none;
+        img{.dh;
+          transform: rotate(180deg);
+          
+        }
+        &:hover{.dh;
+          background-color: var(--active-color);
+          img{.dh;
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+    }
+  }
+ 
   .innerbox{.flex; background-color: #fff; overflow: hidden;
     .leftimg{width: 64.9%;
-      .image{width: 64%; margin: auto;}
+      .image{width: 64%; margin: auto;margin-top: .56rem;}
     }
     .rightinfo{width: 35.1%; border-left: solid 1px #dddddd; padding: .8rem;
       .title{margin-top: .16rem;}
@@ -7303,6 +7572,43 @@ button {
 
     }
 
+  }
+  .swiper-pagination{
+    position: relative;
+    margin-top: .5rem;
+    display: none;
+  }
+  @media @max1280{
+    .innerbox .rightinfo{
+      width: 39%;
+    }
+    .swiperbox .pre-next-button .btn{
+      width: .44rem;
+      height: .44rem;
+    }
+
+  }
+  @media @max1200{
+    .innerbox .rightinfo{
+      padding: 0.5rem;
+      .thi-title{
+        margin-top: 1.2rem;
+      }
+    }
+  }
+  @media @max990{
+
+  }
+  @media @max768{
+    .innerbox{
+      display: inline-block;width: 100%;
+      .leftimg{width: 100%;}
+      .rightinfo{width: 100%;border-left:none}
+    }
+    .pre-next-button{display: none;}
+    .swiper-pagination{
+      display: inline-block;
+    }
   }
 }
 
@@ -7332,14 +7638,22 @@ button {
     margin-top: 1rem;
     .swiper-pagination{
       display: inline-block;
+      width: 100%;
       position: relative;
       margin-top: 30px;
+      transform: translateX(-25%);
     }
   }
   @media @max480{
     margin-top: 0.5rem;
     .innerbox{
       margin-top: 0.5rem;
+    }
+    .swiper-pagination{
+      transform: translateX(-42%);
+    }
+    .innerbox li{
+      padding: 0.4rem 0;
     }
   }
 }
@@ -7520,7 +7834,7 @@ button {
   }
   
   @media @max1280 {
-    margin-top: .5rem;
+   
     .idx_solve .center_box .right{
       .swiper_list .item_box {
         margin-top: 1rem;
@@ -7532,6 +7846,7 @@ button {
 
   }
   @media @max990 {
+     margin-top: .5rem;
     .idx_solve .center_box .right{padding: 1rem 0;
       .pre-next-button{
         right: 35.7%;
@@ -7548,7 +7863,7 @@ button {
     }
   }
   @media @max768 {
-    margin-top: 0;
+    
     .idx_solve .center_box .right {
       .pre-next-button{
         display: none;

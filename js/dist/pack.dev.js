@@ -341,7 +341,21 @@ $(function () {
     });
   }
 
-  tabUl(); // 文字过渡动画
+  tabUl(); // a标签锚点平滑过渡
+
+  $('a[href^="#"]').on('click', function (event) {
+    var target = $(this.getAttribute('href'));
+
+    if (target.length) {
+      event.preventDefault();
+      $('html, body').stop().animate({
+        scrollTop: target.offset().top - 60 // 调整滚动位置以适应导航栏的高度
+
+      }, 1000, function () {
+        window.location.hash = target.selector;
+      });
+    }
+  }); // 文字过渡动画
 
   function aniText() {
     var PC = $(window).width() > 1200,
@@ -650,8 +664,7 @@ $(function () {
 
   function cooperationOne() {
     var mySwiper = new Swiper('.cooperation-wrap .cooperate1', {
-      loop: true,
-      //可选选项，开启循环
+      // loop : true,//可选选项，开启循环
       slidesPerView: 5,
       spaceBetween: 20,
       allowTouchMove: false,
@@ -681,8 +694,7 @@ $(function () {
 
   function cooperationTwo() {
     var mySwiper = new Swiper('.cooperation-wrap .cooperate2', {
-      loop: true,
-      //可选选项，开启循环
+      // loop : true,//可选选项，开启循环
       slidesPerView: 5,
       spaceBetween: 20,
       allowTouchMove: false,
@@ -778,7 +790,7 @@ $(function () {
   function projectHighlights() {
     var slide = new Swiper('.project-highlights .innerbox', {
       loop: true,
-      // autoplay:true,
+      autoplay: true,
       slidesPerView: 4.4,
       spaceBetween: 22,
       preventLinksPropagation: false,
@@ -787,10 +799,13 @@ $(function () {
         el: '.project-highlights .swiper-pagination',
         clickable: true
       },
-      allowTouchMove: false,
+      // allowTouchMove: false,
       breakpoints: {
         480: {
-          slidesPerView: 1,
+          slidesPerView: 1
+        },
+        768: {
+          slidesPerView: 2,
           spaceBetween: 15
         },
         990: {
@@ -807,48 +822,6 @@ $(function () {
   projectHighlights(); // --------------------------------------------- 青绿案例详情详情--采用设备
 
   function equimentWrap() {
-    // let divBox = $('.equiment-wrap')
-    // if(divBox.length) {
-    //     // 第一层
-    //     var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#fff" stroke-dasharray="314" stroke-dashoffset="314"/></svg>'
-    //     const swiper1 = new Swiper(".firstcontainer", {
-    //         slidesPerView: 1,
-    //         effect: 'fade',
-    //         fadeEffect: {crossFade: true, },
-    //         spaceBetween: 20,allowTouchMove: false,
-    //         pagination: {
-    //             el: '.equiment-wrap .banner_sp', 
-    //             clickable: true, 
-    //         }
-    //     });
-    //     // 第二层
-    //     const getDiv = el => divBox.find(el);           
-    //     let swiperBox = getDiv('.leftitem'),
-    //         pager =  getDiv('.pager'),
-    //         prev =  getDiv('.prev'),
-    //         next =  getDiv('.next'),
-    //         speed = 500;
-    //     const swiper = new Swiper(swiperBox, {
-    //         speed,
-    //         slidesPerView: 1,
-    //         effect: 'fade',
-    //         fadeEffect: {crossFade: true, },
-    //         spaceBetween: 20,allowTouchMove: false,
-    //         pagination: {el: pager, clickable: true, },
-    //         navigation: {nextEl: next, prevEl: prev,},
-    //         on: {
-    //             // init(){swiperAnimateCache(this); swiperAnimate(this);},
-    //             // slideChangeTransitionEnd() {swiperAnimate(this);},
-    //             // slideChange(){}
-    //         },
-    //     });
-    //     $(".equiment-wrap .firstcontainer .innerbox .rightitem .caselist .item").hover(function(e){
-    //         if(e.type === "mouseenter") {
-    //             var index  =  $(this).index();
-    //             // swiper.slideTo(index);
-    //         }
-    //     })
-    // }
     var box = $('.equiment-wrap');
     var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#333" stroke-dasharray="314" stroke-dashoffset="314"/></svg>';
 
@@ -871,16 +844,21 @@ $(function () {
         },
         allowTouchMove: false,
         on: {
-          //     slideChangeTransitionStart: function () { //切换时分类也要改变状态
-          //         var d = this.activeIndex;
-          //         $(".idx_solve .swiper_box .topbox .swiper_list .item_box .item").eq(d).addClass("active").siblings().removeClass("active");
-          //     },
+          slideChangeTransitionStart: function slideChangeTransitionStart() {
+            //切换时分类也要改变状态
+            var d = this.activeIndex;
+            $(".equiment-wrap .firstcontainer .innerbox .rightitem .caselist .item").eq(d).addClass("active").siblings().removeClass("active");
+          },
           slideChange: function slideChange(mySwiper) {
             $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty();
           }
         }
       });
       var swiper2 = new Swiper(".equiment-wrap .leftitem", {
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
         slidesPerView: 1,
         effect: 'fade',
         fadeEffect: {
@@ -889,10 +867,14 @@ $(function () {
         spaceBetween: 20,
         allowTouchMove: false,
         on: {
-          init: function init() {// swiperAnimateCache(this); 
-            // swiperAnimate(this);
+          slideChangeTransitionStart: function slideChangeTransitionStart() {
+            //切换时分类也要改变状态
+            var d = this.activeIndex;
+            $(".equiment-wrap .firstcontainer .innerbox .rightitem .caselist .item").eq(d).addClass("active").siblings().removeClass("active");
           },
-          slideChange: function slideChange() {}
+          slideChange: function slideChange(mySwiper) {
+            $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty();
+          }
         }
       });
       $(".equiment-wrap .firstcontainer .innerbox .rightitem .caselist .item").click(function () {
@@ -996,7 +978,29 @@ function productParams() {
   });
 }
 
-productParams(); // --------------------------------------------- 产品详情-应用场景
+productParams(); // --------------------------------------------- 产品详情-产品介绍
+
+function productIntroduce() {
+  var swiper = new Swiper('.product-introduce-wrap .swiperbox', {
+    slidesPerView: 1,
+    speed: 800,
+    allowTouchMove: false,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    navigation: {
+      nextEl: '.product-introduce-wrap .pre-next-button .nextbtn',
+      prevEl: '.product-introduce-wrap .pre-next-button .prebtn'
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+}
+
+productIntroduce(); // --------------------------------------------- 产品详情-应用场景
 
 function applicationScenarios() {
   var box = $('#appl_scenarios');
@@ -1004,6 +1008,7 @@ function applicationScenarios() {
   if (box.length) {
     var swiper = box.find(".swiper_box"),
         num = swiper.find(".center_box");
+    var s1;
     var s0 = new Swiper(swiper, {
       slidesPerView: 1,
       speed: 800,
@@ -1013,9 +1018,6 @@ function applicationScenarios() {
         crossFade: true
       },
       on: {
-        init: function init() {// swiperAnimateCache(this);
-          // swiperAnimate(this);
-        },
         slideChangeTransitionEnd: function slideChangeTransitionEnd() {
           swiperAnimate(this);
         }
@@ -1024,56 +1026,17 @@ function applicationScenarios() {
     num.each(function (e) {
       var _this = $(this),
           swiper_img = _this.find('.swiper_img'),
-          // swiper_text = _this.find('.swiper_text'),
-      pagination = _this.find('.idxPageHide'),
+          pagination = _this.find('.idxPageHide'),
           item = _this.find(".swiper_list  .item_box .item");
 
-      var s1 = new Swiper(swiper_img, {
+      s1 = new Swiper(swiper_img, {
         effect: 'fade',
         slidesPerView: 1,
         speed: 1200,
         allowTouchMove: false
-      }); // var s2 = new Swiper(swiper_text, {
-      //     slidesPerView: 1,
-      //     speed: 800,
-      //     effect: 'fade',
-      //     // fadeEffect: {
-      //     //     crossFade: true,
-      //     // },
-      //     // pagination: { el: pagination, clickable: true, }, allowTouchMove: false,
-      //     breakpoints: {
-      //         768: {
-      //             allowTouchMove: true,
-      //         },
-      //     },
-      //     navigation: {
-      //         nextEl: '.pre-next-button .nextbtn',
-      //         prevEl: '.pre-next-button .prebtn',
-      //     },
-      //     on: {
-      //         init() {
-      //             // swiperAnimateCache(this);
-      //             // swiperAnimate(this);
-      //         },
-      //         // slideChangeTransitionEnd() {
-      //         //     swiperAnimateCache(this);
-      //         //     swiperAnimate(this);
-      //         // },
-      //         slideChangeTransitionStart: function () {
-      //             // swiperAnimateCache(this);
-      //             // swiperAnimate(this);
-      //             var index = this.activeIndex;
-      //             s1.slideTo(index)
-      //             item.removeClass("active").eq(index).addClass("active");
-      //         },
-      //     },
-      // })
-      // item.click(function () {
-      //     var index = $(this).index();
-      //     s2.slideTo(index)
-      // })
+      });
     });
-    $(".appl_solve .idx_title .item_box .item").click(function () {
+    $(".application-scenarios .appl_solve .center_box .right .swiper_list .item_box .item").click(function () {
       $(this).addClass("active").siblings().removeClass("active");
       var index = $(this).index();
       s1.slideTo(index);
@@ -1085,19 +1048,22 @@ applicationScenarios(); // --------------------------------------------- 产品�
 
 function projectHighlights() {
   var slide = new Swiper('.product-highlights .innerbox', {
-    // loop:true,
+    loop: true,
     autoplay: true,
     slidesPerView: 3.4,
     preventLinksPropagation: false,
     // 阻止点击事件冒泡
     pagination: {
-      el: '.project-highlights .swiper-pagination',
+      el: '.swiper-pagination',
       clickable: true
     },
     allowTouchMove: false,
     breakpoints: {
       480: {
         slidesPerView: 1
+      },
+      768: {
+        slidesPerView: 2
       },
       990: {
         slidesPerView: 3
