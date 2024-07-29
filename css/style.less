@@ -5578,6 +5578,9 @@ button {
   img{
     width: 100%; height: 100%; object-fit: cover;
   }
+  @media @max990{
+    height: auto;
+  }
   @media @max768{
     // padding-left: 20px;
   }
@@ -5589,26 +5592,29 @@ button {
 .server-module{
   padding: 1.28rem 0;
   position: relative;
+  margin-bottom: 1.28rem;
   &::after{
     position: absolute;
     content: '';
     width: 90%;
     border-bottom: 1px dashed #999;
     right: 0;
-    bottom: 0
+    top: 0
   }
   &:last-child{
     &::after{
       border-bottom: none;
     }
   }
-  .public-title{.flex; gap: .24rem;line-height: 1.1666;
+  .public-title{.flex; .a_center; gap: .24rem;line-height: 1.1666;
     font-size: var(--font48);font-weight: 700;
     .active{.flex;.a_center; font-size: var(--font24);font-weight: 700; color: var(--active-color);
       padding: 0 .69rem 0 .24rem ;
       color: var(--active-color);
       border-radius: 60px;
-      background-image: linear-gradient(to right, rgba(37, 187, 15, 0), rgba(37, 187, 15, 0.1));
+      height: .49rem;
+      margin-top: .05rem;
+      background-image: linear-gradient(to right, rgba(37, 187, 15, 0.1), rgba(37, 187, 15, 0));
     }
   }
   .itemlist{
@@ -5618,12 +5624,13 @@ button {
     
     .item{
       cursor: pointer;
-      padding: .48rem .56rem;
+      padding: .46rem .56rem;
       background-color: var(--white-color);
       transition: .5s ease-in-out;
+      
       .title{.dh;font-size: var(--font24); font-weight: 700}
       .content{.black6; margin-top: .24rem; padding-top: .24rem;line-height: 1.167; position: relative;
-        border-top: solid 1px rgb(102 102 102 / 10%);
+        border-top: solid 1px rgb(102 102 102 / 10%);    
         &::before{
           position: absolute;
           content: "";
@@ -5636,14 +5643,18 @@ button {
         }
       }
       .image{.dh;margin-top: 1.43rem;
-        width: 40px; height: 40px;
+        width: .4rem; height: .4rem;
         img{.dh;
           width: 100%; height: 100%; object-fit: cover;
           filter: brightness(0.6) invert(1);
         }
       }
+      .imagebg{.dh;display: none;     position: absolute;
+        bottom: 0;
+        right: 0;}
       &:hover{
         transform: translateY(-10px);
+        box-shadow: 6px 8px 31px 0 rgba(37, 187, 15, 0.19);
         .title{.dh;color: var(--active-color);}
         .content{
           &:before{
@@ -5657,6 +5668,7 @@ button {
             filter: brightness(1) invert(1);
           }
         }
+        .imagebg{.dh;display: inline-block; }
       }
     }
   }
@@ -5686,25 +5698,54 @@ button {
   .list2{
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    .item {
+      .image{
+        margin-top: 0.64rem;
+        width: .42rem;
+        height: .42rem;
+      }
+      &:nth-child(2){
+        .image{
+          float: right;
+        }
+      }
+    }
   }
   .list3{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    .item .image{
+      margin-top: 1.73rem;
+      width: .5rem;
+      height: .5rem;
+    }
   }
 
   .list4{
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    .item .content{
+      max-width: 2.4rem;
+    }
   }
   @media @max990{
+    margin-bottom: auto;
     .list4{
       display: grid;
       grid-template-columns: repeat(3,1fr);
+      .item{
+        .content{
+          max-width: fit-content;
+        }
+      }
     }
 
   }
   @media @max768{
     padding: 1rem 0;
+    .itemlist .item:hover .imagebg{
+      width: 50%;
+    }
     .list3,.list4{
       display: grid;
       grid-template-columns: repeat(2,1fr);
@@ -5726,8 +5767,22 @@ button {
     }
   }
 }
+.server-bg{
+  .itemlist .item{
+    position: relative;
+    .imagebg{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+.server-six{
+  margin-bottom: 0 !important;
+}
 .server-seven{
   background-color: inherit;
+  padding-top: 0;
  .innerbox{
     background-image: url(../images/section7-bg.png);
     background-size: cover;
@@ -5737,8 +5792,12 @@ button {
     .itemlist {
       .item{
         background-color: inherit;
+        padding: 0;
+        box-shadow: inherit;
         .image{
           margin-top: .88rem;
+          width: .56rem;
+          height: .56rem;
         }
       }
     }
@@ -6273,6 +6332,7 @@ button {
       .index-p-more{margin-top:.4rem;
         .icon{
           background-image: url("../images/more-icon-color.png");
+          background-size: auto;
         }
       }
     }
