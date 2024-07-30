@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper with Shutter Effect</title>
+  <!-- 引入Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- 自定义CSS -->
+  <style>
+    .swiper-container {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .shutter-effect {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+    }
+
+    .shutter-effect .slice {
+      position: absolute;
+      width: 10%;
+      height: 100%;
+      top: 0;
+      background-repeat: no-repeat;
+      /* background-position: center; */
+      /* background-size: 100% 100%; */
+      transition: transform 0.5s ease-in-out;
+      transform: skew(-30deg);
+    }
+
+    .shutter-effect .slice .img {
+      height: 100%;
+      transform: skew(0deg);
+    }
+
+    .shutter-effect .slice:nth-child(1) {
+      left: -20%;
+
+    }
+
+    .shutter-effect .slice:nth-child(2) {
+      left: -10%;
+      background-position: 0%;
+    }
+    .shutter-effect .slice:nth-child(2) .img{
+      background-position: 0%;
+    }
+    .shutter-effect .slice:nth-child(3) {
+      left: 0;
+      background-position: 10%;
+    }
+    .shutter-effect .slice:nth-child(3) .img{
+      background-position: 10%;
+    }
+    .shutter-effect .slice:nth-child(4) {
+      left: 10%;
+      background-position: 20%;
+
+    }
+    .shutter-effect .slice:nth-child(4) .img{
+      
+      background-position: 20%;
+
+    }
+
+    .shutter-effect .slice:nth-child(5) {
+      left: 20%;
+      background-position: 30%;
+    }
+    .shutter-effect .slice:nth-child(5) .img{
+     
+      background-position: 30%;
+    }
+    .shutter-effect .slice:nth-child(6) {
+      left: 30%;
+      background-position: 40%;
+    }
+    .shutter-effect .slice:nth-child(6) .img{
+     
+      background-position: 40%;
+    }
+    .shutter-effect .slice:nth-child(7) {
+      left: 40%;
+      background-position: 50%;
+    }
+    .shutter-effect .slice:nth-child(7) .img{
+      
+      background-position: 50%;
+    }
+    .shutter-effect .slice:nth-child(8) {
+      left: 50%;
+      background-position: 60%;
+    }
+    .shutter-effect .slice:nth-child(8) .img{
+      
+      background-position: 60%;
+    }
+    .shutter-effect .slice:nth-child(9) {
+      left: 60%;
+      background-position: 70%;
+    }
+    .shutter-effect .slice:nth-child(9) .img{
+     
+      background-position: 70%;
+    }
+
+    .shutter-effect .slice:nth-child(10) {
+      left: 70%;
+      background-position: 80%;
+    }
+    .shutter-effect .slice:nth-child(10) .img{
+     
+      background-position: 80%;
+    }
+    .shutter-effect .slice:nth-child(11) {
+      left: 80%;
+      background-position: 91%;
+    }
+    .shutter-effect .slice:nth-child(11) .img{
+     
+      background-position: 91%;
+    }
+    .shutter-effect .slice:nth-child(12) {
+      left: 90%;
+      background-position: 102%;
+    }
+    .shutter-effect .slice:nth-child(12) .img{
+     
+      background-position: 102%;
+    }
+    .shutter-effect .slice:nth-child(13) {
+      left: 100%;
+      background-position: 110%;
+    }
+    .shutter-effect .slice:nth-child(13) .img{
+     
+      background-position: 110%;
+    }
+    .shutter-effect .slice:nth-child(14) {
+      left: 110%;
+      background-position: 120%;
+    }
+    .shutter-effect .slice:nth-child(14) .img{
+     
+      background-position: 120%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <div class="shutter-effect">
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/banner.png);"></div>
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/banner.png);"></div>
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/banner.png);"></div>
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/banner.png);"></div>
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/banner.png);"></div>
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/banner.png);"></div>
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/banner.png);"></div>
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/banner.png);"></div>
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/banner.png);"></div>
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/banner.png);"></div>
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/banner.png);"></div>
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/banner.png);"></div>
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/banner.png);"></div>
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/banner.png);"></div>
+          </div>
+
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="shutter-effect">
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/case-image.png);"></div>
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/case-image.png);"></div>
+
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/case-image.png);"></div>
+
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/case-image.png);"></div>
+
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/case-image.png);"></div>
+
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/case-image.png);"></div>
+
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/case-image.png);"></div>
+
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/case-image.png);"></div>
+
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/case-image.png);"></div>
+
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/case-image.png);"></div>
+
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/case-image.png);"></div>
+
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/case-image.png);"></div>
+
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/case-image.png);"></div>
+
+          </div>
+          <div class="slice">
+            <div class="img" style="background-image: url(./images/case-image.png);"></div>
+
+          </div>
+
+        </div>
+      </div>
+      <!-- <div class="swiper-slide">
+        <div class="shutter-effect">
+          <div class="slice" style="background-image: url(./images/company-enviroment1.png);"></div>
+          <div class="slice" style="background-image: url(./images/company-enviroment1.png);"></div>
+          <div class="slice" style="background-image: url(./images/company-enviroment1.png);"></div>
+          <div class="slice" style="background-image: url(./images/company-enviroment1.png);"></div>
+          <div class="slice" style="background-image: url(./images/company-enviroment1.png);"></div>
+          <div class="slice" style="background-image: url(./images/company-enviroment1.png);"></div>
+          <div class="slice" style="background-image: url(./images/company-enviroment1.png);"></div>
+          <div class="slice" style="background-image: url(./images/company-enviroment1.png);"></div>
+          <div class="slice" style="background-image: url(./images/company-enviroment1.png);"></div>
+          <div class="slice" style="background-image: url(./images/company-enviroment1.png);"></div>
+        </div>
+      </div> -->
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- 引入Swiper JS -->
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      var swiper = new Swiper('.swiper-container', {
+        effect: 'fade', // 设置为fade以便更好地控制过渡
+        autoplay: true,
+        speed: 3000,
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        on: {
+          slideChangeTransitionStart: function () {
+            // $(this.slides).find('.shutter-effect .slice').css({ transform: 'translateX(-100%)' });
+            $(this.slides).find('.shutter-effect .slice').animate({ width: '10%' });
+            // $(this.slides).find('.shutter-effect .slice').animate('transition-duration', '1s');
+            // $('#example').css('transition-duration', '1s'); // 改变过渡时间为1秒
+
+          },
+          slideChangeTransitionEnd: function () {
+            $(this.slides).find('.shutter-effect .slice').each(function (index) {
+              // setTimeout(function () {
+              //   $(this).css({ transform: 'translateX(0)' });
+              // }, 100 * index);
+              $(this).animate({ width: '0' });
+              // $(this).animate('transition-duration', '1s');
+
+            });
+          }
+        }
+      })
+    });
+
+  </script>
+</body>
+
+</html>

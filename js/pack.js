@@ -963,6 +963,8 @@ productIntroduce()
 // --------------------------------------------- 产品详情-应用场景
 function applicationScenarios() {
     var box = $('#appl_scenarios');
+    var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#fff" stroke-dasharray="314" stroke-dashoffset="314"/></svg>'
+
     if (box.length) {
         var swiper = box.find(".swiper_box"),
             num = swiper.find(".center_box");
@@ -987,10 +989,28 @@ function applicationScenarios() {
                 pagination = _this.find('.idxPageHide'),
                 item = _this.find(".swiper_list  .item_box .item");
             s1 = new Swiper(swiper_img, {
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
                 effect: 'fade',
                 slidesPerView: 1,
                 speed: 1200,
                 allowTouchMove: false,
+                pagination: {
+                    el: '.banner_sp',
+                    clickable: true,
+                },
+                on: {
+                    slideChangeTransitionStart: function () { //切换时分类也要改变状态
+                        var d = this.activeIndex;
+                        $(".application-scenarios .appl_solve .center_box .right .swiper_list .item_box .item").eq(d).addClass("active").siblings().removeClass("active");
+
+                    },
+                    slideChange: function (mySwiper) {
+                        $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty()
+                    }
+                },
             })
         })
 

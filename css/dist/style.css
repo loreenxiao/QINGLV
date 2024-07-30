@@ -646,6 +646,11 @@ button {
     padding: 0 60px;
   }
 }
+@media (max-width:1820px) {
+  .w1540 {
+    max-width: 100%;
+  }
+}
 @media (max-width:1560px) {
   .w1540 {
     max-width: 100%;
@@ -7207,30 +7212,39 @@ button {
   margin-top: 1.28rem;
 }
 .develoment-wrap .info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
   position: absolute;
-  padding: 1.28rem 1.9rem 1.07rem 1.9rem;
+  top: 0;
+  left: 0;
   z-index: 5;
   width: 100%;
   height: 100%;
 }
-.develoment-wrap .info .leftwrap {
+.develoment-wrap .info .w1540 {
+  height: 100%;
+}
+.develoment-wrap .info .boxInfo {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding: 1.28rem 0 1.07rem 0;
+}
+.develoment-wrap .info .boxInfo .leftwrap {
   width: 50%;
 }
-.develoment-wrap .info .leftwrap .index-p-title {
+.develoment-wrap .info .boxInfo .leftwrap .index-p-title {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)) !important;
   color: #fff;
 }
-.develoment-wrap .info .leftwrap .title {
+.develoment-wrap .info .boxInfo .leftwrap .title {
   color: var(--white-color);
   font-size: var(--font48);
   font-weight: 700;
   margin-top: 0.3rem;
 }
-.develoment-wrap .info .rightwrap {
+.develoment-wrap .info .boxInfo .rightwrap {
   width: 50%;
   margin-top: 2.84rem;
   display: -webkit-box;
@@ -7239,7 +7253,7 @@ button {
   display: flex;
   gap: 0.96rem;
 }
-.develoment-wrap .info .rightwrap li:nth-child(2) .year {
+.develoment-wrap .info .boxInfo .rightwrap li:nth-child(2) .year {
   background-image: linear-gradient(to bottom, rgb(255 255 3.64285714%), rgb(255 255 25.5%));
   /* 将渐变背景应用于文字 */
   -webkit-background-clip: text;
@@ -7248,7 +7262,7 @@ button {
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
 }
-.develoment-wrap .info .rightwrap .yeartab li {
+.develoment-wrap .info .boxInfo .rightwrap .yeartab li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -7260,38 +7274,38 @@ button {
   cursor: pointer;
   line-height: 2;
 }
-.develoment-wrap .info .rightwrap .yeartab li img {
+.develoment-wrap .info .boxInfo .rightwrap .yeartab li img {
   margin-right: 0.2rem;
   opacity: 0.4;
 }
-.develoment-wrap .info .rightwrap .yeartab li span {
+.develoment-wrap .info .boxInfo .rightwrap .yeartab li span {
   color: var(--black-999);
   font-weight: 700;
 }
-.develoment-wrap .info .rightwrap .yeartab .active img {
+.develoment-wrap .info .boxInfo .rightwrap .yeartab .active img {
   opacity: 1;
 }
-.develoment-wrap .info .rightwrap .yeartab .active span {
+.develoment-wrap .info .boxInfo .rightwrap .yeartab .active span {
   color: #fff;
 }
-.develoment-wrap .info .rightwrap .scrollcontent {
+.develoment-wrap .info .boxInfo .rightwrap .scrollcontent {
   color: var(--white-color);
   height: 100%;
   overflow: hidden;
 }
-.develoment-wrap .info .rightwrap .scrollcontent .year {
+.develoment-wrap .info .boxInfo .rightwrap .scrollcontent .year {
   font-size: var(--font96);
   font-weight: 700;
   line-height: 1;
 }
-.develoment-wrap .info .rightwrap .scrollcontent .introduce {
+.develoment-wrap .info .boxInfo .rightwrap .scrollcontent .introduce {
   margin-top: 0.16rem;
   line-height: 1.167;
 }
-.develoment-wrap .info .rightwrap .scrollcontent .introduce p {
+.develoment-wrap .info .boxInfo .rightwrap .scrollcontent .introduce p {
   font-size: var(--font24);
 }
-.develoment-wrap .info .rightwrap .swiper-pagination {
+.develoment-wrap .info .boxInfo .rightwrap .swiper-pagination {
   display: none;
 }
 .develoment-wrap .riverbg {
@@ -9203,10 +9217,11 @@ button {
 .application-scenarios {
   position: relative;
   margin-top: 1.28rem;
+  height: 9.6rem;
 }
 .application-scenarios .appl_solve {
   width: 100%;
-  height: auto;
+  height: 100%;
   position: relative;
   z-index: 2;
   overflow: hidden;
@@ -9239,7 +9254,10 @@ button {
   display: flex;
   grid-gap: 20px;
 }
-.application-scenarios .appl_solve .center_box {
+.application-scenarios .appl_solve .swiper_box {
+  height: 100%;
+}
+.application-scenarios .appl_solve .swiper_box .center_box {
   width: 100%;
   height: 100%;
   position: relative;
@@ -9252,36 +9270,41 @@ button {
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
-.application-scenarios .appl_solve .center_box .left {
+.application-scenarios .appl_solve .swiper_box .center_box .left {
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: 2;
 }
-.application-scenarios .appl_solve .center_box .left .swiper_img {
+.application-scenarios .appl_solve .swiper_box .center_box .left .swiper_img {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.application-scenarios .appl_solve .center_box .left .swiper_img .swiper-wrapper .swiper-slide {
+.application-scenarios .appl_solve .swiper_box .center_box .left .swiper_img .swiper-wrapper .swiper-slide {
   width: 0;
   pointer-events: none;
   position: relative;
   z-index: 1;
   height: 100% !important;
 }
-.application-scenarios .appl_solve .center_box .left .swiper_img .swiper-wrapper .swiper-slide .centerInfo {
+.application-scenarios .appl_solve .swiper_box .center_box .left .swiper_img .swiper-wrapper .swiper-slide .centerInfo {
   width: 100%;
   height: 100%;
   font-size: 0px;
   overflow: hidden;
 }
-.application-scenarios .appl_solve .center_box .left .swiper_img .swiper-wrapper .swiper-slide .centerInfo img {
+.application-scenarios .appl_solve .swiper_box .center_box .left .swiper_img .swiper-wrapper .swiper-slide .centerInfo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.application-scenarios .appl_solve .center_box .right {
+.application-scenarios .appl_solve .swiper_box .center_box .left .swiper_img .swiper-pagination {
+  position: absolute;
+  z-index: 100;
+  bottom: 0.95rem;
+}
+.application-scenarios .appl_solve .swiper_box .center_box .right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -9296,39 +9319,39 @@ button {
   position: relative;
   z-index: 3;
 }
-.application-scenarios .appl_solve .center_box .right .index-p-title {
+.application-scenarios .appl_solve .swiper_box .center_box .right .index-p-title {
   color: #fff;
   background-image: linear-gradient(to right, rgb(255 255 8.5%), rgb(255 255 Infinity%));
 }
-.application-scenarios .appl_solve .center_box .right .sectitle {
+.application-scenarios .appl_solve .swiper_box .center_box .right .sectitle {
   margin-top: 0.4rem;
 }
-.application-scenarios .appl_solve .center_box .right .sectitle p {
+.application-scenarios .appl_solve .swiper_box .center_box .right .sectitle p {
   font-size: var(--font48);
   font-weight: 700;
   line-height: 1.2;
 }
-.application-scenarios .appl_solve .center_box .right .sectitle .title1 {
+.application-scenarios .appl_solve .swiper_box .center_box .right .sectitle .title1 {
   color: #ffffff;
   font-family: 'HarmonyOS-TC';
 }
-.application-scenarios .appl_solve .center_box .right .sectitle .title2 {
+.application-scenarios .appl_solve .swiper_box .center_box .right .sectitle .title2 {
   color: #BBBBBB;
   font-family: 'HarmonyOS-TC';
 }
-.application-scenarios .appl_solve .center_box .right .index-p-more {
+.application-scenarios .appl_solve .swiper_box .center_box .right .index-p-more {
   margin-top: 0.64rem;
 }
-.application-scenarios .appl_solve .center_box .right .index-p-more .title {
+.application-scenarios .appl_solve .swiper_box .center_box .right .index-p-more .title {
   color: #FFFFFF;
 }
-.application-scenarios .appl_solve .center_box .right .index-p-more .icon img {
+.application-scenarios .appl_solve .swiper_box .center_box .right .index-p-more .icon img {
   filter: brightness(0) invert(1);
 }
-.application-scenarios .appl_solve .center_box .right .publictitle {
+.application-scenarios .appl_solve .swiper_box .center_box .right .publictitle {
   color: #fff;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_list {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_list {
   width: 65%;
   height: 100%;
   display: -webkit-box;
@@ -9340,12 +9363,12 @@ button {
   -webkit-align-items: flex-end;
   align-items: flex-end;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_list .item_box {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_list .item_box {
   width: 100%;
   height: auto;
   margin-top: 1.57rem;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_list .item_box .item {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_list .item_box .item {
   width: auto;
   height: auto;
   position: relative;
@@ -9357,40 +9380,40 @@ button {
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.application-scenarios .appl_solve .center_box .right .swiper_list .item_box .item .image {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_list .item_box .item .image {
   display: inline-block;
   width: 34px;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_list .item_box .item img {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_list .item_box .item img {
   display: none;
   filter: brightness(0) invert(1);
   margin-right: 0.24rem;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_list .item_box .item:hover {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_list .item_box .item:hover {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   color: var(--white-color);
 }
-.application-scenarios .appl_solve .center_box .right .swiper_list .item_box .item:hover img {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_list .item_box .item:hover img {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   display: inline-block;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_list .item_box .active {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_list .item_box .active {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   color: #FFF;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_list .item_box .active img {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_list .item_box .active img {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   display: inline-block;
 }
-.application-scenarios .appl_solve .center_box .right .pre-next-button {
+.application-scenarios .appl_solve .swiper_box .center_box .right .pre-next-button {
   position: absolute;
   top: 0;
   right: 100%;
@@ -9399,7 +9422,7 @@ button {
   min-height: 50px;
   z-index: 10;
 }
-.application-scenarios .appl_solve .center_box .right .pre-next-button .btn {
+.application-scenarios .appl_solve .swiper_box .center_box .right .pre-next-button .btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -9417,55 +9440,55 @@ button {
   min-width: 50px;
   min-height: 50px;
 }
-.application-scenarios .appl_solve .center_box .right .pre-next-button .prebtn {
+.application-scenarios .appl_solve .swiper_box .center_box .right .pre-next-button .prebtn {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   cursor: pointer;
   background: linear-gradient(to bottom right, rgb(255 255 Infinity%), rgb(255 255 3.1875%));
 }
-.application-scenarios .appl_solve .center_box .right .pre-next-button .prebtn img {
+.application-scenarios .appl_solve .swiper_box .center_box .right .pre-next-button .prebtn img {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   filter: brightness(0) invert(1);
 }
-.application-scenarios .appl_solve .center_box .right .pre-next-button .prebtn:hover {
+.application-scenarios .appl_solve .swiper_box .center_box .right .pre-next-button .prebtn:hover {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   background-color: rgb(255 255 3.1875%);
 }
-.application-scenarios .appl_solve .center_box .right .pre-next-button .prebtn:hover img {
+.application-scenarios .appl_solve .swiper_box .center_box .right .pre-next-button .prebtn:hover img {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   filter: brightness(0) invert(0);
 }
-.application-scenarios .appl_solve .center_box .right .pre-next-button .nextbtn {
+.application-scenarios .appl_solve .swiper_box .center_box .right .pre-next-button .nextbtn {
   cursor: pointer;
   background: linear-gradient(to bottom right, rgb(255 255 Infinity%), rgb(255 255 3.1875%));
 }
-.application-scenarios .appl_solve .center_box .right .pre-next-button .nextbtn img {
+.application-scenarios .appl_solve .swiper_box .center_box .right .pre-next-button .nextbtn img {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transform: rotate(180deg);
   filter: brightness(0) invert(1);
 }
-.application-scenarios .appl_solve .center_box .right .pre-next-button .nextbtn:hover {
+.application-scenarios .appl_solve .swiper_box .center_box .right .pre-next-button .nextbtn:hover {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   background-color: rgb(255 255 3.1875%);
 }
-.application-scenarios .appl_solve .center_box .right .pre-next-button .nextbtn:hover img {
+.application-scenarios .appl_solve .swiper_box .center_box .right .pre-next-button .nextbtn:hover img {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   filter: brightness(0) invert(0);
 }
-.application-scenarios .appl_solve .center_box .right .swiper_text {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_text {
   position: absolute;
   top: 1.82rem;
   right: 64px;
@@ -9474,34 +9497,34 @@ button {
   padding-bottom: 2px;
   background-image: url("../images/Subtract.png");
 }
-.application-scenarios .appl_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_text .swiper-wrapper .swiper-slide {
   pointer-events: none;
   position: relative;
   z-index: 1;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide.swiper-slide-active {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_text .swiper-wrapper .swiper-slide.swiper-slide-active {
   pointer-events: inherit;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide.swiper-slide-active .centerInfo {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_text .swiper-wrapper .swiper-slide.swiper-slide-active .centerInfo {
   display: block;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo {
   padding: 0.48rem 0.64rem;
   display: none;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .title p {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .title p {
   font-size: var(--font24);
   color: var(--black-000);
   font-weight: 500;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .info {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .info {
   color: var(--black-666);
   line-height: 1.5;
   margin-top: 0.32rem;
   padding-top: 0.32rem;
   border-top: solid 1px var(--black-ccc);
 }
-.application-scenarios .appl_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -9516,8 +9539,8 @@ button {
   align-items: center;
   margin-top: 2.26rem;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist .item .down,
-.application-scenarios .appl_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist .item .fast {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist .item .down,
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist .item .fast {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -9529,22 +9552,22 @@ button {
   gap: 12px;
   font-weight: 700;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist .item .down {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist .item .down {
   color: #25BB0F;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist .item .fast {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist .item .fast {
   color: #FF9D2A;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist .item .percent {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist .item .percent {
   font-size: var(--font40);
   color: var(--black-000);
   font-weight: 700;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist .item .percent .jump-num {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist .item .percent .jump-num {
   font-size: var(--font40);
   font-weight: 700;
 }
-.application-scenarios .appl_solve .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist .item .content {
+.application-scenarios .appl_solve .swiper_box .center_box .right .swiper_text .swiper-wrapper .swiper-slide .centerInfo .datalist .item .content {
   color: var(--black-666);
   font-weight: 300;
 }
