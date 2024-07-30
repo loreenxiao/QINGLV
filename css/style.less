@@ -2853,8 +2853,11 @@ button {
         border-bottom: solid 1px #DDDDDD;
         margin-top: 1.74rem;
         .left-text{.flex;.a_center; .j_justify; gap: 32px;
-          a{
+          a{.dh;
             visibility: visible !important;
+            &:hover{.dh;
+              color: var(--black-333);
+            }
           }
         }
         .right-media{.flex;.a_center; .j_justify; gap: 32px;
@@ -2874,8 +2877,11 @@ button {
           visibility: visible !important;
         }
         .right{.flex;.a_center; .j_justify; gap: 10px;
-          a{
+          a{.dh;
             visibility: visible !important;
+            &:hover{.dh;
+              color: var(--black-333);
+            }
           }
           .line{
             display: inline-block;
@@ -3886,7 +3892,7 @@ button {
   }
 }
 
-// --------------------------------------------- 隐私条款 
+// --------------------------------------------- 隐私条款 --弹窗
 .private-policy{.flex; .j_justify; .a_center;
     position: fixed;
     top: 0;
@@ -3933,7 +3939,44 @@ button {
     }
     
 }
+// --------------------------------------------- 隐私条款 
+.policy-wrap{.flex; .j_justify; .a_center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: calc(var(--header-height) + 0.8rem); padding-bottom: 1.2rem;
+  .innerbox{
+    position: relative;
+    width: 80%;
+    background-color: #fff;
+    margin: auto;
+    padding: .96rem;
+    z-index: 0;
 
+  }
+  .time{margin-top: .16rem;
+    padding-bottom: .5rem;border-bottom: solid 1px #dddddd; color: var(--black-999);
+  }
+  .item{
+    margin-top: .8rem;
+    img{margin-right: .1rem; width: .4rem; height: .4rem;}
+    .title{
+      font-size: var(--font30);font-weight: 700;
+    }
+    .info{margin-top: .3rem;}
+  }
+  @media @max990 {
+   .innerbox{
+    padding: 0.65rem;
+   }
+  }
+  @media @max768 {
+    .innerbox{
+      width: 100%;padding: 0.5rem;
+    }
+   }
+  
+}
 
 
 // --------------------------------------------- 侧边
@@ -6845,16 +6888,17 @@ button {
 // --------------------------------------------- 青绿案例详情--广州白云装饰装修垃圾循环利用项目
 .casesubject-wrap{margin-top: .8rem;
   .innerbox{.flex;
-    .image{width:57.57%; 
+    .image{
+      // width:57.57%; 
       img{
         width: 100%; height: 100%; object-fit: cover;
       }
     }
-    .info{width:42%;padding: .64rem 1.28rem;  background-color: #fff;
+    .info{width:66.225%;padding: .64rem 1.28rem;  background-color: #fff;
       .title{max-width: 3.35rem;}
       .dataitem{padding-top: 2.5rem; margin-top: .32rem; border-top: solid 1px #cccccc;.flex; column-gap: .56rem; position: relative;
         .d-item{
-          .num{color: var(--black-000);font-weight: 700; margin-top: .4rem; font-size: var(--font40);line-height: calc(34/40);}
+          .num{color: var(--black-000);font-weight: 700;  font-size: var(--font40);line-height: calc(34/40);}
           .area{color: var(--black-666);margin-top: .12rem;font-size: var(--font16);}
         }
         &:before{
@@ -7020,6 +7064,11 @@ button {
           .caselist{max-width: inherit;}
         }
       }
+    }
+  }
+  @media @max480{
+    .firstcontainer .banner_sp{
+      margin-left: 10%;
     }
   }
 }
