@@ -880,19 +880,20 @@
             }
             // 6.关于青绿--鼠标滚动时候地图展示完整
             if(isMobile()){
-                debugger
                 gsap.to(".index-about .image", {
-                    y: -400,// Y轴最终位置的偏移量，正值向下移动，负值向上移动
-                    duration: 2,// 动画持续的时间，单位是秒
+                    y: 0,// Y轴最终位置的偏移量，正值向下移动，负值向上移动
                     ease: 'power2.inOut',
                     scrollTrigger: {
                         trigger: ".index-about .image",
                         scrub: 1,
                     },
                 });
+               
             }else{
+               
                 gsap.to(".index-about .image", {
-                    y: 0,// Y轴最终位置的偏移量，正值向下移动，负值向上移动
+                    y: -400,// Y轴最终位置的偏移量，正值向下移动，负值向上移动
+                    duration: 2,// 动画持续的时间，单位是秒
                     ease: 'power2.inOut',
                     scrollTrigger: {
                         trigger: ".index-about .image",
