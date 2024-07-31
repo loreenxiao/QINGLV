@@ -941,14 +941,11 @@ $(function () {
         $(this).addClass('active').siblings().removeClass('active');
         var index = $(this).index(); // swiper2.slideTo(index);
 
-        console.log("swiper2", swiper2); // -----S ------
-
         if (checkType(swiper2) === 'Array') {
           swiper2[swiper1ActiveIndex].slideTo(index);
         } else {
           swiper2.slideTo(index);
-        } // -----E ------
-
+        }
       });
     }
   }
