@@ -820,8 +820,75 @@ $(function () {
   }
 
   projectHighlights(); // --------------------------------------------- 青绿案例详情详情--采用设备
+  // function equimentWrap(){
+  //     var box = $('.equiment-wrap');
+  //     var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#333" stroke-dasharray="314" stroke-dashoffset="314"/></svg>'
+  //     if (box.length) {
+  //         var swiper1 = new Swiper('.equiment-wrap .firstcontainer', {
+  //             autoplay: {
+  //                 delay: 5000,
+  //                 disableOnInteraction: false,
+  //             },
+  //             effect: "fade",
+  //             fadeEffect: {
+  //                 crossFade: true //开启淡出。过渡时，原slide透明度从1->0（淡出），过渡中的slide透明度从0->1（淡入），其他slide透明度0。
+  //             },
+  //             preventLinksPropagation: false, // 阻止点击事件冒泡
+  //             pagination: {
+  //                 el: '.equiment-wrap .banner_sp',
+  //                 clickable: true,
+  //             },
+  //             allowTouchMove: false,
+  //             on: {
+  //                 slideChangeTransitionStart: function () { //切换时分类也要改变状态
+  //                     var d = this.activeIndex;
+  //                     console.log("1d",d)
+  //                 },
+  //                 slideChange: function (mySwiper) {
+  //                     $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty()
+  //                 },
+  //             },
+  //         });
+  //         var swiper2 = new Swiper(".equiment-wrap .leftitem", {
+  //             autoplay: {
+  //                 delay: 5000,
+  //                 disableOnInteraction: false,
+  //             },
+  //             slidesPerView: 1,
+  //             effect: 'fade',
+  //             fadeEffect: {crossFade: true, },
+  //             spaceBetween: 20,allowTouchMove: false,
+  //         });
+  //         console.log("swiper2",swiper2)
+  //         // 内部轮播的点击事件
+  //         $(".equiment-wrap .firstcontainer .innerbox .rightitem .caselist .item").click(function () {
+  //             $(this).addClass('active').siblings().removeClass('active');
+  //             var index  =  $(this).index();
+  //             swiper2.slideTo(index);
+  //         });
+  //     }
+  // }
+  // equimentWrap();
+
+  function checkType(data) {
+    var res = '';
+
+    if (_typeof(data) === 'object' && Array.isArray(data)) {
+      //检查 data 是否是一个数组。Array.isArray() 是一个全局函数，用于判断给定的值是否为数组。
+      res = 'Array';
+    } else if (_typeof(data) === 'object' && !Array.isArray(data)) {
+      //Array.isArray检查一个变量是否为数组
+      res = 'Object';
+    } else {
+      res = '';
+    }
+
+    return res;
+  }
 
   function equimentWrap() {
+    var swiper1ActiveIndex = 0; // 第一个轮播的索引
+
     var box = $('.equiment-wrap');
     var svg = '<svg width="28" height="28" style="transform: rotate(-90deg)"><circle id="progress" cx="14" cy="14" r="12" fill="transparent" stroke-width="1"  stroke="#333" stroke-dasharray="314" stroke-dashoffset="314"/></svg>';
 
@@ -847,14 +914,16 @@ $(function () {
           slideChangeTransitionStart: function slideChangeTransitionStart() {
             //切换时分类也要改变状态
             var d = this.activeIndex;
-            $(".equiment-wrap .firstcontainer .innerbox .rightitem .caselist .item").eq(d).addClass("active").siblings().removeClass("active");
+            console.log("1d", d);
           },
           slideChange: function slideChange(mySwiper) {
-            $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty();
+            $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty(); // -----S ------
+
+            swiper1ActiveIndex = this.activeIndex; // -----E ------
           }
         }
       });
-      var swiper2 = new Swiper(".equiment-wrap .leftitem", {
+      var swiper2 = new Swiper('.equiment-wrap .leftitem', {
         autoplay: {
           delay: 5000,
           disableOnInteraction: false
@@ -865,22 +934,21 @@ $(function () {
           crossFade: true
         },
         spaceBetween: 20,
-        allowTouchMove: false,
-        on: {
-          slideChangeTransitionStart: function slideChangeTransitionStart() {
-            //切换时分类也要改变状态
-            var d = this.activeIndex;
-            $(".equiment-wrap .firstcontainer .innerbox .rightitem .caselist .item").eq(d).addClass("active").siblings().removeClass("active");
-          },
-          slideChange: function slideChange(mySwiper) {
-            $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty();
-          }
-        }
-      });
+        allowTouchMove: false
+      }); // 内部轮播的点击事件
+
       $(".equiment-wrap .firstcontainer .innerbox .rightitem .caselist .item").click(function () {
         $(this).addClass('active').siblings().removeClass('active');
-        var index = $(this).index();
-        swiper2.slideTo(index);
+        var index = $(this).index(); // swiper2.slideTo(index);
+
+        console.log("swiper2", swiper2); // -----S ------
+
+        if (checkType(swiper2) === 'Array') {
+          swiper2[swiper1ActiveIndex].slideTo(index);
+        } else {
+          swiper2.slideTo(index);
+        } // -----E ------
+
       });
     }
   }

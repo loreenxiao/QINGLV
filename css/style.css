@@ -8059,6 +8059,9 @@ button {
   padding: 20px 0;
 }
 .project-highlights .innerbox li {
+  -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
   background-color: #fff;
   padding: 0.24rem 0.24rem 0.48rem 0.56rem;
@@ -8091,9 +8094,12 @@ button {
   position: absolute;
   bottom: 0;
   right: 0;
-  opacity: 0;
+  display: none;
 }
 .project-highlights .innerbox li:hover {
+  -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   box-shadow: 6px 8px 31px 0 rgba(37, 187, 15, 0.19);
 }
 .project-highlights .innerbox li:hover .p-icon {
@@ -8113,7 +8119,7 @@ button {
   -webkit-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
-  opacity: 1;
+  display: inline-block;
 }
 .project-highlights .swiper-pagination {
   display: none;

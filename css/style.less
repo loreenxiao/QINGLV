@@ -6991,19 +6991,19 @@ button {
 // --------------------------------------------- 青绿案例详情--项目亮点
 .project-highlights{margin-top: 1.28rem;  position: relative;
   .innerbox{ overflow: hidden; margin-top: .8rem;display: grid;padding: 20px 0;
-    li{position: relative;background-color: #fff; padding: .24rem .24rem 0.48rem 0.56rem; cursor: pointer;
+    li{.dh; position: relative;background-color: #fff; padding: .24rem .24rem 0.48rem 0.56rem; cursor: pointer;
      .num{text-align: right; color: var(--black-ccc);}
      .p-icon{.dh;margin-top: 1.02rem;filter: brightness(0.5) invert(1);}
      .title{.dh; line-height: 1.167;margin-top: .24rem;  color: var(--black-000);font-size: var(--font24);}
       .bgimage{.dh;
         position: absolute;
-        bottom: 0;right: 0;opacity: 0; 
+        bottom: 0;right: 0;display: none; 
       }
-     &:hover{
+     &:hover{.dh;
       box-shadow: 6px 8px 31px 0 rgba(37, 187, 15, 0.19);
       .p-icon{.dh;filter: inherit;}
       .title{.dh;color: var(--active-color);font-weight: 700;}
-      .bgimage{.dh;opacity: 1; }
+      .bgimage{.dh;display: inline-block; }
      }
     }
     
