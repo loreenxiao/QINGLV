@@ -6742,18 +6742,21 @@ button {
   margin-top: 0.8rem;
   overflow: hidden;
 }
-.solution-wrap .solutionlist .innerbox .image .pb {
+.solution-wrap .solutionlist .innerbox a {
+  display: inline;
+}
+.solution-wrap .solutionlist .innerbox a .image .pb {
   padding-bottom: 133.713%;
 }
-.solution-wrap .solutionlist .innerbox .image .pb img {
+.solution-wrap .solutionlist .innerbox a .image .pb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.solution-wrap .solutionlist .innerbox .image .pb .nomal {
+.solution-wrap .solutionlist .innerbox a .image .pb .nomal {
   transition: 1s ease-in-out;
 }
-.solution-wrap .solutionlist .innerbox .image .pb .select {
+.solution-wrap .solutionlist .innerbox a .image .pb .select {
   height: 100%;
   display: inline-block;
   transition: 1s ease-in-out;
@@ -6762,7 +6765,7 @@ button {
   width: 0;
   transition: 0.6s ease-in-out;
 }
-.solution-wrap .solutionlist .innerbox .content {
+.solution-wrap .solutionlist .innerbox a .content {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -6771,39 +6774,39 @@ button {
   padding: 0.4rem;
   z-index: 10;
 }
-.solution-wrap .solutionlist .innerbox .content .info p {
+.solution-wrap .solutionlist .innerbox a .content .info p {
   font-size: var(--font28);
   font-weight: 500;
   color: #FFF;
   line-height: 1.2;
 }
-.solution-wrap .solutionlist .innerbox .content .info .desc {
+.solution-wrap .solutionlist .innerbox a .content .info .desc {
   margin-top: 0.32rem;
   color: #FFF;
   opacity: 0;
   transform: translateY(-20px);
   transition: 0.5s ease-in-out;
 }
-.solution-wrap .solutionlist .innerbox .content .more {
+.solution-wrap .solutionlist .innerbox a .content .more {
   position: absolute;
   right: 0;
   bottom: 0;
   padding: 0.4rem;
 }
-.solution-wrap .solutionlist .innerbox .content .more img {
+.solution-wrap .solutionlist .innerbox a .content .more img {
   width: 0.65rem;
   height: 0.65rem;
 }
-.solution-wrap .solutionlist .innerbox:hover {
+.solution-wrap .solutionlist .innerbox a:hover {
   cursor: pointer;
 }
-.solution-wrap .solutionlist .innerbox:hover .image .select {
+.solution-wrap .solutionlist .innerbox a:hover .image .select {
   height: 100%;
   display: inline-block;
   width: 100%;
   transition: 0.6s ease-in-out;
 }
-.solution-wrap .solutionlist .innerbox:hover .info .desc {
+.solution-wrap .solutionlist .innerbox a:hover .info .desc {
   opacity: 1;
   transform: translateY(0px);
   transition: 0.5s ease-in-out;
@@ -10294,6 +10297,21 @@ button {
   background: var(--active-color);
   color: var(--white-color);
   line-height: 1;
+}
+.form-wrap .inner .right-form .layui-form-checkbox[lay-skin=primary] > i {
+  border-radius: 30px;
+  padding: 4px;
+  background-color: #fff;
+}
+.form-wrap .inner .right-form .layui-form-checked .layui-icon-ok:before {
+  position: absolute;
+  content: '';
+  width: 6px;
+  height: 6px;
+  top: 4px;
+  left: 4px;
+  background-color: var(--active-color);
+  border-radius: 30px;
 }
 @media (max-width:1440px) {
   .form-wrap .inner .right-form ul li .submit-content .submit-btn {

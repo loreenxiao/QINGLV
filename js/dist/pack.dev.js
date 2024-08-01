@@ -579,11 +579,11 @@ $(function () {
 
   function solutionList() {
     var slide = new Swiper('.solution-wrap .solutionlist', {
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
+      // loop:true,
+      // autoplay: {
+      //     delay: 5000,
+      //     disableOnInteraction: false,
+      // },
       // speed:1000,
       slidesPerView: 3.3,
       spaceBetween: 22,
