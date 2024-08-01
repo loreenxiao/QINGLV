@@ -436,7 +436,18 @@ $(function () {
 
   wowFun(".s-animate", "fadeInLeft", 1);
   wowFun(".s-animate-up", "fadeInUp", 1); // 滚动加载入场动画 --结束
-  // 解决方案
+  // 首页--立即咨询
+
+  function consultBtn(params) {
+    $(".consult-btn").click(function () {
+      $(".private-policy").css("display", "inline-flex");
+    });
+    $(".private-policy .close").click(function () {
+      $(".private-policy").css("display", "none");
+    });
+  }
+
+  consultBtn(); // 解决方案
 
   function indexSolution() {
     var box = $('#idx_solution');
@@ -603,7 +614,7 @@ $(function () {
     });
   }
 
-  solutionList(); // 关于我们--发展历程
+  solutionList(); // --------------------------------------------- 关于我们--发展历程
 
   function development() {
     var mySwiper = new Swiper('.develoment-wrap .scrollcontent', {
@@ -635,7 +646,7 @@ $(function () {
     });
   }
 
-  development(); // 关于我们--发展历程线运动轨迹
+  development(); // --------------------------------------------- 关于我们--发展历程线运动轨迹
 
   function idx_development() {
     var box = $(".develoment-wrap");
@@ -660,7 +671,7 @@ $(function () {
     }
   }
 
-  idx_development(); // 关于我们--合作伙伴1,2
+  idx_development(); // --------------------------------------------- 关于我们--合作伙伴1,2
 
   function cooperationOne() {
     var mySwiper = new Swiper('.cooperation-wrap .cooperate1', {
@@ -718,7 +729,21 @@ $(function () {
     });
   }
 
-  cooperationTwo(); // --------------------------------------------- 青绿解决方案详情--分选产物
+  cooperationTwo(); // --------------------------------------------- 联系我们--分布网络
+
+  function contactMap() {
+    var slide = new Swiper('.map-wrap .map', {
+      slidesPerView: 1,
+      effect: "fade"
+    });
+    $(".map-wrap .innerbox .info .tab-ul li").click(function () {
+      $(this).addClass("active").siblings().removeClass("active");
+      var index = $(this).index();
+      slide.slideTo(index);
+    });
+  }
+
+  contactMap(); // --------------------------------------------- 青绿解决方案详情--分选产物
 
   function solutionAdvantageList() {
     var slide = new Swiper('.sorting-products-wrap .innerbox', {
@@ -1046,7 +1071,7 @@ function productParams() {
 productParams(); // --------------------------------------------- 产品详情-产品介绍
 
 function productIntroduce() {
-  var swiper = new Swiper('.product-introduce-wrap .swiperbox', {
+  var swiper = new Swiper('.product-introduce-wrap .leftimg', {
     slidesPerView: 1,
     speed: 800,
     allowTouchMove: false,
