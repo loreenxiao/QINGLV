@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper with Shutter Effect</title>
+  <!-- 引入Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/extend.css">
+  <!-- 自定义CSS -->
+  <style>
+    *,body{
+      width: 100%;height: 100%; overflow: hidden;margin: 0;padding: 0;
+    }
+    ul{
+
+    }
+    .js-loading{width: 100%;}
+
+    .c-loading__wrapper {
+      position: fixed;
+      z-index: 103;
+      top: 0%;
+      left: 0%;
+      -webkit-transform: translate(-55%, -25%);
+      transform: translate(-55%, -25%);
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 400vw;
+      height: 400vh;
+      padding: 0;
+      margin: 0;
+      pointer-events: none;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-transition: 0.6s opacity ease;
+      transition: 0.6s opacity ease;
+    }
+
+    .c-loading__item {
+      translate: none;
+      rotate: none;
+      scale: none;
+      transform: rotate(45deg) scale(1, 1) !important;
+    }
+
+    .active .c-loading__item{
+      transform: rotate(45deg) scale(0, 1) !important;
+      transition: 1.2s ease-in-out;
+    }
+
+    .bannerwrap{
+      
+    }
+    .bannerwrap .image{
+      height: 100%;
+      width: 100%;
+    }
+    .bannerwrap .image img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @media screen and (min-width: 1200px) {
+      .c-loading__wrapper {
+        top: 0%;
+        left: 0%;
+        -webkit-transform: translate(-25%, -20%);
+        transform: translate(-25%, -20%);
+        width: 400vw;
+        height: 400vh;
+      }
+    }
+
+    .c-loading__wrapper .c-loading__item {
+      width: 200px;
+      height: 100%;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      background-color: #E0E7E6;
+      -webkit-transform-origin: right;
+      transform-origin: right;
+    }
+
+    @media screen and (min-width: 768px) {
+      .c-loading__wrapper {
+        top: 0%;
+        left: 0%;
+        -webkit-transform: translate(-45%, -20%);
+        transform: translate(-45%, -20%);
+        width: 400vw;
+        height: 400vh;
+      }
+
+      .c-loading__wrapper .c-loading__item {
+        height: auto;
+        width: 14.7575vw;
+        max-width: 236px;
+      }
+    }
+
+    .c-loading__logo {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      z-index: 104;
+      top: 50%;
+      left: 50%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      pointer-events: none;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      row-gap: 1rem;
+      opacity: 0;
+      -webkit-transition: opacity 0.5s;
+      transition: opacity 0.5s;
+    }
+
+    .js-loading__counter {
+      font-size: 14px;
+      color: #29528A;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="js-loading">
+    <div class="c-loading__wrapper">
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+      <div class="c-loading__item"></div>
+
+    </div>
+    <div class="bannerwrap">
+      <ul class="swiper-wrapper">
+        <li class="swiper-slide">
+          <div class="image">
+            <img src="./images/banner.png" alt="">
+          </div>
+        </li>
+        <li class="swiper-slide">
+          <div class="image">
+            <img src="./images/case-image.png" alt="">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- 引入Swiper JS -->
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/jquery.js"></script>
+  <!-- <script src="js/loadingInAnimation.js"></script> -->
+  <script>
+    // 给所有c-loading__item 添加样式active
+
+    $(document).ready(function () {
+     
+      
+      var mySwiper = new Swiper('.js-loading .bannerwrap', {
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        effect: 'fade',
+        on: {
+         init:function(){
+          $('.js-loading').addClass('active');
+         },
+          slideChangeTransitionStart: function (mySwiper) {
+            $('.js-loading ').removeClass('active');
+            
+          },
+         
+          slideChangeTransitionEnd: function () {
+            $('.js-loading').addClass('active');
+          }
+        },
+      });
+    });
+
+  </script>
+</body>
+
+</html>
