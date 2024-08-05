@@ -7352,7 +7352,7 @@ button {
   display: flex;
   gap: 0.96rem;
 }
-.develoment-wrap .info .boxInfo .rightwrap li:nth-child(2) .year {
+.develoment-wrap .info .boxInfo .rightwrap .swiper-slide-next .year {
   background-image: linear-gradient(to bottom, rgb(255 255 3.64285714%), rgb(255 255 25.5%));
   /* 将渐变背景应用于文字 */
   -webkit-background-clip: text;
