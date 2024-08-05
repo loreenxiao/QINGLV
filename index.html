@@ -104,6 +104,31 @@
                     <img src="./images/global-big.png" alt="">
                 </div>
                 <div class="index-environment-banner">
+                    <div class="c-loading__wrapper">
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                        <div class="c-loading__item"></div>
+                  
+                      </div>
                     <div class="bannerbox">
                         <ul class="swiper-wrapper">
                             <li class="swiper-slide">
@@ -976,27 +1001,7 @@
         indexText()
     </script>
 
-    <!-- 首页第一屏文字打印效果 -->
-    <!-- <script>
-        // 获取当前第n个item
-        $(document).ready(function () {
-            var text = $(".index-environment .info .global-title .swipertitle .active").text(); // 获取文本内容
-            var i = 0;
-            function printLetter() {
-                if (i < text.length) {
-
-                    $(".index-environment .info .global-title .swipertitle .active").text(text.substring(0, i++)); // 每次增加一个下划线代表打字机打字的样式
-                } else {
-                    clearInterval(interval); // 文本打印完成后清除定时器
-                }
-            }
-            var interval = setInterval(printLetter, 200); // 每200毫秒调用一次printLetter函数
-
-        });
-        // 显示当前第n个item并打印
-
-    </script> -->
-
+   
     <!--首屏-- 文字一个一个出现效果 -->
     <script>
         $(".c_til").each(function () {
@@ -1123,11 +1128,16 @@
                     clickable: true,
                 },
                 on: {
+                    init:function(){
+                        $('.index-environment-banner').addClass('active');
+                    },
                     slideChange: function (mySwiper) {
                         $('.banner_sp span.swiper-pagination-bullet-active').html(svg).siblings().empty()
                     },
 
                     slideChangeTransitionStart: function () {
+                        $('.index-environment-banner').removeClass('active');
+
                         var d = this.realIndex;
                         // $(".index-environment .info .swiper-pagination-bullet").eq(d).click();
 
@@ -1137,7 +1147,11 @@
                         } else {
                             $(".index-environment .info .swiper-pagination-bullet").eq(0).click();
                         }
+                    },
+                    slideChangeTransitionEnd: function () {
+                        $('.index-environment-banner').addClass('active');
                     }
+
 
                 },
             });
