@@ -7776,6 +7776,9 @@ button {
   }
 }
 @media (max-width:480px) {
+  .solution-advantage-wrap .innerbox .ileft {
+    padding: 0 20px;
+  }
   .solution-advantage-wrap .innerbox .ileft .info {
     left: 1.2rem;
   }
@@ -9826,6 +9829,11 @@ button {
     width: 100%;
     margin-top: 0.5rem;
     margin-left: 0;
+  }
+}
+@media (max-width:480px) {
+  .newbanenr-wrap {
+    padding: 0 20px;
   }
 }
 .conpany-news {
