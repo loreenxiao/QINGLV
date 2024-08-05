@@ -994,7 +994,7 @@ function productParams() {
                 // swiperAnimate(this);
             },
             slideChangeTransitionEnd() {
-                swiperAnimate(this);
+                // swiperAnimate(this);
             },
         },
         
@@ -1013,7 +1013,7 @@ function productParams() {
                 // swiperAnimate(this);
             },
             slideChangeTransitionEnd() {
-                swiperAnimate(this);
+                // swiperAnimate(this);
             },
         },
         
